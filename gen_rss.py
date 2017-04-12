@@ -11,6 +11,8 @@ print("Hello. API_KEY={}".format(config.API_KEY))
 
 target_timezone = pytz.timezone(config.TIMEZONE)
 time_now = datetime.datetime.now(tz=target_timezone)
+
+# Format looks like: 2017-03-25T00:00:00-0500
 time_now_formatted = time_now.strftime("%Y-%m-%dT%H:%M:%S%z")
 
 api_url='https://www.googleapis.com/calendar/v3/calendars/{}/events'.format(config.CALENDAR_ID_FULL)
