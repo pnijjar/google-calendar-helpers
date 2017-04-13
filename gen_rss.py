@@ -18,8 +18,6 @@ def get_rfc822_datestring (google_date):
         that RSS wants.
     """
 
-    # This is actually wrong because it ignores timezone.
-    # See: http://stackoverflow.com/questions/19472859
     d = dateutil.parser.parse(google_date)
 
     # Output the proper format
