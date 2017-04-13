@@ -26,14 +26,12 @@
             <description>
                 &lt;p&gt;
                 &lt;strong&gt;Location: &lt;/strong&gt;
-                {{ item['location'] | emarkdown }}
+                {{ item['location'] }}
                 &lt;/p&gt;&lt;p&gt;
                 &lt;strong&gt;Date and Time: &lt;/strong&gt;
                 {{ item['start']['dateTime'] | humandate }} 
                 &lt;/p&gt;
-                &lt;p&gt;
-                {{ item['description'] | emarkdown }}
-                &lt;/p&gt;
+                {{ item['description'] | markdown }}
             </description>
             <guid isPermaLink="false">{{ item['iCalUID'] }}</guid>
             <pubDate>{{ item['created'] | rfc822 }}</pubDate>

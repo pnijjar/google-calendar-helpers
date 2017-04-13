@@ -31,14 +31,14 @@ def get_human_datestring (google_date):
     # Wed, Oct 02 2005
     return d.strftime("%a, %b %d %Y, %I:%M %P")
 
-def get_escaped_markdown (rawtext): 
+def get_markdown (rawtext): 
     """ Returns escaped markdown of rawtext (which might have had 
         stuff before.
     """
     md = markdown.Markdown() 
     md_text = md.convert(rawtext)
-    esc_text = html.escape(md_text)
-    return esc_text
+    # esc_text = html.escape(md_text)
+    return md_text
 
 
 # --- Intro nonsense
@@ -79,13 +79,7 @@ template_env = jinja2.Environment(
     )
 template_env.filters['rfc822'] = get_rfc822_datestring
 template_env.filters['humandate'] = get_human_datestring
-template_env.filters['emarkdown'] = get_escaped_markdown
-
-
-# https://gist.github.com/glombard/7554134
-# I want this filter to insert <p> tags into the text
-md = markdown.Markdown()
-template_env.filters['markdown'] = lambda t: jinja2.Markup(md.convert(t))
+template_env.filters['markdown'] = get_markdown
 
 
 template = template_env.get_template( TEMPLATE ) 
