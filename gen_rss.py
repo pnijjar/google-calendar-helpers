@@ -22,16 +22,6 @@ def get_rfc822_datestring (google_date):
     # See: http://stackoverflow.com/questions/19472859
     d = dateutil.parser.parse(google_date)
 
-    """
-    d = datetime.datetime.strptime(
-        google_date,
-        "%Y-%m-%dT%H:%M:%S.%fZ"
-        )
-
-    # Explicitly make the timezone UTC
-    d.replace(tzinfo=pytz.utc)
-    """
-
     # Output the proper format
     return d.strftime("%a, %d %b %y %T %z")
 
