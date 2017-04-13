@@ -9,8 +9,7 @@ import jinja2, markdown, html
 import pprint
 
 
-TEMPLATE="/home/pnijjar/watcamp/python_rss/rss_template.jinja2"
-
+TEMPLATE="rss_template.jinja2"
 
 
 def get_rfc822_datestring (google_date): 
@@ -41,9 +40,6 @@ def get_markdown (rawtext):
     return md_text
 
 
-# --- Intro nonsense
-print("Hello. API_KEY={}".format(config.API_KEY))
-
 # --- Make API call 
 target_timezone = pytz.timezone(config.TIMEZONE)
 time_now = datetime.datetime.now(tz=target_timezone)
@@ -69,10 +65,11 @@ cal_dict = r.json()
 # --- Process template 
 
 # This is kind of sketchy in general
+# (because why should the summary be the title?)
 feed_title = cal_dict['summary']
 
 
-template_loader = jinja2.FileSystemLoader( searchpath="/" )
+template_loader = jinja2.FileSystemLoader( searchpath=config.TEMPLATE_DIR )
 template_env = jinja2.Environment( 
     loader=template_loader,
     autoescape=True,
