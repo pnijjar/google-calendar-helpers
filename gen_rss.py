@@ -28,7 +28,7 @@ def get_human_datestring (google_date):
     d = dateutil.parser.parse(google_date)
     
     # Wed, Oct 02 2005
-    return d.strftime("%a, %b %d %Y, %I:%M %P")
+    return d.strftime("%A, %b %d %Y, %I:%M %P")
 
 def get_markdown (rawtext): 
     """ Returns escaped markdown of rawtext (which might have had 
