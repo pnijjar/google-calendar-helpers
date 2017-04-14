@@ -7,9 +7,17 @@ import pytz, datetime, dateutil.parser
 import jinja2, markdown, html
 
 import pprint
+import json
 
 
 TEMPLATE="rss_template.jinja2"
+
+def print_from_template (s): 
+    """ Show the value of a string that is being processed in a 
+        Jinja template, for debugging.
+    """
+    print(s)
+    return s
 
 
 def get_rfc822_datestring (google_date): 
@@ -17,6 +25,8 @@ def get_rfc822_datestring (google_date):
         that RSS wants.
     """
 
+    # Sometimes dates look like "0000-12-29T00:00.000Z" and this
+    # confuses the date parser...
     d = dateutil.parser.parse(google_date)
 
     # Output the proper format
@@ -25,10 +35,21 @@ def get_rfc822_datestring (google_date):
 
 def get_human_datestring (google_date): 
     """ RFC 822 is ugly for humans. Use something nicer. """
+
     d = dateutil.parser.parse(google_date)
     
-    # Wed, Oct 02 2005
-    return d.strftime("%A, %b %d %Y, %I:%M %P")
+    # Wednesday, Oct 02 2005, 8:00pm
+    return d.strftime("%A, %b %d %Y, %l:%M%P")
+
+def get_human_dateonly (google_date):
+    """ If there is no minute defined then the date looks bad.
+    """
+
+    d = dateutil.parser.parse(google_date)
+    
+    # Wednesday, Oct 02 2005
+    return d.strftime("%A, %b %d %Y")
+
 
 def get_markdown (rawtext): 
     """ Returns escaped markdown of rawtext (which might have had 
@@ -62,6 +83,12 @@ r = requests.get(api_url, params=api_params)
 cal_dict = r.json()
 
 
+outfile = open(config.OUTJSON, "w")
+json.dump(r.json(), outfile, indent=2, separators=(',', ': '))
+
+
+
+
 # --- Process template 
 
 # This is kind of sketchy in general
@@ -76,7 +103,9 @@ template_env = jinja2.Environment(
     )
 template_env.filters['rfc822'] = get_rfc822_datestring
 template_env.filters['humandate'] = get_human_datestring
+template_env.filters['humandateonly'] = get_human_dateonly
 template_env.filters['markdown'] = get_markdown
+template_env.filters['print'] = print_from_template
 
 
 template = template_env.get_template( TEMPLATE ) 
