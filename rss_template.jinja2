@@ -24,6 +24,10 @@
             <title>{{ item['summary'] }}</title>
             <link>{{ item['htmlLink'] }}</link>
             <description>
+
+                {# Sometimes the provided date formats are different, 
+                 # so be careful.
+                 #}
                 &lt;p&gt;
                 &lt;strong&gt;Date and Time: &lt;/strong&gt;
                 {% if item['start']['dateTime'] is defined %}
