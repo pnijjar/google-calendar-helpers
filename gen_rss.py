@@ -60,72 +60,97 @@ def get_markdown (rawtext):
     # esc_text = html.escape(md_text)
     return md_text
 
+def get_time_now():
+   
+    target_timezone = pytz.timezone(config.TIMEZONE)
+    time_now = datetime.datetime.now(tz=target_timezone)
 
-# --- Make API call 
-target_timezone = pytz.timezone(config.TIMEZONE)
-time_now = datetime.datetime.now(tz=target_timezone)
+    return time_now
 
-# Format looks like: 2017-03-25T00:00:00-0500
-time_now_formatted = time_now.strftime("%Y-%m-%dT%H:%M:%S%z")
+def call_api():
+    """ Returns JSON from API call, or some error I won't handle."""
 
-api_url='https://www.googleapis.com/calendar/v3/calendars/{}/events'.format(config.CALENDAR_ID_FULL)
+    time_now = get_time_now()
 
-api_params = { 
-    'maxResults' : config.NUM_ITEMS,
-    'orderBy' : 'startTime',
-    'singleEvents' : 'true',
-    'key' : config.API_KEY,
-    'timeMin' : time_now_formatted,
-    } 
+    # Format looks like: 2017-03-25T00:00:00-0500
+    time_now_formatted = time_now.strftime("%Y-%m-%dT%H:%M:%S%z")
 
-r = requests.get(api_url, params=api_params)
+    api_url='https://www.googleapis.com/calendar/v3/calendars/{}/events'.format(config.CALENDAR_ID_FULL)
 
-cal_dict = r.json()
+    api_params = { 
+        'maxResults' : config.NUM_ITEMS,
+        'orderBy' : 'startTime',
+        'singleEvents' : 'true',
+        'key' : config.API_KEY,
+        'timeMin' : time_now_formatted,
+        } 
 
+    r = requests.get(api_url, params=api_params)
 
-outfile = open(config.OUTJSON, "w")
-json.dump(r.json(), outfile, indent=2, separators=(',', ': '))
+    calendar_json = r.json()
 
-
-
-
-# --- Process template 
-
-# This is kind of sketchy in general
-# (because why should the summary be the title?)
-feed_title = cal_dict['summary']
+    return calendar_json
 
 
-template_loader = jinja2.FileSystemLoader( searchpath=config.TEMPLATE_DIR )
-template_env = jinja2.Environment( 
-    loader=template_loader,
-    autoescape=True,
-    )
-template_env.filters['rfc822'] = get_rfc822_datestring
-template_env.filters['humandate'] = get_human_datestring
-template_env.filters['humandateonly'] = get_human_dateonly
-template_env.filters['markdown'] = get_markdown
-template_env.filters['print'] = print_from_template
+def generate_rss(cal_dict):
+    """ Given a JSON formatted calendar dictionary, make and return 
+        the RSS file.
+    """
 
 
-template = template_env.get_template( TEMPLATE ) 
-template_vars = { 
-  "feed_title": feed_title,
-  "feed_description": cal_dict['description'],
-  "feed_webmaster" : config.WEBMASTER,
-  "feed_webmaster_name" : config.WEBMASTER_NAME,
-  "feed_builddate" : time_now.strftime("%a, %d %b %Y %T %z"),
-  "feed_pubdate" : cal_dict['updated'],
-  "feed_website" : config.WEBSITE,
-  "feed_logo_url" : config.LOGO,
-  "feed_items" : cal_dict['items'],
-  "feed_selflink" : config.FEED_LINK,
-  }
+    # --- Process template 
 
-output_rss = template.render(template_vars)
+    # This is kind of sketchy in general
+    # (because why should the summary be the title?)
+    feed_title = cal_dict['summary']
 
-outfile = open(config.OUTFILE, "w")
-outfile.write(output_rss)
+
+    template_loader = jinja2.FileSystemLoader( searchpath=config.TEMPLATE_DIR )
+    template_env = jinja2.Environment( 
+        loader=template_loader,
+        autoescape=True,
+        )
+    template_env.filters['rfc822'] = get_rfc822_datestring
+    template_env.filters['humandate'] = get_human_datestring
+    template_env.filters['humandateonly'] = get_human_dateonly
+    template_env.filters['markdown'] = get_markdown
+    template_env.filters['print'] = print_from_template
+
+
+    time_now = get_time_now()
+
+    template = template_env.get_template( TEMPLATE ) 
+    template_vars = { 
+      "feed_title": feed_title,
+      "feed_description": cal_dict['description'],
+      "feed_webmaster" : config.WEBMASTER,
+      "feed_webmaster_name" : config.WEBMASTER_NAME,
+      "feed_builddate" : time_now.strftime("%a, %d %b %Y %T %z"),
+      "feed_pubdate" : cal_dict['updated'],
+      "feed_website" : config.WEBSITE,
+      "feed_logo_url" : config.LOGO,
+      "feed_items" : cal_dict['items'],
+      "feed_selflink" : config.FEED_LINK,
+      }
+
+    output_rss = template.render(template_vars)
+
+    return output_rss
+
+
+
+if __name__ == '__main__':
+
+    cal_json = call_api() 
+
+    outjson = open(config.OUTJSON, "w")
+    json.dump(cal_json, outjson, indent=2, separators=(',', ': '))
+
+    cal_rss = generate_rss(cal_json)
+
+    outfile = open(config.OUTFILE, "w")
+    outfile.write(cal_rss)
+
 
 
 # pprint.pprint(r)
