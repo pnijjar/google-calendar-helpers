@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<rss version="2.0"
+    xmlns:atom="http://www.w3.org/2005/Atom"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+>
+
+    <channel>
+        <title>WatCamp Events</title>
+        <description>Taking inspiration from the TorCamp calendar. This calendar lists all tech events taking place in the KW area.</description>
+        <link>http://watcamp.com</link>
+        <pubDate>Wed, 19 Apr 2017 12:06:50 +0000</pubDate>
+        <webMaster>admin@example.com (Webmaster)</webMaster>
+        <lastBuildDate>Wed, 19 Apr 2017 15:01:56 -0400</lastBuildDate>
+        <image>
+            <url>http://watcamp.com/img/logo.png</url>
+            <title>WatCamp Events</title>
+            <link>http://watcamp.com</link>
+        </image>
+        <atom:link href="http://watcamp.com/watcamp.rss" rel="self" type="application/rss+xml" />
+
+        
+        <item>
+            <title>YWCA Cambridge - STEM Mentoring</title>
+            <link>https://www.google.com/calendar/event?eid=aTJocTAzczBkaDk5MDB0aWhhMDIwM21zcWdfMjAxNzA0MTlUMjEzMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn</link>
+            <description>
+
+                
+                &lt;p&gt;
+                &lt;strong&gt;Date and Time: &lt;/strong&gt;
+                
+                    Wednesday, Apr 19 2017,  5:30pm 
+                
+                &lt;/p&gt;
+                
+                &lt;p&gt;
+                &lt;strong&gt;Location: &lt;/strong&gt;
+                
+                    8 Petty Pl, Cambridge, ON
+                
+                &lt;/p&gt;
+
+                &lt;p&gt;&lt;a href=&#39;http://www.ywcacambridge.ca/mentoring.html&#39;&gt;http://www.ywcacambridge.ca/mentoring.html&lt;/a&gt;
+STEM Mentoring is about building gyrls&#39; interest and skills in STEM through mentorship with amazing womyn who work in the STEM field! Each program is tailored to the interests of the gyrls who participate. Gyrls and their mentors have explored things like robotics and aerodynamics, gone on many field trips, and made things like edible water bottles and solar systems! &lt;/p&gt;
+&lt;p&gt;*Meets bi-weekly from Sept 21- June 14
+Ages 9-13&lt;/p&gt;
+&lt;p&gt;Contact us for more information or to register: girlscentre@ywcacambridge.ca&lt;/p&gt;
+            </description>
+            <guid isPermaLink="false">i2hq03s0dh9900tiha0203msqg@google.com</guid>
+            <pubDate>Wed, 07 Sep 2016 17:00:28 +0000</pubDate>
+        </item>
+        
+    </channel>
+</rss>
