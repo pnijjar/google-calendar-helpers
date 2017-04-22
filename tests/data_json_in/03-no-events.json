@@ -1,0 +1,12 @@
+{
+  "summary": "WatCamp Events",
+  "nextPageToken": "EjYKK3Roc2tiODRrbGNjMXVqMGhxNWFsMW5odTVnXzIwMTcwNTI0VDIyMDAwMFoYgJC7-42J1AI=",
+  "description": "Taking inspiration from the TorCamp calendar. This calendar lists all tech events taking place in the KW area.",
+  "defaultReminders": [],
+  "kind": "calendar#events",
+  "accessRole": "reader",
+  "etag": "\"p33081370nmod60g\"",
+  "items": [],
+  "timeZone": "America/New_York",
+  "updated": "2017-04-19T12:06:50.792Z"
+}

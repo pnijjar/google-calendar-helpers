@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<rss version="2.0"
+    xmlns:atom="http://www.w3.org/2005/Atom"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+>
+
+    <channel>
+        <title>WatCamp Events</title>
+        <description>Taking inspiration from the TorCamp calendar. This calendar lists all tech events taking place in the KW area.</description>
+        <link>http://watcamp.com</link>
+        <pubDate>Wed, 19 Apr 2017 12:06:50 +0000</pubDate>
+        <webMaster>admin@example.com (Webmaster)</webMaster>
+        <lastBuildDate>Wed, 19 Apr 2017 15:01:56 -0400</lastBuildDate>
+        <image>
+            <url>http://watcamp.com/img/logo.png</url>
+            <title>WatCamp Events</title>
+            <link>http://watcamp.com</link>
+        </image>
+        <atom:link href="http://watcamp.com/watcamp.rss" rel="self" type="application/rss+xml" />
+
+        
+    </channel>
+</rss>
