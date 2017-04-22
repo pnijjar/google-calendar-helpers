@@ -24,6 +24,9 @@ TMPDIR = "/tmp/pytest-temp"
 
 # ==== TEST DATA
 
+# To add Markdown/Json files, add them to the proper folder with the 
+# right extension. The harness should pick up files automatically.
+
 # http://stackoverflow.com/questions/23988853/how-to-mock-set-system-date-in-pytest
 # Wow this is fragile, though. It assumes that every test case will
 # have the same generation time. 
@@ -34,18 +37,6 @@ FAKE_NOW = datetime.datetime(
     15, 1, 56, 
     tzinfo=dateutil.tz.tzoffset(None, -14400)
     )
-
-RSS_EXAMPLES = [ 
-    "01-fullcalendar",  # Full complicated output
-    "02-one-event", 
-    "03-no-events",
-    ]
-
-
-MARKDOWN_EXAMPLES = [
-    "01-identity",
-    "02-header",
-    ]
 
 # Format: googledate, rfc822, human, human-dateonly, 
 # explanation
@@ -162,6 +153,29 @@ def get_rss_files(testname):
     rsstext = get_file_as_string(testname, RSS_OUT, ".rss", create_file=True)
     return (jsondict, rsstext)
 
+
+def get_testfiles(infolder, extension):
+    """ Find all files with the given extension in 
+        the given folder. Then return the barenames without the 
+        extension (eg ".json")
+
+        In this way I can drop testfiles into a folder and not worry 
+        about updating testing code. 
+    """
+
+    targetfolder = os.path.join(os.path.dirname(__file__), infolder)
+    allfiles = os.listdir(targetfolder)
+    targetfiles = []
+    chop = -1 * len(extension)
+    # I ought to use filter here. I suck.
+    for f in allfiles:
+        if f.endswith(extension):
+            # eg for .json chop is -5, so we are slicing the
+            # last five characters from the filename
+            targetfiles.append(f[:chop])
+
+    return targetfiles
+
     
 
 # ==== TEST DATES 
@@ -201,7 +215,7 @@ def test_year_zero():
 
 @pytest.mark.parametrize(
     "testcase", 
-    MARKDOWN_EXAMPLES,
+    get_testfiles(MD_IN, ".md"),
     )
 def test_markdown(testcase):
     (intext, outtext) = get_markdown_files(testcase)
@@ -212,7 +226,7 @@ def test_markdown(testcase):
 
 @pytest.mark.parametrize(
     "testcase",
-    RSS_EXAMPLES,
+    get_testfiles(JSON_IN, ".json"),
     )
 def test_json_to_rss(testcase, patch_datetime_now):
     (injson, outrss) = get_rss_files(testcase)
