@@ -38,6 +38,7 @@ FAKE_NOW = datetime.datetime(
 RSS_EXAMPLES = [ 
     "01-fullcalendar",  # Full complicated output
     "02-one-event", 
+    "03-no-events",
     ]
 
 
@@ -130,18 +131,26 @@ def get_testfile_path(filename, datadir, ext=""):
         fullfile,
         )
 
-def get_file_as_string(filename, datadir, ext=""):
+def get_file_as_string(filename, datadir, ext="", create_file=False):
     filepath = get_testfile_path(filename, datadir, ext)
 
-    with open(filepath, "r") as f:
-        filetext = f.read()
+    try:
+        with open(filepath, "r") as f:
+                filetext = f.read()
+    except FileNotFoundError:
+        if create_file:
+            with open(filepath, "w") as t:
+                t.write("")
+                filetext = ""
+        else:
+                raise
 
     return filetext
     
 
 def get_markdown_files(testname):
     intext = get_file_as_string(testname, MD_IN, ".md")
-    outtext = get_file_as_string(testname, MD_OUT, ".html")
+    outtext = get_file_as_string(testname, MD_OUT, ".html", create_file=True)
 
     return (intext, outtext)
     
@@ -150,7 +159,7 @@ def get_rss_files(testname):
     jsontext = get_file_as_string(testname, JSON_IN, ".json")
     jsondict = json.loads(jsontext)
 
-    rsstext = get_file_as_string(testname, RSS_OUT, ".rss")
+    rsstext = get_file_as_string(testname, RSS_OUT, ".rss", create_file=True)
     return (jsondict, rsstext)
 
     
