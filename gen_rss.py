@@ -10,7 +10,8 @@ import pprint
 import json
 
 
-TEMPLATE="rss_template.jinja2"
+RSS_TEMPLATE="rss_template.jinja2"
+NEWSLETTER_TEMPLATE="newsletter_template.jinja2"
 
 def print_from_template (s): 
     """ Show the value of a string that is being processed in a 
@@ -91,6 +92,34 @@ def call_api():
 
     return calendar_json
 
+def generate_newsletter(cal_dict):
+    """ Given a JSON formatted calendar dictionary, make the text for 
+        a fascinating newsletter.
+    """
+    template_loader = jinja2.FileSystemLoader(
+        searchpath=config.TEMPLATE_DIR,
+        )
+    template_env = jinja2.Environment(
+        loader=template_loader,
+        lstrip_blocks=True,
+        trim_blocks=True,
+        )
+    template_env.filters['humandate'] = get_human_datestring
+    template_env.filters['humandateonly'] = get_human_dateonly
+
+    template = template_env.get_template( NEWSLETTER_TEMPLATE ) 
+    template_vars = { 
+      "title": cal_dict['summary'],
+      "items" : cal_dict['items'],
+      "header" : config.NEWSLETTER_HEADER,
+      }
+
+
+
+    output_newsletter = template.render(template_vars)
+    return output_newsletter
+
+
 
 def generate_rss(cal_dict):
     """ Given a JSON formatted calendar dictionary, make and return 
@@ -105,7 +134,9 @@ def generate_rss(cal_dict):
     feed_title = cal_dict['summary']
 
 
-    template_loader = jinja2.FileSystemLoader( searchpath=config.TEMPLATE_DIR )
+    template_loader = jinja2.FileSystemLoader(
+        searchpath=config.TEMPLATE_DIR
+        )
     template_env = jinja2.Environment( 
         loader=template_loader,
         autoescape=True,
@@ -119,7 +150,7 @@ def generate_rss(cal_dict):
 
     time_now = get_time_now()
 
-    template = template_env.get_template( TEMPLATE ) 
+    template = template_env.get_template( RSS_TEMPLATE ) 
     template_vars = { 
       "feed_title": feed_title,
       "feed_description": cal_dict['description'],
@@ -146,7 +177,8 @@ if __name__ == '__main__':
     outjson = open(config.OUTJSON, "w")
     json.dump(cal_json, outjson, indent=2, separators=(',', ': '))
 
-    cal_rss = generate_rss(cal_json)
+    cal_rss = generate_newsletter(cal_json)
+    print(cal_rss)
 
     outfile = open(config.OUTFILE, "w")
     outfile.write(cal_rss)
