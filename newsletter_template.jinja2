@@ -4,27 +4,24 @@
 
 {% for item in items %}
 
-    {{- item['summary'] }}
-
-    {% if item['start']['dateTime'] is defined -%}
-        Date and Time: {{ item['start']['dateTime'] | humandate }}
-    {% elif item['start']['date'] is defined  -%}
-        Date and Time: {{ item['start']['date'] | humandateonly }}
-    {% else -%}
-        Date and Time: Unknown.
+    {%- if item['start']['dateTime'] is defined %}
+        {{- item['start']['dateTime'] | timeonly }}
+    {%- elif item['start']['date'] is defined  -%}
+        TBA
+    {%- else -%}
+        TBA
+    {% endif -%}
+    : {{ item['summary'] }}
+    {% if item['location'] is defined %}
+         Location: {{ item['location'] }}
+    {% else %}
+         Location: unknown.
     {% endif %}
-    {% if item['location'] is defined -%}
-        Location: {{ item['location'] }}
-    {% else -%}
-        Location: unknown.
-    {% endif %}
-    
-    {% if True -%}
-    Google Calendar Link: {{ item['htmlLink'] }} 
+    {% if True %}
+         Learn More: {{ item['htmlLink'] | shorturl }} 
 
     {% endif %}
 
-    {{- item['description'] }} 
 
 ======
 

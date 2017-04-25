@@ -51,6 +51,12 @@ def get_human_dateonly (google_date):
     # Wednesday, Oct 02 2005
     return d.strftime("%A, %b %d %Y")
 
+def get_human_timeonly (google_date):
+    """ Forget the date. Just gimme the time"""
+
+    d = dateutil.parser.parse(google_date)
+    #  8:00pm
+    return d.strftime("%l:%M%P")
 
 def get_markdown (rawtext): 
     """ Returns escaped markdown of rawtext (which might have had 
@@ -92,6 +98,35 @@ def call_api():
 
     return calendar_json
 
+def shorten_url(longurl):
+    """ Shortens URL using goo.gl service. Yay 
+        surveillance.
+    """
+
+    api_url='https://www.googleapis.com/urlshortener/v1/url'
+    headers = {'content-type' : 'application/json'}
+    payload = {'longUrl' : longurl }
+    api_params = { 
+        'key' : config.API_KEY,
+        } 
+    r = requests.post(
+        api_url, 
+        data=json.dumps(payload),
+        headers=headers,
+        params=api_params,
+        )
+    r_vals = r.json()
+
+    pprint.pprint(r_vals)
+
+    if 'id' in r_vals:
+       retval =  r_vals['id']
+    else: 
+       retval = longurl
+
+    return retval
+
+
 def generate_newsletter(cal_dict):
     """ Given a JSON formatted calendar dictionary, make the text for 
         a fascinating newsletter.
@@ -106,6 +141,8 @@ def generate_newsletter(cal_dict):
         )
     template_env.filters['humandate'] = get_human_datestring
     template_env.filters['humandateonly'] = get_human_dateonly
+    template_env.filters['timeonly'] = get_human_timeonly
+    template_env.filters['shorturl'] = shorten_url
 
     template = template_env.get_template( NEWSLETTER_TEMPLATE ) 
     template_vars = { 
