@@ -82,6 +82,18 @@ def extract_datestring (gcal_event):
 
     return retval
 
+# ------------------------------
+def get_underline (title, underline_char):
+    """ Given a string and a character (a string of length 1, 
+        although this is not enforced), return an "underline" 
+        consisting of the character repeated the same length 
+        as the title. 
+
+        title had better not be None. 
+    """
+
+    return underline_char * len(title) 
+
 
 # ------------------------------
 def get_markdown (rawtext): 
@@ -207,6 +219,7 @@ def generate_newsletter(cal_dict):
     template_env.filters['humandateonly'] = get_human_dateonly
     template_env.filters['timeonly'] = get_human_timeonly
     template_env.filters['shorturl'] = shorten_url
+    template_env.filters['underline'] = get_underline
 
     template = template_env.get_template( NEWSLETTER_TEMPLATE ) 
     template_vars = { 
