@@ -5,6 +5,7 @@ import config
 import requests
 import pytz, datetime, dateutil.parser
 import jinja2, markdown, html
+import collections
 
 import pprint
 import json
@@ -12,7 +13,9 @@ import json
 
 RSS_TEMPLATE="rss_template.jinja2"
 NEWSLETTER_TEMPLATE="newsletter_template.jinja2"
+INVALID_DATE="1969-12-12T23:59.000Z"
 
+# ------------------------------
 def print_from_template (s): 
     """ Show the value of a string that is being processed in a 
         Jinja template, for debugging.
@@ -21,6 +24,7 @@ def print_from_template (s):
     return s
 
 
+# ------------------------------
 def get_rfc822_datestring (google_date): 
     """ Convert whatever date Google is using to the RFC-822 dates
         that RSS wants.
@@ -34,6 +38,7 @@ def get_rfc822_datestring (google_date):
     return d.strftime("%a, %d %b %Y %T %z")
 
 
+# ------------------------------
 def get_human_datestring (google_date): 
     """ RFC 822 is ugly for humans. Use something nicer. """
 
@@ -42,6 +47,7 @@ def get_human_datestring (google_date):
     # Wednesday, Oct 02 2005, 8:00pm
     return d.strftime("%A, %b %d %Y, %l:%M%P")
 
+# ------------------------------
 def get_human_dateonly (google_date):
     """ If there is no minute defined then the date looks bad.
     """
@@ -58,6 +64,26 @@ def get_human_timeonly (google_date):
     #  8:00pm
     return d.strftime("%l:%M%P")
 
+
+# ------------------------------
+def extract_datestring (gcal_event):
+    """ Given a google calendar event dictionary, 
+        grab either the datetime string or the date string.
+    """
+
+    if gcal_event['start']['dateTime']:
+        retval = gcal_event['start']['dateTime']
+    elif gcal_event['start']['date']:
+        retval = gcal_event['start']['date']
+    else:
+        # This should never happen. Maybe an exception is wrong?
+        print("Uh oh. extract_datestring could not find a date.")
+        retval = None
+
+    return retval
+
+
+# ------------------------------
 def get_markdown (rawtext): 
     """ Returns escaped markdown of rawtext (which might have had 
         stuff before.
@@ -67,6 +93,7 @@ def get_markdown (rawtext):
     # esc_text = html.escape(md_text)
     return md_text
 
+# ------------------------------
 def get_time_now():
    
     target_timezone = pytz.timezone(config.TIMEZONE)
@@ -74,6 +101,7 @@ def get_time_now():
 
     return time_now
 
+# ------------------------------
 def call_api():
     """ Returns JSON from API call, or some error I won't handle."""
 
@@ -98,6 +126,7 @@ def call_api():
 
     return calendar_json
 
+# ------------------------------
 def shorten_url(longurl):
     """ Shortens URL using goo.gl service. Yay 
         surveillance.
@@ -117,8 +146,6 @@ def shorten_url(longurl):
         )
     r_vals = r.json()
 
-    pprint.pprint(r_vals)
-
     if 'id' in r_vals:
        retval =  r_vals['id']
     else: 
@@ -127,10 +154,47 @@ def shorten_url(longurl):
     return retval
 
 
+# ------------------------------
+def organize_events_by_day(cal_items):
+    """ Given a JSON formatted set of events, sort it into a list of lists
+        (?) with events sorted by starting day and time. 
+    """
+
+    # I  think python really wants me to make this a dict, so that 
+    # there is title metadata. But that means we have to sort twice.
+    outdict = collections.OrderedDict()
+
+    lastdate = get_human_dateonly(INVALID_DATE)
+
+    for event in sorted(
+        cal_items, 
+        key=extract_datestring,
+        ):
+
+        thisdate = get_human_dateonly(extract_datestring(event))
+
+        if thisdate != lastdate:
+            outdict[thisdate] = [] 
+            lastdate = thisdate
+
+        outdict[thisdate].append(event)
+
+
+    return outdict
+
+
+    
+
+# ------------------------------
 def generate_newsletter(cal_dict):
     """ Given a JSON formatted calendar dictionary, make the text for 
         a fascinating newsletter.
     """
+
+    sorted_items = organize_events_by_day(cal_dict['items'])
+    # pprint.pprint(sorted_items)
+
+
     template_loader = jinja2.FileSystemLoader(
         searchpath=config.TEMPLATE_DIR,
         )
@@ -147,7 +211,7 @@ def generate_newsletter(cal_dict):
     template = template_env.get_template( NEWSLETTER_TEMPLATE ) 
     template_vars = { 
       "title": cal_dict['summary'],
-      "items" : cal_dict['items'],
+      "items" : sorted_items,
       "header" : config.NEWSLETTER_HEADER,
       }
 
@@ -158,6 +222,7 @@ def generate_newsletter(cal_dict):
 
 
 
+# ------------------------------
 def generate_rss(cal_dict):
     """ Given a JSON formatted calendar dictionary, make and return 
         the RSS file.
@@ -205,22 +270,56 @@ def generate_rss(cal_dict):
 
     return output_rss
 
+# ------------------------------
+def write_rss():
+    cal_json = call_api() 
 
+    outjson = open(config.OUTJSON, "w")
+    json.dump(cal_json, outjson, indent=2, separators=(',', ': '))
 
-if __name__ == '__main__':
+    cal_rss = generate_rss(cal_json)
+
+    outfile = open(config.OUTRSS, "w")
+    outfile.write(cal_rss)
+
+def write_newsletter():
 
     cal_json = call_api() 
 
     outjson = open(config.OUTJSON, "w")
     json.dump(cal_json, outjson, indent=2, separators=(',', ': '))
 
-    cal_rss = generate_newsletter(cal_json)
-    print(cal_rss)
+    cal_newsletter = generate_newsletter(cal_json)
 
-    outfile = open(config.OUTFILE, "w")
-    outfile.write(cal_rss)
+    outfile = open(config.OUTNEWS, "w")
+    outfile.write(cal_newsletter)
+
+    print(cal_newsletter)
 
 
+
+if __name__ == '__main__':
+
+    #cal_json = call_api() 
+
+    #outjson = open(config.OUTJSON, "w")
+    #json.dump(cal_json, outjson, indent=2, separators=(',', ': '))
+
+    # cal_rss = generate_rss(cal_json)
+    # print(cal_rss)
+
+    #outfile = open(config.OUTFILE, "w")
+    #outfile.write(cal_rss)
+
+    #events = cal_json['items']
+    #d = organize_events_by_day(events)
+
+    #for i in d:
+    #    print(i)
+
+
+    write_newsletter()
+   
 
 # pprint.pprint(r)
 # print("{}".format(r.url))

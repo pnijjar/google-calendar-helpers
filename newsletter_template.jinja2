@@ -2,8 +2,11 @@
 
 {{ header }}
 
-{% for item in items %}
+{% for date_category, itemlist in items.items() %}
 
+  {{- date_category }}
+
+  {% for item in itemlist %}
     {%- if item['start']['dateTime'] is defined %}
         {{- item['start']['dateTime'] | timeonly }}
     {%- elif item['start']['date'] is defined  -%}
@@ -12,17 +15,16 @@
         TBA
     {% endif -%}
     : {{ item['summary'] }}
-    {% if item['location'] is defined %}
+    {% if item['location'] is defined -%}
          Location: {{ item['location'] }}
-    {% else %}
+    {% else -%}
          Location: unknown.
     {% endif %}
-    {% if True %}
+    {% if True -%}
          Learn More: {{ item['htmlLink'] | shorturl }} 
-
     {% endif %}
 
-
-======
+  {% endfor %}
 
 {% endfor %}
+
