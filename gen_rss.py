@@ -295,6 +295,7 @@ def write_rss():
     outfile = open(config.OUTRSS, "w")
     outfile.write(cal_rss)
 
+# ------------------------------
 def write_newsletter():
 
     cal_json = call_api() 
@@ -304,13 +305,15 @@ def write_newsletter():
 
     cal_newsletter = generate_newsletter(cal_json)
 
-    outfile = open(config.OUTNEWS, "w")
+    # Insert Windows newlines for dumb email clients
+    outfile = open(config.OUTNEWS, "w", newline='\r\n')
     outfile.write(cal_newsletter)
 
     print(cal_newsletter)
 
 
 
+# ------------------------------
 if __name__ == '__main__':
 
     #cal_json = call_api() 
