@@ -71,9 +71,9 @@ def extract_datestring (gcal_event):
         grab either the datetime string or the date string.
     """
 
-    if gcal_event['start']['dateTime']:
+    if 'dateTime' in gcal_event['start']:
         retval = gcal_event['start']['dateTime']
-    elif gcal_event['start']['date']:
+    elif 'date' in gcal_event['start']:
         retval = gcal_event['start']['date']
     else:
         # This should never happen. Maybe an exception is wrong?
