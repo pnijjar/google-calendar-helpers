@@ -11,6 +11,9 @@ This is a script that is intended to be run from a cronjob. It is
 written in Python 3 with lots of helper modules (requests, jinja2,
 dateutil ...). 
 
+There is a second script called `gen_newsletter.py` which will 
+create a plaintext email.
+
 
 Deployment
 ----------
@@ -24,8 +27,8 @@ Deployment
 Caveats
 -------
 
-- The code is not production ready. Among other things there is no
-  test coverage. There are no error messages.
+- The code is not production ready. Among other things there is not
+  much test coverage. There are no error messages.  
 - Because it uses an API key, you can only generate feeds for public
   calendars.
 - This project is colonialist: it has only been tested in English, in
