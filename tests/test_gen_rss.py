@@ -19,6 +19,7 @@ MD_OUT = "data_markdown_out"
 
 JSON_IN = "data_json_in"
 RSS_OUT = "data_rss_out"
+NEWSLETTER_OUT = "data_newsletter_out"
 
 TMPDIR = "/tmp/pytest-temp"
 
@@ -110,6 +111,16 @@ def patch_datetime_now(monkeypatch):
             return FAKE_NOW
     monkeypatch.setattr(datetime, 'datetime', mydatetime)
 
+# Hrm. Google link shortener can return different short URLs
+# for the same long link, so ignore for my tests.
+@pytest.fixture
+def patch_google_shortener(monkeypatch):
+    def my_shorten_url(longurl):
+        return longurl
+    monkeypatch.setattr(gen_rss, 'shorten_url', my_shorten_url)
+    
+
+
 
 def get_testfile_path(filename, datadir, ext=""):
     """ ext should be something like ".html"
@@ -152,6 +163,19 @@ def get_rss_files(testname):
 
     rsstext = get_file_as_string(testname, RSS_OUT, ".rss", create_file=True)
     return (jsondict, rsstext)
+
+
+def get_newsletter_files(testname):
+    jsontext = get_file_as_string(testname, JSON_IN, ".json")
+    jsondict = json.loads(jsontext)
+
+    news_text = get_file_as_string(
+        testname, 
+        NEWSLETTER_OUT,
+        ".txt", 
+        create_file=True
+        )
+    return (jsondict, news_text)
 
 
 def get_testfiles(infolder, extension):
@@ -240,3 +264,24 @@ def test_json_to_rss(testcase, patch_datetime_now):
         raise
 
 
+# ==== TEST NEWSLETTER GENERATION 
+
+
+@pytest.mark.parametrize(
+    "testcase",
+    get_testfiles(JSON_IN, ".json"),
+    )
+def test_json_to_newsletter(
+    testcase, 
+    patch_datetime_now,
+    patch_google_shortener,
+    ):
+    (injson, outtxt) = get_newsletter_files(testcase)
+    test_newsletter = gen_rss.generate_newsletter(injson)
+    
+    try: 
+        assert test_newsletter == outtxt
+    except AssertionError:
+        # Use this to generate output for future runs
+        save_to_temp("{}.txt".format(testcase), test_newsletter)    
+        raise
