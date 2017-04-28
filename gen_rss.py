@@ -57,6 +57,7 @@ def get_human_dateonly (google_date):
     # Wednesday, Oct 02 2005
     return d.strftime("%A, %b %d %Y")
 
+# ------------------------------
 def get_human_timeonly (google_date):
     """ Forget the date. Just gimme the time"""
 
@@ -122,21 +123,34 @@ def call_api():
     # Format looks like: 2017-03-25T00:00:00-0500
     time_now_formatted = time_now.strftime("%Y-%m-%dT%H:%M:%S%z")
 
-    api_url='https://www.googleapis.com/calendar/v3/calendars/{}/events'.format(config.CALENDAR_ID_FULL)
+    master_json = None
 
-    api_params = { 
-        'maxResults' : config.NUM_ITEMS,
-        'orderBy' : 'startTime',
-        'singleEvents' : 'true',
-        'key' : config.API_KEY,
-        'timeMin' : time_now_formatted,
-        } 
+    for id in config.CALENDAR_IDS:
 
-    r = requests.get(api_url, params=api_params)
+        api_url='https://www.googleapis.com/calendar/v3/calendars/{}/events'.format(id)
 
-    calendar_json = r.json()
+        api_params = { 
+            'maxResults' : config.NUM_ITEMS,
+            'orderBy' : 'startTime',
+            'singleEvents' : 'true',
+            'key' : config.API_KEY,
+            'timeMin' : time_now_formatted,
+            } 
 
-    return calendar_json
+        r = requests.get(api_url, params=api_params)
+
+        calendar_json = r.json()
+
+        if master_json is None:
+            master_json = calendar_json
+        else:
+            # Append items from this calendar to the master 
+            master_items = master_json['items']
+            new_items = calendar_json['items']
+            
+            master_json['items'] = master_items + new_items
+
+    return master_json
 
 # ------------------------------
 def shorten_url(longurl):
@@ -167,23 +181,37 @@ def shorten_url(longurl):
 
 
 # ------------------------------
-def organize_events_by_day(cal_items):
+def organize_events_by_day(
+    cal_items,
+    max_days=None,
+    ):
     """ Given a JSON formatted set of events, sort it into a list of lists
         (?) with events sorted by starting day and time. 
+
+        If max_days > 0 then only include events taking place within 
+        max_days. (1 == today)
     """
+
+    print("Max days is: {}".format(max_days))
 
     # I  think python really wants me to make this a dict, so that 
     # there is title metadata. But that means we have to sort twice.
     outdict = collections.OrderedDict()
 
     lastdate = get_human_dateonly(INVALID_DATE)
+    today = get_time_now()
 
-    for event in sorted(
-        cal_items, 
-        key=extract_datestring,
-        ):
+    for event in sorted(cal_items, key=extract_datestring,):
+        
+        this_datestring = extract_datestring(event)
+        this_datetime = dateutil.parser.parse(this_datestring)
+        thisdate = get_human_dateonly(this_datestring)
 
-        thisdate = get_human_dateonly(extract_datestring(event))
+        # Skip this entry if it is too far in the future
+        if max_days is not None:
+            date_delta = this_datetime - today
+            if date_delta.days >= max_days:
+                continue
 
         if thisdate != lastdate:
             outdict[thisdate] = [] 
@@ -203,7 +231,10 @@ def generate_newsletter(cal_dict):
         a fascinating newsletter.
     """
 
-    sorted_items = organize_events_by_day(cal_dict['items'])
+    sorted_items = organize_events_by_day(
+        cal_dict['items'],
+        config.NEWSLETTER_MAX_DAYS,
+        )
     # pprint.pprint(sorted_items)
 
 
@@ -308,9 +339,6 @@ def write_newsletter():
     # Insert Windows newlines for dumb email clients
     outfile = open(config.OUTNEWS, "w", newline='\r\n')
     outfile.write(cal_newsletter)
-
-    print(cal_newsletter)
-
 
 
 # ------------------------------
