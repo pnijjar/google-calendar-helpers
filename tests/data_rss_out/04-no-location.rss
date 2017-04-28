@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<rss version="2.0"
+    xmlns:atom="http://www.w3.org/2005/Atom"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+>
+
+    <channel>
+        <title>WatCamp Events</title>
+        <description>Taking inspiration from the TorCamp calendar. This calendar lists all tech events taking place in the KW area.</description>
+        <link>http://watcamp.com</link>
+        <pubDate>Tue, 25 Apr 2017 16:53:14 +0000</pubDate>
+        <webMaster>admin@example.com (Webmaster)</webMaster>
+        <lastBuildDate>Wed, 19 Apr 2017 15:01:56 -0400</lastBuildDate>
+        <image>
+            <url>http://watcamp.com/img/logo.png</url>
+            <title>WatCamp Events</title>
+            <link>http://watcamp.com</link>
+        </image>
+        <atom:link href="http://watcamp.com/watcamp.rss" rel="self" type="application/rss+xml" />
+
+        
+        <item>
+            <title>GPUG - Guelph PHP Users Group</title>
+            <link>https://www.google.com/calendar/event?eid=djFidTJlbzZwMXJxczhhdThnaGFza3M2ZjhfMjAxNzA1MzFUMjMzMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn</link>
+            <description>
+
+                
+                &lt;p&gt;
+                &lt;strong&gt;Date and Time: &lt;/strong&gt;
+                
+                    Wednesday, May 31 2017,  7:30pm 
+                
+                &lt;/p&gt;
+                
+                &lt;p&gt;
+                &lt;strong&gt;Location: &lt;/strong&gt;
+                
+                    unknown.
+                
+                &lt;/p&gt;
+
+                &lt;p&gt;http://www.gpug.ca/&lt;/p&gt;
+&lt;p&gt;Guelph PHP meets on the last Wednesday of every month.  For more information check out http://www.gpug.ca/ and http://www.meetup.com/Guelph-PHP/.&lt;/p&gt;
+            </description>
+            <guid isPermaLink="false">v1bu2eo6p1rqs8au8ghasks6f8@google.com</guid>
+            <pubDate>Sat, 22 Apr 2017 23:08:24 +0000</pubDate>
+        </item>
+        
+    </channel>
+</rss>

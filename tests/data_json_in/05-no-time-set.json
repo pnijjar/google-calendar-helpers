@@ -1,0 +1,43 @@
+{
+  "updated": "2017-04-25T16:53:14.133Z",
+  "nextPageToken": "EiUKGnRobDJ0c3RlcDZjY2VjMG9ma3ZrMDhoNmQ4GICQ_LCCs9QC",
+  "summary": "WatCamp Events",
+  "items": [
+    {
+      "updated": "2017-04-19T11:59:54.959Z",
+      "id": "sq3laembcukjklf1blttnvc2ng",
+      "end": {
+        "date": "2017-06-01"
+      },
+      "location": "McMaster Waterloo Regional Campus, 10-B Victoria St S, Kitchener, ON",
+      "status": "confirmed",
+      "kind": "calendar#event",
+      "iCalUID": "sq3laembcukjklf1blttnvc2ng@google.com",
+      "creator": {
+        "displayName": "Chris Craig",
+        "email": "cearrach@gmail.com"
+      },
+      "sequence": 0,
+      "summary": "Waterloo-Wellington Clinical Research and Quality Improvement Symposium",
+      "organizer": {
+        "self": true,
+        "displayName": "WatCamp Events",
+        "email": "nlkc39jt4p0nbc4pk9pj7p5fh0@group.calendar.google.com"
+      },
+      "start": {
+        "date": "2017-05-31"
+      },
+      "created": "2017-04-19T11:59:54.000Z",
+      "htmlLink": "https://www.google.com/calendar/event?eid=c3EzbGFlbWJjdWtqa2xmMWJsdHRudmMybmcgbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw",
+      "transparency": "transparent",
+      "etag": "\"2985206389918000\"",
+      "description": "<a hrefr='https://uwaterloo.ca/engineering/events/waterloo-wellington-clinical-research-and-quality'>https://uwaterloo.ca/engineering/events/waterloo-wellington-clinical-research-and-quality</a>\nWaterloo-Wellington Clinical Research and Quality Improvement Symposium\ufffc\n\nWednesday, May 31, 2017 (all day)\n\nMcMaster Waterloo Regional Campus\n10-B Victoria Street South\nKitchener, ON\n\nThis symposium is devoted to research and quality improvement in the Waterloo-Wellington region. It brings together local students, clinicians, professionals, and researchers who are working to improve the clinical care in our region.\n\nThis annual event allows local clinical trainees, non-clinical trainees, clinicians, professionals, and researchers to showcase their research and quality improvement work and receive recognition for their clinical and scientific excellence.\n\nThe goal of the symposium is to provide an outstanding opportunity for trainees to develop professional skills and to foster communication and exchange of ideas among new and established clinicians, professionals, and researchers from various backgrounds and interests.\n\nCall for Abstracts open until April 28.  Registration open until May 17.\n\nLocation \nMcMaster Waterloo Regional Campus\n10-B Victoria Street South\nKitchener, ON N2G 1C5\nCanada"
+    }
+  ],
+  "defaultReminders": [],
+  "timeZone": "America/New_York",
+  "accessRole": "reader",
+  "etag": "\"p324f947qh30d60g\"",
+  "kind": "calendar#events",
+  "description": "Taking inspiration from the TorCamp calendar. This calendar lists all tech events taking place in the KW area."
+}

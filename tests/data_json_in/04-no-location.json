@@ -1,0 +1,48 @@
+{
+  "updated": "2017-04-25T16:53:14.133Z",
+  "nextPageToken": "EiUKGnRobDJ0c3RlcDZjY2VjMG9ma3ZrMDhoNmQ4GICQ_LCCs9QC",
+  "summary": "WatCamp Events",
+  "items": [
+    {
+      "updated": "2017-04-22T23:08:24.880Z",
+      "id": "v1bu2eo6p1rqs8au8ghasks6f8_20170531T233000Z",
+      "recurringEventId": "v1bu2eo6p1rqs8au8ghasks6f8",
+      "end": {
+        "timeZone": "America/Toronto",
+        "dateTime": "2017-05-31T22:00:00-04:00"
+      },
+      "start": {
+        "timeZone": "America/Toronto",
+        "dateTime": "2017-05-31T19:30:00-04:00"
+      },
+      "status": "confirmed",
+      "kind": "calendar#event",
+      "iCalUID": "v1bu2eo6p1rqs8au8ghasks6f8@google.com",
+      "creator": {
+        "displayName": "Bob Jonkman",
+        "email": "bobjonkman@gmail.com"
+      },
+      "sequence": 24,
+      "summary": "GPUG - Guelph PHP Users Group",
+      "organizer": {
+        "self": true,
+        "displayName": "WatCamp Events",
+        "email": "nlkc39jt4p0nbc4pk9pj7p5fh0@group.calendar.google.com"
+      },
+      "originalStartTime": {
+        "timeZone": "America/Toronto",
+        "dateTime": "2017-05-31T19:30:00-04:00"
+      },
+      "created": "2012-09-27T07:50:19.000Z",
+      "htmlLink": "https://www.google.com/calendar/event?eid=djFidTJlbzZwMXJxczhhdThnaGFza3M2ZjhfMjAxNzA1MzFUMjMzMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn",
+      "etag": "\"2985805009760000\"",
+      "description": "http://www.gpug.ca/\n\nGuelph PHP meets on the last Wednesday of every month.  For more information check out http://www.gpug.ca/ and http://www.meetup.com/Guelph-PHP/."
+    }
+  ],
+  "defaultReminders": [],
+  "timeZone": "America/New_York",
+  "accessRole": "reader",
+  "etag": "\"p324f947qh30d60g\"",
+  "kind": "calendar#events",
+  "description": "Taking inspiration from the TorCamp calendar. This calendar lists all tech events taking place in the KW area."
+}
