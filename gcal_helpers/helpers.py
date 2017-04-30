@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-import config
+import config 
 
 import requests
 import pytz, datetime, dateutil.parser
@@ -192,9 +192,9 @@ def organize_events_by_day(
         max_days. (1 == today)
     """
 
-    print("Max days is: {}".format(max_days))
+    # print("Max days is: {}".format(max_days))
 
-    # I  think python really wants me to make this a dict, so that 
+    # I think python really wants me to make this a dict, so that 
     # there is title metadata. But that means we have to sort twice.
     outdict = collections.OrderedDict()
 
@@ -223,7 +223,6 @@ def organize_events_by_day(
     return outdict
 
 
-    
 
 # ------------------------------
 def generate_newsletter(cal_dict):
