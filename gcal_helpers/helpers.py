@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-import config 
+from . import config 
 
 import requests
 import pytz, datetime, dateutil.parser
