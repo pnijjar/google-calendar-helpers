@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
 
 # Do the bad thing and import files from the parent folder. 
-import sys, os
-sys.path.insert(0, os.path.abspath(os.pardir))
+# import sys, os
+# sys.path.insert(0, os.path.abspath(os.pardir))
 
-import gen_rss
+from gcal_helpers import helpers as h
+from gcal_helpers import config 
 
 import datetime, pytz, dateutil.tz
 import pytest 
@@ -209,7 +210,7 @@ def get_testfiles(infolder, extension):
     pickdate(2, DATE_EXAMPLES),
     )
 def test_human_date(googledate, target):
-    assert gen_rss.get_human_datestring(googledate) \
+    assert h.get_human_datestring(googledate) \
         == target
 
 @pytest.mark.parametrize(
@@ -217,7 +218,7 @@ def test_human_date(googledate, target):
     pickdate(3, DATE_EXAMPLES),
     )
 def test_human_dateonly(googledate, target):
-    assert gen_rss.get_human_dateonly(googledate) \
+    assert h.get_human_dateonly(googledate) \
         == target
 
 @pytest.mark.parametrize(
@@ -225,12 +226,12 @@ def test_human_dateonly(googledate, target):
     pickdate(1, DATE_EXAMPLES),
     )
 def test_rfc822(googledate, target):
-    assert gen_rss.get_rfc822_datestring(googledate) \
+    assert h.get_rfc822_datestring(googledate) \
         == target
 
 @pytest.mark.xfail(reason="parsedate chokes on 0000")
 def test_year_zero():
-    assert gen_rss.get_human_date("0000-12-29T00:00.000Z") \
+    assert h.get_human_date("0000-12-29T00:00.000Z") \
         == "Friday, December 29 0000"
 
 
@@ -243,10 +244,10 @@ def test_year_zero():
     )
 def test_markdown(testcase):
     (intext, outtext) = get_markdown_files(testcase)
-    assert gen_rss.get_markdown(intext) == outtext
+    assert h.get_markdown(intext) == outtext
 
 
-# ==== TEST JSON CONVERSION
+# ==== TEST JSON TO RSS 
 
 @pytest.mark.parametrize(
     "testcase",
@@ -254,7 +255,7 @@ def test_markdown(testcase):
     )
 def test_json_to_rss(testcase, patch_datetime_now):
     (injson, outrss) = get_rss_files(testcase)
-    testrss = gen_rss.generate_rss(injson)
+    testrss = h.generate_rss(injson)
     
     try: 
         assert testrss == outrss
@@ -275,9 +276,10 @@ def test_json_to_newsletter(
     testcase, 
     patch_datetime_now,
     patch_google_shortener,
+    patch_newsletter_limit_infinite,
     ):
     (injson, outtxt) = get_newsletter_files(testcase)
-    test_newsletter = gen_rss.generate_newsletter(injson)
+    test_newsletter = h.generate_newsletter(injson)
     
     try: 
         assert test_newsletter == outtxt
