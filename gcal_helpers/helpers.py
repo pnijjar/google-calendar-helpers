@@ -203,7 +203,7 @@ def organize_events_by_day(
     
     # Set the time to midnight
     today = today.replace(hour=0, minute=0, second=0)
-    print ("today is {}".format(today))
+    # print ("today is {}".format(today))
 
     for event in sorted(cal_items, key=extract_datestring,):
         
@@ -239,11 +239,11 @@ def organize_events_by_day(
             date_delta = this_datetime - today
             if date_delta.days >= max_days:
                 continue
-            else:
-                print("{} has delta {}".format(
-                    this_datetime,
-                    date_delta,
-                    ))
+            #else:
+            #    print("{} has delta {}".format(
+            #        this_datetime,
+            #        date_delta,
+            #        ))
 
 
         if thisdate != lastdate:
