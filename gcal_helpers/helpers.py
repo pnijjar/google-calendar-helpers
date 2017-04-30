@@ -205,6 +205,21 @@ def organize_events_by_day(
         
         this_datestring = extract_datestring(event)
         this_datetime = dateutil.parser.parse(this_datestring)
+        
+        # @bug Bah. If this_datetime is only a date then it is naive. 
+        # Then you cannot subtract the date properly. 
+        # This will cause all kinds of edge-case nonsense that might 
+        # mean entries get skipped. 
+
+        # Check if this date is naive. 
+        # http://stackoverflow.com/questions/5802108/
+        
+        tz = pytz.timezone(config.TIMEZONE)
+        if this_datetime.tzinfo is None: 
+            this_datetime = tz.localize(this_datetime)
+        elif this_datetime.tzinfo.utcoffset(this_datetime) is None:
+            this_datetime = tz.localize(this_datetime)
+           
         thisdate = get_human_dateonly(this_datestring)
 
         # Skip this entry if it is too far in the future
