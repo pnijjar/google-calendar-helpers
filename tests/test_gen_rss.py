@@ -11,6 +11,7 @@ import datetime, pytz, dateutil.tz
 import pytest 
 import os
 import json
+import pprint
 
 
 # ==== CONSTANTS
@@ -103,6 +104,9 @@ def pickdate(target, datelist):
             )
         )
 
+
+# ===== MONKEYPATCHES 
+
 @pytest.fixture
 def patch_datetime_now(monkeypatch):
     class mydatetime:
@@ -118,9 +122,18 @@ def patch_datetime_now(monkeypatch):
 def patch_google_shortener(monkeypatch):
     def my_shorten_url(longurl):
         return longurl
-    monkeypatch.setattr(gen_rss, 'shorten_url', my_shorten_url)
+    monkeypatch.setattr(h, 'shorten_url', my_shorten_url)
     
+@pytest.fixture
+def patch_newsletter_limit_infinite(monkeypatch):
+    """ Make sure limited newsletter lengths do not mess up 
+        the test cases.
+    """
+    monkeypatch.setattr(config, 'NEWSLETTER_MAX_DAYS', None)
 
+@pytest.fixture
+def patch_newsletter_limit_small(monkeypatch):
+    monkeypatch.setattr(config, 'NEWSLETTER_MAX_DAYS', 2)
 
 
 def get_testfile_path(filename, datadir, ext=""):
@@ -133,6 +146,8 @@ def get_testfile_path(filename, datadir, ext=""):
         datadir,
         fullfile,
         )
+
+# ==== GET FILES 
 
 def get_file_as_string(filename, datadir, ext="", create_file=False):
     filepath = get_testfile_path(filename, datadir, ext)
@@ -263,6 +278,29 @@ def test_json_to_rss(testcase, patch_datetime_now):
         # Use this to generate output for future runs
         save_to_temp("{}.rss".format(testcase), testrss)    
         raise
+
+# ==== TEST NEWSLETTER DAY RESTRICTIONS
+
+@pytest.mark.parametrize( "testcase",
+    ["01-fullcalendar.json",]
+    )
+@pytest.mark.parametrize( "num_days", list(range(0, 14, 3)))
+def test_organize_events_by_day(
+    testcase,
+    num_days,
+    patch_datetime_now,
+    patch_newsletter_limit_small,
+    ):
+
+    in_text = get_file_as_string(testcase, JSON_IN,)
+    in_dict = json.loads(in_text)
+
+    in_items = in_dict['items']
+    sorted_items = h.organize_events_by_day(in_items, num_days)
+
+    # pprint.pprint(sorted_items)
+
+    assert len(sorted_items) <= num_days
 
 
 # ==== TEST NEWSLETTER GENERATION 
