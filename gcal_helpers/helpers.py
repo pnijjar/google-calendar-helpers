@@ -200,6 +200,10 @@ def organize_events_by_day(
 
     lastdate = get_human_dateonly(INVALID_DATE)
     today = get_time_now()
+    
+    # Set the time to midnight
+    today = today.replace(hour=0, minute=0, second=0)
+    print ("today is {}".format(today))
 
     for event in sorted(cal_items, key=extract_datestring,):
         
@@ -216,8 +220,16 @@ def organize_events_by_day(
         
         tz = pytz.timezone(config.TIMEZONE)
         if this_datetime.tzinfo is None: 
+            #print ("{}: tzinfo is {}".format(
+            #    this_datetime, 
+            #    this_datetime.tzinfo
+            #    ))
             this_datetime = tz.localize(this_datetime)
         elif this_datetime.tzinfo.utcoffset(this_datetime) is None:
+            #print ("{}: tzinfo.utcoffset is {}".format(
+            #    this_datetime, 
+            #    this_datetime.tzinfo.utcoffset(this_datetime)
+            #    ))
             this_datetime = tz.localize(this_datetime)
            
         thisdate = get_human_dateonly(this_datestring)
@@ -227,6 +239,12 @@ def organize_events_by_day(
             date_delta = this_datetime - today
             if date_delta.days >= max_days:
                 continue
+            else:
+                print("{} has delta {}".format(
+                    this_datetime,
+                    date_delta,
+                    ))
+
 
         if thisdate != lastdate:
             outdict[thisdate] = [] 
