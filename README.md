@@ -19,7 +19,10 @@ newsletters about your events.
 Deployment
 ----------
 
-- Use `virtualenv` to set up a Python 3 environment.
+- Use `virtualenv` to set up a Python 3 environment: `virtualenv -p
+  /usr/bin/python3 venv`
+- Activate the environment: `venv/bin/activate`
+- Install dependencies: `pip install -r requirements.txt`
 - Copy `config.py.example` to `config.py` and customize it to your
   needs.
 - Run `gen_rss.py`
