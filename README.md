@@ -1,4 +1,4 @@
-Generate RSS2 Feeds from Google Calendar
+Generate RSS2 Feeds (and Newsletters) from Google Calendar
 ========================================
 
 In 2015 Google [dropped
@@ -12,7 +12,8 @@ written in Python 3 with lots of helper modules (requests, jinja2,
 dateutil ...). 
 
 There is a second script called `gen_newsletter.py` which will 
-create a plaintext email.
+create the body of a plaintext email. You can use this to send
+newsletters about your events.
 
 
 Deployment
