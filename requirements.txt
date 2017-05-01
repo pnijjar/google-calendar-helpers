@@ -1,5 +1,6 @@
 Jinja2>=2.9.6
 Markdown>=2.6.8
+pytest>=3.0.7
 pytz>=2017.2
 requests>=2.13.0
 python_dateutil>=2.6.0
