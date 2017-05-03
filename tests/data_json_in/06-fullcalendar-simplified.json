@@ -1,0 +1,3312 @@
+{
+  "summary": "WatCamp Events",
+  "nextPageToken": "EjYKK3Roc2tiODRrbGNjMXVqMGhxNWFsMW5odTVnXzIwMTcwNTI0VDIyMDAwMFoYgJC7-42J1AI=",
+  "description": "Taking inspiration from the TorCamp calendar. This calendar lists all tech events taking place in the KW area.",
+  "defaultReminders": [],
+  "kind": "calendar#events",
+  "accessRole": "reader",
+  "etag": "\"p33081370nmod60g\"",
+  "items": [
+    {
+      "summary": "YWCA Cambridge - STEM Mentoring",
+      "iCalUID": "i2hq03s0dh9900tiha0203msqg@google.com",
+      "description": "Description goes here.",
+      "id": "i2hq03s0dh9900tiha0203msqg_20170419T213000Z",
+      "sequence": 0,
+      "originalStartTime": {
+        "dateTime": "2017-04-19T17:30:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "etag": "\"2946535256528000\"",
+      "location": "8 Petty Pl, Cambridge, ON",
+      "creator": {
+        "email": "cearrach@gmail.com",
+        "displayName": "Chris Craig"
+      },
+      "organizer": {
+        "self": true,
+        "email": "nlkc39jt4p0nbc4pk9pj7p5fh0@group.calendar.google.com",
+        "displayName": "WatCamp Events"
+      },
+      "start": {
+        "dateTime": "2017-04-19T17:30:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "end": {
+        "dateTime": "2017-04-19T19:30:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "kind": "calendar#event",
+      "htmlLink": "https://www.google.com/calendar/event?eid=aTJocTAzczBkaDk5MDB0aWhhMDIwM21zcWdfMjAxNzA0MTlUMjEzMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn",
+      "created": "2016-09-07T17:00:28.000Z",
+      "status": "confirmed",
+      "recurringEventId": "i2hq03s0dh9900tiha0203msqg",
+      "updated": "2016-09-07T17:00:28.264Z"
+    },
+    {
+      "summary": "GGDWR: Eva Skuza - The Science of Cheese",
+      "iCalUID": "igp9mpd9plb7au0v8ubgcfpjcg@google.com",
+      "description": "Description goes here.",
+      "id": "igp9mpd9plb7au0v8ubgcfpjcg",
+      "sequence": 1,
+      "etag": "\"2980564320818000\"",
+      "location": "OpenSky Incubator LOT41, 41 Ardelt Place , Kitchener, Ontario, Canada",
+      "creator": {
+        "email": "bobjonkman@gmail.com",
+        "displayName": "Bob Jonkman"
+      },
+      "organizer": {
+        "self": true,
+        "email": "nlkc39jt4p0nbc4pk9pj7p5fh0@group.calendar.google.com",
+        "displayName": "WatCamp Events"
+      },
+      "start": {
+        "dateTime": "2017-04-19T18:00:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "end": {
+        "dateTime": "2017-04-19T20:30:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "kind": "calendar#event",
+      "htmlLink": "https://www.google.com/calendar/event?eid=aWdwOW1wZDlwbGI3YXUwdjh1YmdjZnBqY2cgbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw",
+      "created": "2017-03-23T15:13:30.000Z",
+      "status": "confirmed",
+      "updated": "2017-03-23T15:16:00.409Z"
+    },
+    {
+      "summary": "TechWaterloo Meetup (April 2017)",
+      "iCalUID": "t17vs0dc19a0ubepdl5u1f2l3g@google.com",
+      "description": "Description goes here.",
+      "id": "t17vs0dc19a0ubepdl5u1f2l3g",
+      "sequence": 2,
+      "etag": "\"2977091425436000\"",
+      "location": "Shopify, 57 Erb St W, Waterloo, Ontario, Canada",
+      "creator": {
+        "email": "bobjonkman@gmail.com",
+        "displayName": "Bob Jonkman"
+      },
+      "organizer": {
+        "self": true,
+        "email": "nlkc39jt4p0nbc4pk9pj7p5fh0@group.calendar.google.com",
+        "displayName": "WatCamp Events"
+      },
+      "visibility": "public",
+      "start": {
+        "dateTime": "2017-04-19T18:00:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "end": {
+        "dateTime": "2017-04-19T21:00:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "kind": "calendar#event",
+      "htmlLink": "https://www.google.com/calendar/event?eid=dDE3dnMwZGMxOWEwdWJlcGRsNXUxZjJsM2cgbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw",
+      "created": "2017-03-01T20:00:17.000Z",
+      "status": "confirmed",
+      "updated": "2017-03-03T12:55:12.718Z"
+    },
+    {
+      "summary": "WatPy - PyDrinks",
+      "iCalUID": "3ae3f455-6b10-47ef-a2ee-a54ef364fca4",
+      "description": "Description goes here.",
+      "id": "_6dgmacr66gqjab9mc8oj0b9k6timcbb169imabb16kq6aphj6oq6cor16g_20170419T223000Z",
+      "sequence": 4,
+      "originalStartTime": {
+        "dateTime": "2017-04-19T18:30:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "etag": "\"2980565351192000\"",
+      "location": "Death Valley's Little Brother, 84 King Street North, Waterloo, Ontario, Canada",
+      "creator": {
+        "email": "bobjonkman@gmail.com",
+        "displayName": "Bob Jonkman"
+      },
+      "organizer": {
+        "self": true,
+        "email": "nlkc39jt4p0nbc4pk9pj7p5fh0@group.calendar.google.com",
+        "displayName": "WatCamp Events"
+      },
+      "start": {
+        "dateTime": "2017-04-19T18:30:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "end": {
+        "dateTime": "2017-04-19T21:30:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "kind": "calendar#event",
+      "htmlLink": "https://www.google.com/calendar/event?eid=XzZkZ21hY3I2NmdxamFiOW1jOG9qMGI5azZ0aW1jYmIxNjlpbWFiYjE2a3E2YXBoajZvcTZjb3IxNmdfMjAxNzA0MTlUMjIzMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn",
+      "created": "2014-07-23T03:00:01.000Z",
+      "status": "confirmed",
+      "recurringEventId": "_6dgmacr66gqjab9mc8oj0b9k6timcbb169imabb16kq6aphj6oq6cor16g",
+      "updated": "2017-03-23T15:24:35.596Z"
+    },
+    {
+      "summary": "UndergroundStudio - Access Wednesdays",
+      "iCalUID": "dr46lmdiau8oukhekjb8f9a32o@google.com",
+      "description": "Description goes here.",
+      "id": "dr46lmdiau8oukhekjb8f9a32o_20170419T223000Z",
+      "sequence": 0,
+      "originalStartTime": {
+        "dateTime": "2017-04-19T18:30:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "etag": "\"2970353035006000\"",
+      "location": "THEMUSEUM, Kitchener, ON",
+      "creator": {
+        "email": "cearrach@gmail.com",
+        "displayName": "Chris Craig"
+      },
+      "organizer": {
+        "self": true,
+        "email": "nlkc39jt4p0nbc4pk9pj7p5fh0@group.calendar.google.com",
+        "displayName": "WatCamp Events"
+      },
+      "start": {
+        "dateTime": "2017-04-19T18:30:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "end": {
+        "dateTime": "2017-04-19T21:00:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "kind": "calendar#event",
+      "htmlLink": "https://www.google.com/calendar/event?eid=ZHI0NmxtZGlhdThvdWtoZWtqYjhmOWEzMm9fMjAxNzA0MTlUMjIzMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn",
+      "created": "2017-01-23T13:01:57.000Z",
+      "status": "confirmed",
+      "recurringEventId": "dr46lmdiau8oukhekjb8f9a32o",
+      "updated": "2017-01-23T13:01:57.503Z"
+    },
+    {
+      "summary": "CCTDNUG: Building a Cloud-Powered Conversation Bot",
+      "iCalUID": "vvdhb5bednivm7ol9nnjd1ksbg@google.com",
+      "description": "Description goes here.",
+      "id": "vvdhb5bednivm7ol9nnjd1ksbg",
+      "sequence": 1,
+      "etag": "\"2980564604532000\"",
+      "location": "Kitchener Central Library , 85 Queen St North, Kitchener, Ontario, Canada",
+      "creator": {
+        "email": "bobjonkman@gmail.com",
+        "displayName": "Bob Jonkman"
+      },
+      "organizer": {
+        "self": true,
+        "email": "nlkc39jt4p0nbc4pk9pj7p5fh0@group.calendar.google.com",
+        "displayName": "WatCamp Events"
+      },
+      "start": {
+        "dateTime": "2017-04-19T18:30:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "end": {
+        "dateTime": "2017-04-19T20:30:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "kind": "calendar#event",
+      "htmlLink": "https://www.google.com/calendar/event?eid=dnZkaGI1YmVkbml2bTdvbDlubmpkMWtzYmcgbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw",
+      "created": "2017-03-23T15:17:01.000Z",
+      "status": "confirmed",
+      "updated": "2017-03-23T15:18:22.266Z"
+    },
+    {
+      "summary": "KW Unix Users Group",
+      "iCalUID": "8nfet2tso6rok8ihi4b82mpcf0@google.com",
+      "description": "Description goes here.",
+      "id": "8nfet2tso6rok8ihi4b82mpcf0_20170419T230000Z",
+      "sequence": 0,
+      "originalStartTime": {
+        "dateTime": "2017-04-19T19:00:00-04:00"
+      },
+      "etag": "\"2664711826000000\"",
+      "location": " William G Davis Computer Research Centre ICR Board Room DC1331, University of Waterloo, Waterloo, ON",
+      "creator": {
+        "email": "bobjonkman@gmail.com",
+        "displayName": "Bob Jonkman"
+      },
+      "organizer": {
+        "self": true,
+        "email": "nlkc39jt4p0nbc4pk9pj7p5fh0@group.calendar.google.com",
+        "displayName": "WatCamp Events"
+      },
+      "start": {
+        "dateTime": "2017-04-19T19:00:00-04:00"
+      },
+      "end": {
+        "dateTime": "2017-04-19T21:00:00-04:00"
+      },
+      "kind": "calendar#event",
+      "htmlLink": "https://www.google.com/calendar/event?eid=OG5mZXQydHNvNnJvazhpaGk0YjgybXBjZjBfMjAxNzA0MTlUMjMwMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn",
+      "created": "2010-10-04T23:34:52.000Z",
+      "status": "confirmed",
+      "recurringEventId": "8nfet2tso6rok8ihi4b82mpcf0",
+      "updated": "2012-03-21T18:51:53.000Z"
+    },
+    {
+      "summary": "FoxNet - Martin Schneider: An Afternoon of Insight on Flash Storage",
+      "iCalUID": "g0b6j4b665v0c7nbto46vqamq4@google.com",
+      "description": "Description goes here.",
+      "id": "g0b6j4b665v0c7nbto46vqamq4",
+      "sequence": 0,
+      "etag": "\"2983768914418000\"",
+      "location": "FoxNet, 92 Erb St E, Waterloo, ON",
+      "creator": {
+        "email": "cearrach@gmail.com",
+        "displayName": "Chris Craig"
+      },
+      "organizer": {
+        "self": true,
+        "email": "nlkc39jt4p0nbc4pk9pj7p5fh0@group.calendar.google.com",
+        "displayName": "WatCamp Events"
+      },
+      "start": {
+        "dateTime": "2017-04-20T11:30:00-04:00"
+      },
+      "end": {
+        "dateTime": "2017-04-20T13:00:00-04:00"
+      },
+      "kind": "calendar#event",
+      "htmlLink": "https://www.google.com/calendar/event?eid=ZzBiNmo0YjY2NXYwYzduYnRvNDZ2cWFtcTQgbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw",
+      "created": "2017-04-11T04:20:57.000Z",
+      "status": "confirmed",
+      "updated": "2017-04-11T04:20:57.209Z"
+    },
+    {
+      "summary": "UofW CE - Jesse Zhu: Small Particles Hoisting Gigantic Industrial Processes the Application of Particle Technology in the Real World",
+      "iCalUID": "gcg54op1mts6sob0lhq4m7jgfg@google.com",
+      "description": "Description goes here.",
+      "id": "gcg54op1mts6sob0lhq4m7jgfg",
+      "sequence": 0,
+      "etag": "\"2985207221194000\"",
+      "location": "Engineering 6 (E6-2024), University of Waterloo, Waterloo, ON",
+      "creator": {
+        "email": "cearrach@gmail.com",
+        "displayName": "Chris Craig"
+      },
+      "organizer": {
+        "self": true,
+        "email": "nlkc39jt4p0nbc4pk9pj7p5fh0@group.calendar.google.com",
+        "displayName": "WatCamp Events"
+      },
+      "start": {
+        "dateTime": "2017-04-20T15:30:00-04:00"
+      },
+      "end": {
+        "dateTime": "2017-04-20T16:30:00-04:00"
+      },
+      "kind": "calendar#event",
+      "htmlLink": "https://www.google.com/calendar/event?eid=Z2NnNTRvcDFtdHM2c29iMGxocTRtN2pnZmcgbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw",
+      "created": "2017-04-19T12:06:50.000Z",
+      "status": "confirmed",
+      "updated": "2017-04-19T12:06:50.597Z"
+    },
+    {
+      "summary": "Idea Exchange - Build an A-Line Robot: Introductory Electronics Course",
+      "iCalUID": "lu9johdhtjh6ts114m9utf25fk@google.com",
+      "description": "Description goes here.",
+      "id": "lu9johdhtjh6ts114m9utf25fk_20170420T223000Z",
+      "sequence": 0,
+      "originalStartTime": {
+        "dateTime": "2017-04-20T18:30:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "etag": "\"2985204283126000\"",
+      "location": "Idea Exchange | Clemens Mill, 50 Saginaw Pkwy, Cambridge, ON",
+      "creator": {
+        "email": "cearrach@gmail.com",
+        "displayName": "Chris Craig"
+      },
+      "organizer": {
+        "self": true,
+        "email": "nlkc39jt4p0nbc4pk9pj7p5fh0@group.calendar.google.com",
+        "displayName": "WatCamp Events"
+      },
+      "start": {
+        "dateTime": "2017-04-20T18:30:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "end": {
+        "dateTime": "2017-04-20T20:00:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "kind": "calendar#event",
+      "htmlLink": "https://www.google.com/calendar/event?eid=bHU5am9oZGh0amg2dHMxMTRtOXV0ZjI1ZmtfMjAxNzA0MjBUMjIzMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn",
+      "created": "2017-04-19T11:42:21.000Z",
+      "status": "confirmed",
+      "recurringEventId": "lu9johdhtjh6ts114m9utf25fk",
+      "updated": "2017-04-19T11:42:21.563Z"
+    },
+    {
+      "summary": "KW Perl Mongers",
+      "iCalUID": "0vjr6sm4111a0u6b80mmt38nqc@google.com",
+      "description": "Description goes here.",
+      "id": "0vjr6sm4111a0u6b80mmt38nqc_20170420T230000Z",
+      "sequence": 0,
+      "originalStartTime": {
+        "dateTime": "2017-04-20T19:00:00-04:00"
+      },
+      "etag": "\"2663198434000000\"",
+      "location": "DC 3323, University of Waterloo,  Waterloo, ON",
+      "creator": {
+        "email": "bobjonkman@gmail.com",
+        "displayName": "Bob Jonkman"
+      },
+      "organizer": {
+        "self": true,
+        "email": "nlkc39jt4p0nbc4pk9pj7p5fh0@group.calendar.google.com",
+        "displayName": "WatCamp Events"
+      },
+      "start": {
+        "dateTime": "2017-04-20T19:00:00-04:00"
+      },
+      "end": {
+        "dateTime": "2017-04-20T21:00:00-04:00"
+      },
+      "kind": "calendar#event",
+      "htmlLink": "https://www.google.com/calendar/event?eid=MHZqcjZzbTQxMTFhMHU2YjgwbW10MzhucWNfMjAxNzA0MjBUMjMwMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn",
+      "created": "2011-10-16T02:36:40.000Z",
+      "status": "confirmed",
+      "recurringEventId": "0vjr6sm4111a0u6b80mmt38nqc",
+      "updated": "2012-03-13T00:40:17.000Z"
+    },
+    {
+      "summary": "WRDUG - Waterloo Region Drupal Users Group",
+      "iCalUID": "dfkm2a8affd2miq20t7tqh1jg0@google.com",
+      "description": "Description goes here.",
+      "id": "dfkm2a8affd2miq20t7tqh1jg0_20170420T230000Z",
+      "sequence": 10,
+      "originalStartTime": {
+        "dateTime": "2017-04-20T19:00:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "etag": "\"2913409988430000\"",
+      "location": "The Working Centre, 58 Queen St. S, Kitchener, Ontario, Canada",
+      "creator": {
+        "email": "redune@gmail.com",
+        "displayName": "Will Spaetzel"
+      },
+      "organizer": {
+        "self": true,
+        "email": "nlkc39jt4p0nbc4pk9pj7p5fh0@group.calendar.google.com",
+        "displayName": "WatCamp Events"
+      },
+      "start": {
+        "dateTime": "2017-04-20T19:00:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "end": {
+        "dateTime": "2017-04-20T21:00:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "kind": "calendar#event",
+      "htmlLink": "https://www.google.com/calendar/event?eid=ZGZrbTJhOGFmZmQybWlxMjB0N3RxaDFqZzBfMjAxNzA0MjBUMjMwMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn",
+      "created": "0000-12-29T00:00:00.000Z",
+      "status": "confirmed",
+      "recurringEventId": "dfkm2a8affd2miq20t7tqh1jg0",
+      "updated": "2016-02-29T00:16:34.215Z",
+      "transparency": "transparent"
+    },
+    {
+      "summary": "K\u2229W - Etienne Manderscheid: Case studies on NLP and neural networks by TalkIQ",
+      "iCalUID": "sjpq2ej97inl5bjoh53ptb2fm0@google.com",
+      "description": "Description goes here.",
+      "id": "sjpq2ej97inl5bjoh53ptb2fm0",
+      "sequence": 1,
+      "etag": "\"2984273190770000\"",
+      "location": "The Atomic Co-Working Space, 119 King St W, Kitchener, ON",
+      "creator": {
+        "email": "bobjonkman@gmail.com",
+        "displayName": "Bob Jonkman"
+      },
+      "organizer": {
+        "self": true,
+        "email": "nlkc39jt4p0nbc4pk9pj7p5fh0@group.calendar.google.com",
+        "displayName": "WatCamp Events"
+      },
+      "start": {
+        "dateTime": "2017-04-20T19:00:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "end": {
+        "dateTime": "2017-04-20T22:00:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "kind": "calendar#event",
+      "htmlLink": "https://www.google.com/calendar/event?eid=c2pwcTJlajk3aW5sNWJqb2g1M3B0YjJmbTAgbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw",
+      "created": "2017-03-27T18:32:17.000Z",
+      "status": "confirmed",
+      "updated": "2017-04-14T02:23:15.385Z"
+    },
+    {
+      "summary": "REEP - Philip Drader: Taking Action; Saving Energy in Your Home",
+      "iCalUID": "tkfekimq7uf8b8bdrkk4t4k2q0@google.com",
+      "description": "Description goes here.",
+      "id": "tkfekimq7uf8b8bdrkk4t4k2q0",
+      "sequence": 0,
+      "etag": "\"2983520023992000\"",
+      "location": "Kitchener Public Library (Meeting Room A), 85 Queen St N, Kitchener, ON",
+      "creator": {
+        "email": "cearrach@gmail.com",
+        "displayName": "Chris Craig"
+      },
+      "organizer": {
+        "self": true,
+        "email": "nlkc39jt4p0nbc4pk9pj7p5fh0@group.calendar.google.com",
+        "displayName": "WatCamp Events"
+      },
+      "start": {
+        "dateTime": "2017-04-20T19:00:00-04:00"
+      },
+      "end": {
+        "dateTime": "2017-04-20T20:30:00-04:00"
+      },
+      "kind": "calendar#event",
+      "htmlLink": "https://www.google.com/calendar/event?eid=dGtmZWtpbXE3dWY4YjhiZHJrazR0NGsycTAgbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw",
+      "created": "2017-04-09T17:46:51.000Z",
+      "status": "confirmed",
+      "updated": "2017-04-09T17:46:51.996Z"
+    },
+    {
+      "summary": "Communitech PM Connect P2P",
+      "iCalUID": "23bmveluf9b8s7ikhrjmr2merc@google.com",
+      "description": "Description goes here.",
+      "id": "23bmveluf9b8s7ikhrjmr2merc_20170421T120000Z",
+      "sequence": 2,
+      "originalStartTime": {
+        "dateTime": "2017-04-21T08:00:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "etag": "\"2973042093432000\"",
+      "location": "Communitech, 151 Charles St W, Kitchener, ON",
+      "creator": {
+        "email": "cearrach@gmail.com",
+        "displayName": "Chris Craig"
+      },
+      "organizer": {
+        "self": true,
+        "email": "nlkc39jt4p0nbc4pk9pj7p5fh0@group.calendar.google.com",
+        "displayName": "WatCamp Events"
+      },
+      "start": {
+        "dateTime": "2017-04-21T08:00:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "end": {
+        "dateTime": "2017-04-21T09:00:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "kind": "calendar#event",
+      "htmlLink": "https://www.google.com/calendar/event?eid=MjNibXZlbHVmOWI4czdpa2hyam1yMm1lcmNfMjAxNzA0MjFUMTIwMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn",
+      "created": "2016-04-16T20:21:10.000Z",
+      "status": "confirmed",
+      "recurringEventId": "23bmveluf9b8s7ikhrjmr2merc",
+      "updated": "2017-02-08T02:30:46.716Z",
+      "transparency": "transparent"
+    },
+    {
+      "summary": "CORS - SWORD: South Western Operations Research Day",
+      "iCalUID": "lkdq51jt93mv5afnu7ekg8m544@google.com",
+      "description": "Description goes here.",
+      "id": "lkdq51jt93mv5afnu7ekg8m544",
+      "sequence": 0,
+      "etag": "\"2982893385592000\"",
+      "location": "Davis Centre (DC-1302), University of Waterloo, Waterloo, ON",
+      "creator": {
+        "email": "cearrach@gmail.com",
+        "displayName": "Chris Craig"
+      },
+      "organizer": {
+        "self": true,
+        "email": "nlkc39jt4p0nbc4pk9pj7p5fh0@group.calendar.google.com",
+        "displayName": "WatCamp Events"
+      },
+      "start": {
+        "dateTime": "2017-04-21T08:30:00-04:00"
+      },
+      "end": {
+        "dateTime": "2017-04-21T17:00:00-04:00"
+      },
+      "kind": "calendar#event",
+      "htmlLink": "https://www.google.com/calendar/event?eid=bGtkcTUxanQ5M212NWFmbnU3ZWtnOG01NDQgbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw",
+      "created": "2017-04-06T02:44:52.000Z",
+      "status": "confirmed",
+      "updated": "2017-04-06T02:44:52.796Z"
+    },
+    {
+      "summary": "Stemotics - LEGO Mindstorm EV3",
+      "iCalUID": "bb7a2ep1q4nbpep1n3955v4v7g@google.com",
+      "description": "Description goes here.",
+      "id": "bb7a2ep1q4nbpep1n3955v4v7g_20170422T180000Z",
+      "sequence": 0,
+      "originalStartTime": {
+        "dateTime": "2017-04-22T14:00:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "etag": "\"2985203673094000\"",
+      "location": "Idea Exchange | Hespeler, 5 Tannery St E, Cambridge, ON",
+      "creator": {
+        "email": "cearrach@gmail.com",
+        "displayName": "Chris Craig"
+      },
+      "organizer": {
+        "self": true,
+        "email": "nlkc39jt4p0nbc4pk9pj7p5fh0@group.calendar.google.com",
+        "displayName": "WatCamp Events"
+      },
+      "start": {
+        "dateTime": "2017-04-22T14:00:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "end": {
+        "dateTime": "2017-04-22T15:00:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "kind": "calendar#event",
+      "htmlLink": "https://www.google.com/calendar/event?eid=YmI3YTJlcDFxNG5icGVwMW4zOTU1djR2N2dfMjAxNzA0MjJUMTgwMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn",
+      "created": "2017-04-19T11:37:16.000Z",
+      "status": "confirmed",
+      "recurringEventId": "bb7a2ep1q4nbpep1n3955v4v7g",
+      "updated": "2017-04-19T11:37:16.547Z"
+    },
+    {
+      "summary": "Guelph Solar - Island Foods and Solar Open House",
+      "iCalUID": "0oov6n4gvmbfe5thnlddsuofcc@google.com",
+      "description": "Description goes here.",
+      "id": "0oov6n4gvmbfe5thnlddsuofcc",
+      "sequence": 0,
+      "etag": "\"2980631902008000\"",
+      "location": "49 Caledonia St, Guelph, ON",
+      "creator": {
+        "email": "cearrach@gmail.com",
+        "displayName": "Chris Craig"
+      },
+      "organizer": {
+        "self": true,
+        "email": "nlkc39jt4p0nbc4pk9pj7p5fh0@group.calendar.google.com",
+        "displayName": "WatCamp Events"
+      },
+      "start": {
+        "dateTime": "2017-04-22T15:00:00-04:00"
+      },
+      "end": {
+        "dateTime": "2017-04-22T17:00:00-04:00"
+      },
+      "kind": "calendar#event",
+      "htmlLink": "https://www.google.com/calendar/event?eid=MG9vdjZuNGd2bWJmZTV0aG5sZGRzdW9mY2MgbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw",
+      "created": "2017-03-24T00:39:10.000Z",
+      "status": "confirmed",
+      "updated": "2017-03-24T00:39:11.004Z"
+    },
+    {
+      "summary": "WPL - Open Family Creation Space - Powershift Pop-up for Earth Day",
+      "iCalUID": "m2dpoosvdk4tnc13c0rmsegtvk@google.com",
+      "description": "Description goes here.",
+      "id": "m2dpoosvdk4tnc13c0rmsegtvk",
+      "sequence": 0,
+      "etag": "\"2983520608992000\"",
+      "location": "Waterloo Public Library, 35 Albert St, Waterloo, ON",
+      "creator": {
+        "email": "cearrach@gmail.com",
+        "displayName": "Chris Craig"
+      },
+      "organizer": {
+        "self": true,
+        "email": "nlkc39jt4p0nbc4pk9pj7p5fh0@group.calendar.google.com",
+        "displayName": "WatCamp Events"
+      },
+      "start": {
+        "dateTime": "2017-04-22T15:00:00-04:00"
+      },
+      "end": {
+        "dateTime": "2017-04-22T16:30:00-04:00"
+      },
+      "kind": "calendar#event",
+      "htmlLink": "https://www.google.com/calendar/event?eid=bTJkcG9vc3ZkazR0bmMxM2Mwcm1zZWd0dmsgbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw",
+      "created": "2017-04-09T17:51:44.000Z",
+      "status": "confirmed",
+      "updated": "2017-04-09T17:51:44.496Z"
+    },
+    {
+      "summary": "KWLUG Laptop Rescue Mission",
+      "iCalUID": "a80hk1la1b3kh7c2pemn3k4bts@google.com",
+      "description": "Description goes here.",
+      "id": "a80hk1la1b3kh7c2pemn3k4bts",
+      "sequence": 0,
+      "etag": "\"2982357156242000\"",
+      "location": "Computer Recycling (entrance off Charles Street), 56 Queen Street South, Kitchener, Ontario, Canada",
+      "creator": {
+        "email": "bobjonkman@gmail.com",
+        "displayName": "Bob Jonkman"
+      },
+      "organizer": {
+        "self": true,
+        "email": "nlkc39jt4p0nbc4pk9pj7p5fh0@group.calendar.google.com",
+        "displayName": "WatCamp Events"
+      },
+      "visibility": "public",
+      "start": {
+        "dateTime": "2017-04-22T16:00:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "end": {
+        "dateTime": "2017-04-22T20:00:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "kind": "calendar#event",
+      "htmlLink": "https://www.google.com/calendar/event?eid=YTgwaGsxbGExYjNraDdjMnBlbW4zazRidHMgbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw",
+      "created": "2017-04-03T00:15:22.000Z",
+      "status": "confirmed",
+      "updated": "2017-04-03T00:16:18.121Z"
+    },
+    {
+      "summary": "Stemotics - LEGO Robotics Workshop for kids",
+      "iCalUID": "921r3a9v9tcdc9c1kpjop8ouv8@google.com",
+      "description": "Description goes here.",
+      "id": "921r3a9v9tcdc9c1kpjop8ouv8_20170423T150000Z",
+      "sequence": 0,
+      "originalStartTime": {
+        "dateTime": "2017-04-23T11:00:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "etag": "\"2971736171124000\"",
+      "location": "Stemotics, 1315 Bishop St N, Unit 155, Cambridge, ON",
+      "creator": {
+        "email": "cearrach@gmail.com",
+        "displayName": "Chris Craig"
+      },
+      "organizer": {
+        "self": true,
+        "email": "nlkc39jt4p0nbc4pk9pj7p5fh0@group.calendar.google.com",
+        "displayName": "WatCamp Events"
+      },
+      "start": {
+        "dateTime": "2017-04-23T11:00:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "end": {
+        "dateTime": "2017-04-23T15:00:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "kind": "calendar#event",
+      "htmlLink": "https://www.google.com/calendar/event?eid=OTIxcjNhOXY5dGNkYzljMWtwam9wOG91djhfMjAxNzA0MjNUMTUwMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn",
+      "created": "2017-01-31T13:07:39.000Z",
+      "status": "confirmed",
+      "recurringEventId": "921r3a9v9tcdc9c1kpjop8ouv8",
+      "updated": "2017-01-31T13:08:05.562Z"
+    },
+    {
+      "summary": "UofW OVS - Vision Science Graduate Research Conference 2017",
+      "iCalUID": "2icquttndb40g465kuuompitks@google.com",
+      "description": "Description goes here.",
+      "id": "2icquttndb40g465kuuompitks",
+      "sequence": 0,
+      "etag": "\"2982787596286000\"",
+      "location": "School of Optometry and Vision Science (OPT-1129), 200 Columbia St W, Waterloo, ON",
+      "creator": {
+        "email": "cearrach@gmail.com",
+        "displayName": "Chris Craig"
+      },
+      "organizer": {
+        "self": true,
+        "email": "nlkc39jt4p0nbc4pk9pj7p5fh0@group.calendar.google.com",
+        "displayName": "WatCamp Events"
+      },
+      "start": {
+        "dateTime": "2017-04-24T09:20:00-04:00"
+      },
+      "end": {
+        "dateTime": "2017-04-25T17:30:00-04:00"
+      },
+      "kind": "calendar#event",
+      "htmlLink": "https://www.google.com/calendar/event?eid=MmljcXV0dG5kYjQwZzQ2NWt1dW9tcGl0a3MgbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw",
+      "created": "2017-04-05T12:03:18.000Z",
+      "status": "confirmed",
+      "updated": "2017-04-05T12:03:18.143Z"
+    },
+    {
+      "summary": "WatPy: Python Project Hours",
+      "iCalUID": "1m8lrbqkbf8iof8l47qc40itfc@google.com",
+      "description": "Description goes here.",
+      "id": "1m8lrbqkbf8iof8l47qc40itfc_20170424T200000Z",
+      "sequence": 2,
+      "originalStartTime": {
+        "dateTime": "2017-04-24T16:00:00-04:00",
+        "timeZone": "America/New_York"
+      },
+      "etag": "\"2976784645684000\"",
+      "location": "University of Waterloo Grad House, University of Waterloo, Waterloo, Ontario, Canada",
+      "creator": {
+        "email": "bobjonkman@gmail.com",
+        "displayName": "Bob Jonkman"
+      },
+      "organizer": {
+        "self": true,
+        "email": "nlkc39jt4p0nbc4pk9pj7p5fh0@group.calendar.google.com",
+        "displayName": "WatCamp Events"
+      },
+      "start": {
+        "dateTime": "2017-04-24T16:00:00-04:00",
+        "timeZone": "America/New_York"
+      },
+      "end": {
+        "dateTime": "2017-04-24T18:00:00-04:00",
+        "timeZone": "America/New_York"
+      },
+      "kind": "calendar#event",
+      "htmlLink": "https://www.google.com/calendar/event?eid=MW04bHJicWtiZjhpb2Y4bDQ3cWM0MGl0ZmNfMjAxNzA0MjRUMjAwMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn",
+      "created": "2017-03-01T18:13:02.000Z",
+      "status": "confirmed",
+      "recurringEventId": "1m8lrbqkbf8iof8l47qc40itfc",
+      "updated": "2017-03-01T18:18:42.842Z"
+    },
+    {
+      "summary": "UofW S&AS - Jeroen De Mast: Mathematical optimization and a multiple-case study",
+      "iCalUID": "k2iu95tnuq1chbjqqf6k80cjc8@google.com",
+      "description": "Description goes here.",
+      "id": "k2iu95tnuq1chbjqqf6k80cjc8",
+      "sequence": 0,
+      "etag": "\"2983136896532000\"",
+      "location": "Mathematics 3 (M3-3127), University of Waterloo, Waterloo, ON",
+      "creator": {
+        "email": "cearrach@gmail.com",
+        "displayName": "Chris Craig"
+      },
+      "organizer": {
+        "self": true,
+        "email": "nlkc39jt4p0nbc4pk9pj7p5fh0@group.calendar.google.com",
+        "displayName": "WatCamp Events"
+      },
+      "start": {
+        "dateTime": "2017-04-24T16:00:00-04:00"
+      },
+      "end": {
+        "dateTime": "2017-04-24T17:00:00-04:00"
+      },
+      "kind": "calendar#event",
+      "htmlLink": "https://www.google.com/calendar/event?eid=azJpdTk1dG51cTFjaGJqcXFmNms4MGNqYzggbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw",
+      "created": "2017-04-07T12:34:08.000Z",
+      "status": "confirmed",
+      "updated": "2017-04-07T12:34:08.266Z"
+    },
+    {
+      "summary": "Terran Stellar Navy - Artemis Spaceship Bridge Simulation",
+      "iCalUID": "rom204r8jqpu6usgm0ofn6jsn4@google.com",
+      "description": "Description goes here.",
+      "id": "rom204r8jqpu6usgm0ofn6jsn4",
+      "sequence": 0,
+      "etag": "\"2982880195368000\"",
+      "location": "The Adventurer's Guild Cafe, 36 Ontario St N, Kitchener, ON",
+      "creator": {
+        "email": "cearrach@gmail.com",
+        "displayName": "Chris Craig"
+      },
+      "organizer": {
+        "self": true,
+        "email": "nlkc39jt4p0nbc4pk9pj7p5fh0@group.calendar.google.com",
+        "displayName": "WatCamp Events"
+      },
+      "start": {
+        "dateTime": "2017-04-24T18:15:00-04:00"
+      },
+      "end": {
+        "dateTime": "2017-04-24T23:00:00-04:00"
+      },
+      "kind": "calendar#event",
+      "htmlLink": "https://www.google.com/calendar/event?eid=cm9tMjA0cjhqcXB1NnVzZ20wb2ZuNmpzbjQgbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw",
+      "created": "2017-04-06T00:54:57.000Z",
+      "status": "confirmed",
+      "updated": "2017-04-06T00:54:57.684Z"
+    },
+    {
+      "summary": "D2L Night School - Bob Duncan: Crafting Delightful Experiences with Microinteractions",
+      "iCalUID": "4a5lueop9rm9lq80o7kvms4g3c@google.com",
+      "description": "Description goes here.",
+      "id": "4a5lueop9rm9lq80o7kvms4g3c",
+      "sequence": 0,
+      "etag": "\"2980707811300000\"",
+      "location": "D2l, 151 Chariles St W, Kitchener, ON",
+      "creator": {
+        "email": "cearrach@gmail.com",
+        "displayName": "Chris Craig"
+      },
+      "organizer": {
+        "self": true,
+        "email": "nlkc39jt4p0nbc4pk9pj7p5fh0@group.calendar.google.com",
+        "displayName": "WatCamp Events"
+      },
+      "start": {
+        "dateTime": "2017-04-24T18:30:00-04:00"
+      },
+      "end": {
+        "dateTime": "2017-04-24T20:30:00-04:00"
+      },
+      "kind": "calendar#event",
+      "htmlLink": "https://www.google.com/calendar/event?eid=NGE1bHVlb3A5cm05bHE4MG83a3ZtczRnM2MgbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw",
+      "created": "2017-03-24T11:11:45.000Z",
+      "status": "confirmed",
+      "updated": "2017-03-24T11:11:45.650Z"
+    },
+    {
+      "summary": "WWITPRO - Jason Eckert: BASH on Windows and WSUS",
+      "iCalUID": "4600q5p0tsrrlbs6ktsdg5g6ik@google.com",
+      "description": "Description goes here.",
+      "id": "4600q5p0tsrrlbs6ktsdg5g6ik",
+      "sequence": 0,
+      "etag": "\"2984273628228000\"",
+      "location": "triOS College, 110 King St E, Kitchener, ON",
+      "creator": {
+        "email": "cearrach@gmail.com",
+        "displayName": "Chris Craig"
+      },
+      "organizer": {
+        "self": true,
+        "email": "nlkc39jt4p0nbc4pk9pj7p5fh0@group.calendar.google.com",
+        "displayName": "WatCamp Events"
+      },
+      "start": {
+        "dateTime": "2017-04-24T19:00:00-04:00"
+      },
+      "end": {
+        "dateTime": "2017-04-24T21:00:00-04:00"
+      },
+      "kind": "calendar#event",
+      "htmlLink": "https://www.google.com/calendar/event?eid=NDYwMHE1cDB0c3JybGJzNmt0c2RnNWc2aWsgbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw",
+      "created": "2017-04-14T02:26:54.000Z",
+      "status": "confirmed",
+      "updated": "2017-04-14T02:26:54.114Z"
+    },
+    {
+      "summary": "DevHouse Waterloo #95",
+      "iCalUID": "k09llv8n8cu366imbjrn3v8lis@google.com",
+      "description": "Description goes here.",
+      "id": "k09llv8n8cu366imbjrn3v8lis",
+      "sequence": 0,
+      "etag": "\"2984934887922000\"",
+      "location": "Shopify, 57 Erb St W, Waterloo, ON",
+      "creator": {
+        "email": "cearrach@gmail.com",
+        "displayName": "Chris Craig"
+      },
+      "organizer": {
+        "self": true,
+        "email": "nlkc39jt4p0nbc4pk9pj7p5fh0@group.calendar.google.com",
+        "displayName": "WatCamp Events"
+      },
+      "start": {
+        "dateTime": "2017-04-24T19:00:00-04:00"
+      },
+      "end": {
+        "dateTime": "2017-04-24T21:00:00-04:00"
+      },
+      "kind": "calendar#event",
+      "htmlLink": "https://www.google.com/calendar/event?eid=azA5bGx2OG44Y3UzNjZpbWJqcm4zdjhsaXMgbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw",
+      "created": "2017-04-17T22:17:23.000Z",
+      "status": "confirmed",
+      "updated": "2017-04-17T22:17:23.961Z"
+    },
+    {
+      "summary": "Diyode - Electronic Drop-in",
+      "iCalUID": "lnirip4jb6jpjsrqau38hc93ek@google.com",
+      "description": "Description goes here.",
+      "id": "lnirip4jb6jpjsrqau38hc93ek_20170425T000000Z",
+      "sequence": 2,
+      "originalStartTime": {
+        "dateTime": "2017-04-24T20:00:00-04:00"
+      },
+      "etag": "\"2609684288000000\"",
+      "location": "Diyode Community Workshop, Unit B - 71 Wyndham St. S, Guelph, Ontario",
+      "creator": {
+        "email": "bobjonkman@gmail.com",
+        "displayName": "Bob Jonkman"
+      },
+      "organizer": {
+        "self": true,
+        "email": "nlkc39jt4p0nbc4pk9pj7p5fh0@group.calendar.google.com",
+        "displayName": "WatCamp Events"
+      },
+      "start": {
+        "dateTime": "2017-04-24T20:00:00-04:00"
+      },
+      "end": {
+        "dateTime": "2017-04-24T21:00:00-04:00"
+      },
+      "kind": "calendar#event",
+      "htmlLink": "https://www.google.com/calendar/event?eid=bG5pcmlwNGpiNmpwanNycWF1MzhoYzkzZWtfMjAxNzA0MjVUMDAwMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn",
+      "created": "0000-12-29T00:00:00.000Z",
+      "status": "confirmed",
+      "recurringEventId": "lnirip4jb6jpjsrqau38hc93ek",
+      "updated": "2011-05-08T08:09:04.000Z",
+      "transparency": "transparent"
+    },
+    {
+      "summary": "Communitech Agile Lean P2P",
+      "iCalUID": "soumu9nuf98f3vvj0b50uui8ro@google.com",
+      "description": "Description goes here.",
+      "id": "soumu9nuf98f3vvj0b50uui8ro_20170425T203000Z",
+      "sequence": 0,
+      "originalStartTime": {
+        "dateTime": "2017-04-25T16:30:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "etag": "\"2955917685494000\"",
+      "location": "Communitech Hub, 151 Charles Street West, Kitchener, ON N2G 1H6, Canada",
+      "creator": {
+        "email": "cearrach@gmail.com",
+        "displayName": "Chris Craig"
+      },
+      "organizer": {
+        "self": true,
+        "email": "nlkc39jt4p0nbc4pk9pj7p5fh0@group.calendar.google.com",
+        "displayName": "WatCamp Events"
+      },
+      "start": {
+        "dateTime": "2017-04-25T16:30:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "end": {
+        "dateTime": "2017-04-25T18:00:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "kind": "calendar#event",
+      "htmlLink": "https://www.google.com/calendar/event?eid=c291bXU5bnVmOThmM3Z2ajBiNTB1dWk4cm9fMjAxNzA0MjVUMjAzMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn",
+      "created": "2015-02-21T03:21:37.000Z",
+      "status": "confirmed",
+      "recurringEventId": "soumu9nuf98f3vvj0b50uui8ro",
+      "updated": "2016-11-01T00:07:22.747Z"
+    },
+    {
+      "summary": "Hive WR - Make your own Android app",
+      "iCalUID": "4e58hmvlorkttvgm44he8tsatk@google.com",
+      "description": "Description goes here.",
+      "id": "4e58hmvlorkttvgm44he8tsatk",
+      "sequence": 0,
+      "etag": "\"2981663068122000\"",
+      "location": "Kitchener Public Library, 85 Queen St N, Kitchener, ON",
+      "creator": {
+        "email": "cearrach@gmail.com",
+        "displayName": "Chris Craig"
+      },
+      "organizer": {
+        "self": true,
+        "email": "nlkc39jt4p0nbc4pk9pj7p5fh0@group.calendar.google.com",
+        "displayName": "WatCamp Events"
+      },
+      "start": {
+        "dateTime": "2017-04-25T18:30:00-04:00"
+      },
+      "end": {
+        "dateTime": "2017-04-25T20:30:00-04:00"
+      },
+      "kind": "calendar#event",
+      "htmlLink": "https://www.google.com/calendar/event?eid=NGU1OGhtdmxvcmt0dHZnbTQ0aGU4dHNhdGsgbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw",
+      "created": "2017-02-03T00:37:54.000Z",
+      "status": "confirmed",
+      "updated": "2017-03-29T23:52:14.061Z"
+    },
+    {
+      "summary": "StartupTech KW Meetup",
+      "iCalUID": "aisl594mq37okjh65kk5of74cg@google.com",
+      "description": "Description goes here.",
+      "id": "aisl594mq37okjh65kk5of74cg",
+      "sequence": 0,
+      "organizer": {
+        "self": true,
+        "email": "nlkc39jt4p0nbc4pk9pj7p5fh0@group.calendar.google.com",
+        "displayName": "WatCamp Events"
+      },
+      "creator": {
+        "email": "bobjonkman@gmail.com",
+        "displayName": "Bob Jonkman"
+      },
+      "start": {
+        "dateTime": "2017-04-25T18:30:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "end": {
+        "dateTime": "2017-04-25T20:30:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "kind": "calendar#event",
+      "htmlLink": "https://www.google.com/calendar/event?eid=YWlzbDU5NG1xMzdva2poNjVrazVvZjc0Y2cgbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw",
+      "created": "2016-12-26T08:36:10.000Z",
+      "status": "confirmed",
+      "updated": "2016-12-26T08:36:10.873Z",
+      "etag": "\"2965482741746000\""
+    },
+    {
+      "summary": "KWArtzLab Tuesday Open Night",
+      "iCalUID": "5ld0e0mk9fl4uss53ijh05id6k@google.com",
+      "description": "Description goes here.",
+      "id": "5ld0e0mk9fl4uss53ijh05id6k_20170425T230000Z",
+      "sequence": 5,
+      "originalStartTime": {
+        "dateTime": "2017-04-25T19:00:00-04:00"
+      },
+      "etag": "\"2714924576956000\"",
+      "location": "KWArtzlab, 33 Kent Avenue, Kitchener, Ontario, Canada",
+      "creator": {
+        "email": "bobjonkman@gmail.com",
+        "displayName": "Bob Jonkman"
+      },
+      "organizer": {
+        "self": true,
+        "email": "nlkc39jt4p0nbc4pk9pj7p5fh0@group.calendar.google.com",
+        "displayName": "WatCamp Events"
+      },
+      "start": {
+        "dateTime": "2017-04-25T19:00:00-04:00"
+      },
+      "end": {
+        "dateTime": "2017-04-25T22:00:00-04:00"
+      },
+      "kind": "calendar#event",
+      "htmlLink": "https://www.google.com/calendar/event?eid=NWxkMGUwbWs5Zmw0dXNzNTNpamgwNWlkNmtfMjAxNzA0MjVUMjMwMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn",
+      "created": "0000-12-29T00:00:00.000Z",
+      "status": "confirmed",
+      "recurringEventId": "5ld0e0mk9fl4uss53ijh05id6k",
+      "updated": "2013-01-06T08:51:28.478Z",
+      "transparency": "transparent"
+    },
+    {
+      "summary": "Communitech IGD P2P - Indie Game Dev April Social",
+      "iCalUID": "pbe9ivr44gobr1qo399ahrod3o@google.com",
+      "description": "Description goes here.",
+      "id": "pbe9ivr44gobr1qo399ahrod3o",
+      "sequence": 0,
+      "etag": "\"2983127721182000\"",
+      "location": "McCabe's Irish Pub & Grill, 352 King St W, Kitchener, ON",
+      "creator": {
+        "email": "cearrach@gmail.com",
+        "displayName": "Chris Craig"
+      },
+      "organizer": {
+        "self": true,
+        "email": "nlkc39jt4p0nbc4pk9pj7p5fh0@group.calendar.google.com",
+        "displayName": "WatCamp Events"
+      },
+      "start": {
+        "dateTime": "2017-04-25T19:00:00-04:00"
+      },
+      "end": {
+        "dateTime": "2017-04-25T21:00:00-04:00"
+      },
+      "kind": "calendar#event",
+      "htmlLink": "https://www.google.com/calendar/event?eid=cGJlOWl2cjQ0Z29icjFxbzM5OWFocm9kM28gbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw",
+      "created": "2017-04-07T11:17:40.000Z",
+      "status": "confirmed",
+      "updated": "2017-04-07T11:17:40.591Z"
+    },
+    {
+      "summary": "UofW Pharmacy - Pharmacy Research Day",
+      "iCalUID": "olmc2e3sk0bhgi9uprja1enrto@google.com",
+      "description": "Description goes here.",
+      "id": "olmc2e3sk0bhgi9uprja1enrto",
+      "sequence": 0,
+      "etag": "\"2980636576842000\"",
+      "location": "School of Pharmacy, 10A Victoria St S, Kitchener, ON",
+      "creator": {
+        "email": "cearrach@gmail.com",
+        "displayName": "Chris Craig"
+      },
+      "organizer": {
+        "self": true,
+        "email": "nlkc39jt4p0nbc4pk9pj7p5fh0@group.calendar.google.com",
+        "displayName": "WatCamp Events"
+      },
+      "start": {
+        "dateTime": "2017-04-26T09:00:00-04:00"
+      },
+      "end": {
+        "dateTime": "2017-04-26T16:30:00-04:00"
+      },
+      "kind": "calendar#event",
+      "htmlLink": "https://www.google.com/calendar/event?eid=b2xtYzJlM3NrMGJoZ2k5dXByamExZW5ydG8gbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw",
+      "created": "2017-03-24T01:18:08.000Z",
+      "status": "confirmed",
+      "updated": "2017-03-24T01:18:08.421Z"
+    },
+    {
+      "summary": "Hive WR - Member Meetup",
+      "iCalUID": "brh4tc8oc88gg6tdd80k1kj6co@google.com",
+      "description": "Description goes here.",
+      "id": "brh4tc8oc88gg6tdd80k1kj6co",
+      "sequence": 0,
+      "etag": "\"2981661199464000\"",
+      "location": "44 Gaukel St, Kitchener, ON",
+      "creator": {
+        "email": "cearrach@gmail.com",
+        "displayName": "Chris Craig"
+      },
+      "organizer": {
+        "self": true,
+        "email": "nlkc39jt4p0nbc4pk9pj7p5fh0@group.calendar.google.com",
+        "displayName": "WatCamp Events"
+      },
+      "start": {
+        "dateTime": "2017-04-26T18:00:00-04:00"
+      },
+      "end": {
+        "dateTime": "2017-04-26T21:00:00-04:00"
+      },
+      "kind": "calendar#event",
+      "htmlLink": "https://www.google.com/calendar/event?eid=YnJoNHRjOG9jODhnZzZ0ZGQ4MGsxa2o2Y28gbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw",
+      "created": "2017-03-29T23:36:39.000Z",
+      "status": "confirmed",
+      "updated": "2017-03-29T23:36:39.732Z"
+    },
+    {
+      "summary": "Kwartzlab: 3D Printer Meetup (public event)",
+      "iCalUID": "thskb84klcc1uj0hq5al1nhu5g@google.com",
+      "description": "Description goes here.",
+      "id": "thskb84klcc1uj0hq5al1nhu5g_20170426T220000Z",
+      "sequence": 3,
+      "originalStartTime": {
+        "dateTime": "2017-04-26T18:00:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "etag": "\"2970613434928000\"",
+      "location": "Kwartzlab, 33 Kent Avenue, Kitchener, Ontario, Canada",
+      "creator": {
+        "email": "bobjonkman@gmail.com",
+        "displayName": "Bob Jonkman"
+      },
+      "organizer": {
+        "self": true,
+        "email": "nlkc39jt4p0nbc4pk9pj7p5fh0@group.calendar.google.com",
+        "displayName": "WatCamp Events"
+      },
+      "start": {
+        "dateTime": "2017-04-26T18:00:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "end": {
+        "dateTime": "2017-04-26T21:00:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "kind": "calendar#event",
+      "htmlLink": "https://www.google.com/calendar/event?eid=dGhza2I4NGtsY2MxdWowaHE1YWwxbmh1NWdfMjAxNzA0MjZUMjIwMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn",
+      "created": "2017-01-25T01:08:17.000Z",
+      "status": "confirmed",
+      "recurringEventId": "thskb84klcc1uj0hq5al1nhu5g",
+      "updated": "2017-01-25T01:11:57.464Z"
+    },
+    {
+      "summary": "GPUG - Guelph PHP Users Group",
+      "iCalUID": "v1bu2eo6p1rqs8au8ghasks6f8@google.com",
+      "description": "Description goes here.",
+      "id": "v1bu2eo6p1rqs8au8ghasks6f8_20170426T233000Z",
+      "sequence": 23,
+      "originalStartTime": {
+        "dateTime": "2017-04-26T19:30:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "organizer": {
+        "self": true,
+        "email": "nlkc39jt4p0nbc4pk9pj7p5fh0@group.calendar.google.com",
+        "displayName": "WatCamp Events"
+      },
+      "creator": {
+        "email": "bobjonkman@gmail.com",
+        "displayName": "Bob Jonkman"
+      },
+      "start": {
+        "dateTime": "2017-04-26T19:30:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "end": {
+        "dateTime": "2017-04-26T22:00:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "kind": "calendar#event",
+      "htmlLink": "https://www.google.com/calendar/event?eid=djFidTJlbzZwMXJxczhhdThnaGFza3M2ZjhfMjAxNzA0MjZUMjMzMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn",
+      "created": "2012-09-27T07:50:19.000Z",
+      "status": "confirmed",
+      "recurringEventId": "v1bu2eo6p1rqs8au8ghasks6f8",
+      "updated": "2016-07-27T22:13:10.923Z",
+      "etag": "\"2939315181846000\""
+    },
+    {
+      "summary": "UofW Distinguished Lecture Series: Eric Horvitz - Data, Predictions and Decisions in Support of People and   Society",
+      "iCalUID": "6nlhul1fmh9enchoa0m631evis@google.com",
+      "description": "Description goes here.",
+      "id": "6nlhul1fmh9enchoa0m631evis",
+      "sequence": 0,
+      "etag": "\"2984559666954000\"",
+      "location": "Davis Centre 1302, University of Waterloo, Waterloo, Ontario, Canada",
+      "creator": {
+        "email": "bobjonkman@gmail.com",
+        "displayName": "Bob Jonkman"
+      },
+      "organizer": {
+        "self": true,
+        "email": "nlkc39jt4p0nbc4pk9pj7p5fh0@group.calendar.google.com",
+        "displayName": "WatCamp Events"
+      },
+      "start": {
+        "dateTime": "2017-04-27T15:30:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "end": {
+        "dateTime": "2017-04-27T16:30:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "kind": "calendar#event",
+      "htmlLink": "https://www.google.com/calendar/event?eid=Nm5saHVsMWZtaDllbmNob2EwbTYzMWV2aXMgbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw",
+      "created": "2017-04-15T18:10:33.000Z",
+      "status": "confirmed",
+      "updated": "2017-04-15T18:10:33.477Z"
+    },
+    {
+      "summary": "UofW PA - D. A. Drabold: Computational Design of Materials",
+      "iCalUID": "fdjkiglknrcu2cub7d775aj3c4@google.com",
+      "description": "Description goes here.",
+      "id": "fdjkiglknrcu2cub7d775aj3c4",
+      "sequence": 0,
+      "etag": "\"2983038910916000\"",
+      "location": "Physics (PHY-308), University of Waterloo, Waterloo, ON",
+      "creator": {
+        "email": "cearrach@gmail.com",
+        "displayName": "Chris Craig"
+      },
+      "organizer": {
+        "self": true,
+        "email": "nlkc39jt4p0nbc4pk9pj7p5fh0@group.calendar.google.com",
+        "displayName": "WatCamp Events"
+      },
+      "start": {
+        "dateTime": "2017-04-27T16:00:00-04:00"
+      },
+      "end": {
+        "dateTime": "2017-04-27T17:00:00-04:00"
+      },
+      "kind": "calendar#event",
+      "htmlLink": "https://www.google.com/calendar/event?eid=ZmRqa2lnbGtucmN1MmN1YjdkNzc1YWozYzQgbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw",
+      "created": "2017-04-06T22:57:35.000Z",
+      "status": "confirmed",
+      "updated": "2017-04-06T22:57:35.458Z"
+    },
+    {
+      "summary": "NeuroTechKW - NeuroMarketing and YOU !... Part 2",
+      "iCalUID": "hfj0knd0fkkpa90t7205vp54o4@google.com",
+      "description": "Description goes here.",
+      "id": "hfj0knd0fkkpa90t7205vp54o4",
+      "sequence": 0,
+      "etag": "\"2982880463394000\"",
+      "location": "Communitech, 151 Charles St W, Kitchener, ON",
+      "creator": {
+        "email": "bobjonkman@gmail.com",
+        "displayName": "Bob Jonkman"
+      },
+      "organizer": {
+        "self": true,
+        "email": "nlkc39jt4p0nbc4pk9pj7p5fh0@group.calendar.google.com",
+        "displayName": "WatCamp Events"
+      },
+      "start": {
+        "dateTime": "2017-04-27T17:30:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "end": {
+        "dateTime": "2017-04-27T19:00:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "kind": "calendar#event",
+      "htmlLink": "https://www.google.com/calendar/event?eid=aGZqMGtuZDBma2twYTkwdDcyMDV2cDU0bzQgbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw",
+      "created": "2016-12-26T08:36:29.000Z",
+      "status": "confirmed",
+      "updated": "2017-04-06T00:57:11.697Z"
+    },
+    {
+      "summary": "KWVoIP: Exploration of tes.kwvoip.ca, the \"Telephonically Enhanced System\"",
+      "iCalUID": "1rf4be0locvse1sh59ij60jjto@google.com",
+      "description": "Description goes here.",
+      "id": "1rf4be0locvse1sh59ij60jjto",
+      "sequence": 0,
+      "etag": "\"2984559251406000\"",
+      "location": "Egg Roll King Restaurant, 85 Courtland Avene East, Kitchener, Ontario, Canada",
+      "creator": {
+        "email": "bobjonkman@gmail.com",
+        "displayName": "Bob Jonkman"
+      },
+      "organizer": {
+        "self": true,
+        "email": "nlkc39jt4p0nbc4pk9pj7p5fh0@group.calendar.google.com",
+        "displayName": "WatCamp Events"
+      },
+      "start": {
+        "dateTime": "2017-04-27T18:00:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "end": {
+        "dateTime": "2017-04-27T21:00:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "kind": "calendar#event",
+      "htmlLink": "https://www.google.com/calendar/event?eid=MXJmNGJlMGxvY3ZzZTFzaDU5aWo2MGpqdG8gbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw",
+      "created": "2017-04-15T18:07:05.000Z",
+      "status": "confirmed",
+      "updated": "2017-04-15T18:07:05.703Z"
+    },
+    {
+      "summary": "IoT WR - Grobo and HITCH",
+      "iCalUID": "iic1mp7e898a5ecjd3vslm2ej4@google.com",
+      "description": "Description goes here.",
+      "id": "iic1mp7e898a5ecjd3vslm2ej4",
+      "sequence": 2,
+      "etag": "\"2984559884544000\"",
+      "location": "Shopify Plus, 57 Erb St W, Waterloo, ON",
+      "creator": {
+        "email": "cearrach@gmail.com",
+        "displayName": "Chris Craig"
+      },
+      "organizer": {
+        "self": true,
+        "email": "nlkc39jt4p0nbc4pk9pj7p5fh0@group.calendar.google.com",
+        "displayName": "WatCamp Events"
+      },
+      "start": {
+        "dateTime": "2017-04-27T18:00:00-04:00",
+        "timeZone": "America/New_York"
+      },
+      "end": {
+        "dateTime": "2017-04-27T21:00:00-04:00",
+        "timeZone": "America/New_York"
+      },
+      "kind": "calendar#event",
+      "htmlLink": "https://www.google.com/calendar/event?eid=aWljMW1wN2U4OThhNWVjamQzdnNsbTJlajQgbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw",
+      "created": "2017-04-06T00:59:53.000Z",
+      "status": "confirmed",
+      "updated": "2017-04-15T18:12:22.272Z"
+    },
+    {
+      "summary": "Communitech Tech Comm P2P - Social",
+      "iCalUID": "vohdf4s6qei753a0h814c5sg3o@google.com",
+      "description": "Description goes here.",
+      "id": "vohdf4s6qei753a0h814c5sg3o",
+      "sequence": 0,
+      "etag": "\"2984274050930000\"",
+      "location": "Rhapsody Barrel Bar, 179 King St W, Kitchener, ON",
+      "creator": {
+        "email": "cearrach@gmail.com",
+        "displayName": "Chris Craig"
+      },
+      "organizer": {
+        "self": true,
+        "email": "nlkc39jt4p0nbc4pk9pj7p5fh0@group.calendar.google.com",
+        "displayName": "WatCamp Events"
+      },
+      "start": {
+        "dateTime": "2017-04-27T18:00:00-04:00"
+      },
+      "end": {
+        "dateTime": "2017-04-27T20:00:00-04:00"
+      },
+      "kind": "calendar#event",
+      "htmlLink": "https://www.google.com/calendar/event?eid=dm9oZGY0czZxZWk3NTNhMGg4MTRjNXNnM28gbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw",
+      "created": "2017-04-14T02:30:25.000Z",
+      "status": "confirmed",
+      "updated": "2017-04-14T02:30:25.465Z"
+    },
+    {
+      "summary": "Idea Exchange - Build an A-Line Robot: Introductory Electronics Course",
+      "iCalUID": "lu9johdhtjh6ts114m9utf25fk@google.com",
+      "description": "Description goes here.",
+      "id": "lu9johdhtjh6ts114m9utf25fk_20170427T223000Z",
+      "sequence": 0,
+      "originalStartTime": {
+        "dateTime": "2017-04-27T18:30:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "etag": "\"2985204283126000\"",
+      "location": "Idea Exchange | Clemens Mill, 50 Saginaw Pkwy, Cambridge, ON",
+      "creator": {
+        "email": "cearrach@gmail.com",
+        "displayName": "Chris Craig"
+      },
+      "organizer": {
+        "self": true,
+        "email": "nlkc39jt4p0nbc4pk9pj7p5fh0@group.calendar.google.com",
+        "displayName": "WatCamp Events"
+      },
+      "start": {
+        "dateTime": "2017-04-27T18:30:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "end": {
+        "dateTime": "2017-04-27T20:00:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "kind": "calendar#event",
+      "htmlLink": "https://www.google.com/calendar/event?eid=bHU5am9oZGh0amg2dHMxMTRtOXV0ZjI1ZmtfMjAxNzA0MjdUMjIzMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn",
+      "created": "2017-04-19T11:42:21.000Z",
+      "status": "confirmed",
+      "recurringEventId": "lu9johdhtjh6ts114m9utf25fk",
+      "updated": "2017-04-19T11:42:21.563Z"
+    },
+    {
+      "summary": "CorridorJS",
+      "iCalUID": "4hnn7sf2qgdcoeanol4t4j74vg@google.com",
+      "description": "Description goes here.",
+      "id": "4hnn7sf2qgdcoeanol4t4j74vg_20170427T230000Z",
+      "sequence": 0,
+      "originalStartTime": {
+        "dateTime": "2017-04-27T19:00:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "etag": "\"2970936910314000\"",
+      "location": "The Tannery, 151 Charles St W, Kitchener, ON",
+      "creator": {
+        "email": "cearrach@gmail.com",
+        "displayName": "Chris Craig"
+      },
+      "organizer": {
+        "self": true,
+        "email": "nlkc39jt4p0nbc4pk9pj7p5fh0@group.calendar.google.com",
+        "displayName": "WatCamp Events"
+      },
+      "start": {
+        "dateTime": "2017-04-27T19:00:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "end": {
+        "dateTime": "2017-04-27T21:30:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "kind": "calendar#event",
+      "htmlLink": "https://www.google.com/calendar/event?eid=NGhubjdzZjJxZ2Rjb2Vhbm9sNHQ0ajc0dmdfMjAxNzA0MjdUMjMwMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn",
+      "created": "2016-09-26T23:10:48.000Z",
+      "status": "confirmed",
+      "recurringEventId": "4hnn7sf2qgdcoeanol4t4j74vg",
+      "updated": "2017-01-26T22:07:35.157Z"
+    },
+    {
+      "summary": "KW-RASC - Stargazing 101",
+      "iCalUID": "9s0qagot5ngplnuq42auhe93i0_R20160123T000000@google.com",
+      "description": "Description goes here.",
+      "id": "9s0qagot5ngplnuq42auhe93i0_20170428T230000Z",
+      "sequence": 0,
+      "originalStartTime": {
+        "dateTime": "2017-04-28T19:00:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "etag": "\"2906873557284000\"",
+      "location": "Zehrs, Laurentian Power Centre, 750 Ottawa St S, Kitchener, ON",
+      "creator": {
+        "email": "cearrach@gmail.com",
+        "displayName": "Chris Craig"
+      },
+      "organizer": {
+        "self": true,
+        "email": "nlkc39jt4p0nbc4pk9pj7p5fh0@group.calendar.google.com",
+        "displayName": "WatCamp Events"
+      },
+      "start": {
+        "dateTime": "2017-04-28T19:00:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "end": {
+        "dateTime": "2017-04-28T22:00:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "kind": "calendar#event",
+      "htmlLink": "https://www.google.com/calendar/event?eid=OXMwcWFnb3Q1bmdwbG51cTQyYXVoZTkzaTBfMjAxNzA0MjhUMjMwMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn",
+      "created": "2015-08-07T01:24:46.000Z",
+      "status": "confirmed",
+      "recurringEventId": "9s0qagot5ngplnuq42auhe93i0_R20160123T000000",
+      "updated": "2016-01-22T04:26:18.642Z"
+    },
+    {
+      "summary": "OSI - Waterloo Region Repair Cafe",
+      "iCalUID": "vse4gogqb59uj81couqfqd100o@google.com",
+      "description": "Description goes here.",
+      "id": "vse4gogqb59uj81couqfqd100o",
+      "sequence": 0,
+      "etag": "\"2985088074652000\"",
+      "location": "Open Sky Incubator, 41 Ardelt Pl, Kitchener, ON",
+      "creator": {
+        "email": "cearrach@gmail.com",
+        "displayName": "Chris Craig"
+      },
+      "organizer": {
+        "self": true,
+        "email": "nlkc39jt4p0nbc4pk9pj7p5fh0@group.calendar.google.com",
+        "displayName": "WatCamp Events"
+      },
+      "start": {
+        "dateTime": "2017-04-29T10:00:00-04:00"
+      },
+      "end": {
+        "dateTime": "2017-04-29T14:00:00-04:00"
+      },
+      "kind": "calendar#event",
+      "htmlLink": "https://www.google.com/calendar/event?eid=dnNlNGdvZ3FiNTl1ajgxY291cWZxZDEwMG8gbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw",
+      "created": "2017-04-18T19:33:57.000Z",
+      "status": "confirmed",
+      "updated": "2017-04-18T19:33:57.326Z"
+    },
+    {
+      "summary": "Stemotics - LEGO Mindstorm EV3",
+      "iCalUID": "bb7a2ep1q4nbpep1n3955v4v7g@google.com",
+      "description": "Description goes here.",
+      "id": "bb7a2ep1q4nbpep1n3955v4v7g_20170429T180000Z",
+      "sequence": 0,
+      "originalStartTime": {
+        "dateTime": "2017-04-29T14:00:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "etag": "\"2985203673094000\"",
+      "location": "Idea Exchange | Hespeler, 5 Tannery St E, Cambridge, ON",
+      "creator": {
+        "email": "cearrach@gmail.com",
+        "displayName": "Chris Craig"
+      },
+      "organizer": {
+        "self": true,
+        "email": "nlkc39jt4p0nbc4pk9pj7p5fh0@group.calendar.google.com",
+        "displayName": "WatCamp Events"
+      },
+      "start": {
+        "dateTime": "2017-04-29T14:00:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "end": {
+        "dateTime": "2017-04-29T15:00:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "kind": "calendar#event",
+      "htmlLink": "https://www.google.com/calendar/event?eid=YmI3YTJlcDFxNG5icGVwMW4zOTU1djR2N2dfMjAxNzA0MjlUMTgwMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn",
+      "created": "2017-04-19T11:37:16.000Z",
+      "status": "confirmed",
+      "recurringEventId": "bb7a2ep1q4nbpep1n3955v4v7g",
+      "updated": "2017-04-19T11:37:16.547Z"
+    },
+    {
+      "summary": "AquaHacking 2017 - Second Challenge Day",
+      "iCalUID": "0i2bkcvc87onqkrg04ac21auv4@google.com",
+      "description": "Description goes here.",
+      "id": "0i2bkcvc87onqkrg04ac21auv4",
+      "sequence": 0,
+      "etag": "\"2982871342434000\"",
+      "location": "Engineering 5 (E5-3101-2), University of Waterloo, Waterloo, ON",
+      "creator": {
+        "email": "cearrach@gmail.com",
+        "displayName": "Chris Craig"
+      },
+      "organizer": {
+        "self": true,
+        "email": "nlkc39jt4p0nbc4pk9pj7p5fh0@group.calendar.google.com",
+        "displayName": "WatCamp Events"
+      },
+      "start": {
+        "dateTime": "2017-04-30T10:00:00-04:00"
+      },
+      "end": {
+        "dateTime": "2017-04-30T16:00:00-04:00"
+      },
+      "kind": "calendar#event",
+      "htmlLink": "https://www.google.com/calendar/event?eid=MGkyYmtjdmM4N29ucWtyZzA0YWMyMWF1djQgbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw",
+      "created": "2017-04-05T23:41:11.000Z",
+      "status": "confirmed",
+      "updated": "2017-04-05T23:41:11.217Z"
+    },
+    {
+      "summary": "Stemotics - LEGO Robotics Workshop for kids",
+      "iCalUID": "921r3a9v9tcdc9c1kpjop8ouv8@google.com",
+      "description": "Description goes here.",
+      "id": "921r3a9v9tcdc9c1kpjop8ouv8_20170430T150000Z",
+      "sequence": 0,
+      "originalStartTime": {
+        "dateTime": "2017-04-30T11:00:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "etag": "\"2971736171124000\"",
+      "location": "Stemotics, 1315 Bishop St N, Unit 155, Cambridge, ON",
+      "creator": {
+        "email": "cearrach@gmail.com",
+        "displayName": "Chris Craig"
+      },
+      "organizer": {
+        "self": true,
+        "email": "nlkc39jt4p0nbc4pk9pj7p5fh0@group.calendar.google.com",
+        "displayName": "WatCamp Events"
+      },
+      "start": {
+        "dateTime": "2017-04-30T11:00:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "end": {
+        "dateTime": "2017-04-30T15:00:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "kind": "calendar#event",
+      "htmlLink": "https://www.google.com/calendar/event?eid=OTIxcjNhOXY5dGNkYzljMWtwam9wOG91djhfMjAxNzA0MzBUMTUwMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn",
+      "created": "2017-01-31T13:07:39.000Z",
+      "status": "confirmed",
+      "recurringEventId": "921r3a9v9tcdc9c1kpjop8ouv8",
+      "updated": "2017-01-31T13:08:05.562Z"
+    },
+    {
+      "summary": "WatPy: Python Project Hours",
+      "iCalUID": "1m8lrbqkbf8iof8l47qc40itfc@google.com",
+      "description": "Description goes here.",
+      "id": "1m8lrbqkbf8iof8l47qc40itfc_20170501T200000Z",
+      "sequence": 2,
+      "originalStartTime": {
+        "dateTime": "2017-05-01T16:00:00-04:00",
+        "timeZone": "America/New_York"
+      },
+      "etag": "\"2976784645684000\"",
+      "location": "University of Waterloo Grad House, University of Waterloo, Waterloo, Ontario, Canada",
+      "creator": {
+        "email": "bobjonkman@gmail.com",
+        "displayName": "Bob Jonkman"
+      },
+      "organizer": {
+        "self": true,
+        "email": "nlkc39jt4p0nbc4pk9pj7p5fh0@group.calendar.google.com",
+        "displayName": "WatCamp Events"
+      },
+      "start": {
+        "dateTime": "2017-05-01T16:00:00-04:00",
+        "timeZone": "America/New_York"
+      },
+      "end": {
+        "dateTime": "2017-05-01T18:00:00-04:00",
+        "timeZone": "America/New_York"
+      },
+      "kind": "calendar#event",
+      "htmlLink": "https://www.google.com/calendar/event?eid=MW04bHJicWtiZjhpb2Y4bDQ3cWM0MGl0ZmNfMjAxNzA1MDFUMjAwMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn",
+      "created": "2017-03-01T18:13:02.000Z",
+      "status": "confirmed",
+      "recurringEventId": "1m8lrbqkbf8iof8l47qc40itfc",
+      "updated": "2017-03-01T18:18:42.842Z"
+    },
+    {
+      "summary": "KWLUG: Aden Seaman - Introduction to Functional Programming and Haskell",
+      "iCalUID": "iqh6md6i4mbe3bs3pa68ru87j0@google.com",
+      "description": "Description goes here.",
+      "id": "iqh6md6i4mbe3bs3pa68ru87j0_20170501T223000Z",
+      "sequence": 1,
+      "originalStartTime": {
+        "dateTime": "2017-05-01T18:30:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "etag": "\"2979891317248000\"",
+      "location": "St. John's Kitchen, 97 Victoria Avenue North, Kitchener, Ontario, Canada",
+      "creator": {
+        "email": "bobjonkman@gmail.com",
+        "displayName": "Bob Jonkman"
+      },
+      "organizer": {
+        "self": true,
+        "email": "nlkc39jt4p0nbc4pk9pj7p5fh0@group.calendar.google.com",
+        "displayName": "WatCamp Events"
+      },
+      "visibility": "public",
+      "start": {
+        "dateTime": "2017-05-01T18:30:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "end": {
+        "dateTime": "2017-05-01T21:00:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "kind": "calendar#event",
+      "htmlLink": "https://www.google.com/calendar/event?eid=aXFoNm1kNmk0bWJlM2JzM3BhNjhydTg3ajBfMjAxNzA1MDFUMjIzMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn",
+      "created": "2016-10-05T22:15:19.000Z",
+      "status": "confirmed",
+      "recurringEventId": "iqh6md6i4mbe3bs3pa68ru87j0",
+      "updated": "2017-03-19T17:47:38.624Z"
+    },
+    {
+      "summary": "KWARC",
+      "iCalUID": "dl5vuov159598t1ur9sitljco4@google.com",
+      "description": "Description goes here.",
+      "id": "dl5vuov159598t1ur9sitljco4_20170501T233000Z",
+      "sequence": 11,
+      "originalStartTime": {
+        "dateTime": "2017-05-01T19:30:00-04:00"
+      },
+      "etag": "\"2818202356906000\"",
+      "location": "St John Ambulance Station, 250 Gage Avenue, Kitchener, Ontario, Canada",
+      "creator": {
+        "email": "bobjonkman@gmail.com",
+        "displayName": "Bob Jonkman"
+      },
+      "organizer": {
+        "self": true,
+        "email": "nlkc39jt4p0nbc4pk9pj7p5fh0@group.calendar.google.com",
+        "displayName": "WatCamp Events"
+      },
+      "extendedProperties": {
+        "shared": {
+          "X-GOOGLE-SNOOZE-RECUR": "{}"
+        }
+      },
+      "start": {
+        "dateTime": "2017-05-01T19:30:00-04:00"
+      },
+      "end": {
+        "dateTime": "2017-05-01T21:30:00-04:00"
+      },
+      "kind": "calendar#event",
+      "htmlLink": "https://www.google.com/calendar/event?eid=ZGw1dnVvdjE1OTU5OHQxdXI5c2l0bGpjbzRfMjAxNzA1MDFUMjMzMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn",
+      "created": "2012-10-13T06:07:51.000Z",
+      "status": "confirmed",
+      "recurringEventId": "dl5vuov159598t1ur9sitljco4",
+      "updated": "2014-08-27T00:59:38.453Z"
+    },
+    {
+      "summary": "Diyode - Electronic Drop-in",
+      "iCalUID": "lnirip4jb6jpjsrqau38hc93ek@google.com",
+      "description": "Description goes here.",
+      "id": "lnirip4jb6jpjsrqau38hc93ek_20170502T000000Z",
+      "sequence": 2,
+      "originalStartTime": {
+        "dateTime": "2017-05-01T20:00:00-04:00"
+      },
+      "etag": "\"2609684288000000\"",
+      "location": "Diyode Community Workshop, Unit B - 71 Wyndham St. S, Guelph, Ontario",
+      "creator": {
+        "email": "bobjonkman@gmail.com",
+        "displayName": "Bob Jonkman"
+      },
+      "organizer": {
+        "self": true,
+        "email": "nlkc39jt4p0nbc4pk9pj7p5fh0@group.calendar.google.com",
+        "displayName": "WatCamp Events"
+      },
+      "start": {
+        "dateTime": "2017-05-01T20:00:00-04:00"
+      },
+      "end": {
+        "dateTime": "2017-05-01T21:00:00-04:00"
+      },
+      "kind": "calendar#event",
+      "htmlLink": "https://www.google.com/calendar/event?eid=bG5pcmlwNGpiNmpwanNycWF1MzhoYzkzZWtfMjAxNzA1MDJUMDAwMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn",
+      "created": "0000-12-29T00:00:00.000Z",
+      "status": "confirmed",
+      "recurringEventId": "lnirip4jb6jpjsrqau38hc93ek",
+      "updated": "2011-05-08T08:09:04.000Z",
+      "transparency": "transparent"
+    },
+    {
+      "summary": "KWArtzLab Tuesday Open Night",
+      "iCalUID": "5ld0e0mk9fl4uss53ijh05id6k@google.com",
+      "description": "Description goes here.",
+      "id": "5ld0e0mk9fl4uss53ijh05id6k_20170502T230000Z",
+      "sequence": 5,
+      "originalStartTime": {
+        "dateTime": "2017-05-02T19:00:00-04:00"
+      },
+      "etag": "\"2714924576956000\"",
+      "location": "KWArtzlab, 33 Kent Avenue, Kitchener, Ontario, Canada",
+      "creator": {
+        "email": "bobjonkman@gmail.com",
+        "displayName": "Bob Jonkman"
+      },
+      "organizer": {
+        "self": true,
+        "email": "nlkc39jt4p0nbc4pk9pj7p5fh0@group.calendar.google.com",
+        "displayName": "WatCamp Events"
+      },
+      "start": {
+        "dateTime": "2017-05-02T19:00:00-04:00"
+      },
+      "end": {
+        "dateTime": "2017-05-02T22:00:00-04:00"
+      },
+      "kind": "calendar#event",
+      "htmlLink": "https://www.google.com/calendar/event?eid=NWxkMGUwbWs5Zmw0dXNzNTNpamgwNWlkNmtfMjAxNzA1MDJUMjMwMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn",
+      "created": "0000-12-29T00:00:00.000Z",
+      "status": "confirmed",
+      "recurringEventId": "5ld0e0mk9fl4uss53ijh05id6k",
+      "updated": "2013-01-06T08:51:28.478Z",
+      "transparency": "transparent"
+    },
+    {
+      "summary": "CREW - GREEN Drinks",
+      "iCalUID": "g1uts54ig3scna95pcl77q4u48@google.com",
+      "description": "Description goes here.",
+      "id": "g1uts54ig3scna95pcl77q4u48_20170502T230000Z",
+      "sequence": 0,
+      "originalStartTime": {
+        "dateTime": "2017-05-02T19:00:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "etag": "\"2919141255134000\"",
+      "location": "Barley Works, Huether Hotel, 59 King St N, Waterloo, ON",
+      "creator": {
+        "email": "cearrach@gmail.com",
+        "displayName": "Chris Craig"
+      },
+      "organizer": {
+        "self": true,
+        "email": "nlkc39jt4p0nbc4pk9pj7p5fh0@group.calendar.google.com",
+        "displayName": "WatCamp Events"
+      },
+      "start": {
+        "dateTime": "2017-05-02T19:00:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "end": {
+        "dateTime": "2017-05-02T22:00:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "kind": "calendar#event",
+      "htmlLink": "https://www.google.com/calendar/event?eid=ZzF1dHM1NGlnM3NjbmE5NXBjbDc3cTR1NDhfMjAxNzA1MDJUMjMwMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn",
+      "created": "2016-04-02T04:17:07.000Z",
+      "status": "confirmed",
+      "recurringEventId": "g1uts54ig3scna95pcl77q4u48",
+      "updated": "2016-04-02T04:17:07.567Z"
+    },
+    {
+      "summary": "YWCA Cambridge - STEM Mentoring",
+      "iCalUID": "i2hq03s0dh9900tiha0203msqg@google.com",
+      "description": "Description goes here.",
+      "id": "i2hq03s0dh9900tiha0203msqg_20170503T213000Z",
+      "sequence": 0,
+      "originalStartTime": {
+        "dateTime": "2017-05-03T17:30:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "etag": "\"2946535256528000\"",
+      "location": "8 Petty Pl, Cambridge, ON",
+      "creator": {
+        "email": "cearrach@gmail.com",
+        "displayName": "Chris Craig"
+      },
+      "organizer": {
+        "self": true,
+        "email": "nlkc39jt4p0nbc4pk9pj7p5fh0@group.calendar.google.com",
+        "displayName": "WatCamp Events"
+      },
+      "start": {
+        "dateTime": "2017-05-03T17:30:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "end": {
+        "dateTime": "2017-05-03T19:30:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "kind": "calendar#event",
+      "htmlLink": "https://www.google.com/calendar/event?eid=aTJocTAzczBkaDk5MDB0aWhhMDIwM21zcWdfMjAxNzA1MDNUMjEzMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn",
+      "created": "2016-09-07T17:00:28.000Z",
+      "status": "confirmed",
+      "recurringEventId": "i2hq03s0dh9900tiha0203msqg",
+      "updated": "2016-09-07T17:00:28.264Z"
+    },
+    {
+      "summary": "Communitech Technology Strategy & Management P2P",
+      "iCalUID": "7uk4r98ksj88hsie69qn9eq98o@google.com",
+      "description": "Description goes here.",
+      "id": "7uk4r98ksj88hsie69qn9eq98o_20170504T120000Z",
+      "sequence": 5,
+      "originalStartTime": {
+        "dateTime": "2017-05-04T08:00:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "etag": "\"2955918054150000\"",
+      "location": "Communitech Hub, 151 Charles Street West, Kitchener, ON N2G 1H6, Canada",
+      "creator": {
+        "email": "cearrach@gmail.com",
+        "displayName": "Chris Craig"
+      },
+      "organizer": {
+        "self": true,
+        "email": "nlkc39jt4p0nbc4pk9pj7p5fh0@group.calendar.google.com",
+        "displayName": "WatCamp Events"
+      },
+      "start": {
+        "dateTime": "2017-05-04T08:00:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "end": {
+        "dateTime": "2017-05-04T10:00:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "kind": "calendar#event",
+      "htmlLink": "https://www.google.com/calendar/event?eid=N3VrNHI5OGtzajg4aHNpZTY5cW45ZXE5OG9fMjAxNzA1MDRUMTIwMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn",
+      "created": "2014-12-18T22:12:11.000Z",
+      "status": "confirmed",
+      "recurringEventId": "7uk4r98ksj88hsie69qn9eq98o",
+      "updated": "2016-11-01T00:10:27.075Z"
+    },
+    {
+      "summary": "Idea Exchange - Build an A-Line Robot: Introductory Electronics Course",
+      "iCalUID": "lu9johdhtjh6ts114m9utf25fk@google.com",
+      "description": "Description goes here.",
+      "id": "lu9johdhtjh6ts114m9utf25fk_20170504T223000Z",
+      "sequence": 0,
+      "originalStartTime": {
+        "dateTime": "2017-05-04T18:30:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "etag": "\"2985204283126000\"",
+      "location": "Idea Exchange | Clemens Mill, 50 Saginaw Pkwy, Cambridge, ON",
+      "creator": {
+        "email": "cearrach@gmail.com",
+        "displayName": "Chris Craig"
+      },
+      "organizer": {
+        "self": true,
+        "email": "nlkc39jt4p0nbc4pk9pj7p5fh0@group.calendar.google.com",
+        "displayName": "WatCamp Events"
+      },
+      "start": {
+        "dateTime": "2017-05-04T18:30:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "end": {
+        "dateTime": "2017-05-04T20:00:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "kind": "calendar#event",
+      "htmlLink": "https://www.google.com/calendar/event?eid=bHU5am9oZGh0amg2dHMxMTRtOXV0ZjI1ZmtfMjAxNzA1MDRUMjIzMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn",
+      "created": "2017-04-19T11:42:21.000Z",
+      "status": "confirmed",
+      "recurringEventId": "lu9johdhtjh6ts114m9utf25fk",
+      "updated": "2017-04-19T11:42:21.563Z"
+    },
+    {
+      "summary": "CrySP: Lisa Austin",
+      "iCalUID": "7vk5qg54rkj7kd73l2c3cqgn04@google.com",
+      "description": "Description goes here.",
+      "id": "7vk5qg54rkj7kd73l2c3cqgn04",
+      "sequence": 0,
+      "etag": "\"2973000595990000\"",
+      "location": "University of Waterloo, Waterloo, Ontario, Canada",
+      "creator": {
+        "email": "bobjonkman@gmail.com",
+        "displayName": "Bob Jonkman"
+      },
+      "organizer": {
+        "self": true,
+        "email": "nlkc39jt4p0nbc4pk9pj7p5fh0@group.calendar.google.com",
+        "displayName": "WatCamp Events"
+      },
+      "visibility": "public",
+      "start": {
+        "date": "2017-05-05"
+      },
+      "end": {
+        "date": "2017-05-06"
+      },
+      "kind": "calendar#event",
+      "htmlLink": "https://www.google.com/calendar/event?eid=N3ZrNXFnNTRya2o3a2Q3M2wyYzNjcWduMDQgbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw",
+      "created": "2017-02-07T20:44:57.000Z",
+      "status": "confirmed",
+      "updated": "2017-02-07T20:44:57.995Z",
+      "transparency": "transparent"
+    },
+    {
+      "summary": "Stemotics - LEGO Mindstorm EV3",
+      "iCalUID": "bb7a2ep1q4nbpep1n3955v4v7g@google.com",
+      "description": "Description goes here.",
+      "id": "bb7a2ep1q4nbpep1n3955v4v7g_20170506T180000Z",
+      "sequence": 0,
+      "originalStartTime": {
+        "dateTime": "2017-05-06T14:00:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "etag": "\"2985203673094000\"",
+      "location": "Idea Exchange | Hespeler, 5 Tannery St E, Cambridge, ON",
+      "creator": {
+        "email": "cearrach@gmail.com",
+        "displayName": "Chris Craig"
+      },
+      "organizer": {
+        "self": true,
+        "email": "nlkc39jt4p0nbc4pk9pj7p5fh0@group.calendar.google.com",
+        "displayName": "WatCamp Events"
+      },
+      "start": {
+        "dateTime": "2017-05-06T14:00:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "end": {
+        "dateTime": "2017-05-06T15:00:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "kind": "calendar#event",
+      "htmlLink": "https://www.google.com/calendar/event?eid=YmI3YTJlcDFxNG5icGVwMW4zOTU1djR2N2dfMjAxNzA1MDZUMTgwMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn",
+      "created": "2017-04-19T11:37:16.000Z",
+      "status": "confirmed",
+      "recurringEventId": "bb7a2ep1q4nbpep1n3955v4v7g",
+      "updated": "2017-04-19T11:37:16.547Z"
+    },
+    {
+      "summary": "Stemotics - LEGO Robotics Workshop for kids",
+      "iCalUID": "921r3a9v9tcdc9c1kpjop8ouv8@google.com",
+      "description": "Description goes here.",
+      "id": "921r3a9v9tcdc9c1kpjop8ouv8_20170507T150000Z",
+      "sequence": 0,
+      "originalStartTime": {
+        "dateTime": "2017-05-07T11:00:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "etag": "\"2971736171124000\"",
+      "location": "Stemotics, 1315 Bishop St N, Unit 155, Cambridge, ON",
+      "creator": {
+        "email": "cearrach@gmail.com",
+        "displayName": "Chris Craig"
+      },
+      "organizer": {
+        "self": true,
+        "email": "nlkc39jt4p0nbc4pk9pj7p5fh0@group.calendar.google.com",
+        "displayName": "WatCamp Events"
+      },
+      "start": {
+        "dateTime": "2017-05-07T11:00:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "end": {
+        "dateTime": "2017-05-07T15:00:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "kind": "calendar#event",
+      "htmlLink": "https://www.google.com/calendar/event?eid=OTIxcjNhOXY5dGNkYzljMWtwam9wOG91djhfMjAxNzA1MDdUMTUwMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn",
+      "created": "2017-01-31T13:07:39.000Z",
+      "status": "confirmed",
+      "recurringEventId": "921r3a9v9tcdc9c1kpjop8ouv8",
+      "updated": "2017-01-31T13:08:05.562Z"
+    },
+    {
+      "summary": "Guelph Solar - Spring & Circus Solar Open House",
+      "iCalUID": "ftefbjdhi6bbe3tc6rf38b3q3s@google.com",
+      "description": "Description goes here.",
+      "id": "ftefbjdhi6bbe3tc6rf38b3q3s",
+      "sequence": 0,
+      "etag": "\"2985117513682000\"",
+      "location": "67 Alice St, Guelph, ON",
+      "creator": {
+        "email": "cearrach@gmail.com",
+        "displayName": "Chris Craig"
+      },
+      "organizer": {
+        "self": true,
+        "email": "nlkc39jt4p0nbc4pk9pj7p5fh0@group.calendar.google.com",
+        "displayName": "WatCamp Events"
+      },
+      "start": {
+        "dateTime": "2017-05-07T13:00:00-04:00"
+      },
+      "end": {
+        "dateTime": "2017-05-07T15:00:00-04:00"
+      },
+      "kind": "calendar#event",
+      "htmlLink": "https://www.google.com/calendar/event?eid=ZnRlZmJqZGhpNmJiZTN0YzZyZjM4YjNxM3MgbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw",
+      "created": "2017-04-18T23:39:16.000Z",
+      "status": "confirmed",
+      "updated": "2017-04-18T23:39:16.841Z"
+    },
+    {
+      "summary": "WatPy: Python Project Hours",
+      "iCalUID": "1m8lrbqkbf8iof8l47qc40itfc@google.com",
+      "description": "Description goes here.",
+      "id": "1m8lrbqkbf8iof8l47qc40itfc_20170508T200000Z",
+      "sequence": 2,
+      "originalStartTime": {
+        "dateTime": "2017-05-08T16:00:00-04:00",
+        "timeZone": "America/New_York"
+      },
+      "etag": "\"2976784645684000\"",
+      "location": "University of Waterloo Grad House, University of Waterloo, Waterloo, Ontario, Canada",
+      "creator": {
+        "email": "bobjonkman@gmail.com",
+        "displayName": "Bob Jonkman"
+      },
+      "organizer": {
+        "self": true,
+        "email": "nlkc39jt4p0nbc4pk9pj7p5fh0@group.calendar.google.com",
+        "displayName": "WatCamp Events"
+      },
+      "start": {
+        "dateTime": "2017-05-08T16:00:00-04:00",
+        "timeZone": "America/New_York"
+      },
+      "end": {
+        "dateTime": "2017-05-08T18:00:00-04:00",
+        "timeZone": "America/New_York"
+      },
+      "kind": "calendar#event",
+      "htmlLink": "https://www.google.com/calendar/event?eid=MW04bHJicWtiZjhpb2Y4bDQ3cWM0MGl0ZmNfMjAxNzA1MDhUMjAwMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn",
+      "created": "2017-03-01T18:13:02.000Z",
+      "status": "confirmed",
+      "recurringEventId": "1m8lrbqkbf8iof8l47qc40itfc",
+      "updated": "2017-03-01T18:18:42.842Z"
+    },
+    {
+      "summary": "Diyode - Electronic Drop-in",
+      "iCalUID": "lnirip4jb6jpjsrqau38hc93ek@google.com",
+      "description": "Description goes here.",
+      "id": "lnirip4jb6jpjsrqau38hc93ek_20170509T000000Z",
+      "sequence": 2,
+      "originalStartTime": {
+        "dateTime": "2017-05-08T20:00:00-04:00"
+      },
+      "etag": "\"2609684288000000\"",
+      "location": "Diyode Community Workshop, Unit B - 71 Wyndham St. S, Guelph, Ontario",
+      "creator": {
+        "email": "bobjonkman@gmail.com",
+        "displayName": "Bob Jonkman"
+      },
+      "organizer": {
+        "self": true,
+        "email": "nlkc39jt4p0nbc4pk9pj7p5fh0@group.calendar.google.com",
+        "displayName": "WatCamp Events"
+      },
+      "start": {
+        "dateTime": "2017-05-08T20:00:00-04:00"
+      },
+      "end": {
+        "dateTime": "2017-05-08T21:00:00-04:00"
+      },
+      "kind": "calendar#event",
+      "htmlLink": "https://www.google.com/calendar/event?eid=bG5pcmlwNGpiNmpwanNycWF1MzhoYzkzZWtfMjAxNzA1MDlUMDAwMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn",
+      "created": "0000-12-29T00:00:00.000Z",
+      "status": "confirmed",
+      "recurringEventId": "lnirip4jb6jpjsrqau38hc93ek",
+      "updated": "2011-05-08T08:09:04.000Z",
+      "transparency": "transparent"
+    },
+    {
+      "summary": "HackerNest Kitchener-Waterloo May Tech Social",
+      "iCalUID": "qucn133pjiq9mcb4l7st5q9aro@google.com",
+      "description": "Description goes here.",
+      "id": "qucn133pjiq9mcb4l7st5q9aro",
+      "sequence": 0,
+      "organizer": {
+        "self": true,
+        "email": "nlkc39jt4p0nbc4pk9pj7p5fh0@group.calendar.google.com",
+        "displayName": "WatCamp Events"
+      },
+      "creator": {
+        "email": "bobjonkman@gmail.com",
+        "displayName": "Bob Jonkman"
+      },
+      "start": {
+        "dateTime": "2017-05-08T20:00:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "end": {
+        "dateTime": "2017-05-08T23:00:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "kind": "calendar#event",
+      "htmlLink": "https://www.google.com/calendar/event?eid=cXVjbjEzM3BqaXE5bWNiNGw3c3Q1cTlhcm8gbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw",
+      "created": "2016-12-26T08:36:50.000Z",
+      "status": "confirmed",
+      "updated": "2016-12-26T08:36:50.748Z",
+      "etag": "\"2965482821496000\""
+    },
+    {
+      "summary": "KWArtzLab Tuesday Open Night",
+      "iCalUID": "5ld0e0mk9fl4uss53ijh05id6k@google.com",
+      "description": "Description goes here.",
+      "id": "5ld0e0mk9fl4uss53ijh05id6k_20170509T230000Z",
+      "sequence": 5,
+      "originalStartTime": {
+        "dateTime": "2017-05-09T19:00:00-04:00"
+      },
+      "etag": "\"2714924576956000\"",
+      "location": "KWArtzlab, 33 Kent Avenue, Kitchener, Ontario, Canada",
+      "creator": {
+        "email": "bobjonkman@gmail.com",
+        "displayName": "Bob Jonkman"
+      },
+      "organizer": {
+        "self": true,
+        "email": "nlkc39jt4p0nbc4pk9pj7p5fh0@group.calendar.google.com",
+        "displayName": "WatCamp Events"
+      },
+      "start": {
+        "dateTime": "2017-05-09T19:00:00-04:00"
+      },
+      "end": {
+        "dateTime": "2017-05-09T22:00:00-04:00"
+      },
+      "kind": "calendar#event",
+      "htmlLink": "https://www.google.com/calendar/event?eid=NWxkMGUwbWs5Zmw0dXNzNTNpamgwNWlkNmtfMjAxNzA1MDlUMjMwMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn",
+      "created": "0000-12-29T00:00:00.000Z",
+      "status": "confirmed",
+      "recurringEventId": "5ld0e0mk9fl4uss53ijh05id6k",
+      "updated": "2013-01-06T08:51:28.478Z",
+      "transparency": "transparent"
+    },
+    {
+      "summary": "Communitech - Tech Leadership Conference",
+      "iCalUID": "en5kg87efkqki8bkvqo5fe5s6g@google.com",
+      "description": "Description goes here.",
+      "id": "en5kg87efkqki8bkvqo5fe5s6g",
+      "sequence": 0,
+      "etag": "\"2979508324338000\"",
+      "location": "Communitech, 151 Charles St W, Kitchener, ON",
+      "creator": {
+        "email": "cearrach@gmail.com",
+        "displayName": "Chris Craig"
+      },
+      "organizer": {
+        "self": true,
+        "email": "nlkc39jt4p0nbc4pk9pj7p5fh0@group.calendar.google.com",
+        "displayName": "WatCamp Events"
+      },
+      "start": {
+        "dateTime": "2017-05-10T09:00:00-04:00"
+      },
+      "end": {
+        "dateTime": "2017-05-11T17:00:00-04:00"
+      },
+      "kind": "calendar#event",
+      "htmlLink": "https://www.google.com/calendar/event?eid=ZW41a2c4N2Vma3FraThia3ZxbzVmZTVzNmcgbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw",
+      "created": "2017-03-17T12:36:02.000Z",
+      "status": "confirmed",
+      "updated": "2017-03-17T12:36:02.169Z"
+    },
+    {
+      "summary": "UndergroundStudio - Access Wednesdays",
+      "iCalUID": "gmi4d5r2ugleelqgtog8s5h2hc_R20170111T233000@google.com",
+      "description": "Description goes here.",
+      "id": "gmi4d5r2ugleelqgtog8s5h2hc_20170510T223000Z",
+      "sequence": 1,
+      "originalStartTime": {
+        "dateTime": "2017-05-10T18:30:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "etag": "\"2970352961224000\"",
+      "location": "THEMUSEUM, Kitchener, ON",
+      "creator": {
+        "email": "cearrach@gmail.com",
+        "displayName": "Chris Craig"
+      },
+      "organizer": {
+        "self": true,
+        "email": "nlkc39jt4p0nbc4pk9pj7p5fh0@group.calendar.google.com",
+        "displayName": "WatCamp Events"
+      },
+      "start": {
+        "dateTime": "2017-05-10T18:30:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "end": {
+        "dateTime": "2017-05-10T21:00:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "kind": "calendar#event",
+      "htmlLink": "https://www.google.com/calendar/event?eid=Z21pNGQ1cjJ1Z2xlZWxxZ3RvZzhzNWgyaGNfMjAxNzA1MTBUMjIzMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn",
+      "created": "2016-03-01T02:45:29.000Z",
+      "status": "confirmed",
+      "recurringEventId": "gmi4d5r2ugleelqgtog8s5h2hc_R20170111T233000",
+      "updated": "2017-01-23T13:01:20.612Z"
+    },
+    {
+      "summary": "UofW EQUALS Conference: Excellence and Quality in Academic Life in STEM",
+      "iCalUID": "mlni2u2ikfl5nv6hpoac3o1g2s@google.com",
+      "description": "Description goes here.",
+      "id": "mlni2u2ikfl5nv6hpoac3o1g2s",
+      "sequence": 0,
+      "etag": "\"2979503000262000\"",
+      "location": "University of Waterloo, Waterloo, ON",
+      "creator": {
+        "email": "cearrach@gmail.com",
+        "displayName": "Chris Craig"
+      },
+      "organizer": {
+        "self": true,
+        "email": "nlkc39jt4p0nbc4pk9pj7p5fh0@group.calendar.google.com",
+        "displayName": "WatCamp Events"
+      },
+      "start": {
+        "dateTime": "2017-05-11T08:30:00-04:00"
+      },
+      "end": {
+        "dateTime": "2017-05-12T16:15:00-04:00"
+      },
+      "kind": "calendar#event",
+      "htmlLink": "https://www.google.com/calendar/event?eid=bWxuaTJ1MmlrZmw1bnY2aHBvYWMzbzFnMnMgbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw",
+      "created": "2017-03-17T11:51:40.000Z",
+      "status": "confirmed",
+      "updated": "2017-03-17T11:51:40.131Z"
+    },
+    {
+      "summary": "UofW AM - Mary-Louise Timmermans: Summer heat overwinters in the Arctic Ocean",
+      "iCalUID": "bim3m6dmh1hkl2sl78pa1oe1f0@google.com",
+      "description": "Description goes here.",
+      "id": "bim3m6dmh1hkl2sl78pa1oe1f0",
+      "sequence": 0,
+      "etag": "\"2979203285436000\"",
+      "location": "Mathematics and Computer (MC-6460), University of Waterloo, Waterloo, ON",
+      "creator": {
+        "email": "cearrach@gmail.com",
+        "displayName": "Chris Craig"
+      },
+      "organizer": {
+        "self": true,
+        "email": "nlkc39jt4p0nbc4pk9pj7p5fh0@group.calendar.google.com",
+        "displayName": "WatCamp Events"
+      },
+      "start": {
+        "dateTime": "2017-05-11T14:30:00-04:00"
+      },
+      "end": {
+        "dateTime": "2017-05-11T15:30:00-04:00"
+      },
+      "kind": "calendar#event",
+      "htmlLink": "https://www.google.com/calendar/event?eid=YmltM202ZG1oMWhrbDJzbDc4cGExb2UxZjAgbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw",
+      "created": "2017-03-15T18:14:02.000Z",
+      "status": "confirmed",
+      "updated": "2017-03-15T18:14:02.718Z"
+    },
+    {
+      "summary": "Tinker Truck - Maker Club Cambridge",
+      "iCalUID": "c8v128av2ievrhjqglv2j281sk@google.com",
+      "description": "Description goes here.",
+      "id": "c8v128av2ievrhjqglv2j281sk_20170511T223000Z",
+      "sequence": 0,
+      "originalStartTime": {
+        "dateTime": "2017-05-11T18:30:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "etag": "\"2972160524832000\"",
+      "location": "Playfit Kids Club, 366 Hespeler Rd, Cambridge, ON",
+      "creator": {
+        "email": "cearrach@gmail.com",
+        "displayName": "Chris Craig"
+      },
+      "organizer": {
+        "self": true,
+        "email": "nlkc39jt4p0nbc4pk9pj7p5fh0@group.calendar.google.com",
+        "displayName": "WatCamp Events"
+      },
+      "start": {
+        "dateTime": "2017-05-11T18:30:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "end": {
+        "dateTime": "2017-05-11T20:00:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "kind": "calendar#event",
+      "htmlLink": "https://www.google.com/calendar/event?eid=Yzh2MTI4YXYyaWV2cmhqcWdsdjJqMjgxc2tfMjAxNzA1MTFUMjIzMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn",
+      "created": "2017-02-03T00:04:22.000Z",
+      "status": "confirmed",
+      "recurringEventId": "c8v128av2ievrhjqglv2j281sk",
+      "updated": "2017-02-03T00:04:22.416Z"
+    },
+    {
+      "summary": "Idea Exchange - Build an A-Line Robot: Introductory Electronics Course",
+      "iCalUID": "lu9johdhtjh6ts114m9utf25fk@google.com",
+      "description": "Description goes here.",
+      "id": "lu9johdhtjh6ts114m9utf25fk_20170511T223000Z",
+      "sequence": 0,
+      "originalStartTime": {
+        "dateTime": "2017-05-11T18:30:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "etag": "\"2985204283126000\"",
+      "location": "Idea Exchange | Clemens Mill, 50 Saginaw Pkwy, Cambridge, ON",
+      "creator": {
+        "email": "cearrach@gmail.com",
+        "displayName": "Chris Craig"
+      },
+      "organizer": {
+        "self": true,
+        "email": "nlkc39jt4p0nbc4pk9pj7p5fh0@group.calendar.google.com",
+        "displayName": "WatCamp Events"
+      },
+      "start": {
+        "dateTime": "2017-05-11T18:30:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "end": {
+        "dateTime": "2017-05-11T20:00:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "kind": "calendar#event",
+      "htmlLink": "https://www.google.com/calendar/event?eid=bHU5am9oZGh0amg2dHMxMTRtOXV0ZjI1ZmtfMjAxNzA1MTFUMjIzMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn",
+      "created": "2017-04-19T11:42:21.000Z",
+      "status": "confirmed",
+      "recurringEventId": "lu9johdhtjh6ts114m9utf25fk",
+      "updated": "2017-04-19T11:42:21.563Z"
+    },
+    {
+      "summary": "AquaHacking 2017 - Third Challenge Day",
+      "iCalUID": "0h9o1ge0tv26nlpboq756hvoto@google.com",
+      "description": "Description goes here.",
+      "id": "0h9o1ge0tv26nlpboq756hvoto",
+      "sequence": 0,
+      "etag": "\"2982871633998000\"",
+      "location": "Engineering 5 (E5-3101-2), University of Waterloo, Waterloo, ON",
+      "creator": {
+        "email": "cearrach@gmail.com",
+        "displayName": "Chris Craig"
+      },
+      "organizer": {
+        "self": true,
+        "email": "nlkc39jt4p0nbc4pk9pj7p5fh0@group.calendar.google.com",
+        "displayName": "WatCamp Events"
+      },
+      "start": {
+        "dateTime": "2017-05-13T10:00:00-04:00"
+      },
+      "end": {
+        "dateTime": "2017-05-13T16:00:00-04:00"
+      },
+      "kind": "calendar#event",
+      "htmlLink": "https://www.google.com/calendar/event?eid=MGg5bzFnZTB0djI2bmxwYm9xNzU2aHZvdG8gbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw",
+      "created": "2017-04-05T23:43:36.000Z",
+      "status": "confirmed",
+      "updated": "2017-04-05T23:43:36.999Z"
+    },
+    {
+      "summary": "WWFC - Girls CAN Fly!",
+      "iCalUID": "hfl9ea1vn94tv3r6h40sjujm0o@google.com",
+      "description": "Description goes here.",
+      "id": "hfl9ea1vn94tv3r6h40sjujm0o",
+      "sequence": 0,
+      "etag": "\"2977781850794000\"",
+      "location": "Waterloo Wellington Flight Centre, 4881 Fountain St N, Breslau, ON",
+      "creator": {
+        "email": "cearrach@gmail.com",
+        "displayName": "Chris Craig"
+      },
+      "organizer": {
+        "self": true,
+        "email": "nlkc39jt4p0nbc4pk9pj7p5fh0@group.calendar.google.com",
+        "displayName": "WatCamp Events"
+      },
+      "start": {
+        "dateTime": "2017-05-13T10:00:00-04:00"
+      },
+      "end": {
+        "dateTime": "2017-05-13T16:00:00-04:00"
+      },
+      "kind": "calendar#event",
+      "htmlLink": "https://www.google.com/calendar/event?eid=aGZsOWVhMXZuOTR0djNyNmg0MHNqdWptMG8gbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw",
+      "created": "2017-03-07T12:48:45.000Z",
+      "status": "confirmed",
+      "updated": "2017-03-07T12:48:45.397Z"
+    },
+    {
+      "summary": "Stemotics - LEGO Mindstorm EV3",
+      "iCalUID": "bb7a2ep1q4nbpep1n3955v4v7g@google.com",
+      "description": "Description goes here.",
+      "id": "bb7a2ep1q4nbpep1n3955v4v7g_20170513T180000Z",
+      "sequence": 0,
+      "originalStartTime": {
+        "dateTime": "2017-05-13T14:00:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "etag": "\"2985203673094000\"",
+      "location": "Idea Exchange | Hespeler, 5 Tannery St E, Cambridge, ON",
+      "creator": {
+        "email": "cearrach@gmail.com",
+        "displayName": "Chris Craig"
+      },
+      "organizer": {
+        "self": true,
+        "email": "nlkc39jt4p0nbc4pk9pj7p5fh0@group.calendar.google.com",
+        "displayName": "WatCamp Events"
+      },
+      "start": {
+        "dateTime": "2017-05-13T14:00:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "end": {
+        "dateTime": "2017-05-13T15:00:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "kind": "calendar#event",
+      "htmlLink": "https://www.google.com/calendar/event?eid=YmI3YTJlcDFxNG5icGVwMW4zOTU1djR2N2dfMjAxNzA1MTNUMTgwMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn",
+      "created": "2017-04-19T11:37:16.000Z",
+      "status": "confirmed",
+      "recurringEventId": "bb7a2ep1q4nbpep1n3955v4v7g",
+      "updated": "2017-04-19T11:37:16.547Z"
+    },
+    {
+      "summary": "Stemotics - LEGO Robotics Workshop for kids",
+      "iCalUID": "921r3a9v9tcdc9c1kpjop8ouv8@google.com",
+      "description": "Description goes here.",
+      "id": "921r3a9v9tcdc9c1kpjop8ouv8_20170514T150000Z",
+      "sequence": 0,
+      "originalStartTime": {
+        "dateTime": "2017-05-14T11:00:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "etag": "\"2971736171124000\"",
+      "location": "Stemotics, 1315 Bishop St N, Unit 155, Cambridge, ON",
+      "creator": {
+        "email": "cearrach@gmail.com",
+        "displayName": "Chris Craig"
+      },
+      "organizer": {
+        "self": true,
+        "email": "nlkc39jt4p0nbc4pk9pj7p5fh0@group.calendar.google.com",
+        "displayName": "WatCamp Events"
+      },
+      "start": {
+        "dateTime": "2017-05-14T11:00:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "end": {
+        "dateTime": "2017-05-14T15:00:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "kind": "calendar#event",
+      "htmlLink": "https://www.google.com/calendar/event?eid=OTIxcjNhOXY5dGNkYzljMWtwam9wOG91djhfMjAxNzA1MTRUMTUwMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn",
+      "created": "2017-01-31T13:07:39.000Z",
+      "status": "confirmed",
+      "recurringEventId": "921r3a9v9tcdc9c1kpjop8ouv8",
+      "updated": "2017-01-31T13:08:05.562Z"
+    },
+    {
+      "summary": "WatPy: Python Project Hours",
+      "iCalUID": "1m8lrbqkbf8iof8l47qc40itfc@google.com",
+      "description": "Description goes here.",
+      "id": "1m8lrbqkbf8iof8l47qc40itfc_20170515T200000Z",
+      "sequence": 2,
+      "originalStartTime": {
+        "dateTime": "2017-05-15T16:00:00-04:00",
+        "timeZone": "America/New_York"
+      },
+      "etag": "\"2976784645684000\"",
+      "location": "University of Waterloo Grad House, University of Waterloo, Waterloo, Ontario, Canada",
+      "creator": {
+        "email": "bobjonkman@gmail.com",
+        "displayName": "Bob Jonkman"
+      },
+      "organizer": {
+        "self": true,
+        "email": "nlkc39jt4p0nbc4pk9pj7p5fh0@group.calendar.google.com",
+        "displayName": "WatCamp Events"
+      },
+      "start": {
+        "dateTime": "2017-05-15T16:00:00-04:00",
+        "timeZone": "America/New_York"
+      },
+      "end": {
+        "dateTime": "2017-05-15T18:00:00-04:00",
+        "timeZone": "America/New_York"
+      },
+      "kind": "calendar#event",
+      "htmlLink": "https://www.google.com/calendar/event?eid=MW04bHJicWtiZjhpb2Y4bDQ3cWM0MGl0ZmNfMjAxNzA1MTVUMjAwMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn",
+      "created": "2017-03-01T18:13:02.000Z",
+      "status": "confirmed",
+      "recurringEventId": "1m8lrbqkbf8iof8l47qc40itfc",
+      "updated": "2017-03-01T18:18:42.842Z"
+    },
+    {
+      "summary": "Diyode - Electronic Drop-in",
+      "iCalUID": "lnirip4jb6jpjsrqau38hc93ek@google.com",
+      "description": "Description goes here.",
+      "id": "lnirip4jb6jpjsrqau38hc93ek_20170516T000000Z",
+      "sequence": 2,
+      "originalStartTime": {
+        "dateTime": "2017-05-15T20:00:00-04:00"
+      },
+      "etag": "\"2609684288000000\"",
+      "location": "Diyode Community Workshop, Unit B - 71 Wyndham St. S, Guelph, Ontario",
+      "creator": {
+        "email": "bobjonkman@gmail.com",
+        "displayName": "Bob Jonkman"
+      },
+      "organizer": {
+        "self": true,
+        "email": "nlkc39jt4p0nbc4pk9pj7p5fh0@group.calendar.google.com",
+        "displayName": "WatCamp Events"
+      },
+      "start": {
+        "dateTime": "2017-05-15T20:00:00-04:00"
+      },
+      "end": {
+        "dateTime": "2017-05-15T21:00:00-04:00"
+      },
+      "kind": "calendar#event",
+      "htmlLink": "https://www.google.com/calendar/event?eid=bG5pcmlwNGpiNmpwanNycWF1MzhoYzkzZWtfMjAxNzA1MTZUMDAwMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn",
+      "created": "0000-12-29T00:00:00.000Z",
+      "status": "confirmed",
+      "recurringEventId": "lnirip4jb6jpjsrqau38hc93ek",
+      "updated": "2011-05-08T08:09:04.000Z",
+      "transparency": "transparent"
+    },
+    {
+      "summary": "ODWR Book Club Monthly Meetup! (Hold the Date)",
+      "iCalUID": "39uqjcbngiu7m3toeb0u3vuvv4@google.com",
+      "description": "Description goes here.",
+      "id": "39uqjcbngiu7m3toeb0u3vuvv4",
+      "sequence": 0,
+      "organizer": {
+        "self": true,
+        "email": "nlkc39jt4p0nbc4pk9pj7p5fh0@group.calendar.google.com",
+        "displayName": "WatCamp Events"
+      },
+      "creator": {
+        "email": "bobjonkman@gmail.com",
+        "displayName": "Bob Jonkman"
+      },
+      "start": {
+        "dateTime": "2017-05-16T17:00:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "end": {
+        "dateTime": "2017-05-16T19:00:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "kind": "calendar#event",
+      "htmlLink": "https://www.google.com/calendar/event?eid=Mzl1cWpjYm5naXU3bTN0b2ViMHUzdnV2djQgbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw",
+      "created": "2016-12-26T08:36:57.000Z",
+      "status": "confirmed",
+      "updated": "2016-12-26T08:36:57.943Z",
+      "etag": "\"2965482835886000\""
+    },
+    {
+      "summary": "Hive WR - Social Media for Business",
+      "iCalUID": "qf7e6joeqkhmsob0mop898qelo@google.com",
+      "description": "Description goes here.",
+      "id": "qf7e6joeqkhmsob0mop898qelo",
+      "sequence": 0,
+      "etag": "\"2981663018334000\"",
+      "location": "Kitchener Public Library, 85 Queen St N, Kitchener, ON",
+      "creator": {
+        "email": "cearrach@gmail.com",
+        "displayName": "Chris Craig"
+      },
+      "organizer": {
+        "self": true,
+        "email": "nlkc39jt4p0nbc4pk9pj7p5fh0@group.calendar.google.com",
+        "displayName": "WatCamp Events"
+      },
+      "start": {
+        "dateTime": "2017-05-16T18:30:00-04:00"
+      },
+      "end": {
+        "dateTime": "2017-05-16T20:30:00-04:00"
+      },
+      "kind": "calendar#event",
+      "htmlLink": "https://www.google.com/calendar/event?eid=cWY3ZTZqb2Vxa2htc29iMG1vcDg5OHFlbG8gbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw",
+      "created": "2017-02-03T00:39:30.000Z",
+      "status": "confirmed",
+      "updated": "2017-03-29T23:51:49.167Z"
+    },
+    {
+      "summary": "KWArtzLab Tuesday Open Night",
+      "iCalUID": "5ld0e0mk9fl4uss53ijh05id6k@google.com",
+      "description": "Description goes here.",
+      "id": "5ld0e0mk9fl4uss53ijh05id6k_20170516T230000Z",
+      "sequence": 5,
+      "originalStartTime": {
+        "dateTime": "2017-05-16T19:00:00-04:00"
+      },
+      "etag": "\"2714924576956000\"",
+      "location": "KWArtzlab, 33 Kent Avenue, Kitchener, Ontario, Canada",
+      "creator": {
+        "email": "bobjonkman@gmail.com",
+        "displayName": "Bob Jonkman"
+      },
+      "organizer": {
+        "self": true,
+        "email": "nlkc39jt4p0nbc4pk9pj7p5fh0@group.calendar.google.com",
+        "displayName": "WatCamp Events"
+      },
+      "start": {
+        "dateTime": "2017-05-16T19:00:00-04:00"
+      },
+      "end": {
+        "dateTime": "2017-05-16T22:00:00-04:00"
+      },
+      "kind": "calendar#event",
+      "htmlLink": "https://www.google.com/calendar/event?eid=NWxkMGUwbWs5Zmw0dXNzNTNpamgwNWlkNmtfMjAxNzA1MTZUMjMwMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn",
+      "created": "0000-12-29T00:00:00.000Z",
+      "status": "confirmed",
+      "recurringEventId": "5ld0e0mk9fl4uss53ijh05id6k",
+      "updated": "2013-01-06T08:51:28.478Z",
+      "transparency": "transparent"
+    },
+    {
+      "summary": "KWRuby: Contributing to Ruby Projects Workshop III",
+      "iCalUID": "6skh9rvcnpclspb6561ichut3o@google.com",
+      "description": "Description goes here.",
+      "id": "6skh9rvcnpclspb6561ichut3o",
+      "sequence": 2,
+      "etag": "\"2976805750758000\"",
+      "location": "Vidyard, 8 Queen St N, Kitchener, Ontario, Canada",
+      "creator": {
+        "email": "bobjonkman@gmail.com",
+        "displayName": "Bob Jonkman"
+      },
+      "organizer": {
+        "self": true,
+        "email": "nlkc39jt4p0nbc4pk9pj7p5fh0@group.calendar.google.com",
+        "displayName": "WatCamp Events"
+      },
+      "visibility": "public",
+      "start": {
+        "dateTime": "2017-05-16T19:00:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "end": {
+        "dateTime": "2017-05-16T22:00:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "kind": "calendar#event",
+      "htmlLink": "https://www.google.com/calendar/event?eid=NnNraDlydmNucGNsc3BiNjU2MWljaHV0M28gbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw",
+      "created": "2017-03-01T21:12:58.000Z",
+      "status": "confirmed",
+      "updated": "2017-03-01T21:14:35.379Z"
+    },
+    {
+      "summary": "KW Go Devs - Simon Pratt: The Go Assembler",
+      "iCalUID": "cvks42g4fd6dbvbmbukf09itrs@google.com",
+      "description": "Description goes here.",
+      "id": "cvks42g4fd6dbvbmbukf09itrs",
+      "sequence": 0,
+      "etag": "\"2984066685410000\"",
+      "location": "Dejero, 412 Albert St, Waterloo, ON",
+      "creator": {
+        "email": "cearrach@gmail.com",
+        "displayName": "Chris Craig"
+      },
+      "organizer": {
+        "self": true,
+        "email": "nlkc39jt4p0nbc4pk9pj7p5fh0@group.calendar.google.com",
+        "displayName": "WatCamp Events"
+      },
+      "start": {
+        "dateTime": "2017-05-16T19:00:00-04:00"
+      },
+      "end": {
+        "dateTime": "2017-05-16T21:00:00-04:00"
+      },
+      "kind": "calendar#event",
+      "htmlLink": "https://www.google.com/calendar/event?eid=Y3ZrczQyZzRmZDZkYnZibWJ1a2YwOWl0cnMgbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw",
+      "created": "2017-04-12T21:42:22.000Z",
+      "status": "confirmed",
+      "updated": "2017-04-12T21:42:22.705Z"
+    },
+    {
+      "summary": "Communitech Women in Technology P2P",
+      "iCalUID": "h84ajmqe28fng7v0s32vb8g7ms_R20150121T133000@google.com",
+      "description": "Description goes here.",
+      "id": "h84ajmqe28fng7v0s32vb8g7ms_20170517T123000Z",
+      "sequence": 0,
+      "originalStartTime": {
+        "dateTime": "2017-05-17T08:30:00-04:00"
+      },
+      "etag": "\"2955917961530000\"",
+      "location": "Communitech Hub, 151 Charles Street West, Kitchener, ON N2G 1H6, Canada",
+      "creator": {
+        "email": "cearrach@gmail.com",
+        "displayName": "Chris Craig"
+      },
+      "organizer": {
+        "self": true,
+        "email": "nlkc39jt4p0nbc4pk9pj7p5fh0@group.calendar.google.com",
+        "displayName": "WatCamp Events"
+      },
+      "start": {
+        "dateTime": "2017-05-17T08:30:00-04:00"
+      },
+      "end": {
+        "dateTime": "2017-05-17T09:30:00-04:00"
+      },
+      "kind": "calendar#event",
+      "htmlLink": "https://www.google.com/calendar/event?eid=aDg0YWptcWUyOGZuZzd2MHMzMnZiOGc3bXNfMjAxNzA1MTdUMTIzMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn",
+      "created": "2014-10-24T03:44:36.000Z",
+      "status": "confirmed",
+      "recurringEventId": "h84ajmqe28fng7v0s32vb8g7ms_R20150121T133000",
+      "updated": "2016-11-01T00:09:40.765Z"
+    },
+    {
+      "summary": "YWCA Cambridge - STEM Mentoring",
+      "iCalUID": "i2hq03s0dh9900tiha0203msqg@google.com",
+      "description": "Description goes here.",
+      "id": "i2hq03s0dh9900tiha0203msqg_20170517T213000Z",
+      "sequence": 0,
+      "originalStartTime": {
+        "dateTime": "2017-05-17T17:30:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "etag": "\"2946535256528000\"",
+      "location": "8 Petty Pl, Cambridge, ON",
+      "creator": {
+        "email": "cearrach@gmail.com",
+        "displayName": "Chris Craig"
+      },
+      "organizer": {
+        "self": true,
+        "email": "nlkc39jt4p0nbc4pk9pj7p5fh0@group.calendar.google.com",
+        "displayName": "WatCamp Events"
+      },
+      "start": {
+        "dateTime": "2017-05-17T17:30:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "end": {
+        "dateTime": "2017-05-17T19:30:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "kind": "calendar#event",
+      "htmlLink": "https://www.google.com/calendar/event?eid=aTJocTAzczBkaDk5MDB0aWhhMDIwM21zcWdfMjAxNzA1MTdUMjEzMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn",
+      "created": "2016-09-07T17:00:28.000Z",
+      "status": "confirmed",
+      "recurringEventId": "i2hq03s0dh9900tiha0203msqg",
+      "updated": "2016-09-07T17:00:28.264Z"
+    },
+    {
+      "summary": "WatPy - PyDrinks",
+      "iCalUID": "3ae3f455-6b10-47ef-a2ee-a54ef364fca4",
+      "description": "Description goes here.",
+      "id": "_6dgmacr66gqjab9mc8oj0b9k6timcbb169imabb16kq6aphj6oq6cor16g_20170517T223000Z",
+      "sequence": 3,
+      "originalStartTime": {
+        "dateTime": "2017-05-17T18:30:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "etag": "\"2929343688810000\"",
+      "location": "Death Valley's Little Brother, 84 King Street North, Waterloo, Ontario, Canada",
+      "creator": {
+        "email": "bobjonkman@gmail.com",
+        "displayName": "Bob Jonkman"
+      },
+      "organizer": {
+        "self": true,
+        "email": "nlkc39jt4p0nbc4pk9pj7p5fh0@group.calendar.google.com",
+        "displayName": "WatCamp Events"
+      },
+      "start": {
+        "dateTime": "2017-05-17T18:30:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "end": {
+        "dateTime": "2017-05-17T20:30:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "kind": "calendar#event",
+      "htmlLink": "https://www.google.com/calendar/event?eid=XzZkZ21hY3I2NmdxamFiOW1jOG9qMGI5azZ0aW1jYmIxNjlpbWFiYjE2a3E2YXBoajZvcTZjb3IxNmdfMjAxNzA1MTdUMjIzMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn",
+      "created": "2014-07-23T03:00:01.000Z",
+      "status": "confirmed",
+      "recurringEventId": "_6dgmacr66gqjab9mc8oj0b9k6timcbb169imabb16kq6aphj6oq6cor16g",
+      "updated": "2016-05-31T05:17:24.405Z"
+    },
+    {
+      "summary": "UndergroundStudio - Access Wednesdays",
+      "iCalUID": "dr46lmdiau8oukhekjb8f9a32o@google.com",
+      "description": "Description goes here.",
+      "id": "dr46lmdiau8oukhekjb8f9a32o_20170517T223000Z",
+      "sequence": 0,
+      "originalStartTime": {
+        "dateTime": "2017-05-17T18:30:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "etag": "\"2970353035006000\"",
+      "location": "THEMUSEUM, Kitchener, ON",
+      "creator": {
+        "email": "cearrach@gmail.com",
+        "displayName": "Chris Craig"
+      },
+      "organizer": {
+        "self": true,
+        "email": "nlkc39jt4p0nbc4pk9pj7p5fh0@group.calendar.google.com",
+        "displayName": "WatCamp Events"
+      },
+      "start": {
+        "dateTime": "2017-05-17T18:30:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "end": {
+        "dateTime": "2017-05-17T21:00:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "kind": "calendar#event",
+      "htmlLink": "https://www.google.com/calendar/event?eid=ZHI0NmxtZGlhdThvdWtoZWtqYjhmOWEzMm9fMjAxNzA1MTdUMjIzMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn",
+      "created": "2017-01-23T13:01:57.000Z",
+      "status": "confirmed",
+      "recurringEventId": "dr46lmdiau8oukhekjb8f9a32o",
+      "updated": "2017-01-23T13:01:57.503Z"
+    },
+    {
+      "summary": "KW Unix Users Group",
+      "iCalUID": "8nfet2tso6rok8ihi4b82mpcf0@google.com",
+      "description": "Description goes here.",
+      "id": "8nfet2tso6rok8ihi4b82mpcf0_20170517T230000Z",
+      "sequence": 0,
+      "originalStartTime": {
+        "dateTime": "2017-05-17T19:00:00-04:00"
+      },
+      "etag": "\"2664711826000000\"",
+      "location": " William G Davis Computer Research Centre ICR Board Room DC1331, University of Waterloo, Waterloo, ON",
+      "creator": {
+        "email": "bobjonkman@gmail.com",
+        "displayName": "Bob Jonkman"
+      },
+      "organizer": {
+        "self": true,
+        "email": "nlkc39jt4p0nbc4pk9pj7p5fh0@group.calendar.google.com",
+        "displayName": "WatCamp Events"
+      },
+      "start": {
+        "dateTime": "2017-05-17T19:00:00-04:00"
+      },
+      "end": {
+        "dateTime": "2017-05-17T21:00:00-04:00"
+      },
+      "kind": "calendar#event",
+      "htmlLink": "https://www.google.com/calendar/event?eid=OG5mZXQydHNvNnJvazhpaGk0YjgybXBjZjBfMjAxNzA1MTdUMjMwMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn",
+      "created": "2010-10-04T23:34:52.000Z",
+      "status": "confirmed",
+      "recurringEventId": "8nfet2tso6rok8ihi4b82mpcf0",
+      "updated": "2012-03-21T18:51:53.000Z"
+    },
+    {
+      "summary": "KW Perl Mongers",
+      "iCalUID": "0vjr6sm4111a0u6b80mmt38nqc@google.com",
+      "description": "Description goes here.",
+      "id": "0vjr6sm4111a0u6b80mmt38nqc_20170518T230000Z",
+      "sequence": 0,
+      "originalStartTime": {
+        "dateTime": "2017-05-18T19:00:00-04:00"
+      },
+      "etag": "\"2663198434000000\"",
+      "location": "DC 3323, University of Waterloo,  Waterloo, ON",
+      "creator": {
+        "email": "bobjonkman@gmail.com",
+        "displayName": "Bob Jonkman"
+      },
+      "organizer": {
+        "self": true,
+        "email": "nlkc39jt4p0nbc4pk9pj7p5fh0@group.calendar.google.com",
+        "displayName": "WatCamp Events"
+      },
+      "start": {
+        "dateTime": "2017-05-18T19:00:00-04:00"
+      },
+      "end": {
+        "dateTime": "2017-05-18T21:00:00-04:00"
+      },
+      "kind": "calendar#event",
+      "htmlLink": "https://www.google.com/calendar/event?eid=MHZqcjZzbTQxMTFhMHU2YjgwbW10MzhucWNfMjAxNzA1MThUMjMwMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn",
+      "created": "2011-10-16T02:36:40.000Z",
+      "status": "confirmed",
+      "recurringEventId": "0vjr6sm4111a0u6b80mmt38nqc",
+      "updated": "2012-03-13T00:40:17.000Z"
+    },
+    {
+      "summary": "WRDUG - Waterloo Region Drupal Users Group",
+      "iCalUID": "dfkm2a8affd2miq20t7tqh1jg0@google.com",
+      "description": "Description goes here.",
+      "id": "dfkm2a8affd2miq20t7tqh1jg0_20170518T230000Z",
+      "sequence": 10,
+      "originalStartTime": {
+        "dateTime": "2017-05-18T19:00:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "etag": "\"2913409988430000\"",
+      "location": "The Working Centre, 58 Queen St. S, Kitchener, Ontario, Canada",
+      "creator": {
+        "email": "redune@gmail.com",
+        "displayName": "Will Spaetzel"
+      },
+      "organizer": {
+        "self": true,
+        "email": "nlkc39jt4p0nbc4pk9pj7p5fh0@group.calendar.google.com",
+        "displayName": "WatCamp Events"
+      },
+      "start": {
+        "dateTime": "2017-05-18T19:00:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "end": {
+        "dateTime": "2017-05-18T21:00:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "kind": "calendar#event",
+      "htmlLink": "https://www.google.com/calendar/event?eid=ZGZrbTJhOGFmZmQybWlxMjB0N3RxaDFqZzBfMjAxNzA1MThUMjMwMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn",
+      "created": "0000-12-29T00:00:00.000Z",
+      "status": "confirmed",
+      "recurringEventId": "dfkm2a8affd2miq20t7tqh1jg0",
+      "updated": "2016-02-29T00:16:34.215Z",
+      "transparency": "transparent"
+    },
+    {
+      "summary": "Communitech PM Connect P2P",
+      "iCalUID": "23bmveluf9b8s7ikhrjmr2merc@google.com",
+      "description": "Description goes here.",
+      "id": "23bmveluf9b8s7ikhrjmr2merc_20170519T120000Z",
+      "sequence": 2,
+      "originalStartTime": {
+        "dateTime": "2017-05-19T08:00:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "etag": "\"2973042093432000\"",
+      "location": "Communitech, 151 Charles St W, Kitchener, ON",
+      "creator": {
+        "email": "cearrach@gmail.com",
+        "displayName": "Chris Craig"
+      },
+      "organizer": {
+        "self": true,
+        "email": "nlkc39jt4p0nbc4pk9pj7p5fh0@group.calendar.google.com",
+        "displayName": "WatCamp Events"
+      },
+      "start": {
+        "dateTime": "2017-05-19T08:00:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "end": {
+        "dateTime": "2017-05-19T09:00:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "kind": "calendar#event",
+      "htmlLink": "https://www.google.com/calendar/event?eid=MjNibXZlbHVmOWI4czdpa2hyam1yMm1lcmNfMjAxNzA1MTlUMTIwMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn",
+      "created": "2016-04-16T20:21:10.000Z",
+      "status": "confirmed",
+      "recurringEventId": "23bmveluf9b8s7ikhrjmr2merc",
+      "updated": "2017-02-08T02:30:46.716Z",
+      "transparency": "transparent"
+    },
+    {
+      "summary": "Stemotics - LEGO Robotics Workshop for kids",
+      "iCalUID": "921r3a9v9tcdc9c1kpjop8ouv8@google.com",
+      "description": "Description goes here.",
+      "id": "921r3a9v9tcdc9c1kpjop8ouv8_20170521T150000Z",
+      "sequence": 0,
+      "originalStartTime": {
+        "dateTime": "2017-05-21T11:00:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "etag": "\"2971736171124000\"",
+      "location": "Stemotics, 1315 Bishop St N, Unit 155, Cambridge, ON",
+      "creator": {
+        "email": "cearrach@gmail.com",
+        "displayName": "Chris Craig"
+      },
+      "organizer": {
+        "self": true,
+        "email": "nlkc39jt4p0nbc4pk9pj7p5fh0@group.calendar.google.com",
+        "displayName": "WatCamp Events"
+      },
+      "start": {
+        "dateTime": "2017-05-21T11:00:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "end": {
+        "dateTime": "2017-05-21T15:00:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "kind": "calendar#event",
+      "htmlLink": "https://www.google.com/calendar/event?eid=OTIxcjNhOXY5dGNkYzljMWtwam9wOG91djhfMjAxNzA1MjFUMTUwMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn",
+      "created": "2017-01-31T13:07:39.000Z",
+      "status": "confirmed",
+      "recurringEventId": "921r3a9v9tcdc9c1kpjop8ouv8",
+      "updated": "2017-01-31T13:08:05.562Z"
+    },
+    {
+      "summary": "WatPy: Python Project Hours",
+      "iCalUID": "1m8lrbqkbf8iof8l47qc40itfc@google.com",
+      "description": "Description goes here.",
+      "id": "1m8lrbqkbf8iof8l47qc40itfc_20170522T200000Z",
+      "sequence": 2,
+      "originalStartTime": {
+        "dateTime": "2017-05-22T16:00:00-04:00",
+        "timeZone": "America/New_York"
+      },
+      "etag": "\"2976784645684000\"",
+      "location": "University of Waterloo Grad House, University of Waterloo, Waterloo, Ontario, Canada",
+      "creator": {
+        "email": "bobjonkman@gmail.com",
+        "displayName": "Bob Jonkman"
+      },
+      "organizer": {
+        "self": true,
+        "email": "nlkc39jt4p0nbc4pk9pj7p5fh0@group.calendar.google.com",
+        "displayName": "WatCamp Events"
+      },
+      "start": {
+        "dateTime": "2017-05-22T16:00:00-04:00",
+        "timeZone": "America/New_York"
+      },
+      "end": {
+        "dateTime": "2017-05-22T18:00:00-04:00",
+        "timeZone": "America/New_York"
+      },
+      "kind": "calendar#event",
+      "htmlLink": "https://www.google.com/calendar/event?eid=MW04bHJicWtiZjhpb2Y4bDQ3cWM0MGl0ZmNfMjAxNzA1MjJUMjAwMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn",
+      "created": "2017-03-01T18:13:02.000Z",
+      "status": "confirmed",
+      "recurringEventId": "1m8lrbqkbf8iof8l47qc40itfc",
+      "updated": "2017-03-01T18:18:42.842Z"
+    },
+    {
+      "summary": "Diyode - Electronic Drop-in",
+      "iCalUID": "lnirip4jb6jpjsrqau38hc93ek@google.com",
+      "description": "Description goes here.",
+      "id": "lnirip4jb6jpjsrqau38hc93ek_20170523T000000Z",
+      "sequence": 2,
+      "originalStartTime": {
+        "dateTime": "2017-05-22T20:00:00-04:00"
+      },
+      "etag": "\"2609684288000000\"",
+      "location": "Diyode Community Workshop, Unit B - 71 Wyndham St. S, Guelph, Ontario",
+      "creator": {
+        "email": "bobjonkman@gmail.com",
+        "displayName": "Bob Jonkman"
+      },
+      "organizer": {
+        "self": true,
+        "email": "nlkc39jt4p0nbc4pk9pj7p5fh0@group.calendar.google.com",
+        "displayName": "WatCamp Events"
+      },
+      "start": {
+        "dateTime": "2017-05-22T20:00:00-04:00"
+      },
+      "end": {
+        "dateTime": "2017-05-22T21:00:00-04:00"
+      },
+      "kind": "calendar#event",
+      "htmlLink": "https://www.google.com/calendar/event?eid=bG5pcmlwNGpiNmpwanNycWF1MzhoYzkzZWtfMjAxNzA1MjNUMDAwMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn",
+      "created": "0000-12-29T00:00:00.000Z",
+      "status": "confirmed",
+      "recurringEventId": "lnirip4jb6jpjsrqau38hc93ek",
+      "updated": "2011-05-08T08:09:04.000Z",
+      "transparency": "transparent"
+    },
+    {
+      "summary": "Communitech Agile Lean P2P",
+      "iCalUID": "soumu9nuf98f3vvj0b50uui8ro@google.com",
+      "description": "Description goes here.",
+      "id": "soumu9nuf98f3vvj0b50uui8ro_20170523T203000Z",
+      "sequence": 0,
+      "originalStartTime": {
+        "dateTime": "2017-05-23T16:30:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "etag": "\"2955917685494000\"",
+      "location": "Communitech Hub, 151 Charles Street West, Kitchener, ON N2G 1H6, Canada",
+      "creator": {
+        "email": "cearrach@gmail.com",
+        "displayName": "Chris Craig"
+      },
+      "organizer": {
+        "self": true,
+        "email": "nlkc39jt4p0nbc4pk9pj7p5fh0@group.calendar.google.com",
+        "displayName": "WatCamp Events"
+      },
+      "start": {
+        "dateTime": "2017-05-23T16:30:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "end": {
+        "dateTime": "2017-05-23T18:00:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "kind": "calendar#event",
+      "htmlLink": "https://www.google.com/calendar/event?eid=c291bXU5bnVmOThmM3Z2ajBiNTB1dWk4cm9fMjAxNzA1MjNUMjAzMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn",
+      "created": "2015-02-21T03:21:37.000Z",
+      "status": "confirmed",
+      "recurringEventId": "soumu9nuf98f3vvj0b50uui8ro",
+      "updated": "2016-11-01T00:07:22.747Z"
+    },
+    {
+      "summary": "StartupTech KW Meetup",
+      "iCalUID": "e5th9b0jfaki485p1ris16tomk@google.com",
+      "description": "Description goes here.",
+      "id": "e5th9b0jfaki485p1ris16tomk",
+      "sequence": 0,
+      "organizer": {
+        "self": true,
+        "email": "nlkc39jt4p0nbc4pk9pj7p5fh0@group.calendar.google.com",
+        "displayName": "WatCamp Events"
+      },
+      "creator": {
+        "email": "bobjonkman@gmail.com",
+        "displayName": "Bob Jonkman"
+      },
+      "start": {
+        "dateTime": "2017-05-23T18:30:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "end": {
+        "dateTime": "2017-05-23T20:30:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "kind": "calendar#event",
+      "htmlLink": "https://www.google.com/calendar/event?eid=ZTV0aDliMGpmYWtpNDg1cDFyaXMxNnRvbWsgbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw",
+      "created": "2016-12-26T08:37:05.000Z",
+      "status": "confirmed",
+      "updated": "2016-12-26T08:37:05.855Z",
+      "etag": "\"2965482851710000\""
+    },
+    {
+      "summary": "KWArtzLab Tuesday Open Night",
+      "iCalUID": "5ld0e0mk9fl4uss53ijh05id6k@google.com",
+      "description": "Description goes here.",
+      "id": "5ld0e0mk9fl4uss53ijh05id6k_20170523T230000Z",
+      "sequence": 5,
+      "originalStartTime": {
+        "dateTime": "2017-05-23T19:00:00-04:00"
+      },
+      "etag": "\"2714924576956000\"",
+      "location": "KWArtzlab, 33 Kent Avenue, Kitchener, Ontario, Canada",
+      "creator": {
+        "email": "bobjonkman@gmail.com",
+        "displayName": "Bob Jonkman"
+      },
+      "organizer": {
+        "self": true,
+        "email": "nlkc39jt4p0nbc4pk9pj7p5fh0@group.calendar.google.com",
+        "displayName": "WatCamp Events"
+      },
+      "start": {
+        "dateTime": "2017-05-23T19:00:00-04:00"
+      },
+      "end": {
+        "dateTime": "2017-05-23T22:00:00-04:00"
+      },
+      "kind": "calendar#event",
+      "htmlLink": "https://www.google.com/calendar/event?eid=NWxkMGUwbWs5Zmw0dXNzNTNpamgwNWlkNmtfMjAxNzA1MjNUMjMwMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn",
+      "created": "0000-12-29T00:00:00.000Z",
+      "status": "confirmed",
+      "recurringEventId": "5ld0e0mk9fl4uss53ijh05id6k",
+      "updated": "2013-01-06T08:51:28.478Z",
+      "transparency": "transparent"
+    },
+    {
+      "summary": "Kwartzlab: 3D Printer Meetup (public event)",
+      "iCalUID": "thskb84klcc1uj0hq5al1nhu5g@google.com",
+      "description": "Description goes here.",
+      "id": "thskb84klcc1uj0hq5al1nhu5g_20170524T220000Z",
+      "sequence": 3,
+      "originalStartTime": {
+        "dateTime": "2017-05-24T18:00:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "etag": "\"2970613434928000\"",
+      "location": "Kwartzlab, 33 Kent Avenue, Kitchener, Ontario, Canada",
+      "creator": {
+        "email": "bobjonkman@gmail.com",
+        "displayName": "Bob Jonkman"
+      },
+      "organizer": {
+        "self": true,
+        "email": "nlkc39jt4p0nbc4pk9pj7p5fh0@group.calendar.google.com",
+        "displayName": "WatCamp Events"
+      },
+      "start": {
+        "dateTime": "2017-05-24T18:00:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "end": {
+        "dateTime": "2017-05-24T21:00:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "kind": "calendar#event",
+      "htmlLink": "https://www.google.com/calendar/event?eid=dGhza2I4NGtsY2MxdWowaHE1YWwxbmh1NWdfMjAxNzA1MjRUMjIwMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn",
+      "created": "2017-01-25T01:08:17.000Z",
+      "status": "confirmed",
+      "recurringEventId": "thskb84klcc1uj0hq5al1nhu5g",
+      "updated": "2017-01-25T01:11:57.464Z"
+    }
+  ],
+  "timeZone": "America/New_York",
+  "updated": "2017-04-19T12:06:50.792Z"
+}

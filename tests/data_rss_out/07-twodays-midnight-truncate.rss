@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<rss version="2.0"
+    xmlns:atom="http://www.w3.org/2005/Atom"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+>
+
+    <channel>
+        <title>WatCamp Events</title>
+        <description>Taking inspiration from the TorCamp calendar. This calendar lists all tech events taking place in the KW area.</description>
+        <link>http://watcamp.com</link>
+        <pubDate>Wed, 19 Apr 2017 12:06:50 +0000</pubDate>
+        <webMaster>admin@example.com (Webmaster)</webMaster>
+        <lastBuildDate>Wed, 19 Apr 2017 15:01:56 -0400</lastBuildDate>
+        <image>
+            <url>http://watcamp.com/img/logo.png</url>
+            <title>WatCamp Events</title>
+            <link>http://watcamp.com</link>
+        </image>
+        <atom:link href="http://watcamp.com/watcamp.rss" rel="self" type="application/rss+xml" />
+
+        
+        <item>
+            <title>YWCA Cambridge - STEM Mentoring</title>
+            <link>https://www.google.com/calendar/event?eid=aTJocTAzczBkaDk5MDB0aWhhMDIwM21zcWdfMjAxNzA0MTlUMjEzMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn</link>
+            <description>
+
+                
+                &lt;p&gt;
+                &lt;strong&gt;Date and Time: &lt;/strong&gt;
+                
+                    Wednesday, Apr 19 2017,  5:30pm 
+                
+                &lt;/p&gt;
+                
+                &lt;p&gt;
+                &lt;strong&gt;Location: &lt;/strong&gt;
+                
+                    8 Petty Pl, Cambridge, ON
+                
+                &lt;/p&gt;
+
+                &lt;p&gt;Description goes here.&lt;/p&gt;
+            </description>
+            <guid isPermaLink="false">i2hq03s0dh9900tiha0203msqg@google.com</guid>
+            <pubDate>Wed, 07 Sep 2016 17:00:28 +0000</pubDate>
+        </item>
+        
+        <item>
+            <title>FoxNet - Martin Schneider: An Afternoon of Insight on Flash Storage</title>
+            <link>https://www.google.com/calendar/event?eid=ZzBiNmo0YjY2NXYwYzduYnRvNDZ2cWFtcTQgbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw</link>
+            <description>
+
+                
+                &lt;p&gt;
+                &lt;strong&gt;Date and Time: &lt;/strong&gt;
+                
+                    Thursday, Apr 20 2017, 11:30am 
+                
+                &lt;/p&gt;
+                
+                &lt;p&gt;
+                &lt;strong&gt;Location: &lt;/strong&gt;
+                
+                    FoxNet, 92 Erb St E, Waterloo, ON
+                
+                &lt;/p&gt;
+
+                &lt;p&gt;Description goes here.&lt;/p&gt;
+            </description>
+            <guid isPermaLink="false">g0b6j4b665v0c7nbto46vqamq4@google.com</guid>
+            <pubDate>Tue, 11 Apr 2017 04:20:57 +0000</pubDate>
+        </item>
+        
+        <item>
+            <title>Communitech PM Connect P2P</title>
+            <link>https://www.google.com/calendar/event?eid=MjNibXZlbHVmOWI4czdpa2hyam1yMm1lcmNfMjAxNzA0MjFUMTIwMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn</link>
+            <description>
+
+                
+                &lt;p&gt;
+                &lt;strong&gt;Date and Time: &lt;/strong&gt;
+                
+                    Friday, Apr 21 2017,  8:00am 
+                
+                &lt;/p&gt;
+                
+                &lt;p&gt;
+                &lt;strong&gt;Location: &lt;/strong&gt;
+                
+                    Communitech, 151 Charles St W, Kitchener, ON
+                
+                &lt;/p&gt;
+
+                &lt;p&gt;Description goes here.&lt;/p&gt;
+            </description>
+            <guid isPermaLink="false">23bmveluf9b8s7ikhrjmr2merc@google.com</guid>
+            <pubDate>Wed, 08 Feb 2017 02:30:46 +0000</pubDate>
+        </item>
+        
+        <item>
+            <title>CORS - SWORD: South Western Operations Research Day</title>
+            <link>https://www.google.com/calendar/event?eid=bGtkcTUxanQ5M212NWFmbnU3ZWtnOG01NDQgbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw</link>
+            <description>
+
+                
+                &lt;p&gt;
+                &lt;strong&gt;Date and Time: &lt;/strong&gt;
+                
+                    Friday, Apr 21 2017,  8:30am 
+                
+                &lt;/p&gt;
+                
+                &lt;p&gt;
+                &lt;strong&gt;Location: &lt;/strong&gt;
+                
+                    Davis Centre (DC-1302), University of Waterloo, Waterloo, ON
+                
+                &lt;/p&gt;
+
+                &lt;p&gt;Description goes here.&lt;/p&gt;
+            </description>
+            <guid isPermaLink="false">lkdq51jt93mv5afnu7ekg8m544@google.com</guid>
+            <pubDate>Thu, 06 Apr 2017 02:44:52 +0000</pubDate>
+        </item>
+        
+    </channel>
+</rss>

@@ -1,0 +1,144 @@
+{
+  "summary": "WatCamp Events",
+  "nextPageToken": "EjYKK3Roc2tiODRrbGNjMXVqMGhxNWFsMW5odTVnXzIwMTcwNTI0VDIyMDAwMFoYgJC7-42J1AI=",
+  "description": "Taking inspiration from the TorCamp calendar. This calendar lists all tech events taking place in the KW area.",
+  "defaultReminders": [],
+  "kind": "calendar#events",
+  "accessRole": "reader",
+  "etag": "\"p33081370nmod60g\"",
+  "items": [
+    {
+      "summary": "YWCA Cambridge - STEM Mentoring",
+      "iCalUID": "i2hq03s0dh9900tiha0203msqg@google.com",
+      "description": "Description goes here.",
+      "id": "i2hq03s0dh9900tiha0203msqg_20170419T213000Z",
+      "sequence": 0,
+      "originalStartTime": {
+        "dateTime": "2017-04-19T17:30:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "etag": "\"2946535256528000\"",
+      "location": "8 Petty Pl, Cambridge, ON",
+      "creator": {
+        "email": "cearrach@gmail.com",
+        "displayName": "Chris Craig"
+      },
+      "organizer": {
+        "self": true,
+        "email": "nlkc39jt4p0nbc4pk9pj7p5fh0@group.calendar.google.com",
+        "displayName": "WatCamp Events"
+      },
+      "start": {
+        "dateTime": "2017-04-19T17:30:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "end": {
+        "dateTime": "2017-04-19T19:30:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "kind": "calendar#event",
+      "htmlLink": "https://www.google.com/calendar/event?eid=aTJocTAzczBkaDk5MDB0aWhhMDIwM21zcWdfMjAxNzA0MTlUMjEzMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn",
+      "created": "2016-09-07T17:00:28.000Z",
+      "status": "confirmed",
+      "recurringEventId": "i2hq03s0dh9900tiha0203msqg",
+      "updated": "2016-09-07T17:00:28.264Z"
+    },
+    {
+      "summary": "FoxNet - Martin Schneider: An Afternoon of Insight on Flash Storage",
+      "iCalUID": "g0b6j4b665v0c7nbto46vqamq4@google.com",
+      "description": "Description goes here.",
+      "id": "g0b6j4b665v0c7nbto46vqamq4",
+      "sequence": 0,
+      "etag": "\"2983768914418000\"",
+      "location": "FoxNet, 92 Erb St E, Waterloo, ON",
+      "creator": {
+        "email": "cearrach@gmail.com",
+        "displayName": "Chris Craig"
+      },
+      "organizer": {
+        "self": true,
+        "email": "nlkc39jt4p0nbc4pk9pj7p5fh0@group.calendar.google.com",
+        "displayName": "WatCamp Events"
+      },
+      "start": {
+        "dateTime": "2017-04-20T11:30:00-04:00"
+      },
+      "end": {
+        "dateTime": "2017-04-20T13:00:00-04:00"
+      },
+      "kind": "calendar#event",
+      "htmlLink": "https://www.google.com/calendar/event?eid=ZzBiNmo0YjY2NXYwYzduYnRvNDZ2cWFtcTQgbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw",
+      "created": "2017-04-11T04:20:57.000Z",
+      "status": "confirmed",
+      "updated": "2017-04-11T04:20:57.209Z"
+    },
+    {
+      "summary": "Communitech PM Connect P2P",
+      "iCalUID": "23bmveluf9b8s7ikhrjmr2merc@google.com",
+      "description": "Description goes here.",
+      "id": "23bmveluf9b8s7ikhrjmr2merc_20170421T120000Z",
+      "sequence": 2,
+      "originalStartTime": {
+        "dateTime": "2017-04-21T08:00:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "etag": "\"2973042093432000\"",
+      "location": "Communitech, 151 Charles St W, Kitchener, ON",
+      "creator": {
+        "email": "cearrach@gmail.com",
+        "displayName": "Chris Craig"
+      },
+      "organizer": {
+        "self": true,
+        "email": "nlkc39jt4p0nbc4pk9pj7p5fh0@group.calendar.google.com",
+        "displayName": "WatCamp Events"
+      },
+      "start": {
+        "dateTime": "2017-04-21T08:00:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "end": {
+        "dateTime": "2017-04-21T09:00:00-04:00",
+        "timeZone": "America/Toronto"
+      },
+      "kind": "calendar#event",
+      "htmlLink": "https://www.google.com/calendar/event?eid=MjNibXZlbHVmOWI4czdpa2hyam1yMm1lcmNfMjAxNzA0MjFUMTIwMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn",
+      "created": "2016-04-16T20:21:10.000Z",
+      "status": "confirmed",
+      "recurringEventId": "23bmveluf9b8s7ikhrjmr2merc",
+      "updated": "2017-02-08T02:30:46.716Z",
+      "transparency": "transparent"
+    },
+    {
+      "summary": "CORS - SWORD: South Western Operations Research Day",
+      "iCalUID": "lkdq51jt93mv5afnu7ekg8m544@google.com",
+      "description": "Description goes here.",
+      "id": "lkdq51jt93mv5afnu7ekg8m544",
+      "sequence": 0,
+      "etag": "\"2982893385592000\"",
+      "location": "Davis Centre (DC-1302), University of Waterloo, Waterloo, ON",
+      "creator": {
+        "email": "cearrach@gmail.com",
+        "displayName": "Chris Craig"
+      },
+      "organizer": {
+        "self": true,
+        "email": "nlkc39jt4p0nbc4pk9pj7p5fh0@group.calendar.google.com",
+        "displayName": "WatCamp Events"
+      },
+      "start": {
+        "dateTime": "2017-04-21T08:30:00-04:00"
+      },
+      "end": {
+        "dateTime": "2017-04-21T17:00:00-04:00"
+      },
+      "kind": "calendar#event",
+      "htmlLink": "https://www.google.com/calendar/event?eid=bGtkcTUxanQ5M212NWFmbnU3ZWtnOG01NDQgbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw",
+      "created": "2017-04-06T02:44:52.000Z",
+      "status": "confirmed",
+      "updated": "2017-04-06T02:44:52.796Z"
+    }
+  ],
+  "timeZone": "America/New_York",
+  "updated": "2017-04-19T12:06:50.792Z"
+}

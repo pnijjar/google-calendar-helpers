@@ -300,7 +300,10 @@ def test_json_to_rss(testcase, patch_datetime_now):
 # ==== TEST NEWSLETTER DAY RESTRICTIONS
 
 @pytest.mark.parametrize( "testcase",
-    ["01-fullcalendar.json",]
+    ["01-fullcalendar.json",
+     "07-twodays-midnight-truncate.json",
+     "08-event-day-gap.json",
+    ]
     )
 @pytest.mark.parametrize( "num_days", list(range(0, 14, 3)))
 def test_organize_events_by_day(
@@ -324,7 +327,10 @@ def test_organize_events_by_day(
 
 
 @pytest.mark.parametrize( "testcase",
-    ["01-fullcalendar",]
+    ["01-fullcalendar",
+     "07-twodays-midnight-truncate",
+     "08-event-day-gap",
+    ]
     )
 @pytest.mark.parametrize( "num_days", [2, 4, None])
 def test_organize_events_exact_items(
