@@ -48,7 +48,6 @@ def load_config():
     args = parser.parse_args()
     if args.configfile:
         config_location = os.path.abspath(args.configfile)
-        print("config file: {}".format(config_location))
 
 
     # http://stackoverflow.com/questions/11990556/python-how-to-make-global
