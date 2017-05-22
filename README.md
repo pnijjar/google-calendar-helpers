@@ -37,5 +37,7 @@ Caveats
   calendars.
 - This project is colonialist: it has only been tested in English, in
   the `America/Toronto` timezone.
-
+- This project sources a file `config.py` that the end user can
+  specify on the commandline. This is really dangerous unless you
+  trust everybody who can run this script.
 

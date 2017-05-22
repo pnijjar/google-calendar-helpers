@@ -4,3 +4,5 @@
   just the longurl
 - Test date limits on newsletter (oy. How?)
 - Move away from config.py into command line parsing
+- Turn config.py into config.ini, which is less unsafe
+

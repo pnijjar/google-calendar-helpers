@@ -49,11 +49,6 @@ OUTJSON=os.path.join(PARENTDIR, "output", "watcamp.json")
 WEBMASTER="admin@example.com"
 WEBMASTER_NAME="Webmaster"
 
-
-# What is the filesystem path to the templates?
-# (Same folder as config.py?)
-TEMPLATE_DIR=os.path.dirname(os.path.abspath(__file__))
-
 # Introductory text for newsletter
 NEWSLETTER_HEADER="""
 Welcome to the watcamp.com newsletter. To contribute events to the calendar, use the Contact functionality on the website. To unsubscribe, reply to this message with the subject "unsubscribe", or visit the mailing list website.

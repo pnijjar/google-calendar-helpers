@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
 
-from . import config 
+# from . import config 
 
 import requests
 import pytz, datetime, dateutil.parser
 import jinja2, markdown, html
 import collections
+import argparse, sys, os
 
 import pprint
 import json
@@ -14,6 +15,66 @@ import json
 RSS_TEMPLATE="rss_template.jinja2"
 NEWSLETTER_TEMPLATE="newsletter_template.jinja2"
 INVALID_DATE="1969-12-12T23:59.000Z"
+TEMPLATE_DIR=os.path.dirname(os.path.abspath(__file__))
+
+# ------------------------------
+def load_config():
+    """ Load configuration definitions.
+       (This is really scary, actually. We are trusting that the 
+       config.py we are taking as input is sane!) 
+    """
+
+
+    # '/home/pnijjar/watcamp/python_rss/gcal_helpers/config.py'
+    # See: http://www.karoltomala.com/blog/?p=622
+    DEFAULT_CONFIG_SOURCEFILE = os.path.join(
+        os.getcwd(),
+        'config.py',
+        )
+
+    config_location = DEFAULT_CONFIG_SOURCEFILE
+
+    # Now parse commandline options (Here??? This code smells bad.)
+    parser = argparse.ArgumentParser(
+        description="Generate fun RSS/newsletter feeds from "
+            "Google Calendar entries."
+        )
+    parser.add_argument('-c', '--configfile', 
+        help='configuration file location.',
+        )
+
+    args = parser.parse_args()
+    if args.configfile:
+        config_location = os.path.abspath(args.configfile)
+        print("config file: {}".format(config_location))
+
+
+    # http://stackoverflow.com/questions/11990556/python-how-to-make-global
+    global config
+
+
+    # Blargh. You can load modules from paths, but the syntax is
+    # different depending on the version of python. 
+    # http://stackoverflow.com/questions/67631/how-to-import-a-mod
+    # https://stackoverflow.com/questions/1093322/how-do-i-ch
+
+    if sys.version_info >= (3,5): 
+        import importlib.util 
+        spec = importlib.util.spec_from_file_location(
+            'config',
+            config_location,
+            )
+        config = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(config)
+    elif sys.version_info >= (3,3):
+        # This is the only one I can test. Sad!
+        from importlib.machinery import SourceFileLoader
+        config = SourceFileLoader( 'config', config_location,).load_module()
+    else:
+        import imp
+        config = imp.load_source( 'config', config_location,)
+
+            
 
 # ------------------------------
 def print_from_template (s): 
@@ -280,7 +341,7 @@ def generate_newsletter(cal_dict):
 
 
     template_loader = jinja2.FileSystemLoader(
-        searchpath=config.TEMPLATE_DIR,
+        searchpath=TEMPLATE_DIR,
         )
     template_env = jinja2.Environment(
         loader=template_loader,
@@ -323,7 +384,7 @@ def generate_rss(cal_dict):
 
 
     template_loader = jinja2.FileSystemLoader(
-        searchpath=config.TEMPLATE_DIR
+        searchpath=TEMPLATE_DIR
         )
     template_env = jinja2.Environment( 
         loader=template_loader,
@@ -358,6 +419,7 @@ def generate_rss(cal_dict):
 
 # ------------------------------
 def write_rss():
+    load_config() 
     cal_json = call_api() 
 
     outjson = open(config.OUTJSON, "w")
@@ -370,6 +432,7 @@ def write_rss():
 
 # ------------------------------
 def write_newsletter():
+    load_config() 
 
     cal_json = call_api() 
 
