@@ -83,6 +83,15 @@ def extract_datestring (gcal_event):
 
     return retval
 
+
+# ------------------------------
+def add_timezone(google_url):
+    """ Given a Google Calendar URL, append an argument for the 
+        timezone string.
+    """
+
+    return "{}&ctz={}".format(google_url, config.TIMEZONE)
+
 # ------------------------------
 def get_underline (title, underline_char):
     """ Given a string and a character (a string of length 1, 
@@ -283,6 +292,7 @@ def generate_newsletter(cal_dict):
     template_env.filters['timeonly'] = get_human_timeonly
     template_env.filters['shorturl'] = shorten_url
     template_env.filters['underline'] = get_underline
+    template_env.filters['addtz'] = add_timezone
 
     template = template_env.get_template( NEWSLETTER_TEMPLATE ) 
     template_vars = { 

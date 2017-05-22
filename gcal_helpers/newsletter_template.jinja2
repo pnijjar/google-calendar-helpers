@@ -25,7 +25,7 @@
             {{ '        ' }} Location: unknown.
         {% endif %}
         {% if True -%}
-            {{ '        ' }} Learn More: {{ item['htmlLink'] | shorturl }} 
+            {{ '        ' }} Learn More: {{ item['htmlLink'] | addtz | shorturl }} 
         {% endif %}
 
     {% endfor %}
