@@ -37,10 +37,12 @@ def load_config():
     # Now parse commandline options (Here??? This code smells bad.)
     parser = argparse.ArgumentParser(
         description="Generate fun RSS/newsletter feeds from "
-            "Google Calendar entries."
+            "Google Calendar entries.",
+        formatter_class=argparse.ArgumentDefaultsHelpFormatter,
         )
     parser.add_argument('-c', '--configfile', 
-        help='configuration file location.',
+        help='configuration file location',
+        default=DEFAULT_CONFIG_SOURCEFILE,
         )
 
     args = parser.parse_args()
