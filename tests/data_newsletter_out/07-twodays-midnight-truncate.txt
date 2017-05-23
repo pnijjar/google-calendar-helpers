@@ -2,16 +2,16 @@ WatCamp Events
 ==============
 
 
-Welcome to the watcamp.com newsletter. To contribute events to the calendar, email watcamp-admins@watcamp.com . To unsubscribe, reply to this message with the subject "unsubscribe", or visit the mailing list website: [WHERE?].
+This is the default config.py newsletter.
 
-Note that "Learn More" links point to our Google Calendar, not to the event sites directly (but those event sites are usually accessible from our calendar).
+
 
 Wednesday, Apr 19 2017
 ----------------------
 
  5:30pm: YWCA Cambridge - STEM Mentoring
          Location: 8 Petty Pl, Cambridge, ON
-         Learn More: https://www.google.com/calendar/event?eid=aTJocTAzczBkaDk5MDB0aWhhMDIwM21zcWdfMjAxNzA0MTlUMjEzMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn 
+         Learn More: https://www.google.com/calendar/event?eid=aTJocTAzczBkaDk5MDB0aWhhMDIwM21zcWdfMjAxNzA0MTlUMjEzMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn&ctz=America/Toronto 
 
 
 Thursday, Apr 20 2017
@@ -19,7 +19,7 @@ Thursday, Apr 20 2017
 
 11:30am: FoxNet - Martin Schneider: An Afternoon of Insight on Flash Storage
          Location: FoxNet, 92 Erb St E, Waterloo, ON
-         Learn More: https://www.google.com/calendar/event?eid=ZzBiNmo0YjY2NXYwYzduYnRvNDZ2cWFtcTQgbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw 
+         Learn More: https://www.google.com/calendar/event?eid=ZzBiNmo0YjY2NXYwYzduYnRvNDZ2cWFtcTQgbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw&ctz=America/Toronto 
 
 
 Friday, Apr 21 2017
@@ -27,10 +27,10 @@ Friday, Apr 21 2017
 
  8:00am: Communitech PM Connect P2P
          Location: Communitech, 151 Charles St W, Kitchener, ON
-         Learn More: https://www.google.com/calendar/event?eid=MjNibXZlbHVmOWI4czdpa2hyam1yMm1lcmNfMjAxNzA0MjFUMTIwMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn 
+         Learn More: https://www.google.com/calendar/event?eid=MjNibXZlbHVmOWI4czdpa2hyam1yMm1lcmNfMjAxNzA0MjFUMTIwMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn&ctz=America/Toronto 
 
  8:30am: CORS - SWORD: South Western Operations Research Day
          Location: Davis Centre (DC-1302), University of Waterloo, Waterloo, ON
-         Learn More: https://www.google.com/calendar/event?eid=bGtkcTUxanQ5M212NWFmbnU3ZWtnOG01NDQgbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw 
+         Learn More: https://www.google.com/calendar/event?eid=bGtkcTUxanQ5M212NWFmbnU3ZWtnOG01NDQgbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw&ctz=America/Toronto 
 
 

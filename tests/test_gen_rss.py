@@ -5,7 +5,7 @@
 # sys.path.insert(0, os.path.abspath(os.pardir))
 
 from gcal_helpers import helpers as h
-from gcal_helpers import config 
+#from gcal_helpers import config 
 
 import datetime, pytz, dateutil.tz
 import pytest 
@@ -27,6 +27,9 @@ NEWSLETTER_OUT = "data_newsletter_out"
 ITEM_COUNT_OUT = "data_itemcount_out"
 
 TMPDIR = "/tmp/pytest-temp"
+
+TESTCONFIG = 'testing_config.py'
+
 
 # ==== TEST DATA
 
@@ -79,6 +82,19 @@ DATE_EXAMPLES = [
 
 # ==== Helper Functions 
 
+def set_config():
+    """ Set dummy config file.
+    """
+    global config
+    config = h.load_config(
+        os.path.join(
+            os.path.dirname(os.path.abspath(__file__)),
+            TESTCONFIG,
+            )
+        )
+
+
+
 def save_to_temp(filename, output):
     """ Save output to a tempdir so I can generate 
         outputs.
@@ -127,6 +143,7 @@ def tally_organized_list(orglist):
 
 @pytest.fixture
 def patch_datetime_now(monkeypatch):
+    set_config()
     class mydatetime:
         @classmethod
         # Gah. I have to account for timezone input.
@@ -147,10 +164,12 @@ def patch_newsletter_limit_infinite(monkeypatch):
     """ Make sure limited newsletter lengths do not mess up 
         the test cases.
     """
+    set_config()
     monkeypatch.setattr(config, 'NEWSLETTER_MAX_DAYS', None)
 
 @pytest.fixture
 def patch_newsletter_limit_small(monkeypatch):
+    set_config()
     monkeypatch.setattr(config, 'NEWSLETTER_MAX_DAYS', 2)
 
 

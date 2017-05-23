@@ -2,7 +2,7 @@ WatCamp Events
 ==============
 
 
-Welcome to the watcamp.com newsletter. To contribute events to the calendar, email watcamp-admins@watcamp.com . To unsubscribe, reply to this message with the subject "unsubscribe", or visit the mailing list website: [WHERE?].
+This is the default config.py newsletter.
 
-Note that "Learn More" links point to our Google Calendar, not to the event sites directly (but those event sites are usually accessible from our calendar).
+
 

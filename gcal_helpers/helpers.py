@@ -1,7 +1,5 @@
 #!/usr/bin/env python3
 
-# from . import config 
-
 import requests
 import pytz, datetime, dateutil.parser
 import jinja2, markdown, html
@@ -18,12 +16,14 @@ INVALID_DATE="1969-12-12T23:59.000Z"
 TEMPLATE_DIR=os.path.dirname(os.path.abspath(__file__))
 
 # ------------------------------
-def load_config():
+def load_config(configfile=None):
     """ Load configuration definitions.
        (This is really scary, actually. We are trusting that the 
        config.py we are taking as input is sane!) 
-    """
 
+       If both the commandline and the parameter are 
+       specified then the commandline takes precedence.
+    """
 
     # '/home/pnijjar/watcamp/python_rss/gcal_helpers/config.py'
     # See: http://www.karoltomala.com/blog/?p=622
@@ -32,7 +32,12 @@ def load_config():
         'config.py',
         )
 
-    config_location = DEFAULT_CONFIG_SOURCEFILE
+    config_location=None
+
+    if configfile: 
+        config_location=configfile
+    else: 
+        config_location = DEFAULT_CONFIG_SOURCEFILE
 
     # Now parse commandline options (Here??? This code smells bad.)
     parser = argparse.ArgumentParser(
@@ -75,6 +80,8 @@ def load_config():
         import imp
         config = imp.load_source( 'config', config_location,)
 
+    # For test harness
+    return config
             
 
 # ------------------------------

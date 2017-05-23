@@ -2,15 +2,15 @@ WatCamp Events
 ==============
 
 
-Welcome to the watcamp.com newsletter. To contribute events to the calendar, email watcamp-admins@watcamp.com . To unsubscribe, reply to this message with the subject "unsubscribe", or visit the mailing list website: [WHERE?].
+This is the default config.py newsletter.
 
-Note that "Learn More" links point to our Google Calendar, not to the event sites directly (but those event sites are usually accessible from our calendar).
+
 
 Wednesday, May 31 2017
 ----------------------
 
 TBA: Waterloo-Wellington Clinical Research and Quality Improvement Symposium
          Location: McMaster Waterloo Regional Campus, 10-B Victoria St S,...
-         Learn More: https://www.google.com/calendar/event?eid=c3EzbGFlbWJjdWtqa2xmMWJsdHRudmMybmcgbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw 
+         Learn More: https://www.google.com/calendar/event?eid=c3EzbGFlbWJjdWtqa2xmMWJsdHRudmMybmcgbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw&ctz=America/Toronto 
 
 

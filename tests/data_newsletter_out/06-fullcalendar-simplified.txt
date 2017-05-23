@@ -2,40 +2,40 @@ WatCamp Events
 ==============
 
 
-Welcome to the watcamp.com newsletter. To contribute events to the calendar, email watcamp-admins@watcamp.com . To unsubscribe, reply to this message with the subject "unsubscribe", or visit the mailing list website: [WHERE?].
+This is the default config.py newsletter.
 
-Note that "Learn More" links point to our Google Calendar, not to the event sites directly (but those event sites are usually accessible from our calendar).
+
 
 Wednesday, Apr 19 2017
 ----------------------
 
  5:30pm: YWCA Cambridge - STEM Mentoring
          Location: 8 Petty Pl, Cambridge, ON
-         Learn More: https://www.google.com/calendar/event?eid=aTJocTAzczBkaDk5MDB0aWhhMDIwM21zcWdfMjAxNzA0MTlUMjEzMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn 
+         Learn More: https://www.google.com/calendar/event?eid=aTJocTAzczBkaDk5MDB0aWhhMDIwM21zcWdfMjAxNzA0MTlUMjEzMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn&ctz=America/Toronto 
 
  6:00pm: GGDWR: Eva Skuza - The Science of Cheese
          Location: OpenSky Incubator LOT41, 41 Ardelt Place , Kitchener,...
-         Learn More: https://www.google.com/calendar/event?eid=aWdwOW1wZDlwbGI3YXUwdjh1YmdjZnBqY2cgbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw 
+         Learn More: https://www.google.com/calendar/event?eid=aWdwOW1wZDlwbGI3YXUwdjh1YmdjZnBqY2cgbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw&ctz=America/Toronto 
 
  6:00pm: TechWaterloo Meetup (April 2017)
          Location: Shopify, 57 Erb St W, Waterloo, Ontario, Canada
-         Learn More: https://www.google.com/calendar/event?eid=dDE3dnMwZGMxOWEwdWJlcGRsNXUxZjJsM2cgbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw 
+         Learn More: https://www.google.com/calendar/event?eid=dDE3dnMwZGMxOWEwdWJlcGRsNXUxZjJsM2cgbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw&ctz=America/Toronto 
 
  6:30pm: WatPy - PyDrinks
          Location: Death Valley's Little Brother, 84 King Street North,...
-         Learn More: https://www.google.com/calendar/event?eid=XzZkZ21hY3I2NmdxamFiOW1jOG9qMGI5azZ0aW1jYmIxNjlpbWFiYjE2a3E2YXBoajZvcTZjb3IxNmdfMjAxNzA0MTlUMjIzMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn 
+         Learn More: https://www.google.com/calendar/event?eid=XzZkZ21hY3I2NmdxamFiOW1jOG9qMGI5azZ0aW1jYmIxNjlpbWFiYjE2a3E2YXBoajZvcTZjb3IxNmdfMjAxNzA0MTlUMjIzMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn&ctz=America/Toronto 
 
  6:30pm: UndergroundStudio - Access Wednesdays
          Location: THEMUSEUM, Kitchener, ON
-         Learn More: https://www.google.com/calendar/event?eid=ZHI0NmxtZGlhdThvdWtoZWtqYjhmOWEzMm9fMjAxNzA0MTlUMjIzMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn 
+         Learn More: https://www.google.com/calendar/event?eid=ZHI0NmxtZGlhdThvdWtoZWtqYjhmOWEzMm9fMjAxNzA0MTlUMjIzMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn&ctz=America/Toronto 
 
  6:30pm: CCTDNUG: Building a Cloud-Powered Conversation Bot
          Location: Kitchener Central Library , 85 Queen St North,...
-         Learn More: https://www.google.com/calendar/event?eid=dnZkaGI1YmVkbml2bTdvbDlubmpkMWtzYmcgbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw 
+         Learn More: https://www.google.com/calendar/event?eid=dnZkaGI1YmVkbml2bTdvbDlubmpkMWtzYmcgbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw&ctz=America/Toronto 
 
  7:00pm: KW Unix Users Group
          Location:  William G Davis Computer Research Centre ICR Board Room...
-         Learn More: https://www.google.com/calendar/event?eid=OG5mZXQydHNvNnJvazhpaGk0YjgybXBjZjBfMjAxNzA0MTlUMjMwMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn 
+         Learn More: https://www.google.com/calendar/event?eid=OG5mZXQydHNvNnJvazhpaGk0YjgybXBjZjBfMjAxNzA0MTlUMjMwMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn&ctz=America/Toronto 
 
 
 Thursday, Apr 20 2017
@@ -43,31 +43,31 @@ Thursday, Apr 20 2017
 
 11:30am: FoxNet - Martin Schneider: An Afternoon of Insight on Flash Storage
          Location: FoxNet, 92 Erb St E, Waterloo, ON
-         Learn More: https://www.google.com/calendar/event?eid=ZzBiNmo0YjY2NXYwYzduYnRvNDZ2cWFtcTQgbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw 
+         Learn More: https://www.google.com/calendar/event?eid=ZzBiNmo0YjY2NXYwYzduYnRvNDZ2cWFtcTQgbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw&ctz=America/Toronto 
 
  3:30pm: UofW CE - Jesse Zhu: Small Particles Hoisting Gigantic Industrial Processes the Application of Particle Technology in the Real World
          Location: Engineering 6 (E6-2024), University of Waterloo, Waterloo, ON
-         Learn More: https://www.google.com/calendar/event?eid=Z2NnNTRvcDFtdHM2c29iMGxocTRtN2pnZmcgbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw 
+         Learn More: https://www.google.com/calendar/event?eid=Z2NnNTRvcDFtdHM2c29iMGxocTRtN2pnZmcgbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw&ctz=America/Toronto 
 
  6:30pm: Idea Exchange - Build an A-Line Robot: Introductory Electronics Course
          Location: Idea Exchange | Clemens Mill, 50 Saginaw Pkwy, Cambridge, ON
-         Learn More: https://www.google.com/calendar/event?eid=bHU5am9oZGh0amg2dHMxMTRtOXV0ZjI1ZmtfMjAxNzA0MjBUMjIzMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn 
+         Learn More: https://www.google.com/calendar/event?eid=bHU5am9oZGh0amg2dHMxMTRtOXV0ZjI1ZmtfMjAxNzA0MjBUMjIzMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn&ctz=America/Toronto 
 
  7:00pm: KW Perl Mongers
          Location: DC 3323, University of Waterloo,  Waterloo, ON
-         Learn More: https://www.google.com/calendar/event?eid=MHZqcjZzbTQxMTFhMHU2YjgwbW10MzhucWNfMjAxNzA0MjBUMjMwMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn 
+         Learn More: https://www.google.com/calendar/event?eid=MHZqcjZzbTQxMTFhMHU2YjgwbW10MzhucWNfMjAxNzA0MjBUMjMwMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn&ctz=America/Toronto 
 
  7:00pm: WRDUG - Waterloo Region Drupal Users Group
          Location: The Working Centre, 58 Queen St. S, Kitchener, Ontario, Canada
-         Learn More: https://www.google.com/calendar/event?eid=ZGZrbTJhOGFmZmQybWlxMjB0N3RxaDFqZzBfMjAxNzA0MjBUMjMwMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn 
+         Learn More: https://www.google.com/calendar/event?eid=ZGZrbTJhOGFmZmQybWlxMjB0N3RxaDFqZzBfMjAxNzA0MjBUMjMwMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn&ctz=America/Toronto 
 
  7:00pm: K∩W - Etienne Manderscheid: Case studies on NLP and neural networks by TalkIQ
          Location: The Atomic Co-Working Space, 119 King St W, Kitchener, ON
-         Learn More: https://www.google.com/calendar/event?eid=c2pwcTJlajk3aW5sNWJqb2g1M3B0YjJmbTAgbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw 
+         Learn More: https://www.google.com/calendar/event?eid=c2pwcTJlajk3aW5sNWJqb2g1M3B0YjJmbTAgbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw&ctz=America/Toronto 
 
  7:00pm: REEP - Philip Drader: Taking Action; Saving Energy in Your Home
          Location: Kitchener Public Library (Meeting Room A), 85 Queen St...
-         Learn More: https://www.google.com/calendar/event?eid=dGtmZWtpbXE3dWY4YjhiZHJrazR0NGsycTAgbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw 
+         Learn More: https://www.google.com/calendar/event?eid=dGtmZWtpbXE3dWY4YjhiZHJrazR0NGsycTAgbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw&ctz=America/Toronto 
 
 
 Friday, Apr 21 2017
@@ -75,11 +75,11 @@ Friday, Apr 21 2017
 
  8:00am: Communitech PM Connect P2P
          Location: Communitech, 151 Charles St W, Kitchener, ON
-         Learn More: https://www.google.com/calendar/event?eid=MjNibXZlbHVmOWI4czdpa2hyam1yMm1lcmNfMjAxNzA0MjFUMTIwMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn 
+         Learn More: https://www.google.com/calendar/event?eid=MjNibXZlbHVmOWI4czdpa2hyam1yMm1lcmNfMjAxNzA0MjFUMTIwMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn&ctz=America/Toronto 
 
  8:30am: CORS - SWORD: South Western Operations Research Day
          Location: Davis Centre (DC-1302), University of Waterloo, Waterloo, ON
-         Learn More: https://www.google.com/calendar/event?eid=bGtkcTUxanQ5M212NWFmbnU3ZWtnOG01NDQgbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw 
+         Learn More: https://www.google.com/calendar/event?eid=bGtkcTUxanQ5M212NWFmbnU3ZWtnOG01NDQgbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw&ctz=America/Toronto 
 
 
 Saturday, Apr 22 2017
@@ -87,19 +87,19 @@ Saturday, Apr 22 2017
 
  2:00pm: Stemotics - LEGO Mindstorm EV3
          Location: Idea Exchange | Hespeler, 5 Tannery St E, Cambridge, ON
-         Learn More: https://www.google.com/calendar/event?eid=YmI3YTJlcDFxNG5icGVwMW4zOTU1djR2N2dfMjAxNzA0MjJUMTgwMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn 
+         Learn More: https://www.google.com/calendar/event?eid=YmI3YTJlcDFxNG5icGVwMW4zOTU1djR2N2dfMjAxNzA0MjJUMTgwMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn&ctz=America/Toronto 
 
  3:00pm: Guelph Solar - Island Foods and Solar Open House
          Location: 49 Caledonia St, Guelph, ON
-         Learn More: https://www.google.com/calendar/event?eid=MG9vdjZuNGd2bWJmZTV0aG5sZGRzdW9mY2MgbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw 
+         Learn More: https://www.google.com/calendar/event?eid=MG9vdjZuNGd2bWJmZTV0aG5sZGRzdW9mY2MgbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw&ctz=America/Toronto 
 
  3:00pm: WPL - Open Family Creation Space - Powershift Pop-up for Earth Day
          Location: Waterloo Public Library, 35 Albert St, Waterloo, ON
-         Learn More: https://www.google.com/calendar/event?eid=bTJkcG9vc3ZkazR0bmMxM2Mwcm1zZWd0dmsgbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw 
+         Learn More: https://www.google.com/calendar/event?eid=bTJkcG9vc3ZkazR0bmMxM2Mwcm1zZWd0dmsgbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw&ctz=America/Toronto 
 
  4:00pm: KWLUG Laptop Rescue Mission
          Location: Computer Recycling (entrance off Charles Street), 56...
-         Learn More: https://www.google.com/calendar/event?eid=YTgwaGsxbGExYjNraDdjMnBlbW4zazRidHMgbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw 
+         Learn More: https://www.google.com/calendar/event?eid=YTgwaGsxbGExYjNraDdjMnBlbW4zazRidHMgbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw&ctz=America/Toronto 
 
 
 Sunday, Apr 23 2017
@@ -107,7 +107,7 @@ Sunday, Apr 23 2017
 
 11:00am: Stemotics - LEGO Robotics Workshop for kids
          Location: Stemotics, 1315 Bishop St N, Unit 155, Cambridge, ON
-         Learn More: https://www.google.com/calendar/event?eid=OTIxcjNhOXY5dGNkYzljMWtwam9wOG91djhfMjAxNzA0MjNUMTUwMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn 
+         Learn More: https://www.google.com/calendar/event?eid=OTIxcjNhOXY5dGNkYzljMWtwam9wOG91djhfMjAxNzA0MjNUMTUwMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn&ctz=America/Toronto 
 
 
 Monday, Apr 24 2017
@@ -115,35 +115,35 @@ Monday, Apr 24 2017
 
  9:20am: UofW OVS - Vision Science Graduate Research Conference 2017
          Location: School of Optometry and Vision Science (OPT-1129), 200...
-         Learn More: https://www.google.com/calendar/event?eid=MmljcXV0dG5kYjQwZzQ2NWt1dW9tcGl0a3MgbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw 
+         Learn More: https://www.google.com/calendar/event?eid=MmljcXV0dG5kYjQwZzQ2NWt1dW9tcGl0a3MgbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw&ctz=America/Toronto 
 
  4:00pm: WatPy: Python Project Hours
          Location: University of Waterloo Grad House, University of...
-         Learn More: https://www.google.com/calendar/event?eid=MW04bHJicWtiZjhpb2Y4bDQ3cWM0MGl0ZmNfMjAxNzA0MjRUMjAwMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn 
+         Learn More: https://www.google.com/calendar/event?eid=MW04bHJicWtiZjhpb2Y4bDQ3cWM0MGl0ZmNfMjAxNzA0MjRUMjAwMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn&ctz=America/Toronto 
 
  4:00pm: UofW S&AS - Jeroen De Mast: Mathematical optimization and a multiple-case study
          Location: Mathematics 3 (M3-3127), University of Waterloo, Waterloo, ON
-         Learn More: https://www.google.com/calendar/event?eid=azJpdTk1dG51cTFjaGJqcXFmNms4MGNqYzggbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw 
+         Learn More: https://www.google.com/calendar/event?eid=azJpdTk1dG51cTFjaGJqcXFmNms4MGNqYzggbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw&ctz=America/Toronto 
 
  6:15pm: Terran Stellar Navy - Artemis Spaceship Bridge Simulation
          Location: The Adventurer's Guild Cafe, 36 Ontario St N, Kitchener, ON
-         Learn More: https://www.google.com/calendar/event?eid=cm9tMjA0cjhqcXB1NnVzZ20wb2ZuNmpzbjQgbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw 
+         Learn More: https://www.google.com/calendar/event?eid=cm9tMjA0cjhqcXB1NnVzZ20wb2ZuNmpzbjQgbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw&ctz=America/Toronto 
 
  6:30pm: D2L Night School - Bob Duncan: Crafting Delightful Experiences with Microinteractions
          Location: D2l, 151 Chariles St W, Kitchener, ON
-         Learn More: https://www.google.com/calendar/event?eid=NGE1bHVlb3A5cm05bHE4MG83a3ZtczRnM2MgbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw 
+         Learn More: https://www.google.com/calendar/event?eid=NGE1bHVlb3A5cm05bHE4MG83a3ZtczRnM2MgbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw&ctz=America/Toronto 
 
  7:00pm: WWITPRO - Jason Eckert: BASH on Windows and WSUS
          Location: triOS College, 110 King St E, Kitchener, ON
-         Learn More: https://www.google.com/calendar/event?eid=NDYwMHE1cDB0c3JybGJzNmt0c2RnNWc2aWsgbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw 
+         Learn More: https://www.google.com/calendar/event?eid=NDYwMHE1cDB0c3JybGJzNmt0c2RnNWc2aWsgbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw&ctz=America/Toronto 
 
  7:00pm: DevHouse Waterloo #95
          Location: Shopify, 57 Erb St W, Waterloo, ON
-         Learn More: https://www.google.com/calendar/event?eid=azA5bGx2OG44Y3UzNjZpbWJqcm4zdjhsaXMgbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw 
+         Learn More: https://www.google.com/calendar/event?eid=azA5bGx2OG44Y3UzNjZpbWJqcm4zdjhsaXMgbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw&ctz=America/Toronto 
 
  8:00pm: Diyode - Electronic Drop-in
          Location: Diyode Community Workshop, Unit B - 71 Wyndham St. S,...
-         Learn More: https://www.google.com/calendar/event?eid=bG5pcmlwNGpiNmpwanNycWF1MzhoYzkzZWtfMjAxNzA0MjVUMDAwMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn 
+         Learn More: https://www.google.com/calendar/event?eid=bG5pcmlwNGpiNmpwanNycWF1MzhoYzkzZWtfMjAxNzA0MjVUMDAwMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn&ctz=America/Toronto 
 
 
 Tuesday, Apr 25 2017
@@ -151,23 +151,23 @@ Tuesday, Apr 25 2017
 
  4:30pm: Communitech Agile Lean P2P
          Location: Communitech Hub, 151 Charles Street West, Kitchener, ON...
-         Learn More: https://www.google.com/calendar/event?eid=c291bXU5bnVmOThmM3Z2ajBiNTB1dWk4cm9fMjAxNzA0MjVUMjAzMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn 
+         Learn More: https://www.google.com/calendar/event?eid=c291bXU5bnVmOThmM3Z2ajBiNTB1dWk4cm9fMjAxNzA0MjVUMjAzMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn&ctz=America/Toronto 
 
  6:30pm: Hive WR - Make your own Android app
          Location: Kitchener Public Library, 85 Queen St N, Kitchener, ON
-         Learn More: https://www.google.com/calendar/event?eid=NGU1OGhtdmxvcmt0dHZnbTQ0aGU4dHNhdGsgbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw 
+         Learn More: https://www.google.com/calendar/event?eid=NGU1OGhtdmxvcmt0dHZnbTQ0aGU4dHNhdGsgbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw&ctz=America/Toronto 
 
  6:30pm: StartupTech KW Meetup
          Location: unknown.
-         Learn More: https://www.google.com/calendar/event?eid=YWlzbDU5NG1xMzdva2poNjVrazVvZjc0Y2cgbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw 
+         Learn More: https://www.google.com/calendar/event?eid=YWlzbDU5NG1xMzdva2poNjVrazVvZjc0Y2cgbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw&ctz=America/Toronto 
 
  7:00pm: KWArtzLab Tuesday Open Night
          Location: KWArtzlab, 33 Kent Avenue, Kitchener, Ontario, Canada
-         Learn More: https://www.google.com/calendar/event?eid=NWxkMGUwbWs5Zmw0dXNzNTNpamgwNWlkNmtfMjAxNzA0MjVUMjMwMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn 
+         Learn More: https://www.google.com/calendar/event?eid=NWxkMGUwbWs5Zmw0dXNzNTNpamgwNWlkNmtfMjAxNzA0MjVUMjMwMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn&ctz=America/Toronto 
 
  7:00pm: Communitech IGD P2P - Indie Game Dev April Social
          Location: McCabe's Irish Pub & Grill, 352 King St W, Kitchener, ON
-         Learn More: https://www.google.com/calendar/event?eid=cGJlOWl2cjQ0Z29icjFxbzM5OWFocm9kM28gbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw 
+         Learn More: https://www.google.com/calendar/event?eid=cGJlOWl2cjQ0Z29icjFxbzM5OWFocm9kM28gbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw&ctz=America/Toronto 
 
 
 Wednesday, Apr 26 2017
@@ -175,19 +175,19 @@ Wednesday, Apr 26 2017
 
  9:00am: UofW Pharmacy - Pharmacy Research Day
          Location: School of Pharmacy, 10A Victoria St S, Kitchener, ON
-         Learn More: https://www.google.com/calendar/event?eid=b2xtYzJlM3NrMGJoZ2k5dXByamExZW5ydG8gbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw 
+         Learn More: https://www.google.com/calendar/event?eid=b2xtYzJlM3NrMGJoZ2k5dXByamExZW5ydG8gbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw&ctz=America/Toronto 
 
  6:00pm: Hive WR - Member Meetup
          Location: 44 Gaukel St, Kitchener, ON
-         Learn More: https://www.google.com/calendar/event?eid=YnJoNHRjOG9jODhnZzZ0ZGQ4MGsxa2o2Y28gbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw 
+         Learn More: https://www.google.com/calendar/event?eid=YnJoNHRjOG9jODhnZzZ0ZGQ4MGsxa2o2Y28gbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw&ctz=America/Toronto 
 
  6:00pm: Kwartzlab: 3D Printer Meetup (public event)
          Location: Kwartzlab, 33 Kent Avenue, Kitchener, Ontario, Canada
-         Learn More: https://www.google.com/calendar/event?eid=dGhza2I4NGtsY2MxdWowaHE1YWwxbmh1NWdfMjAxNzA0MjZUMjIwMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn 
+         Learn More: https://www.google.com/calendar/event?eid=dGhza2I4NGtsY2MxdWowaHE1YWwxbmh1NWdfMjAxNzA0MjZUMjIwMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn&ctz=America/Toronto 
 
  7:30pm: GPUG - Guelph PHP Users Group
          Location: unknown.
-         Learn More: https://www.google.com/calendar/event?eid=djFidTJlbzZwMXJxczhhdThnaGFza3M2ZjhfMjAxNzA0MjZUMjMzMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn 
+         Learn More: https://www.google.com/calendar/event?eid=djFidTJlbzZwMXJxczhhdThnaGFza3M2ZjhfMjAxNzA0MjZUMjMzMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn&ctz=America/Toronto 
 
 
 Thursday, Apr 27 2017
@@ -195,35 +195,35 @@ Thursday, Apr 27 2017
 
  3:30pm: UofW Distinguished Lecture Series: Eric Horvitz - Data, Predictions and Decisions in Support of People and   Society
          Location: Davis Centre 1302, University of Waterloo, Waterloo,...
-         Learn More: https://www.google.com/calendar/event?eid=Nm5saHVsMWZtaDllbmNob2EwbTYzMWV2aXMgbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw 
+         Learn More: https://www.google.com/calendar/event?eid=Nm5saHVsMWZtaDllbmNob2EwbTYzMWV2aXMgbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw&ctz=America/Toronto 
 
  4:00pm: UofW PA - D. A. Drabold: Computational Design of Materials
          Location: Physics (PHY-308), University of Waterloo, Waterloo, ON
-         Learn More: https://www.google.com/calendar/event?eid=ZmRqa2lnbGtucmN1MmN1YjdkNzc1YWozYzQgbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw 
+         Learn More: https://www.google.com/calendar/event?eid=ZmRqa2lnbGtucmN1MmN1YjdkNzc1YWozYzQgbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw&ctz=America/Toronto 
 
  5:30pm: NeuroTechKW - NeuroMarketing and YOU !... Part 2
          Location: Communitech, 151 Charles St W, Kitchener, ON
-         Learn More: https://www.google.com/calendar/event?eid=aGZqMGtuZDBma2twYTkwdDcyMDV2cDU0bzQgbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw 
+         Learn More: https://www.google.com/calendar/event?eid=aGZqMGtuZDBma2twYTkwdDcyMDV2cDU0bzQgbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw&ctz=America/Toronto 
 
  6:00pm: KWVoIP: Exploration of tes.kwvoip.ca, the "Telephonically Enhanced System"
          Location: Egg Roll King Restaurant, 85 Courtland Avene East,...
-         Learn More: https://www.google.com/calendar/event?eid=MXJmNGJlMGxvY3ZzZTFzaDU5aWo2MGpqdG8gbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw 
+         Learn More: https://www.google.com/calendar/event?eid=MXJmNGJlMGxvY3ZzZTFzaDU5aWo2MGpqdG8gbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw&ctz=America/Toronto 
 
  6:00pm: IoT WR - Grobo and HITCH
          Location: Shopify Plus, 57 Erb St W, Waterloo, ON
-         Learn More: https://www.google.com/calendar/event?eid=aWljMW1wN2U4OThhNWVjamQzdnNsbTJlajQgbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw 
+         Learn More: https://www.google.com/calendar/event?eid=aWljMW1wN2U4OThhNWVjamQzdnNsbTJlajQgbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw&ctz=America/Toronto 
 
  6:00pm: Communitech Tech Comm P2P - Social
          Location: Rhapsody Barrel Bar, 179 King St W, Kitchener, ON
-         Learn More: https://www.google.com/calendar/event?eid=dm9oZGY0czZxZWk3NTNhMGg4MTRjNXNnM28gbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw 
+         Learn More: https://www.google.com/calendar/event?eid=dm9oZGY0czZxZWk3NTNhMGg4MTRjNXNnM28gbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw&ctz=America/Toronto 
 
  6:30pm: Idea Exchange - Build an A-Line Robot: Introductory Electronics Course
          Location: Idea Exchange | Clemens Mill, 50 Saginaw Pkwy, Cambridge, ON
-         Learn More: https://www.google.com/calendar/event?eid=bHU5am9oZGh0amg2dHMxMTRtOXV0ZjI1ZmtfMjAxNzA0MjdUMjIzMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn 
+         Learn More: https://www.google.com/calendar/event?eid=bHU5am9oZGh0amg2dHMxMTRtOXV0ZjI1ZmtfMjAxNzA0MjdUMjIzMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn&ctz=America/Toronto 
 
  7:00pm: CorridorJS
          Location: The Tannery, 151 Charles St W, Kitchener, ON
-         Learn More: https://www.google.com/calendar/event?eid=NGhubjdzZjJxZ2Rjb2Vhbm9sNHQ0ajc0dmdfMjAxNzA0MjdUMjMwMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn 
+         Learn More: https://www.google.com/calendar/event?eid=NGhubjdzZjJxZ2Rjb2Vhbm9sNHQ0ajc0dmdfMjAxNzA0MjdUMjMwMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn&ctz=America/Toronto 
 
 
 Friday, Apr 28 2017
@@ -231,7 +231,7 @@ Friday, Apr 28 2017
 
  7:00pm: KW-RASC - Stargazing 101
          Location: Zehrs, Laurentian Power Centre, 750 Ottawa St S, Kitchener, ON
-         Learn More: https://www.google.com/calendar/event?eid=OXMwcWFnb3Q1bmdwbG51cTQyYXVoZTkzaTBfMjAxNzA0MjhUMjMwMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn 
+         Learn More: https://www.google.com/calendar/event?eid=OXMwcWFnb3Q1bmdwbG51cTQyYXVoZTkzaTBfMjAxNzA0MjhUMjMwMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn&ctz=America/Toronto 
 
 
 Saturday, Apr 29 2017
@@ -239,11 +239,11 @@ Saturday, Apr 29 2017
 
 10:00am: OSI - Waterloo Region Repair Cafe
          Location: Open Sky Incubator, 41 Ardelt Pl, Kitchener, ON
-         Learn More: https://www.google.com/calendar/event?eid=dnNlNGdvZ3FiNTl1ajgxY291cWZxZDEwMG8gbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw 
+         Learn More: https://www.google.com/calendar/event?eid=dnNlNGdvZ3FiNTl1ajgxY291cWZxZDEwMG8gbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw&ctz=America/Toronto 
 
  2:00pm: Stemotics - LEGO Mindstorm EV3
          Location: Idea Exchange | Hespeler, 5 Tannery St E, Cambridge, ON
-         Learn More: https://www.google.com/calendar/event?eid=YmI3YTJlcDFxNG5icGVwMW4zOTU1djR2N2dfMjAxNzA0MjlUMTgwMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn 
+         Learn More: https://www.google.com/calendar/event?eid=YmI3YTJlcDFxNG5icGVwMW4zOTU1djR2N2dfMjAxNzA0MjlUMTgwMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn&ctz=America/Toronto 
 
 
 Sunday, Apr 30 2017
@@ -251,11 +251,11 @@ Sunday, Apr 30 2017
 
 10:00am: AquaHacking 2017 - Second Challenge Day
          Location: Engineering 5 (E5-3101-2), University of Waterloo, Waterloo, ON
-         Learn More: https://www.google.com/calendar/event?eid=MGkyYmtjdmM4N29ucWtyZzA0YWMyMWF1djQgbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw 
+         Learn More: https://www.google.com/calendar/event?eid=MGkyYmtjdmM4N29ucWtyZzA0YWMyMWF1djQgbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw&ctz=America/Toronto 
 
 11:00am: Stemotics - LEGO Robotics Workshop for kids
          Location: Stemotics, 1315 Bishop St N, Unit 155, Cambridge, ON
-         Learn More: https://www.google.com/calendar/event?eid=OTIxcjNhOXY5dGNkYzljMWtwam9wOG91djhfMjAxNzA0MzBUMTUwMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn 
+         Learn More: https://www.google.com/calendar/event?eid=OTIxcjNhOXY5dGNkYzljMWtwam9wOG91djhfMjAxNzA0MzBUMTUwMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn&ctz=America/Toronto 
 
 
 Monday, May 01 2017
@@ -263,19 +263,19 @@ Monday, May 01 2017
 
  4:00pm: WatPy: Python Project Hours
          Location: University of Waterloo Grad House, University of...
-         Learn More: https://www.google.com/calendar/event?eid=MW04bHJicWtiZjhpb2Y4bDQ3cWM0MGl0ZmNfMjAxNzA1MDFUMjAwMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn 
+         Learn More: https://www.google.com/calendar/event?eid=MW04bHJicWtiZjhpb2Y4bDQ3cWM0MGl0ZmNfMjAxNzA1MDFUMjAwMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn&ctz=America/Toronto 
 
  6:30pm: KWLUG: Aden Seaman - Introduction to Functional Programming and Haskell
          Location: St. John's Kitchen, 97 Victoria Avenue North, Kitchener,...
-         Learn More: https://www.google.com/calendar/event?eid=aXFoNm1kNmk0bWJlM2JzM3BhNjhydTg3ajBfMjAxNzA1MDFUMjIzMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn 
+         Learn More: https://www.google.com/calendar/event?eid=aXFoNm1kNmk0bWJlM2JzM3BhNjhydTg3ajBfMjAxNzA1MDFUMjIzMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn&ctz=America/Toronto 
 
  7:30pm: KWARC
          Location: St John Ambulance Station, 250 Gage Avenue, Kitchener,...
-         Learn More: https://www.google.com/calendar/event?eid=ZGw1dnVvdjE1OTU5OHQxdXI5c2l0bGpjbzRfMjAxNzA1MDFUMjMzMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn 
+         Learn More: https://www.google.com/calendar/event?eid=ZGw1dnVvdjE1OTU5OHQxdXI5c2l0bGpjbzRfMjAxNzA1MDFUMjMzMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn&ctz=America/Toronto 
 
  8:00pm: Diyode - Electronic Drop-in
          Location: Diyode Community Workshop, Unit B - 71 Wyndham St. S,...
-         Learn More: https://www.google.com/calendar/event?eid=bG5pcmlwNGpiNmpwanNycWF1MzhoYzkzZWtfMjAxNzA1MDJUMDAwMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn 
+         Learn More: https://www.google.com/calendar/event?eid=bG5pcmlwNGpiNmpwanNycWF1MzhoYzkzZWtfMjAxNzA1MDJUMDAwMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn&ctz=America/Toronto 
 
 
 Tuesday, May 02 2017
@@ -283,11 +283,11 @@ Tuesday, May 02 2017
 
  7:00pm: KWArtzLab Tuesday Open Night
          Location: KWArtzlab, 33 Kent Avenue, Kitchener, Ontario, Canada
-         Learn More: https://www.google.com/calendar/event?eid=NWxkMGUwbWs5Zmw0dXNzNTNpamgwNWlkNmtfMjAxNzA1MDJUMjMwMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn 
+         Learn More: https://www.google.com/calendar/event?eid=NWxkMGUwbWs5Zmw0dXNzNTNpamgwNWlkNmtfMjAxNzA1MDJUMjMwMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn&ctz=America/Toronto 
 
  7:00pm: CREW - GREEN Drinks
          Location: Barley Works, Huether Hotel, 59 King St N, Waterloo, ON
-         Learn More: https://www.google.com/calendar/event?eid=ZzF1dHM1NGlnM3NjbmE5NXBjbDc3cTR1NDhfMjAxNzA1MDJUMjMwMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn 
+         Learn More: https://www.google.com/calendar/event?eid=ZzF1dHM1NGlnM3NjbmE5NXBjbDc3cTR1NDhfMjAxNzA1MDJUMjMwMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn&ctz=America/Toronto 
 
 
 Wednesday, May 03 2017
@@ -295,7 +295,7 @@ Wednesday, May 03 2017
 
  5:30pm: YWCA Cambridge - STEM Mentoring
          Location: 8 Petty Pl, Cambridge, ON
-         Learn More: https://www.google.com/calendar/event?eid=aTJocTAzczBkaDk5MDB0aWhhMDIwM21zcWdfMjAxNzA1MDNUMjEzMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn 
+         Learn More: https://www.google.com/calendar/event?eid=aTJocTAzczBkaDk5MDB0aWhhMDIwM21zcWdfMjAxNzA1MDNUMjEzMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn&ctz=America/Toronto 
 
 
 Thursday, May 04 2017
@@ -303,11 +303,11 @@ Thursday, May 04 2017
 
  8:00am: Communitech Technology Strategy & Management P2P
          Location: Communitech Hub, 151 Charles Street West, Kitchener, ON...
-         Learn More: https://www.google.com/calendar/event?eid=N3VrNHI5OGtzajg4aHNpZTY5cW45ZXE5OG9fMjAxNzA1MDRUMTIwMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn 
+         Learn More: https://www.google.com/calendar/event?eid=N3VrNHI5OGtzajg4aHNpZTY5cW45ZXE5OG9fMjAxNzA1MDRUMTIwMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn&ctz=America/Toronto 
 
  6:30pm: Idea Exchange - Build an A-Line Robot: Introductory Electronics Course
          Location: Idea Exchange | Clemens Mill, 50 Saginaw Pkwy, Cambridge, ON
-         Learn More: https://www.google.com/calendar/event?eid=bHU5am9oZGh0amg2dHMxMTRtOXV0ZjI1ZmtfMjAxNzA1MDRUMjIzMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn 
+         Learn More: https://www.google.com/calendar/event?eid=bHU5am9oZGh0amg2dHMxMTRtOXV0ZjI1ZmtfMjAxNzA1MDRUMjIzMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn&ctz=America/Toronto 
 
 
 Friday, May 05 2017
@@ -315,7 +315,7 @@ Friday, May 05 2017
 
 TBA: CrySP: Lisa Austin
          Location: University of Waterloo, Waterloo, Ontario, Canada
-         Learn More: https://www.google.com/calendar/event?eid=N3ZrNXFnNTRya2o3a2Q3M2wyYzNjcWduMDQgbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw 
+         Learn More: https://www.google.com/calendar/event?eid=N3ZrNXFnNTRya2o3a2Q3M2wyYzNjcWduMDQgbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw&ctz=America/Toronto 
 
 
 Saturday, May 06 2017
@@ -323,7 +323,7 @@ Saturday, May 06 2017
 
  2:00pm: Stemotics - LEGO Mindstorm EV3
          Location: Idea Exchange | Hespeler, 5 Tannery St E, Cambridge, ON
-         Learn More: https://www.google.com/calendar/event?eid=YmI3YTJlcDFxNG5icGVwMW4zOTU1djR2N2dfMjAxNzA1MDZUMTgwMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn 
+         Learn More: https://www.google.com/calendar/event?eid=YmI3YTJlcDFxNG5icGVwMW4zOTU1djR2N2dfMjAxNzA1MDZUMTgwMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn&ctz=America/Toronto 
 
 
 Sunday, May 07 2017
@@ -331,11 +331,11 @@ Sunday, May 07 2017
 
 11:00am: Stemotics - LEGO Robotics Workshop for kids
          Location: Stemotics, 1315 Bishop St N, Unit 155, Cambridge, ON
-         Learn More: https://www.google.com/calendar/event?eid=OTIxcjNhOXY5dGNkYzljMWtwam9wOG91djhfMjAxNzA1MDdUMTUwMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn 
+         Learn More: https://www.google.com/calendar/event?eid=OTIxcjNhOXY5dGNkYzljMWtwam9wOG91djhfMjAxNzA1MDdUMTUwMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn&ctz=America/Toronto 
 
  1:00pm: Guelph Solar - Spring & Circus Solar Open House
          Location: 67 Alice St, Guelph, ON
-         Learn More: https://www.google.com/calendar/event?eid=ZnRlZmJqZGhpNmJiZTN0YzZyZjM4YjNxM3MgbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw 
+         Learn More: https://www.google.com/calendar/event?eid=ZnRlZmJqZGhpNmJiZTN0YzZyZjM4YjNxM3MgbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw&ctz=America/Toronto 
 
 
 Monday, May 08 2017
@@ -343,15 +343,15 @@ Monday, May 08 2017
 
  4:00pm: WatPy: Python Project Hours
          Location: University of Waterloo Grad House, University of...
-         Learn More: https://www.google.com/calendar/event?eid=MW04bHJicWtiZjhpb2Y4bDQ3cWM0MGl0ZmNfMjAxNzA1MDhUMjAwMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn 
+         Learn More: https://www.google.com/calendar/event?eid=MW04bHJicWtiZjhpb2Y4bDQ3cWM0MGl0ZmNfMjAxNzA1MDhUMjAwMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn&ctz=America/Toronto 
 
  8:00pm: Diyode - Electronic Drop-in
          Location: Diyode Community Workshop, Unit B - 71 Wyndham St. S,...
-         Learn More: https://www.google.com/calendar/event?eid=bG5pcmlwNGpiNmpwanNycWF1MzhoYzkzZWtfMjAxNzA1MDlUMDAwMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn 
+         Learn More: https://www.google.com/calendar/event?eid=bG5pcmlwNGpiNmpwanNycWF1MzhoYzkzZWtfMjAxNzA1MDlUMDAwMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn&ctz=America/Toronto 
 
  8:00pm: HackerNest Kitchener-Waterloo May Tech Social
          Location: unknown.
-         Learn More: https://www.google.com/calendar/event?eid=cXVjbjEzM3BqaXE5bWNiNGw3c3Q1cTlhcm8gbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw 
+         Learn More: https://www.google.com/calendar/event?eid=cXVjbjEzM3BqaXE5bWNiNGw3c3Q1cTlhcm8gbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw&ctz=America/Toronto 
 
 
 Tuesday, May 09 2017
@@ -359,7 +359,7 @@ Tuesday, May 09 2017
 
  7:00pm: KWArtzLab Tuesday Open Night
          Location: KWArtzlab, 33 Kent Avenue, Kitchener, Ontario, Canada
-         Learn More: https://www.google.com/calendar/event?eid=NWxkMGUwbWs5Zmw0dXNzNTNpamgwNWlkNmtfMjAxNzA1MDlUMjMwMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn 
+         Learn More: https://www.google.com/calendar/event?eid=NWxkMGUwbWs5Zmw0dXNzNTNpamgwNWlkNmtfMjAxNzA1MDlUMjMwMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn&ctz=America/Toronto 
 
 
 Wednesday, May 10 2017
@@ -367,11 +367,11 @@ Wednesday, May 10 2017
 
  9:00am: Communitech - Tech Leadership Conference
          Location: Communitech, 151 Charles St W, Kitchener, ON
-         Learn More: https://www.google.com/calendar/event?eid=ZW41a2c4N2Vma3FraThia3ZxbzVmZTVzNmcgbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw 
+         Learn More: https://www.google.com/calendar/event?eid=ZW41a2c4N2Vma3FraThia3ZxbzVmZTVzNmcgbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw&ctz=America/Toronto 
 
  6:30pm: UndergroundStudio - Access Wednesdays
          Location: THEMUSEUM, Kitchener, ON
-         Learn More: https://www.google.com/calendar/event?eid=Z21pNGQ1cjJ1Z2xlZWxxZ3RvZzhzNWgyaGNfMjAxNzA1MTBUMjIzMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn 
+         Learn More: https://www.google.com/calendar/event?eid=Z21pNGQ1cjJ1Z2xlZWxxZ3RvZzhzNWgyaGNfMjAxNzA1MTBUMjIzMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn&ctz=America/Toronto 
 
 
 Thursday, May 11 2017
@@ -379,19 +379,19 @@ Thursday, May 11 2017
 
  8:30am: UofW EQUALS Conference: Excellence and Quality in Academic Life in STEM
          Location: University of Waterloo, Waterloo, ON
-         Learn More: https://www.google.com/calendar/event?eid=bWxuaTJ1MmlrZmw1bnY2aHBvYWMzbzFnMnMgbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw 
+         Learn More: https://www.google.com/calendar/event?eid=bWxuaTJ1MmlrZmw1bnY2aHBvYWMzbzFnMnMgbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw&ctz=America/Toronto 
 
  2:30pm: UofW AM - Mary-Louise Timmermans: Summer heat overwinters in the Arctic Ocean
          Location: Mathematics and Computer (MC-6460), University of...
-         Learn More: https://www.google.com/calendar/event?eid=YmltM202ZG1oMWhrbDJzbDc4cGExb2UxZjAgbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw 
+         Learn More: https://www.google.com/calendar/event?eid=YmltM202ZG1oMWhrbDJzbDc4cGExb2UxZjAgbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw&ctz=America/Toronto 
 
  6:30pm: Tinker Truck - Maker Club Cambridge
          Location: Playfit Kids Club, 366 Hespeler Rd, Cambridge, ON
-         Learn More: https://www.google.com/calendar/event?eid=Yzh2MTI4YXYyaWV2cmhqcWdsdjJqMjgxc2tfMjAxNzA1MTFUMjIzMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn 
+         Learn More: https://www.google.com/calendar/event?eid=Yzh2MTI4YXYyaWV2cmhqcWdsdjJqMjgxc2tfMjAxNzA1MTFUMjIzMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn&ctz=America/Toronto 
 
  6:30pm: Idea Exchange - Build an A-Line Robot: Introductory Electronics Course
          Location: Idea Exchange | Clemens Mill, 50 Saginaw Pkwy, Cambridge, ON
-         Learn More: https://www.google.com/calendar/event?eid=bHU5am9oZGh0amg2dHMxMTRtOXV0ZjI1ZmtfMjAxNzA1MTFUMjIzMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn 
+         Learn More: https://www.google.com/calendar/event?eid=bHU5am9oZGh0amg2dHMxMTRtOXV0ZjI1ZmtfMjAxNzA1MTFUMjIzMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn&ctz=America/Toronto 
 
 
 Saturday, May 13 2017
@@ -399,15 +399,15 @@ Saturday, May 13 2017
 
 10:00am: AquaHacking 2017 - Third Challenge Day
          Location: Engineering 5 (E5-3101-2), University of Waterloo, Waterloo, ON
-         Learn More: https://www.google.com/calendar/event?eid=MGg5bzFnZTB0djI2bmxwYm9xNzU2aHZvdG8gbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw 
+         Learn More: https://www.google.com/calendar/event?eid=MGg5bzFnZTB0djI2bmxwYm9xNzU2aHZvdG8gbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw&ctz=America/Toronto 
 
 10:00am: WWFC - Girls CAN Fly!
          Location: Waterloo Wellington Flight Centre, 4881 Fountain St N,...
-         Learn More: https://www.google.com/calendar/event?eid=aGZsOWVhMXZuOTR0djNyNmg0MHNqdWptMG8gbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw 
+         Learn More: https://www.google.com/calendar/event?eid=aGZsOWVhMXZuOTR0djNyNmg0MHNqdWptMG8gbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw&ctz=America/Toronto 
 
  2:00pm: Stemotics - LEGO Mindstorm EV3
          Location: Idea Exchange | Hespeler, 5 Tannery St E, Cambridge, ON
-         Learn More: https://www.google.com/calendar/event?eid=YmI3YTJlcDFxNG5icGVwMW4zOTU1djR2N2dfMjAxNzA1MTNUMTgwMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn 
+         Learn More: https://www.google.com/calendar/event?eid=YmI3YTJlcDFxNG5icGVwMW4zOTU1djR2N2dfMjAxNzA1MTNUMTgwMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn&ctz=America/Toronto 
 
 
 Sunday, May 14 2017
@@ -415,7 +415,7 @@ Sunday, May 14 2017
 
 11:00am: Stemotics - LEGO Robotics Workshop for kids
          Location: Stemotics, 1315 Bishop St N, Unit 155, Cambridge, ON
-         Learn More: https://www.google.com/calendar/event?eid=OTIxcjNhOXY5dGNkYzljMWtwam9wOG91djhfMjAxNzA1MTRUMTUwMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn 
+         Learn More: https://www.google.com/calendar/event?eid=OTIxcjNhOXY5dGNkYzljMWtwam9wOG91djhfMjAxNzA1MTRUMTUwMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn&ctz=America/Toronto 
 
 
 Monday, May 15 2017
@@ -423,11 +423,11 @@ Monday, May 15 2017
 
  4:00pm: WatPy: Python Project Hours
          Location: University of Waterloo Grad House, University of...
-         Learn More: https://www.google.com/calendar/event?eid=MW04bHJicWtiZjhpb2Y4bDQ3cWM0MGl0ZmNfMjAxNzA1MTVUMjAwMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn 
+         Learn More: https://www.google.com/calendar/event?eid=MW04bHJicWtiZjhpb2Y4bDQ3cWM0MGl0ZmNfMjAxNzA1MTVUMjAwMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn&ctz=America/Toronto 
 
  8:00pm: Diyode - Electronic Drop-in
          Location: Diyode Community Workshop, Unit B - 71 Wyndham St. S,...
-         Learn More: https://www.google.com/calendar/event?eid=bG5pcmlwNGpiNmpwanNycWF1MzhoYzkzZWtfMjAxNzA1MTZUMDAwMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn 
+         Learn More: https://www.google.com/calendar/event?eid=bG5pcmlwNGpiNmpwanNycWF1MzhoYzkzZWtfMjAxNzA1MTZUMDAwMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn&ctz=America/Toronto 
 
 
 Tuesday, May 16 2017
@@ -435,23 +435,23 @@ Tuesday, May 16 2017
 
  5:00pm: ODWR Book Club Monthly Meetup! (Hold the Date)
          Location: unknown.
-         Learn More: https://www.google.com/calendar/event?eid=Mzl1cWpjYm5naXU3bTN0b2ViMHUzdnV2djQgbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw 
+         Learn More: https://www.google.com/calendar/event?eid=Mzl1cWpjYm5naXU3bTN0b2ViMHUzdnV2djQgbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw&ctz=America/Toronto 
 
  6:30pm: Hive WR - Social Media for Business
          Location: Kitchener Public Library, 85 Queen St N, Kitchener, ON
-         Learn More: https://www.google.com/calendar/event?eid=cWY3ZTZqb2Vxa2htc29iMG1vcDg5OHFlbG8gbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw 
+         Learn More: https://www.google.com/calendar/event?eid=cWY3ZTZqb2Vxa2htc29iMG1vcDg5OHFlbG8gbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw&ctz=America/Toronto 
 
  7:00pm: KWArtzLab Tuesday Open Night
          Location: KWArtzlab, 33 Kent Avenue, Kitchener, Ontario, Canada
-         Learn More: https://www.google.com/calendar/event?eid=NWxkMGUwbWs5Zmw0dXNzNTNpamgwNWlkNmtfMjAxNzA1MTZUMjMwMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn 
+         Learn More: https://www.google.com/calendar/event?eid=NWxkMGUwbWs5Zmw0dXNzNTNpamgwNWlkNmtfMjAxNzA1MTZUMjMwMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn&ctz=America/Toronto 
 
  7:00pm: KWRuby: Contributing to Ruby Projects Workshop III
          Location: Vidyard, 8 Queen St N, Kitchener, Ontario, Canada
-         Learn More: https://www.google.com/calendar/event?eid=NnNraDlydmNucGNsc3BiNjU2MWljaHV0M28gbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw 
+         Learn More: https://www.google.com/calendar/event?eid=NnNraDlydmNucGNsc3BiNjU2MWljaHV0M28gbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw&ctz=America/Toronto 
 
  7:00pm: KW Go Devs - Simon Pratt: The Go Assembler
          Location: Dejero, 412 Albert St, Waterloo, ON
-         Learn More: https://www.google.com/calendar/event?eid=Y3ZrczQyZzRmZDZkYnZibWJ1a2YwOWl0cnMgbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw 
+         Learn More: https://www.google.com/calendar/event?eid=Y3ZrczQyZzRmZDZkYnZibWJ1a2YwOWl0cnMgbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw&ctz=America/Toronto 
 
 
 Wednesday, May 17 2017
@@ -459,23 +459,23 @@ Wednesday, May 17 2017
 
  8:30am: Communitech Women in Technology P2P
          Location: Communitech Hub, 151 Charles Street West, Kitchener, ON...
-         Learn More: https://www.google.com/calendar/event?eid=aDg0YWptcWUyOGZuZzd2MHMzMnZiOGc3bXNfMjAxNzA1MTdUMTIzMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn 
+         Learn More: https://www.google.com/calendar/event?eid=aDg0YWptcWUyOGZuZzd2MHMzMnZiOGc3bXNfMjAxNzA1MTdUMTIzMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn&ctz=America/Toronto 
 
  5:30pm: YWCA Cambridge - STEM Mentoring
          Location: 8 Petty Pl, Cambridge, ON
-         Learn More: https://www.google.com/calendar/event?eid=aTJocTAzczBkaDk5MDB0aWhhMDIwM21zcWdfMjAxNzA1MTdUMjEzMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn 
+         Learn More: https://www.google.com/calendar/event?eid=aTJocTAzczBkaDk5MDB0aWhhMDIwM21zcWdfMjAxNzA1MTdUMjEzMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn&ctz=America/Toronto 
 
  6:30pm: WatPy - PyDrinks
          Location: Death Valley's Little Brother, 84 King Street North,...
-         Learn More: https://www.google.com/calendar/event?eid=XzZkZ21hY3I2NmdxamFiOW1jOG9qMGI5azZ0aW1jYmIxNjlpbWFiYjE2a3E2YXBoajZvcTZjb3IxNmdfMjAxNzA1MTdUMjIzMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn 
+         Learn More: https://www.google.com/calendar/event?eid=XzZkZ21hY3I2NmdxamFiOW1jOG9qMGI5azZ0aW1jYmIxNjlpbWFiYjE2a3E2YXBoajZvcTZjb3IxNmdfMjAxNzA1MTdUMjIzMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn&ctz=America/Toronto 
 
  6:30pm: UndergroundStudio - Access Wednesdays
          Location: THEMUSEUM, Kitchener, ON
-         Learn More: https://www.google.com/calendar/event?eid=ZHI0NmxtZGlhdThvdWtoZWtqYjhmOWEzMm9fMjAxNzA1MTdUMjIzMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn 
+         Learn More: https://www.google.com/calendar/event?eid=ZHI0NmxtZGlhdThvdWtoZWtqYjhmOWEzMm9fMjAxNzA1MTdUMjIzMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn&ctz=America/Toronto 
 
  7:00pm: KW Unix Users Group
          Location:  William G Davis Computer Research Centre ICR Board Room...
-         Learn More: https://www.google.com/calendar/event?eid=OG5mZXQydHNvNnJvazhpaGk0YjgybXBjZjBfMjAxNzA1MTdUMjMwMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn 
+         Learn More: https://www.google.com/calendar/event?eid=OG5mZXQydHNvNnJvazhpaGk0YjgybXBjZjBfMjAxNzA1MTdUMjMwMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn&ctz=America/Toronto 
 
 
 Thursday, May 18 2017
@@ -483,11 +483,11 @@ Thursday, May 18 2017
 
  7:00pm: KW Perl Mongers
          Location: DC 3323, University of Waterloo,  Waterloo, ON
-         Learn More: https://www.google.com/calendar/event?eid=MHZqcjZzbTQxMTFhMHU2YjgwbW10MzhucWNfMjAxNzA1MThUMjMwMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn 
+         Learn More: https://www.google.com/calendar/event?eid=MHZqcjZzbTQxMTFhMHU2YjgwbW10MzhucWNfMjAxNzA1MThUMjMwMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn&ctz=America/Toronto 
 
  7:00pm: WRDUG - Waterloo Region Drupal Users Group
          Location: The Working Centre, 58 Queen St. S, Kitchener, Ontario, Canada
-         Learn More: https://www.google.com/calendar/event?eid=ZGZrbTJhOGFmZmQybWlxMjB0N3RxaDFqZzBfMjAxNzA1MThUMjMwMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn 
+         Learn More: https://www.google.com/calendar/event?eid=ZGZrbTJhOGFmZmQybWlxMjB0N3RxaDFqZzBfMjAxNzA1MThUMjMwMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn&ctz=America/Toronto 
 
 
 Friday, May 19 2017
@@ -495,7 +495,7 @@ Friday, May 19 2017
 
  8:00am: Communitech PM Connect P2P
          Location: Communitech, 151 Charles St W, Kitchener, ON
-         Learn More: https://www.google.com/calendar/event?eid=MjNibXZlbHVmOWI4czdpa2hyam1yMm1lcmNfMjAxNzA1MTlUMTIwMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn 
+         Learn More: https://www.google.com/calendar/event?eid=MjNibXZlbHVmOWI4czdpa2hyam1yMm1lcmNfMjAxNzA1MTlUMTIwMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn&ctz=America/Toronto 
 
 
 Sunday, May 21 2017
@@ -503,7 +503,7 @@ Sunday, May 21 2017
 
 11:00am: Stemotics - LEGO Robotics Workshop for kids
          Location: Stemotics, 1315 Bishop St N, Unit 155, Cambridge, ON
-         Learn More: https://www.google.com/calendar/event?eid=OTIxcjNhOXY5dGNkYzljMWtwam9wOG91djhfMjAxNzA1MjFUMTUwMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn 
+         Learn More: https://www.google.com/calendar/event?eid=OTIxcjNhOXY5dGNkYzljMWtwam9wOG91djhfMjAxNzA1MjFUMTUwMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn&ctz=America/Toronto 
 
 
 Monday, May 22 2017
@@ -511,11 +511,11 @@ Monday, May 22 2017
 
  4:00pm: WatPy: Python Project Hours
          Location: University of Waterloo Grad House, University of...
-         Learn More: https://www.google.com/calendar/event?eid=MW04bHJicWtiZjhpb2Y4bDQ3cWM0MGl0ZmNfMjAxNzA1MjJUMjAwMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn 
+         Learn More: https://www.google.com/calendar/event?eid=MW04bHJicWtiZjhpb2Y4bDQ3cWM0MGl0ZmNfMjAxNzA1MjJUMjAwMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn&ctz=America/Toronto 
 
  8:00pm: Diyode - Electronic Drop-in
          Location: Diyode Community Workshop, Unit B - 71 Wyndham St. S,...
-         Learn More: https://www.google.com/calendar/event?eid=bG5pcmlwNGpiNmpwanNycWF1MzhoYzkzZWtfMjAxNzA1MjNUMDAwMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn 
+         Learn More: https://www.google.com/calendar/event?eid=bG5pcmlwNGpiNmpwanNycWF1MzhoYzkzZWtfMjAxNzA1MjNUMDAwMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn&ctz=America/Toronto 
 
 
 Tuesday, May 23 2017
@@ -523,15 +523,15 @@ Tuesday, May 23 2017
 
  4:30pm: Communitech Agile Lean P2P
          Location: Communitech Hub, 151 Charles Street West, Kitchener, ON...
-         Learn More: https://www.google.com/calendar/event?eid=c291bXU5bnVmOThmM3Z2ajBiNTB1dWk4cm9fMjAxNzA1MjNUMjAzMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn 
+         Learn More: https://www.google.com/calendar/event?eid=c291bXU5bnVmOThmM3Z2ajBiNTB1dWk4cm9fMjAxNzA1MjNUMjAzMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn&ctz=America/Toronto 
 
  6:30pm: StartupTech KW Meetup
          Location: unknown.
-         Learn More: https://www.google.com/calendar/event?eid=ZTV0aDliMGpmYWtpNDg1cDFyaXMxNnRvbWsgbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw 
+         Learn More: https://www.google.com/calendar/event?eid=ZTV0aDliMGpmYWtpNDg1cDFyaXMxNnRvbWsgbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw&ctz=America/Toronto 
 
  7:00pm: KWArtzLab Tuesday Open Night
          Location: KWArtzlab, 33 Kent Avenue, Kitchener, Ontario, Canada
-         Learn More: https://www.google.com/calendar/event?eid=NWxkMGUwbWs5Zmw0dXNzNTNpamgwNWlkNmtfMjAxNzA1MjNUMjMwMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn 
+         Learn More: https://www.google.com/calendar/event?eid=NWxkMGUwbWs5Zmw0dXNzNTNpamgwNWlkNmtfMjAxNzA1MjNUMjMwMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn&ctz=America/Toronto 
 
 
 Wednesday, May 24 2017
@@ -539,6 +539,6 @@ Wednesday, May 24 2017
 
  6:00pm: Kwartzlab: 3D Printer Meetup (public event)
          Location: Kwartzlab, 33 Kent Avenue, Kitchener, Ontario, Canada
-         Learn More: https://www.google.com/calendar/event?eid=dGhza2I4NGtsY2MxdWowaHE1YWwxbmh1NWdfMjAxNzA1MjRUMjIwMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn 
+         Learn More: https://www.google.com/calendar/event?eid=dGhza2I4NGtsY2MxdWowaHE1YWwxbmh1NWdfMjAxNzA1MjRUMjIwMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn&ctz=America/Toronto 
 
 
