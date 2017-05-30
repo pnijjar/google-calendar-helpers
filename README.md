@@ -19,6 +19,7 @@ newsletters about your events.
 Deployment
 ----------
 
+- Generate a Google Calendar API key, as described below.
 - Use `virtualenv` to set up a Python 3 environment: `virtualenv -p
   /usr/bin/python3 venv`
 - Activate the environment: `venv/bin/activate`
@@ -27,11 +28,24 @@ Deployment
   needs.
 - Run `gen_rss.py`
 
+### Generating an API key
+
+- Log into https://console.developers.google.com with a Google account
+  (preferably the one that owns the Google calendar in question, but
+  it does not really matter).
+- Create a new project. 
+- Click on `Enable API` (or `Library`). Select the `URL Shortener API`
+  and enable it. Do the same for the `Google Calendar API`. 
+- Click on `Credentials`, and then `Create Credentials`.
+- Create an `API Key`. Give it an appropriate name ("RSS/Newsletter
+  key"). Set the restriction to be `IP Addresses`, and enter the IP
+  address of the host that will be running the scripts.
 
 Caveats
 -------
 
-- The code is not production ready. Among other things there is not
+- The code is probably not production ready (but we are deploying it
+  anyways). Among other things there is not
   much test coverage. There are no error messages.  
 - Because it uses an API key, you can only generate feeds for public
   calendars.
