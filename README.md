@@ -22,7 +22,7 @@ Deployment
 - Generate a Google Calendar API key, as described below.
 - Use `virtualenv` to set up a Python 3 environment: `virtualenv -p
   /usr/bin/python3 venv`
-- Activate the environment: `venv/bin/activate`
+- Activate the environment: `source venv/bin/activate`
 - Install dependencies: `pip install -r requirements.txt`
 - Copy `config.py.example` to `config.py` and customize it to your
   needs.
