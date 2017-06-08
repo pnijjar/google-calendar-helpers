@@ -430,12 +430,12 @@ def write_rss():
     load_config() 
     cal_json = call_api() 
 
-    outjson = open(config.OUTJSON, "w")
+    outjson = open(config.OUTJSON, "w", encoding='utf8')
     json.dump(cal_json, outjson, indent=2, separators=(',', ': '))
 
     cal_rss = generate_rss(cal_json)
 
-    outfile = open(config.OUTRSS, "w")
+    outfile = open(config.OUTRSS, "w", encoding='utf8')
     outfile.write(cal_rss)
 
 # ------------------------------
@@ -444,13 +444,13 @@ def write_newsletter():
 
     cal_json = call_api() 
 
-    outjson = open(config.OUTJSON, "w")
+    outjson = open(config.OUTJSON, "w", encoding='utf8')
     json.dump(cal_json, outjson, indent=2, separators=(',', ': '))
 
     cal_newsletter = generate_newsletter(cal_json)
 
     # Insert Windows newlines for dumb email clients
-    outfile = open(config.OUTNEWS, "w", newline='\r\n')
+    outfile = open(config.OUTNEWS, "w", newline='\r\n', encoding='utf8')
     outfile.write(cal_newsletter)
 
 
