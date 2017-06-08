@@ -1,0 +1,16 @@
+WatCamp Events
+==============
+
+
+This is the default config.py newsletter.
+
+
+
+Wednesday, Apr 19 2017
+----------------------
+
+ 5:30pm: YWCA Cambridge - K∩W STEM Mentoring
+         Location: 8 Petty Pl, Cambridge, ON
+         Learn More: https://www.google.com/calendar/event?eid=aTJocTAzczBkaDk5MDB0aWhhMDIwM21zcWdfMjAxNzA0MTlUMjEzMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn&ctz=America/Toronto 
+
+
