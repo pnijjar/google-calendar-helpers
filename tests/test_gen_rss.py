@@ -22,6 +22,7 @@ MD_OUT = "data_markdown_out"
 JSON_IN = "data_json_in"
 RSS_OUT = "data_rss_out"
 NEWSLETTER_OUT = "data_newsletter_out"
+SIDEBAR_OUT = "data_sidebar_out"
 
 # For counting numbers of elements
 ITEM_COUNT_OUT = "data_itemcount_out"
@@ -48,7 +49,8 @@ FAKE_NOW = datetime.datetime(
     )
 
 # Format: googledate, rfc822, human, human-dateonly, 
-# explanation
+#   short-human-dateonly, short-human-datetime 
+#   explanation
 # This is because I am testing many different 
 # functions with the same input.
 DATE_EXAMPLES = [
@@ -56,24 +58,32 @@ DATE_EXAMPLES = [
         "Thu, 07 Apr 2016 20:10:00 +0000",
         "Thursday, Apr 07 2016,  8:10pm",
         "Thursday, Apr 07 2016",
+        "Thu, Apr  7",
+        "Thu, Apr  7,  8:10pm",
         "Regular date with UTC",
         ),
     ("2017-04-07T20:10.000EDT", 
         "Fri, 07 Apr 2017 20:10:00 -0400",
         "Friday, Apr 07 2017,  8:10pm",
         "Friday, Apr 07 2017",
+        "Fri, Apr  7",
+        "Fri, Apr  7,  8:10pm",
         "Regular date with EDT",
         ),
     ("1970-01-01T00:00.000Z", 
         "Thu, 01 Jan 1970 00:00:00 +0000",
         "Thursday, Jan 01 1970, 12:00am",
         "Thursday, Jan 01 1970",
+        "Thu, Jan  1",
+        "Thu, Jan  1, 12:00am",
         "Start of epoch",
         ),
     ("2016-04-07T23:59.000Z", 
         "Thu, 07 Apr 2016 23:59:00 +0000",
         "Thursday, Apr 07 2016, 11:59pm",
         "Thursday, Apr 07 2016",
+        "Thu, Apr  7",
+        "Thu, Apr  7, 11:59pm",
         "Final minute",
         ),
     ]
@@ -280,6 +290,25 @@ def test_human_dateonly(googledate, target):
 def test_rfc822(googledate, target):
     assert h.get_rfc822_datestring(googledate) \
         == target
+
+@pytest.mark.parametrize(
+    "googledate, target",
+    pickdate(4, DATE_EXAMPLES),
+    )
+def test_short_human_dateonly(googledate, target):
+    assert h.get_short_human_dateonly(googledate) \
+        == target
+
+
+@pytest.mark.parametrize(
+    "googledate, target",
+    pickdate(5, DATE_EXAMPLES),
+    )
+def test_short_human_datetime(googledate, target):
+    assert h.get_short_human_datetime(googledate) \
+        == target
+
+
 
 @pytest.mark.xfail(reason="parsedate chokes on 0000")
 def test_year_zero():
