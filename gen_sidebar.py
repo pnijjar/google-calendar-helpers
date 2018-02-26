@@ -2,4 +2,4 @@
 
 from gcal_helpers import helpers
 
-helpers.write_sidebar()
+helpers.write_transformation("sidebar")

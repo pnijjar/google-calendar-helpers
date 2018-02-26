@@ -475,39 +475,12 @@ def generate_sidebar(cal_dict):
 
 
 # ------------------------------
-def write_rss():
-    load_config() 
-    cal_json = call_api() 
-
-    outjson = open(config.OUTJSON, "w", encoding='utf8')
-    json.dump(cal_json, outjson, indent=2, separators=(',', ': '))
-
-    cal_rss = generate_rss(cal_json)
-
-    outfile = open(config.OUTRSS, "w", encoding='utf8')
-    outfile.write(cal_rss)
-
-# ------------------------------
-def write_newsletter():
-    load_config() 
-
-    cal_json = call_api() 
-
-    outjson = open(config.OUTJSON, "w", encoding='utf8')
-    json.dump(cal_json, outjson, indent=2, separators=(',', ': '))
-
-    cal_newsletter = generate_newsletter(cal_json)
-
-    # Insert Windows newlines for dumb email clients
-    outfile = open(config.OUTNEWS, "w", newline='\r\n', encoding='utf8')
-    outfile.write(cal_newsletter)
-
-
-# ------------------------------
-def write_sidebar():
-    """ Write a sidebar. This functionality should be merged with 
-        the other write_* methods.
+def write_transformation(transform_type):
+    """ Write a file for the transformation. The transform_type should
+        be one of "rss", "newsletter", or "sidebar". If I was a better
+        programmer then I would force this.
     """
+
     load_config() 
 
     cal_json = call_api() 
@@ -515,12 +488,29 @@ def write_sidebar():
     outjson = open(config.OUTJSON, "w", encoding='utf8')
     json.dump(cal_json, outjson, indent=2, separators=(',', ': '))
 
-    cal_sidebar = generate_sidebar(cal_json)
+    generated_file = None
+    dest = None
+
+    if transform_type == "rss":
+        generated_file = generate_rss(cal_json)
+        dest = config.OUTRSS
+
+    elif transform_type == "newsletter":
+        generated_file = generate_newsletter(cal_json)
+        dest = config.OUTNEWS
+
+    elif transform_type == "sidebar":
+        generated_file = generate_sidebar(cal_json)
+        dest = config.OUTSIDEBAR
+
+    else:
+        raise NameError("Incorrect type '%s' listed" %
+          (transform_type,))
+
 
     # Insert Windows newlines for dumb email clients
-    outfile = open(config.OUTSIDEBAR, "w", newline='\r\n', encoding='utf8')
-    outfile.write(cal_sidebar)
-
+    outfile = open(dest, "w", newline='\r\n', encoding='utf8')
+    outfile.write(generated_file)
 
 
 # ------------------------------
