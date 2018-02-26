@@ -9,7 +9,7 @@ This is the default config.py newsletter.
 Wednesday, May 31 2017
 ----------------------
 
-TBA: Waterloo-Wellington Clinical Research and Quality Improvement Symposium
+All Day: Waterloo-Wellington Clinical Research and Quality Improvement Symposium
          Location: McMaster Waterloo Regional Campus, 10-B Victoria St S,...
          Learn More: https://www.google.com/calendar/event?eid=c3EzbGFlbWJjdWtqa2xmMWJsdHRudmMybmcgbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw&ctz=America/Toronto 
 
