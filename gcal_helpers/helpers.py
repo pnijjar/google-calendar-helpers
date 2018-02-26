@@ -12,6 +12,7 @@ import json
 
 RSS_TEMPLATE="rss_template.jinja2"
 NEWSLETTER_TEMPLATE="newsletter_template.jinja2"
+SIDEBAR_TEMPLATE="sidebar_template.jinja2"
 INVALID_DATE="1969-12-12T23:59.000Z"
 TEMPLATE_DIR=os.path.dirname(os.path.abspath(__file__))
 
@@ -125,6 +126,25 @@ def get_human_dateonly (google_date):
     
     # Wednesday, Oct 02 2005
     return d.strftime("%A, %b %d %Y")
+
+# ------------------------------
+def get_short_human_dateonly (google_date):
+    """ Readable by humans, but shorter. """
+
+    d = dateutil.parser.parse(google_date)
+
+    # Sun, Feb 18
+    return d.strftime("%a, %b %e")
+
+# ------------------------------
+def get_short_human_datetime (google_date):
+    """ Date time readable by humans, but shorter. """
+
+    d = dateutil.parser.parse(google_date)
+
+    # Sun, Feb 18, 8:00pm
+    return d.strftime("%a, %b %e, %l:%M%P")
+
 
 # ------------------------------
 def get_human_timeonly (google_date):
@@ -334,7 +354,6 @@ def organize_events_by_day(
     return outdict
 
 
-
 # ------------------------------
 def generate_newsletter(cal_dict):
     """ Given a JSON formatted calendar dictionary, make the text for 
@@ -369,8 +388,6 @@ def generate_newsletter(cal_dict):
       "items" : sorted_items,
       "header" : config.NEWSLETTER_HEADER,
       }
-
-
 
     output_newsletter = template.render(template_vars)
     return output_newsletter
@@ -425,6 +442,38 @@ def generate_rss(cal_dict):
 
     return output_rss
 
+
+# ------------------------------
+def generate_sidebar(cal_dict):
+    """ Given a JSON formatted calendar dictionary, make and return 
+        the HTML sidebar list.
+    """
+
+    # --- Process template 
+
+    template_loader = jinja2.FileSystemLoader(
+        searchpath=TEMPLATE_DIR
+        )
+    template_env = jinja2.Environment( 
+        loader=template_loader,
+        autoescape=True,
+        )
+    template_env.filters['humandate'] = get_short_human_datetime
+    template_env.filters['humandateonly'] = get_short_human_dateonly
+    template_env.filters['addtz'] = add_timezone
+
+    time_now = get_time_now()
+
+    template = template_env.get_template( SIDEBAR_TEMPLATE ) 
+    template_vars = { 
+      "feed_items" : cal_dict['items'],
+      }
+
+    output_sidebar = template.render(template_vars)
+
+    return output_sidebar
+
+
 # ------------------------------
 def write_rss():
     load_config() 
@@ -452,6 +501,26 @@ def write_newsletter():
     # Insert Windows newlines for dumb email clients
     outfile = open(config.OUTNEWS, "w", newline='\r\n', encoding='utf8')
     outfile.write(cal_newsletter)
+
+
+# ------------------------------
+def write_sidebar():
+    """ Write a sidebar. This functionality should be merged with 
+        the other write_* methods.
+    """
+    load_config() 
+
+    cal_json = call_api() 
+
+    outjson = open(config.OUTJSON, "w", encoding='utf8')
+    json.dump(cal_json, outjson, indent=2, separators=(',', ': '))
+
+    cal_sidebar = generate_sidebar(cal_json)
+
+    # Insert Windows newlines for dumb email clients
+    outfile = open(config.OUTSIDEBAR, "w", newline='\r\n', encoding='utf8')
+    outfile.write(cal_sidebar)
+
 
 
 # ------------------------------

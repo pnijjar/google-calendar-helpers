@@ -240,6 +240,19 @@ def get_newsletter_files(testname):
         )
     return (jsondict, news_text)
 
+def get_sidebar_files(testname):
+    """ This should be merged with get_newsletter_files"""
+    jsontext = get_file_as_string(testname, JSON_IN, ".json")
+    jsondict = json.loads(jsontext)
+
+    sidebar_text = get_file_as_string(
+        testname, 
+        SIDEBAR_OUT,
+        ".html", 
+        create_file=True
+        )
+    return (jsondict, sidebar_text)
+
 
 def get_testfiles(infolder, extension):
     """ Find all files with the given extension in 
@@ -439,4 +452,24 @@ def test_json_to_newsletter(
     except AssertionError:
         # Use this to generate output for future runs
         save_to_temp("{}.txt".format(testcase), test_newsletter)    
+        raise
+
+# ==== TEST SIDEBAR GENERATION (yuk)
+
+
+@pytest.mark.parametrize(
+    "testcase",
+    get_testfiles(JSON_IN, ".json"),
+    )
+def test_json_to_sidebar(
+    testcase, 
+    ):
+    (injson, outtxt) = get_sidebar_files(testcase)
+    test_sidebar = h.generate_sidebar(injson)
+    
+    try: 
+        assert test_sidebar == outtxt
+    except AssertionError:
+        # Use this to generate output for future runs
+        save_to_temp("{}.html".format(testcase), test_sidebar)    
         raise

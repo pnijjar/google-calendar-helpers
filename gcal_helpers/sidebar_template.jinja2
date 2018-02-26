@@ -1,22 +1,18 @@
 <ul>
 {% for item in feed_items %}
-
   <li><strong>
-    {%- if item['start']['dateTime'] is defined %}
+    {%- if item['start']['dateTime'] is defined -%}
         {{- item['start']['dateTime'] | humandate }}
     {%- elif item['start']['date'] is defined  -%}
         {{- item['start']['date'] | humandateonly }}
     {%- else -%}
         TBA
     {% endif -%}
-    </strong> - 
-  <a href="{{ item['htmlLink'] }}" 
-     target="_blank" 
-     rel="noopener noreferrer">{{ item['summary'] }}</a> 
-  {%- if item['location'] is defined -%}
-     {{' '}}@ {{ item['location'] | truncate(60) }}
-  {%- endif -%}
+    </strong> - {# strip whitespace -#}
+    <a href="{{ item['htmlLink'] | addtz }}" {# strip whitespace -#}
+     target="_blank" {# strip whitespace -#}
+     rel="noopener noreferrer">
+     {{- item['summary'] }}</a>{#- strip whitespace -#}
   </li>
-
 {% endfor %}
 </ul>

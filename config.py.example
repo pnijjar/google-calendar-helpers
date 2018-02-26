@@ -44,6 +44,7 @@ PARENTDIR=os.path.abspath(os.pardir)
 OUTRSS=os.path.join(PARENTDIR, "output", "watcamp.rss")
 OUTNEWS=os.path.join(PARENTDIR, "output", "watcamp.txt")
 OUTJSON=os.path.join(PARENTDIR, "output", "watcamp.json")
+OUTSIDEBAR=os.path.join(PARENTDIR, "output", "watcamp-sidebar.html")
 
 # Who is responsible for this feed
 WEBMASTER="admin@example.com"
