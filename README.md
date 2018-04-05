@@ -54,4 +54,7 @@ Caveats
 - This project sources a file `config.py` that the end user can
   specify on the commandline. This is really dangerous unless you
   trust everybody who can run this script.
-
+- If you use a person's default calendar the title of the newsletter
+  will be the same as their email. The person will have to edit the
+  name of the calendar in order for the scripts to display something
+  sensible. (This is the "summary" field returned by the API.)
