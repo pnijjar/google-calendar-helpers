@@ -9,11 +9,18 @@ functionality, so I wrote my own.
 
 This is a script that is intended to be run from a cronjob. It is
 written in Python 3 with lots of helper modules (requests, jinja2,
-dateutil ...). 
+dateutil ...). Note that since Google [dropped
+support](https://developers.googleblog.com/2018/03/transitioning-google-url-shortener.html)
+for its goo.gl shortening service, we are now using the
+[pyshorteners](https://github.com/ellisonleao/pyshorteners/) library
+for URL shortening. This library is licensed under the GPL3 (which
+should be okay, since the Apache 2.0 license is GPL3-compatible). 
 
 There is a second script called `gen_newsletter.py` which will 
 create the body of a plaintext email. You can use this to send
-newsletters about your events.
+newsletters about your events. There is a third script for generating
+HTML bullet lists of events, but you probably do not want to use that
+one. 
 
 
 Deployment
@@ -58,3 +65,5 @@ Caveats
   will be the same as their email. The person will have to edit the
   name of the calendar in order for the scripts to display something
   sensible. (This is the "summary" field returned by the API.)
+- By default we use the [da.gd](https://da.gd) link shortener for
+  newsletters.

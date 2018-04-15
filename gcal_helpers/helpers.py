@@ -5,6 +5,7 @@ import pytz, datetime, dateutil.parser
 import jinja2, markdown, html
 import collections
 import argparse, sys, os
+import pyshorteners
 
 import pprint
 import json
@@ -252,28 +253,25 @@ def call_api():
 
 # ------------------------------
 def shorten_url(longurl):
-    """ Shortens URL using goo.gl service. Yay 
-        surveillance.
+    """ Shortens URL using a given service. Yay surveillance.
     """
+    retval = longurl
 
-    api_url='https://www.googleapis.com/urlshortener/v1/url'
-    headers = {'content-type' : 'application/json'}
-    payload = {'longUrl' : longurl }
-    api_params = { 
-        'key' : config.API_KEY,
-        } 
-    r = requests.post(
-        api_url, 
-        data=json.dumps(payload),
-        headers=headers,
-        params=api_params,
-        )
-    r_vals = r.json()
+    if config.LINK_SHORTENER_PARAMS:
+      
+        try:
+            shortener = pyshorteners.Shortener(
+              **config.LINK_SHORTENER_PARAMS)
+            retval = shortener.short(longurl)
 
-    if 'id' in r_vals:
-       retval =  r_vals['id']
-    else: 
-       retval = longurl
+        except pyshorteners.exceptions.ShorteningErrorException:
+            retval = longurl
+
+        # I won't handle this. Let the program crash.
+        # except pyshorteners.exceptions.UnknownShortenerException:
+        #    retval = "%s (Error: %s)" % \
+        #               (longurl, 
+        #               "Incorrect shortening service invocation?")
 
     return retval
 

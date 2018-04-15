@@ -27,6 +27,18 @@ NUM_ITEMS='100'
 # (No, this is not a good idea for RSS feeds. Trust me.)
 NEWSLETTER_MAX_DAYS=None
 
+# What link shortening service should be used in newsletters?
+# If you have no preference then the default should be okay. 
+# If you want to turn off link shortening set: 
+# LINK_SHORTENER_PARAMS = None
+# 
+# See https://github.com/ellisonleao/pyshorteners/ for the 
+# syntax of making a new shortener. For example, to 
+# use bit.ly, you would specify YOUR_TOKEN, then have: 
+# LINK_SHORTENER_PARAMS = {"engine":"Bitly", "bitly_token":YOUR_TOKEN}
+#
+LINK_SHORTENER_PARAMS = {"engine":"Dagd"}
+
 # For datetime nonsense 
 TIMEZONE='America/Toronto'
 
