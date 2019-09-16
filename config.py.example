@@ -3,7 +3,7 @@
 import os
 
 # Go to https://console.developers.google.com to generate this. You
-# need to enable it for Google Calendar and URL Shortener APIS
+# need to enable it for the Google Calendar API
 API_KEY='Insert-Your-API-key-here'
 
 # Look in your calendar URLs to figure this out (src= parameter). 
