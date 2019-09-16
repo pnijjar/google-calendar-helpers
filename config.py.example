@@ -6,6 +6,17 @@ import os
 # need to enable it for the Google Calendar API
 API_KEY='Insert-Your-API-key-here'
 
+
+# Oops. Now we need keys for other APIs, too. 
+# This is for the Twitter API. Generate it from developers.twitter.com
+# You only need it if you are sending tweets from the calendar
+TWITTER_CONSUMER_KEY='Insert-Your-Consumer-Key'
+TWITTER_CONSUMER_SECRET='Insert-Your-Consumer-Secret'
+
+TWITTER_ACCESS_TOKEN='Insert-Your-Twitter-Access-Token'
+TWITTER_ACCESS_SECRET='Insert-Your-Twitter-Access-Token-Secret'
+
+
 # Look in your calendar URLs to figure this out (src= parameter). 
 #
 # This is a list. The first calendar has the master information 
