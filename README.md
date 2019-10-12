@@ -22,6 +22,17 @@ newsletters about your events. There is a third script for generating
 HTML bullet lists of events, but you probably do not want to use that
 one. 
 
+There is a third script that is called `schedule_event_tweets.py`. 
+This sends out tweets at random times about upcoming events. It is
+moderately dangerous: first it generates tweet text and schedules them
+using the `at` command. Then the `at` command launches a second script
+which (blindly!) tweets out the contents of the text. Don't use this
+one in an untrusted environment. 
+
+There is a fourth script called `gen_sidebar.py` which generates an
+HTML bullet list. This is probably not helpful for you, but it can be
+used to embed events on a webpage.
+
 
 Deployment
 ----------
@@ -33,7 +44,8 @@ Deployment
 - Install dependencies: `pip install -r requirements.txt`
 - Copy `config.py.example` to `config.py` and customize it to your
   needs.
-- Run `gen_rss.py`
+- Run `gen_rss.py` or `gen_newsletter.py` or `gen_sidebar.py` or 
+  `schedule_event_tweets.py`
 
 ### Generating an API key
 
