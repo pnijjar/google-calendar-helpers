@@ -7,6 +7,8 @@ import collections
 import argparse, sys, os
 import pyshorteners
 import random
+import io
+import subprocess
 
 import pprint
 import json
@@ -18,9 +20,10 @@ SIDEBAR_TEMPLATE="sidebar_template.jinja2"
 TWEET_TEMPLATE="tweet_template.jinja2"
 INVALID_DATE="1969-12-12T23:59.000Z"
 TEMPLATE_DIR=os.path.dirname(os.path.abspath(__file__))
+LAUNCH_TWEET_SCRIPT='launch_tweet_sender.sh'
 
 # ------------------------------
-def load_config(configfile=None):
+def load_config(configfile=None, caller=None):
     """ Load configuration definitions.
        (This is really scary, actually. We are trusting that the 
        config.py we are taking as input is sane!) 
@@ -55,6 +58,15 @@ def load_config(configfile=None):
         default=config_location,
         )
 
+    # HACK HACK HACK. send_tweet needs to load the config file, 
+    # but needs an additional parameter. 
+
+    if caller == 'send_tweet':
+        parser.add_argument('--tweet-id',
+            help='ID of file containing tweet',
+            required=True,
+            )
+
     args = parser.parse_args()
     if args.configfile:
         config_location = os.path.abspath(args.configfile)
@@ -84,9 +96,26 @@ def load_config(configfile=None):
         import imp
         config = imp.load_source( 'config', config_location,)
 
+    if caller == 'send_tweet' and args.tweet_id:
+        config.TWEET_ID = args.tweet_id
+
+    # Needed to send tweets
+    config.CONFIG_LOCATION = config_location
+
     # For test harness
     return config
             
+
+# ------------------------------
+def log_msg(msg, toscreen=False):
+   """ Log a message to syslog.
+   """
+
+   subprocess.call(['logger', msg])
+
+   if toscreen:
+       print(msg)
+
 
 # ------------------------------
 def print_from_template (s): 
@@ -413,6 +442,32 @@ def schedule_tweets(tweets_to_schedule):
         outfile = open(dest, "w", newline='\r\n', encoding='utf8')
         outfile.write(tweets_to_schedule[id])
         outfile.close()
+
+        # Make a fake "file" to pass into subprocess.call as 
+        # stdin. From:
+        # https://webkul.com/blog/using-io-for-creating-file-object/
+
+        fake_stdin = io.StringIO()
+        fake_stdin.write("{}/{} {} {}".format(
+          LAUNCH_TWEET_SCRIPT,
+          config.SHELL_SCRIPT_DIR,
+          config.CONFIG_LOCATION,
+          dest_filename,
+          ))
+
+        at_time = tweet_time.strftime("%H:%M")
+        at_date = tweet_time.strftime("%Y-%m-%d")
+          
+        retcode = subprocess.call( 
+          ['at', '-M', at_time, at_date], 
+          stdin = fake_stdin,
+          )
+
+        if retcode != 0: 
+            log_msg("{}: failed to start at command.  Retval={}".format(
+              sys.argv[0],
+              retcode,
+              ), True)
 
      
      # at invocation:
