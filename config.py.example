@@ -82,16 +82,33 @@ Note that "Learn More" links point to our Google Calendar, not to the event site
 """
 
 
-
 # How many days in advance should we tweet events, and what should the
 # intro text be?
 TWEET_DATE_EXPRESSION = { 
   0: "Today!",
-  3: "Three sleeps!",
-  5: "Five sleeps!",
+  1: "Tomorrow!",
+  2: "Three sleeps!",
+  3: "Four sleeps!",
+  4: "Five sleeps!",
   6: "Next week!"
   }
 
 # How many days in advance should we grab tweets (upper bound). 
 # Use 8 for events one week from now. 0 is today.
-TWITTER_EVENT_CUTOFF=8
+TWEET_NUM_DAYS=8
+
+# What hours of the day should we release tweets? This should be a
+# single range (sorry) with two strings specified in 24 hour notation.
+# The last minute will NOT be included.
+# 
+# The start should be AFTER you run the script (actually, after the 
+# script stops running). This is going to be bad for events that begin 
+# today, before the tweet window.
+TWEET_WINDOW = ("09:00", "16:00")
+
+# Where should tweets to be released be stored?
+# DANGER: this folder should be writable and readable by the process.
+OUTTWEET="/tmp/tweets"
+
+# Where to find shell script that launches tweets
+SHELL_SCRIPT_DIR=os.path.join(os.getcwd(), 'scripts')
