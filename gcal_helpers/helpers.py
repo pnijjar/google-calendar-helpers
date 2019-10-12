@@ -41,6 +41,7 @@ def load_config(configfile=None):
     else: 
         config_location = DEFAULT_CONFIG_SOURCEFILE
 
+
     # Now parse commandline options (Here??? This code smells bad.)
     parser = argparse.ArgumentParser(
         description="Generate fun RSS/newsletter feeds from "
@@ -49,7 +50,7 @@ def load_config(configfile=None):
         )
     parser.add_argument('-c', '--configfile', 
         help='configuration file location',
-        default=DEFAULT_CONFIG_SOURCEFILE,
+        default=config_location,
         )
 
     args = parser.parse_args()
@@ -59,7 +60,6 @@ def load_config(configfile=None):
 
     # http://stackoverflow.com/questions/11990556/python-how-to-make-global
     global config
-
 
     # Blargh. You can load modules from paths, but the syntax is
     # different depending on the version of python. 
@@ -161,15 +161,26 @@ def extract_datestring (gcal_event):
     """ Given a google calendar event dictionary, 
         grab either the datetime string or the date string.
     """
+    #print("gcal_event: {}".format(gcal_event))
 
-    if 'dateTime' in gcal_event['start']:
-        retval = gcal_event['start']['dateTime']
-    elif 'date' in gcal_event['start']:
-        retval = gcal_event['start']['date']
-    else:
-        # This should never happen. Maybe an exception is wrong?
-        print("Uh oh. extract_datestring could not find a date.")
-        retval = None
+    try:
+
+        if 'dateTime' in gcal_event['start']:
+            retval = gcal_event['start']['dateTime']
+        elif 'date' in gcal_event['start']:
+            retval = gcal_event['start']['date']
+        else:
+            # This should never happen. Maybe an exception is wrong?
+            print("Uh oh. extract_datestring could not find a date.")
+            retval = None
+
+    except:
+        raise Exception("bad extract_datestring: "
+                        "gcal_event = '{}'".format(
+                           gcal_event))
+
+
+
 
     return retval
 
