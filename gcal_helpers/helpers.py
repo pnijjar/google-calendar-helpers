@@ -14,6 +14,7 @@ import json
 RSS_TEMPLATE="rss_template.jinja2"
 NEWSLETTER_TEMPLATE="newsletter_template.jinja2"
 SIDEBAR_TEMPLATE="sidebar_template.jinja2"
+TWEET_TEMPLATE="tweet_template.jinja2"
 INVALID_DATE="1969-12-12T23:59.000Z"
 TEMPLATE_DIR=os.path.dirname(os.path.abspath(__file__))
 
@@ -361,6 +362,38 @@ def organize_events_by_day(
 
 
     return outdict
+
+
+
+# -------------------------------
+def generate_tweet_text(tweet_dict):
+    """ Given information to put in a tweet, generate the string to
+        tweet out. 
+    """
+
+    
+    template_loader = jinja2.FileSystemLoader(
+        searchpath=TEMPLATE_DIR
+        )
+    template_env = jinja2.Environment( 
+        loader=template_loader,
+        lstrip_blocks=True,
+        trim_blocks=True,
+        )
+    template_env.filters['humandate'] = get_short_human_datetime
+    template_env.filters['humandateonly'] = get_short_human_dateonly
+    template_env.filters['addtz'] = add_timezone
+    template_env.filters['shorturl'] = shorten_url
+    template_env.filters['timeonly'] = get_human_timeonly
+
+    template = template_env.get_template( TWEET_TEMPLATE ) 
+    template_vars = { 
+      "event" : tweet_dict,
+      }
+
+    tweet_text = template.render(template_vars)
+
+    return tweet_text
 
 
 # ------------------------------

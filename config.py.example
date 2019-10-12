@@ -81,3 +81,17 @@ Note that "Learn More" links point to our Google Calendar, not to the event site
 
 """
 
+
+
+# How many days in advance should we tweet events, and what should the
+# intro text be?
+TWEET_DATE_EXPRESSION = { 
+  0: "Today!",
+  3: "Three sleeps!",
+  5: "Five sleeps!",
+  6: "Next week!"
+  }
+
+# How many days in advance should we grab tweets (upper bound). 
+# Use 8 for events one week from now. 0 is today.
+TWITTER_EVENT_CUTOFF=8
