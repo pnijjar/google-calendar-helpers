@@ -7,7 +7,6 @@ import collections
 import argparse, sys, os
 import pyshorteners
 import random
-import io
 import subprocess
 
 import pprint
@@ -443,31 +442,31 @@ def schedule_tweets(tweets_to_schedule):
         outfile.write(tweets_to_schedule[id])
         outfile.close()
 
-        # Make a fake "file" to pass into subprocess.call as 
-        # stdin. From:
-        # https://webkul.com/blog/using-io-for-creating-file-object/
-
-        fake_stdin = io.StringIO()
-        fake_stdin.write("{}/{} {} {}".format(
-          LAUNCH_TWEET_SCRIPT,
+        send_tweet_cmd = "{}/{} {} {}".format(
           config.SHELL_SCRIPT_DIR,
+          LAUNCH_TWEET_SCRIPT,
           config.CONFIG_LOCATION,
           dest_filename,
-          ))
+          )
 
         at_time = tweet_time.strftime("%H:%M")
         at_date = tweet_time.strftime("%Y-%m-%d")
           
-        retcode = subprocess.call( 
+        # https://stackoverflow.com/questions/8475290/how-do-i-write-to-a-python-subprocess-stdin
+        p = subprocess.Popen(
           ['at', '-M', at_time, at_date], 
-          stdin = fake_stdin,
+          stdout = subprocess.PIPE,
+          stdin = subprocess.PIPE,
+          stderr = subprocess.PIPE,
           )
+        retval = p.communicate(input=send_tweet_cmd.encode())
 
-        if retcode != 0: 
-            log_msg("{}: failed to start at command.  Retval={}".format(
-              sys.argv[0],
-              retcode,
-              ), True)
+        # I do not know how to identify failure. Huh.
+        #if retval != 0: 
+        #    log_msg("{}: failed to start at command.  Retval={}".format(
+        #      sys.argv[0],
+        #      retval,
+        #      ), True)
 
      
      # at invocation:

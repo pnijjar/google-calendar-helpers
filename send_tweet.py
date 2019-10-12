@@ -51,10 +51,11 @@ try:
 
     with open(tweetfile) as f:
         tweettext = f.readline()
-        helpers.log_msg('ID {}: {}'.format(
-            config.TWEET_ID,
-            tweettext,
-            ))
+        #helpers.log_msg('ID {}: {}'.format(
+        #    config.TWEET_ID,
+        #    tweettext,
+        #    ))
+        api.update_status(tweettext)
         os.remove(tweetfile)
 
 except FileNotFoundError:
