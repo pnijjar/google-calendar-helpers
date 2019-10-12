@@ -1,0 +1,12 @@
+{{ event['day_expression'] }}{{ ' ' }}
+
+{%- if event['start']['dateTime'] is defined %}
+    {{- event['start']['dateTime'] | humandate }}{{ ': ' }}
+{%- elif event['start']['date'] is defined  -%}
+    {{- event['start']['date'] | humandateonly }}{{ ': ' }}
+{% endif -%}
+
+{{- event['summary'] }}{{ '. ' }}
+
+{{- event['htmlLink'] | addtz | shorturl }}
+ 
