@@ -278,6 +278,7 @@ def call_api():
             } 
 
         r = requests.get(api_url, params=api_params)
+        r.raise_for_status()
 
         calendar_json = r.json()
 
@@ -699,30 +700,45 @@ def write_transformation(transform_type):
 
     load_config() 
 
+    # Before generating the new RSS get rid of the old one. 
+    dest = None
+    if transform_type == "rss":
+        dest = config.OUTRSS
+
+    elif transform_type == "newsletter":
+        dest = config.OUTNEWS
+
+    elif transform_type == "sidebar":
+        dest = config.OUTSIDEBAR
+
+    else:
+        raise NameError("Incorrect type '%s' listed" %
+          (transform_type,))
+    
+    if os.path.isfile(dest):
+        os.remove(dest)
+
+    if os.path.isfile(config.OUTJSON):
+        os.remove(config.OUTJSON)
+
     cal_json = call_api() 
 
     outjson = open(config.OUTJSON, "w", encoding='utf8')
     json.dump(cal_json, outjson, indent=2, separators=(',', ': '))
 
     generated_file = None
-    dest = None
 
     if transform_type == "rss":
         generated_file = generate_rss(cal_json)
-        dest = config.OUTRSS
 
     elif transform_type == "newsletter":
         generated_file = generate_newsletter(cal_json)
-        dest = config.OUTNEWS
 
     elif transform_type == "sidebar":
         generated_file = generate_sidebar(cal_json)
-        dest = config.OUTSIDEBAR
 
-    else:
-        raise NameError("Incorrect type '%s' listed" %
-          (transform_type,))
-
+    # No else should be needed. 
+    # print("dest is: {}".format(dest))
 
     # Insert Windows newlines for dumb email clients
     outfile = open(dest, "w", newline='\r\n', encoding='utf8')
