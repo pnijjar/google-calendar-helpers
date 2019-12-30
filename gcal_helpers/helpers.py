@@ -644,7 +644,7 @@ def generate_rss(cal_dict):
     template = template_env.get_template( RSS_TEMPLATE ) 
     template_vars = { 
       "feed_title": feed_title,
-      "feed_description": cal_dict['description'],
+      "feed_description": config.DESCRIPTION,
       "feed_webmaster" : config.WEBMASTER,
       "feed_webmaster_name" : config.WEBMASTER_NAME,
       "feed_builddate" : time_now.strftime("%a, %d %b %Y %T %z"),

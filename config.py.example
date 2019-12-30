@@ -62,6 +62,9 @@ FEED_LINK="{}/watcamp.rss".format(WEBSITE)
 # Used as the image for the RSS feed
 LOGO="{}/img/logo.png".format(WEBSITE)
 
+# A short description for the RSS feed
+DESCRIPTION='Upcoming tech events in Waterloo Region'
+
 # Where to save the output, and what to call it
 PARENTDIR=os.path.abspath(os.pardir)
 OUTRSS=os.path.join(PARENTDIR, "output", "watcamp.rss")
