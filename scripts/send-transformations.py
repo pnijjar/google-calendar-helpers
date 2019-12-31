@@ -40,7 +40,7 @@ def get_config():
 
     config = None
 
-    with open(config_location) as f:
+    with open(config_location, encoding='utf-8') as f:
         config = yaml.load(f)
 
     if config:
@@ -57,13 +57,14 @@ def assemble_email(to_address, from_address, subject, body_string):
     retval += "To: {}\n".format(to_address)
     retval += "From: {}\n".format(from_address)
     retval += "Subject: {}\n".format(subject)
+    retval += 'Content-Type: text/plain; charset="UTF-8"\n'
     
     # Forget requiring pytz. Just call shell functions. 
     email_date = subprocess.check_output(['date', '-R']).decode()
 
-    retval += "Date: {}\n".format(email_date)
 
-    retval += "Content-Type: text/plain; charset=UTF-8\n\n"
+    retval += "Date: {}\n\n".format(email_date)
+
 
     retval += body_string
     retval += "\n"
@@ -75,7 +76,10 @@ def send_mail(text, to_addr, account):
     """ Send the email using msmtp. account is the account in .msmtprc
     """
 
-    subprocess.check_call(
+    # check_call does not take input in Python 3.4. 
+    # But check_output does??
+
+    dummy = subprocess.check_output(
       ['msmtp', '-a', account, to_addr],
       input=text.encode()
       )
@@ -123,6 +127,8 @@ def run_transforms():
       dict(__file__=activate_this_file)
       )
 
+    log = open(full_config['logfile'], 'a', encoding='utf-8')
+
     for operation in full_config['transform_targets']:
         for target in full_config['targets']:
 
@@ -136,10 +142,58 @@ def run_transforms():
                   target,
                   ))
 
+
+                script_name = None
+
+                if operation == 'newsletter':
+                    script_name = 'gen_newsletter.py'
+                elif operation == 'sidebar':
+                    script_name = 'gen_sidebar.py'
+                elif operation == 'rss':
+                    script_name = 'gen_rss.py'
+                elif operation == 'twitter':
+                    script_name = 'schedule_event_tweets.py'
+
+                subprocess.check_call(
+                  [os.path.join(full_config['pydir'], script_name),
+                    '--configfile',
+                    os.path.join(
+                      full_config['confdir'],
+                      conf['configfile'],
+                      ),
+                   ],
+                   stdout=log,
+                   stderr=log,
+                   )
+
                 # Only certain operations have email 
                 if operation in ['newsletter', 'sidebar']: 
                     subject = get_subject(conf, operation)
                     #print("Subject is '{}'".format(subject))
+
+                    body = None
+
+                    resultfile = os.path.join(
+                      full_config['outputdir'],
+                      conf[operation]['body']
+                      )
+
+                    with open(resultfile, encoding='utf-8') as f:
+                        body = f.read()
+
+                    email = assemble_email(
+                      conf[operation]['to_address'], 
+                      conf['from_address'], 
+                      subject, 
+                      body
+                      )
+
+                    send_mail(
+                      email,
+                      conf[operation]['to_address'],
+                      conf['msmtp_account'],
+                      )
+                    
 
                 # If the subprocess failed then send admin an email
 
