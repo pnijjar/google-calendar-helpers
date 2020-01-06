@@ -4,6 +4,7 @@ import argparse, sys, os
 import yaml
 import subprocess
 import pprint
+import logging
 
 
 # ---------------------
@@ -34,7 +35,7 @@ def get_config():
 
     # Config location is required, so we must get here!
     config_location = os.path.abspath(args.configfile)
-    print("config file: {}".format(config_location))
+    #print("config file: {}".format(config_location))
 
     #print("{}".format(args))
 
@@ -128,6 +129,12 @@ def run_transforms():
       )
 
     log = open(full_config['logfile'], 'a', encoding='utf-8')
+    logging.basicConfig(
+      filename=full_config['logfile'], 
+      level=logging.INFO,
+      format='%(asctime)s %(filename)s: %(message)s',
+      )
+
 
     for operation in full_config['transform_targets']:
         for target in full_config['targets']:
@@ -137,7 +144,7 @@ def run_transforms():
             conf = full_config['targets'][target]
 
             if operation in conf['transforms']:
-                print("Performing operation {} on target {}".format(
+                logging.info("Performing operation {} on target {}".format(
                   operation,
                   target,
                   ))
@@ -154,22 +161,51 @@ def run_transforms():
                 elif operation == 'twitter':
                     script_name = 'schedule_event_tweets.py'
 
-                subprocess.check_call(
-                  [os.path.join(full_config['pydir'], script_name),
-                    '--configfile',
-                    os.path.join(
-                      full_config['confdir'],
-                      conf['configfile'],
-                      ),
-                   ],
-                   stdout=log,
-                   stderr=log,
-                   )
+                call_succeeded = False
+
+                try:
+                    subprocess.check_call(
+                      [os.path.join(full_config['pydir'], script_name),
+                        '--configfile',
+                        os.path.join(
+                          full_config['confdir'],
+                          conf['configfile'],
+                          ),
+                       ],
+                       stdout=log,
+                       stderr=log,
+                       )
+                    call_succeeded = True
+
+                # If the call fails, send an alert
+                except subprocess.CalledProcessError as e:
+                    body = ("Call to {} for target {} "
+                      "failed with error code {} .").format(
+                        e.cmd,
+                        target,
+                        e.returncode,
+                        )
+                    email = assemble_email(
+                      full_config['admin_email'],
+                      conf['from_address'],
+                      "Operation {} failed for {}".format(
+                        script_name,
+                        target,
+                        ),
+                      body
+                      )
+                    send_mail(
+                      email,
+                      full_config['admin_email'],
+                      conf['msmtp_account'],
+                      )
+
+
 
                 # Only certain operations have email 
-                if operation in ['newsletter', 'sidebar']: 
+                if call_succeeded and operation in ['newsletter', 'sidebar']: 
                     subject = get_subject(conf, operation)
-                    #print("Subject is '{}'".format(subject))
+                    logging.debug("Subject is '{}'".format(subject))
 
                     body = None
 
