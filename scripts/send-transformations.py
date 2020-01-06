@@ -158,7 +158,7 @@ def run_transforms():
                     script_name = 'gen_sidebar.py'
                 elif operation == 'rss':
                     script_name = 'gen_rss.py'
-                elif operation == 'twitter':
+                elif operation == 'tweets':
                     script_name = 'schedule_event_tweets.py'
 
                 call_succeeded = False

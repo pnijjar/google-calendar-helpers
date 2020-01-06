@@ -8,7 +8,7 @@ import argparse, sys, os
 import pyshorteners
 import random
 import subprocess
-
+import tweepy
 import pprint
 import json
 
@@ -443,9 +443,11 @@ def schedule_tweets(tweets_to_schedule):
         outfile.write(tweets_to_schedule[id])
         outfile.close()
 
-        send_tweet_cmd = "{}/{} {} {}".format(
+        send_tweet_cmd = "{}/{} {} {} {} {}".format(
           config.SHELL_SCRIPT_DIR,
           LAUNCH_TWEET_SCRIPT,
+          config.PYDIR,
+          config.VENV_DIR,
           config.CONFIG_LOCATION,
           dest_filename,
           )
@@ -690,6 +692,47 @@ def generate_sidebar(cal_dict):
 
     return output_sidebar
 
+# ------------------------------
+def send_tweet():
+    """ Open Tweepy and send the tweet.
+    """
+
+    load_config(caller='send_tweet')
+
+    auth = tweepy.OAuthHandler(
+      config.TWITTER_CONSUMER_KEY,
+      config.TWITTER_CONSUMER_SECRET,
+      )
+    auth.set_access_token(
+      config.TWITTER_ACCESS_TOKEN,
+      config.TWITTER_ACCESS_SECRET,
+      )
+
+    api = None
+
+    try:
+        api = tweepy.API(auth)
+    except Exception as e:
+        log_msg("send_tweet.py: error opening Twitter API: {}".format(e))
+        exit(3)
+
+    tweetfile = os.path.join(config.OUTTWEET, config.TWEET_ID)
+
+    # If you can't find the file just fail, I guess?
+    try:
+        with open(tweetfile) as f:
+            tweettext = f.readline()
+            #helpers.log_msg('ID {}: {}'.format(
+            #    config.TWEET_ID,
+            #    tweettext,
+            #    ))
+            api.update_status(tweettext)
+            os.remove(tweetfile)
+
+    except FileNotFoundError:
+        log_msg('send_tweet.py: Unable to open file {}'.format(tweetfile))
+        exit(2)
+
 
 # ------------------------------
 def write_transformation(transform_type):
@@ -711,6 +754,11 @@ def write_transformation(transform_type):
     elif transform_type == "sidebar":
         dest = config.OUTSIDEBAR
 
+    elif transform_type == 'tweets':
+        # Grr. This does not really fit in.
+        tweets_to_schedule = construct_tweets()
+        schedule_tweets(tweets_to_schedule)
+        return
     else:
         raise NameError("Incorrect type '%s' listed" %
           (transform_type,))
@@ -743,6 +791,8 @@ def write_transformation(transform_type):
     # Insert Windows newlines for dumb email clients
     outfile = open(dest, "w", newline='\r\n', encoding='utf8')
     outfile.write(generated_file)
+
+
 
 
 # ------------------------------

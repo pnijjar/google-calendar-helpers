@@ -111,7 +111,13 @@ TWEET_WINDOW = ("09:00", "16:00")
 
 # Where should tweets to be released be stored?
 # DANGER: this folder should be writable and readable by the process.
-OUTTWEET="/tmp/tweets"
+OUTTWEET=os.path.join(PARENTDIR, "output", "tweets")
+
+# Where to find the google-calendar-helpers files
+PYDIR=os.getcwd()
 
 # Where to find shell script that launches tweets
-SHELL_SCRIPT_DIR=os.path.join(os.getcwd(), 'scripts')
+SHELL_SCRIPT_DIR=os.path.join(PYDIR, 'scripts')
+
+# Where to find the virtualenv environment
+VENV_DIR=os.path.join(PYDIR, 'venv')
