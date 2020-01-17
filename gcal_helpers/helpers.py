@@ -11,6 +11,7 @@ import subprocess
 
 import pprint
 import json
+from bs4 import BeautifulSoup
 
 
 RSS_TEMPLATE="rss_template.jinja2"
@@ -523,10 +524,29 @@ def construct_tweets():
             expression = config.TWEET_DATE_EXPRESSION[delta.days]
 
             for item in sorted[day]:
+                # Most watcamp entries start with a link to the event.
+                # Use that if it is available. Otherwise link to 
+                # the calendar.
+
+                soup = BeautifulSoup(item['description'], 'html.parser')
+
+                link_to_tweet = shorten_url(
+                  add_timezone(item['htmlLink'])
+                  )
+
+                # soup.a == first link
+                if soup.a:
+                    href = soup.a['href']
+                    text = soup.a.contents[0]
+
+                    if href == text:
+                        link_to_tweet = soup.a['href']
+
+
                 tweet_dict = {
                   "summary": item['summary'],
                   "start": item['start'],
-                  "htmlLink": item['htmlLink'],
+                  "htmlLink": link_to_tweet,
                   "day_expression": expression,
                   }
 
@@ -557,8 +577,6 @@ def generate_tweet_text(tweet_dict):
         )
     template_env.filters['humandate'] = get_short_human_datetime
     template_env.filters['humandateonly'] = get_short_human_dateonly
-    template_env.filters['addtz'] = add_timezone
-    template_env.filters['shorturl'] = shorten_url
     template_env.filters['timeonly'] = get_human_timeonly
 
     template = template_env.get_template( TWEET_TEMPLATE ) 
