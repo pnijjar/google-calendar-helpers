@@ -658,7 +658,6 @@ def generate_rss(cal_dict):
     template_env.filters['markdown'] = get_markdown
     template_env.filters['print'] = print_from_template
 
-
     time_now = get_time_now()
 
     template = template_env.get_template( RSS_TEMPLATE ) 
