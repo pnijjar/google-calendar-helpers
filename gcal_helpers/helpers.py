@@ -640,11 +640,6 @@ def generate_rss(cal_dict):
 
     # --- Process template 
 
-    # This is kind of sketchy in general
-    # (because why should the summary be the title?)
-    feed_title = cal_dict['summary']
-
-
     template_loader = jinja2.FileSystemLoader(
         searchpath=TEMPLATE_DIR
         )
@@ -662,7 +657,7 @@ def generate_rss(cal_dict):
 
     template = template_env.get_template( RSS_TEMPLATE ) 
     template_vars = { 
-      "feed_title": feed_title,
+      "feed_title": config.RSS_TITLE,
       "feed_description": config.DESCRIPTION,
       "feed_webmaster" : config.WEBMASTER,
       "feed_webmaster_name" : config.WEBMASTER_NAME,
