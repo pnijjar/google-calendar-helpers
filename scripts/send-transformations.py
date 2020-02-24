@@ -42,7 +42,7 @@ def get_config():
     config = None
 
     with open(config_location, encoding='utf-8') as f:
-        config = yaml.load(f)
+        config = yaml.load(f, Loader=yaml.SafeLoader)
 
     if config:
         config['transform_targets'] = args.transforms
