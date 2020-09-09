@@ -48,7 +48,9 @@
                 {% endif %}
                 &lt;/p&gt;
 
-                {{ item['description'] | markdown }}
+                {% if item['description'] is defined %}
+                    {{ item['description'] | markdown }}
+                {% endif %}
             </description>
             <guid isPermaLink="false">{{ item['iCalUID'] }}</guid>
             <pubDate>{{ item['updated'] | rfc822 }}</pubDate>
