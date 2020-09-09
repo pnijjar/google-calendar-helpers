@@ -81,7 +81,7 @@ def send_mail(text, to_addr, account):
     # But check_output does??
 
     dummy = subprocess.check_output(
-      ['msmtp', '-a', account, to_addr],
+      ['msmtp', '-d', '-a', account, to_addr],
       input=text.encode()
       )
 
