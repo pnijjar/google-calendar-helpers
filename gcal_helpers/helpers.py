@@ -6,6 +6,7 @@ import jinja2, markdown, html
 import collections
 import argparse, sys, os
 import pyshorteners
+import pyshorteners.exceptions
 import random
 import subprocess
 import tweepy
@@ -300,21 +301,38 @@ def shorten_url(longurl):
     """
     retval = longurl
 
-    if config.LINK_SHORTENER_PARAMS:
-      
-        try:
-            shortener = pyshorteners.Shortener(
-              **config.LINK_SHORTENER_PARAMS)
-            retval = shortener.short(longurl)
+    s = pyshorteners.Shortener()
 
-        except pyshorteners.exceptions.ShorteningErrorException:
-            retval = longurl
+    if config.LINK_SHORTENER_SERVICE:
 
-        # I won't handle this. Let the program crash.
-        # except pyshorteners.exceptions.UnknownShortenerException:
-        #    retval = "%s (Error: %s)" % \
-        #               (longurl, 
-        #               "Incorrect shortening service invocation?")
+        if config.LINK_SHORTENER_SERVICE in s.available_shorteners:
+            #print("Looks like {} is available.".format(
+            #  config.LINK_SHORTENER_SERVICE,
+            #  ))
+
+            svc = config.LINK_SHORTENER_SERVICE
+
+            if config.LINK_SHORTENER_PARAMS:
+                params = config.LINK_SHORTENER_PARAMS
+                s = pyshorteners.Shortener(**params)
+          
+            try:
+                retval = s.__getattr__(svc).short(longurl)
+
+                #print("Got short url {}".format(
+                #  retval,
+                #  ))
+
+            except pyshorteners.exceptions.ShorteningErrorException:
+                    retval = longurl
+
+         
+
+    # I won't handle this. Let the program crash.
+    # except pyshorteners.exceptions.UnknownShortenerException:
+    #    retval = "%s (Error: %s)" % \
+    #               (longurl, 
+    #               "Incorrect shortening service invocation?")
 
     return retval
 
