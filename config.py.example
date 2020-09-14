@@ -38,17 +38,30 @@ NUM_ITEMS='100'
 # (No, this is not a good idea for RSS feeds. Trust me.)
 NEWSLETTER_MAX_DAYS=None
 
+
 # What link shortening service should be used in newsletters?
 # If you have no preference then the default should be okay. 
 # If you want to turn off link shortening set: 
-# LINK_SHORTENER_PARAMS = None
+# LINK_SHORTENER_SERVICE = None
 # 
+
 # See https://github.com/ellisonleao/pyshorteners/ for the 
-# syntax of making a new shortener. For example, to 
-# use bit.ly, you would specify YOUR_TOKEN, then have: 
-# LINK_SHORTENER_PARAMS = {"engine":"Bitly", "bitly_token":YOUR_TOKEN}
+# syntax of making a new shortener. 
+# Note that the syntax has changed dramatically since v0.6.1
+
+# To see the services:
+#   source venv/bin/activate
+#   python3
+#   import pyshorteners
+#   s = pyshorteners.Shortener()
+#   print(s.available_shorteners)
 #
-LINK_SHORTENER_PARAMS = {"engine":"Dagd"}
+# Another non-pyshorteners option is available: liteshort
+# This requires a domain parameter: 
+#   LINK_SHORTENER_PARAMS = {"domain": "https://s.kwlug.org"}
+
+LINK_SHORTENER_SERVICE = 'dagd'
+LINK_SHORTENER_PARAMS =  {}
 
 # For datetime nonsense 
 TIMEZONE='America/Toronto'
