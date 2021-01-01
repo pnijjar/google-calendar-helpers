@@ -7,6 +7,7 @@ import collections
 import argparse, sys, os
 import pyshorteners
 import pyshorteners.exceptions
+from .liteshort import Shortener as lss
 import random
 import subprocess
 import tweepy
@@ -324,9 +325,22 @@ def shorten_url(longurl):
                 #  ))
 
             except pyshorteners.exceptions.ShorteningErrorException:
-                    retval = longurl
+                retval = longurl
 
-         
+        # this is a hack because Liteshort is not an official
+        # pyshorteners implementation. (I guess I could submit
+        # it, but I am afraid).
+        #
+        # The parameter "domain" is mandatory for this shortener.
+        elif config.LINK_SHORTENER_SERVICE == 'liteshort':
+            s = lss(**config.LINK_SHORTENER_PARAMS)
+
+            try:
+                retval = s.short(longurl)
+
+            except pyshorteners.exceptions.ShorteningErrorException as e:
+                #print("ShorteningError: {}", e)
+                retval = longurl
 
     # I won't handle this. Let the program crash.
     # except pyshorteners.exceptions.UnknownShortenerException:
