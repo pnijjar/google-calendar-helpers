@@ -5,6 +5,7 @@ import yaml
 import subprocess
 import pprint
 import logging
+import email.utils
 
 
 # ---------------------
@@ -59,6 +60,7 @@ def assemble_email(to_address, from_address, subject, body_string):
     retval += "From: {}\n".format(from_address)
     retval += "Subject: {}\n".format(subject)
     retval += 'Content-Type: text/plain; charset="UTF-8"\n'
+    retval += 'Message-ID: {}\n'.format(email.utils.make_msgid())
     
     # Forget requiring pytz. Just call shell functions. 
     email_date = subprocess.check_output(['date', '-R']).decode()
