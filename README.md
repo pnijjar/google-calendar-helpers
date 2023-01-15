@@ -37,6 +37,8 @@ used to embed events on a webpage.
 Deployment
 ----------
 
+### Local
+
 - Generate a Google Calendar API key, as described below.
 - Use `virtualenv` to set up a Python 3 environment: `virtualenv -p
   /usr/bin/python3 venv`
@@ -59,6 +61,12 @@ Deployment
 - Create an `API Key`. Give it an appropriate name ("RSS/Newsletter
   key"). Set the restriction to be `IP Addresses`, and enter the IP
   address of the host that will be running the scripts.
+  
+### Production
+
+- Copy `config.py.example` to `config.py` and customize it to your liking
+- Build the docker image with `docker build -t gcal-rss .`
+- Run the container and generate the files into a named volume: `docker run --rm -v gcal-rss-data:/data gcal-rss`
 
 Caveats
 -------
