@@ -53,9 +53,16 @@
                 {% endif %}
             </description>
             <guid isPermaLink="false">{{ item['iCalUID'] }}</guid>
-            <pubDate>{{ item['updated'] | rfc822 }}</pubDate>
+            <pubDate>
+                {%- if item['start']['dateTime'] is defined -%}
+                    {{ item['start']['dateTime'] | rfc822 }}
+                {%- elif item['start']['date'] is defined  -%}
+                    {{ item['start']['date'] | rfc822 }}
+                {%- else -%}
+                    {{ item['updated'] | rfc822 }}
+                {%- endif -%}
+            </pubDate>
         </item>
         {% endfor %}
     </channel>
 </rss>
-
