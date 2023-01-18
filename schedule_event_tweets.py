@@ -4,7 +4,9 @@ from gcal_helpers import helpers
 
 # ------- MAIN PROGRAM -------------
 
-helpers.write_transformation("tweets")
+
+config = helpers.load_config()
+helpers.write_transformation(config, "tweets")
 
 
 """

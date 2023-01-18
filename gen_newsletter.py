@@ -2,4 +2,5 @@
 
 from gcal_helpers import helpers
 
-helpers.write_transformation("newsletter")
+config = helpers.load_config()
+helpers.write_transformation(config, "newsletter")

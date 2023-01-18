@@ -856,13 +856,11 @@ def send_tweet():
 
 
 # ------------------------------
-def write_transformation(transform_type):
+def write_transformation(config, transform_type):
     """ Write a file for the transformation. The transform_type should
         be one of "rss", "newsletter", or "sidebar". If I was a better
         programmer then I would force this.
     """
-
-    config = load_config() 
 
     # Before generating the new RSS get rid of the old one. 
     # XXX THESE PATHS ARE WRONG. SHOULD BE CONFIGURABLE PER FEED
