@@ -3,7 +3,7 @@ config.py
 venv
 .cache
 garbage
-.yaml
+*.yaml
 !config.yaml.example
 !tests/*.yaml
 .*.swp
