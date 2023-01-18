@@ -44,7 +44,7 @@ Deployment
   /usr/bin/python3 venv`
 - Activate the environment: `source venv/bin/activate`
 - Install dependencies: `pip install -r requirements.txt`
-- Copy `config.py.example` to `config.py` and customize it to your
+- Copy `config.yaml.example` to `config.yaml` and customize it to your
   needs.
 - Run `gen_rss.py` or `gen_newsletter.py` or `gen_sidebar.py` or 
   `schedule_event_tweets.py`
@@ -64,7 +64,7 @@ Deployment
   
 ### Production
 
-- Copy `config.py.example` to `config.py` and customize it to your liking
+- Copy `config.yaml.example` to `config.yaml` and customize it to your liking
 - Build the docker image with `docker build -t gcal-rss .`
 - Run the container and generate the files into a named volume: `docker run --rm -v gcal-rss-data:/data gcal-rss`
 
@@ -78,9 +78,6 @@ Caveats
   calendars.
 - This project is colonialist: it has only been tested in English, in
   the `America/Toronto` timezone.
-- This project sources a file `config.py` that the end user can
-  specify on the commandline. This is really dangerous unless you
-  trust everybody who can run this script.
 - If you use a person's default calendar the title of the newsletter
   will be the same as their email. The person will have to edit the
   name of the calendar in order for the scripts to display something
