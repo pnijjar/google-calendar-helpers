@@ -6,5 +6,6 @@ garbage
 .yaml
 !config.yaml.example
 !tests/*.yaml
+.*.swp
 
 .idea/
