@@ -14,6 +14,7 @@ import tweepy
 import pprint
 import json
 from bs4 import BeautifulSoup
+import yaml
 
 
 RSS_TEMPLATE="rss_template.jinja2"
@@ -21,33 +22,28 @@ NEWSLETTER_TEMPLATE="newsletter_template.jinja2"
 SIDEBAR_TEMPLATE="sidebar_template.jinja2"
 TWEET_TEMPLATE="tweet_template.jinja2"
 INVALID_DATE="1969-12-12T23:59.000Z"
+
+# This is the folder that contains the helper.py script
 TEMPLATE_DIR=os.path.dirname(os.path.abspath(__file__))
-LAUNCH_TWEET_SCRIPT='launch_tweet_sender.sh'
 
-# ------------------------------
-def load_config(configfile=None, caller=None):
-    """ Load configuration definitions.
-       (This is really scary, actually. We are trusting that the 
-       config.py we are taking as input is sane!) 
+# This should be the folder that has send_tweet.py
+LAUNCH_PYDIR=os.path.abspath(os.path.join(TEMPLATE_DIR, os.pardir))
 
-       If both the commandline and the parameter are 
-       specified then the commandline takes precedence.
+# This should be the folder that has the shell script
+SHELL_SCRIPT_DIR=os.path.abspath(
+ os.path.join(TEMPLATE_DIR, 'scripts')
+ )
+
+TWEET_SHELL_SCRIPT='launch_tweet_sender.sh'
+
+
+## ------------------------------
+def parse_args(caller = None):
+    """ Parse commandline args. Return the args thingy. (What is it?
+    A module? It is like a dict.)
+
+    caller: The calling program? Currently: 'send_tweet'
     """
-
-    # '/home/pnijjar/watcamp/python_rss/gcal_helpers/config.py'
-    # See: http://www.karoltomala.com/blog/?p=622
-    DEFAULT_CONFIG_SOURCEFILE = os.path.join(
-        os.getcwd(),
-        'config.py',
-        )
-
-    config_location=None
-
-    if configfile: 
-        config_location=configfile
-    else: 
-        config_location = DEFAULT_CONFIG_SOURCEFILE
-
 
     # Now parse commandline options (Here??? This code smells bad.)
     parser = argparse.ArgumentParser(
@@ -57,8 +53,9 @@ def load_config(configfile=None, caller=None):
         )
     parser.add_argument('-c', '--configfile', 
         help='configuration file location',
-        default=config_location,
+        required=True,
         )
+
 
     # HACK HACK HACK. send_tweet needs to load the config file, 
     # but needs an additional parameter. 
@@ -70,45 +67,63 @@ def load_config(configfile=None, caller=None):
             )
 
     args = parser.parse_args()
-    if args.configfile:
-        config_location = os.path.abspath(args.configfile)
+
+    return args
 
 
-    # http://stackoverflow.com/questions/11990556/python-how-to-make-global
-    global config
+## ------------------------------
+def load_config_yaml(configfile=None):
+    """ Load config definitions from YAML file.
 
-    # Blargh. You can load modules from paths, but the syntax is
-    # different depending on the version of python. 
-    # http://stackoverflow.com/questions/67631/how-to-import-a-mod
-    # https://stackoverflow.com/questions/1093322/how-do-i-ch
+    I feel the commandline arg should be mandatory?
 
-    if sys.version_info >= (3,5): 
-        import importlib.util 
-        spec = importlib.util.spec_from_file_location(
-            'config',
-            config_location,
-            )
-        config = importlib.util.module_from_spec(spec)
-        spec.loader.exec_module(config)
-    elif sys.version_info >= (3,3):
-        # This is the only one I can test. Sad!
-        from importlib.machinery import SourceFileLoader
-        config = SourceFileLoader( 'config', config_location,).load_module()
-    else:
-        import imp
-        config = imp.load_source( 'config', config_location,)
+    Return the config dict. It can be global later.
+
+    """
+    with open(configfile, encoding='utf-8') as f:
+        config = yaml.load(f, Loader=yaml.SafeLoader)
+
+    if not config.get('flags'):
+        config['flags'] = {}
+
+    if not config.get('internal'):
+        config['internal'] = {}
+
+    return config
+
+
+# ------------------------------
+def load_config(configfile=None, caller=None):
+    """ Load configuration definitions.
+
+       :param configfile : a configfile with YAML to load. If this 
+         is specified then no commandline args are parsed.
+       :param caller : What calls this. 'send_tweet' is defined.
+       :returns the config dict
+
+    """
+    configuration_lala = None
+    args = None
+
+    if configfile:
+        configuration_lala = load_config_yaml(configfile)
+    else: 
+        args = parse_args(caller)
+        configfile = args.configfile
+        configuration_lala = load_config_yaml(configfile)
+
+    configuration_lala['internal']['config_location'] \
+      = os.path.abspath(configfile)
 
     if caller == 'send_tweet' and args.tweet_id:
-        config.TWEET_ID = args.tweet_id
-
-    # Needed to send tweets
-    config.CONFIG_LOCATION = config_location
+        config['flags']['tweet_id'] = args.tweet_id
 
     # For test harness
-    return config
+    return configuration_lala
             
 
 # ------------------------------
+# XXX - replace with proper logging
 def log_msg(msg, toscreen=False):
    """ Log a message to syslog.
    """
@@ -219,12 +234,12 @@ def extract_datestring (gcal_event):
 
 
 # ------------------------------
-def add_timezone(google_url):
+def add_timezone(config, google_url):
     """ Given a Google Calendar URL, append an argument for the 
         timezone string.
     """
 
-    return "{}&ctz={}".format(google_url, config.TIMEZONE)
+    return "{}&ctz={}".format(google_url, config['feeds']['timezone'])
 
 # ------------------------------
 def get_underline (title, underline_char):
@@ -250,33 +265,33 @@ def get_markdown (rawtext):
     return md_text
 
 # ------------------------------
-def get_time_now():
+def get_time_now(config):
    
-    target_timezone = pytz.timezone(config.TIMEZONE)
+    target_timezone = pytz.timezone(config['feeds']['timezone'])
     time_now = datetime.datetime.now(tz=target_timezone)
 
     return time_now
 
 # ------------------------------
-def call_api():
+def call_api(config):
     """ Returns JSON from API call, or some error I won't handle."""
 
-    time_now = get_time_now()
+    time_now = get_time_now(config)
 
     # Format looks like: 2017-03-25T00:00:00-0500
     time_now_formatted = time_now.strftime("%Y-%m-%dT%H:%M:%S%z")
 
     master_json = None
 
-    for id in config.CALENDAR_IDS:
+    for id in config['services']['google']['calendar_ids']:
 
         api_url='https://www.googleapis.com/calendar/v3/calendars/{}/events'.format(id)
 
         api_params = { 
-            'maxResults' : config.NUM_ITEMS,
+            'maxResults' : config['feeds']['num_items'],
             'orderBy' : 'startTime',
             'singleEvents' : 'true',
-            'key' : config.API_KEY,
+            'key' : config['services']['google']['api_key'],
             'timeMin' : time_now_formatted,
             } 
 
@@ -297,24 +312,25 @@ def call_api():
     return master_json
 
 # ------------------------------
-def shorten_url(longurl):
+def shorten_url(config, longurl):
     """ Shortens URL using a given service. Yay surveillance.
     """
     retval = longurl
 
     s = pyshorteners.Shortener()
 
-    if config.LINK_SHORTENER_SERVICE:
+    if config['services']['shortener']['service']:
 
-        if config.LINK_SHORTENER_SERVICE in s.available_shorteners:
-            #print("Looks like {} is available.".format(
-            #  config.LINK_SHORTENER_SERVICE,
-            #  ))
+        s_config = config['services']['shortener']
 
-            svc = config.LINK_SHORTENER_SERVICE
+        if s_config['service'] in s.available_shorteners:
 
-            if config.LINK_SHORTENER_PARAMS:
-                params = config.LINK_SHORTENER_PARAMS
+            svc = s_config['service']
+
+            if s_config['params']:
+                # This variable should not be needed. :(
+                # I am bad at Python.
+                params = s_config['params']
                 s = pyshorteners.Shortener(**params)
           
             try:
@@ -332,8 +348,8 @@ def shorten_url(longurl):
         # it, but I am afraid).
         #
         # The parameter "domain" is mandatory for this shortener.
-        elif config.LINK_SHORTENER_SERVICE == 'liteshort':
-            s = lss(**config.LINK_SHORTENER_PARAMS)
+        elif s_config['service'] == 'liteshort':
+            s = lss(**s_config['params'])
 
             try:
                 retval = s.short(longurl)
@@ -353,6 +369,7 @@ def shorten_url(longurl):
 
 # ------------------------------
 def organize_events_by_day(
+    config,
     cal_items,
     max_days=None,
     ):
@@ -370,7 +387,7 @@ def organize_events_by_day(
     outdict = collections.OrderedDict()
 
     lastdate = get_human_dateonly(INVALID_DATE)
-    today = get_time_now()
+    today = get_time_now(config)
     
     # Set the time to midnight
     today = today.replace(hour=0, minute=0, second=0)
@@ -389,7 +406,7 @@ def organize_events_by_day(
         # Check if this date is naive. 
         # http://stackoverflow.com/questions/5802108/
         
-        tz = pytz.timezone(config.TIMEZONE)
+        tz = pytz.timezone(config['feeds']['timezone'])
         if this_datetime.tzinfo is None: 
             #print ("{}: tzinfo is {}".format(
             #    this_datetime, 
@@ -441,13 +458,14 @@ def pick_random_time(start_time, tweet_delta):
 
 
 # ---------------------------------
-def schedule_tweets(tweets_to_schedule):
+def schedule_tweets(config, tweets_to_schedule):
     """ Generate tweets, schedule them for random times in the 
         tweet window. Consumes a dict of strings to be tweeted.
     """
+    t_config = config['feeds']['tweet']
 
-    start_dt = dateutil.parser.parse(config.TWEET_WINDOW[0])
-    end_dt = dateutil.parser.parse(config.TWEET_WINDOW[1])
+    start_dt = dateutil.parser.parse(t_config['window']['start'])
+    end_dt = dateutil.parser.parse(t_config['window']['end'])
 
     tweet_delta = end_dt - start_dt
     
@@ -470,18 +488,22 @@ def schedule_tweets(tweets_to_schedule):
            id,
            random.randrange(1000,10000),
            )
-        dest = os.path.join(config.OUTTWEET, dest_filename)
+        dest = os.path.join(
+          config['paths']['tweet_cache_path'], 
+          dest_filename
+          )
 
         outfile = open(dest, "w", newline='\r\n', encoding='utf8')
         outfile.write(tweets_to_schedule[id])
         outfile.close()
 
+        # XXX - Paths need to get fixed here
         send_tweet_cmd = "{}/{} {} {} {} {}".format(
-          config.SHELL_SCRIPT_DIR,
-          LAUNCH_TWEET_SCRIPT,
-          config.PYDIR,
-          config.VENV_DIR,
-          config.CONFIG_LOCATION,
+          SHELL_SCRIPT_DIR,
+          TWEET_SHELL_SCRIPT,
+          LAUNCH_PYDIR,
+          config['paths']['venv_path'],
+          config['internal']['config_location'],
           dest_filename,
           )
 
@@ -511,16 +533,16 @@ def schedule_tweets(tweets_to_schedule):
     
 
 # -------------------------------
-def construct_tweets():
+def construct_tweets(config):
     """ Generate the text of the tweets. Produce a dict of 
     strings that are the tweet texts.
     """
-    results = call_api()
+    results = call_api(config)
 
     # This is actually a datetime, not just a date.
-    tz = pytz.timezone(config.TIMEZONE)
+    tz = pytz.timezone(config['feeds']['timezone'])
 
-    today = get_time_now()
+    today = get_time_now(config)
 
     # Ugh. Need to convert this to midnight, or 
     # delta calculations can break. 
@@ -536,8 +558,9 @@ def construct_tweets():
       )
 
     sorted = organize_events_by_day(
+      config,
       results['items'], 
-      config.TWEET_NUM_DAYS,
+      config['feeds']['tweet']['days_in_advance'],
       )
 
     tweet_output = {} 
@@ -554,8 +577,9 @@ def construct_tweets():
         #  delta,
         #  ))
 
-        if delta.days in config.TWEET_DATE_EXPRESSION:
-            expression = config.TWEET_DATE_EXPRESSION[delta.days]
+        if delta.days in config['feeds']['tweet']['date_expression']:
+            expression = \
+              config['feeds']['tweet']['date_expression'][delta.days]
 
             for item in sorted[day]:
                 # Most watcamp entries start with a link to the event.
@@ -565,7 +589,8 @@ def construct_tweets():
                 soup = BeautifulSoup(item['description'], 'html.parser')
 
                 link_to_tweet = shorten_url(
-                  add_timezone(item['htmlLink'])
+                  config,
+                  add_timezone(config, item['htmlLink'])
                   )
 
                 # soup.a == first link
@@ -624,16 +649,20 @@ def generate_tweet_text(tweet_dict):
 
 
 # ------------------------------
-def generate_newsletter(cal_dict):
+def generate_newsletter(config, cal_dict):
     """ Given a JSON formatted calendar dictionary, make the text for 
         a fascinating newsletter.
     """
 
     sorted_items = organize_events_by_day(
+        config,
         cal_dict['items'],
-        config.NEWSLETTER_MAX_DAYS,
+        config['feeds']['newsletter']['max_days']
         )
     # pprint.pprint(sorted_items)
+
+    shorten_url_curry = lambda x: shorten_url(config, x)
+    add_timezone_curry = lambda x: add_timezone(config, x)
 
 
     template_loader = jinja2.FileSystemLoader(
@@ -647,15 +676,15 @@ def generate_newsletter(cal_dict):
     template_env.filters['humandate'] = get_human_datestring
     template_env.filters['humandateonly'] = get_human_dateonly
     template_env.filters['timeonly'] = get_human_timeonly
-    template_env.filters['shorturl'] = shorten_url
+    template_env.filters['shorturl'] = shorten_url_curry
     template_env.filters['underline'] = get_underline
-    template_env.filters['addtz'] = add_timezone
+    template_env.filters['addtz'] = add_timezone_curry
 
     template = template_env.get_template( NEWSLETTER_TEMPLATE ) 
     template_vars = { 
       "title": cal_dict['summary'],
       "items" : sorted_items,
-      "header" : config.NEWSLETTER_HEADER,
+      "header" : config['feeds']['newsletter']['header']
       }
 
     output_newsletter = template.render(template_vars)
@@ -680,7 +709,7 @@ def sort_by_date(events):
 
 
 # ------------------------------
-def generate_rss(cal_dict):
+def generate_rss(config, cal_dict):
     """ Given a JSON formatted calendar dictionary, make and return 
         the RSS file.
     """
@@ -701,35 +730,46 @@ def generate_rss(cal_dict):
     template_env.filters['markdown'] = get_markdown
     template_env.filters['print'] = print_from_template
 
-    time_now = get_time_now()
+    time_now = get_time_now(config)
 
     """
-    Filtering duplicate events: Repeated events have the same calendar UID, resulting
-        in an invalid RSS feed as feeds are not allowed to have multiple `<item>`s with
-        the same `<guid>` tag. Filtering them out allows us to still list the _next_
-        iteration of that particular event though.
+
+    Filtering duplicate events: Repeated events have the same calendar
+    UID, resulting in an invalid RSS feed as feeds are not allowed to
+    have multiple `<item>`s with the same `<guid>` tag. Filtering them
+    out allows us to still list the _next_ iteration of that
+    particular event though.
     
-    Sorting by date: Because we're ingesting several calendars, the RSS feed will end up
-        being ordered first by the arbitrary order of the calendar IDs in the config and then
-        by the date (Google's API already sorts them by date). At this point we have several
-        date sorted lists. To get a properly sorted RSS feed we need to go ahead and actually
-        sort the full list of events by date, which we can do easily via the ISO formated date
-        time stamps.
+    Sorting by date: Because we're ingesting several calendars, the
+    RSS feed will end up being ordered first by the arbitrary order of
+    the calendar IDs in the config and then by the date (Google's API
+    already sorts them by date). At this point we have several date
+    sorted lists. To get a properly sorted RSS feed we need to go
+    ahead and actually sort the full list of events by date, which we
+    can do easily via the ISO formated date time stamps.
+
     """
     cal_dict['items'] = sort_by_date(filter_duplicate_guids(cal_dict['items']))
 
+    # XXX - BAD -- assumes a particular publish URL.
+    feed_selflink = "{}/{}.rss".format(
+      config['feeds']['website'],
+      config['feeds']['filename'],
+      )
+      
+
     template = template_env.get_template( RSS_TEMPLATE ) 
     template_vars = { 
-      "feed_title": config.RSS_TITLE,
-      "feed_description": config.DESCRIPTION,
-      "feed_webmaster" : config.WEBMASTER,
-      "feed_webmaster_name" : config.WEBMASTER_NAME,
+      "feed_title": config['feeds']['rss']['title'],
+      "feed_description": config['feeds']['rss']['description'],
+      "feed_webmaster" : config['feeds']['webmaster'],
+      "feed_webmaster_name" : config['feeds']['webmaster_name'],
       "feed_builddate" : time_now.strftime("%a, %d %b %Y %T %z"),
       "feed_pubdate" : cal_dict['updated'],
-      "feed_website" : config.WEBSITE,
-      "feed_logo_url" : config.LOGO,
+      "feed_website" : config['feeds']['website'],
+      "feed_logo_url" : config['feeds']['logo_url'],
       "feed_items" : cal_dict['items'],
-      "feed_selflink" : config.FEED_LINK,
+      "feed_selflink" : feed_selflink,
       }
 
     output_rss = template.render(template_vars)
@@ -738,12 +778,13 @@ def generate_rss(cal_dict):
 
 
 # ------------------------------
-def generate_sidebar(cal_dict):
+def generate_sidebar(config, cal_dict):
     """ Given a JSON formatted calendar dictionary, make and return 
         the HTML sidebar list.
     """
 
     # --- Process template 
+    add_timezone_curry = lambda x: add_timezone(config, x)
 
     template_loader = jinja2.FileSystemLoader(
         searchpath=TEMPLATE_DIR
@@ -754,9 +795,9 @@ def generate_sidebar(cal_dict):
         )
     template_env.filters['humandate'] = get_short_human_datetime
     template_env.filters['humandateonly'] = get_short_human_dateonly
-    template_env.filters['addtz'] = add_timezone
+    template_env.filters['addtz'] = add_timezone_curry
 
-    time_now = get_time_now()
+    time_now = get_time_now(config)
 
     template = template_env.get_template( SIDEBAR_TEMPLATE ) 
     template_vars = { 
@@ -772,15 +813,17 @@ def send_tweet():
     """ Open Tweepy and send the tweet.
     """
 
-    load_config(caller='send_tweet')
+    # This is going to break! We need the credentials in a file!
+    config = load_config(caller='send_tweet')
+    t_config = config['services']['twitter']
 
     auth = tweepy.OAuthHandler(
-      config.TWITTER_CONSUMER_KEY,
-      config.TWITTER_CONSUMER_SECRET,
+      t_config['consumer_key'],
+      t_config['consumer_secret'],
       )
     auth.set_access_token(
-      config.TWITTER_ACCESS_TOKEN,
-      config.TWITTER_ACCESS_SECRET,
+      t_config['access_token'],
+      t_config['access_secret'],
       )
 
     api = None
@@ -791,14 +834,17 @@ def send_tweet():
         log_msg("send_tweet.py: error opening Twitter API: {}".format(e))
         exit(3)
 
-    tweetfile = os.path.join(config.OUTTWEET, config.TWEET_ID)
+    tweetfile = os.path.join(
+      config['paths']['tweet_cache_path'],
+      config['flags']['tweet_id'],
+      )
 
     # If you can't find the file just fail, I guess?
     try:
         with open(tweetfile) as f:
             tweettext = f.readline()
             #helpers.log_msg('ID {}: {}'.format(
-            #    config.TWEET_ID,
+            #    config['flags']['tweet_id'],
             #    tweettext,
             #    ))
             api.update_status(tweettext)
@@ -816,23 +862,30 @@ def write_transformation(transform_type):
         programmer then I would force this.
     """
 
-    load_config() 
+    config = load_config() 
 
     # Before generating the new RSS get rid of the old one. 
+    # XXX THESE PATHS ARE WRONG. SHOULD BE CONFIGURABLE PER FEED
+    folder = ""
+    if config['feeds'].get('relative_to_publish_path'):
+        folder = config['paths']['publish_path']
+
+    filebase = config['feeds']['filename']
+
     dest = None
     if transform_type == "rss":
-        dest = config.OUTRSS
+        dest = os.path.join(folder, "{}.rss".format(filebase))
 
     elif transform_type == "newsletter":
-        dest = config.OUTNEWS
+        dest = os.path.join(folder, "{}.txt".format(filebase))
 
     elif transform_type == "sidebar":
-        dest = config.OUTSIDEBAR
+        dest = os.path.join(folder, "{}-sidebar.html".format(filebase))
 
     elif transform_type == 'tweets':
         # Grr. This does not really fit in.
-        tweets_to_schedule = construct_tweets()
-        schedule_tweets(tweets_to_schedule)
+        tweets_to_schedule = construct_tweets(config)
+        schedule_tweets(config, tweets_to_schedule)
         return
     else:
         raise NameError("Incorrect type '%s' listed" %
@@ -841,24 +894,35 @@ def write_transformation(transform_type):
     if os.path.isfile(dest):
         os.remove(dest)
 
-    if os.path.isfile(config.OUTJSON):
-        os.remove(config.OUTJSON)
+    cal_json = call_api(config) 
 
-    cal_json = call_api() 
+    # Keep JSON?
+    if config['paths']['cache_file'].get('name'):
+        json_filename = config['paths']['cache_file']['name']
 
-    outjson = open(config.OUTJSON, "w", encoding='utf8')
-    json.dump(cal_json, outjson, indent=2, separators=(',', ': '))
+        cache_dir = ""
+        if config['paths']['cache_file'].get('relative_to_cache_path'):
+            cache_dir = config['paths']['cache_path']
+
+        out_json_file=os.path.join(cache_dir, json_filename)
+
+
+        if os.path.isfile(out_json_file):
+            os.remove(out_json_file)
+
+        outjson = open(out_json_file, "w", encoding='utf8')
+        json.dump(cal_json, outjson, indent=2, separators=(',', ': '))
 
     generated_file = None
 
     if transform_type == "rss":
-        generated_file = generate_rss(cal_json)
+        generated_file = generate_rss(config, cal_json)
 
     elif transform_type == "newsletter":
-        generated_file = generate_newsletter(cal_json)
+        generated_file = generate_newsletter(config, cal_json)
 
     elif transform_type == "sidebar":
-        generated_file = generate_sidebar(cal_json)
+        generated_file = generate_sidebar(config, cal_json)
 
     # No else should be needed. 
     # print("dest is: {}".format(dest))
@@ -868,33 +932,9 @@ def write_transformation(transform_type):
     outfile.write(generated_file)
 
 
-
-
 # ------------------------------
 if __name__ == '__main__':
-
-    #cal_json = call_api() 
-
-    #outjson = open(config.OUTJSON, "w")
-    #json.dump(cal_json, outjson, indent=2, separators=(',', ': '))
-
-    # cal_rss = generate_rss(cal_json)
-    # print(cal_rss)
-
-    #outfile = open(config.OUTFILE, "w")
-    #outfile.write(cal_rss)
-
-    #events = cal_json['items']
-    #d = organize_events_by_day(events)
-
-    #for i in d:
-    #    print(i)
-
 
     write_newsletter()
    
 
-# pprint.pprint(r)
-# print("{}".format(r.url))
-# pprint.pprint(r.json())
-# pprint.pprint(output_rss)
