@@ -367,6 +367,9 @@ def shorten_url(config, longurl):
                 #print("ShorteningError: {}", e)
                 retval = longurl
 
+        elif s_config['service'] == 'no_shortener':
+            reval = longurl
+
     # I won't handle this. Let the program crash.
     # except pyshorteners.exceptions.UnknownShortenerException:
     #    retval = "%s (Error: %s)" % \
