@@ -471,7 +471,7 @@ def schedule_tweets(config, tweets_to_schedule):
     """ Generate tweets, schedule them for random times in the 
         tweet window. Consumes a dict of strings to be tweeted.
     """
-    t_config = config['feeds']['tweet']
+    t_config = config['feeds']['tweets']
 
     start_dt = dateutil.parser.parse(t_config['window']['start'])
     end_dt = dateutil.parser.parse(t_config['window']['end'])
@@ -569,7 +569,7 @@ def construct_tweets(config):
     sorted = organize_events_by_day(
       config,
       results['items'], 
-      config['feeds']['tweet']['days_in_advance'],
+      config['feeds']['tweets']['days_in_advance'],
       )
 
     tweet_output = {} 
@@ -586,9 +586,9 @@ def construct_tweets(config):
         #  delta,
         #  ))
 
-        if delta.days in config['feeds']['tweet']['date_expression']:
+        if delta.days in config['feeds']['tweets']['date_expression']:
             expression = \
-              config['feeds']['tweet']['date_expression'][delta.days]
+              config['feeds']['tweets']['date_expression'][delta.days]
 
             for item in sorted[day]:
                 # Most watcamp entries start with a link to the event.
@@ -760,11 +760,12 @@ def generate_rss(config, cal_dict):
     """
     cal_dict['items'] = sort_by_date(filter_duplicate_guids(cal_dict['items']))
 
-    # XXX - BAD -- assumes a particular publish URL.
-    feed_selflink = "{}/{}.rss".format(
-      config['feeds']['website'],
-      config['feeds']['filename'],
-      )
+    feed_selflink = config['feeds']['rss']['url']
+    if config['feeds']['rss']['relative_to_website']:
+        feed_selflink = "{}/{}.rss".format(
+          config['feeds']['website'],
+          config['feeds']['rss']['url'],
+        )
       
 
     template = template_env.get_template( RSS_TEMPLATE ) 
@@ -868,8 +869,9 @@ def send_tweet():
 def write_transformation(config, transforms):
     """ Write a file for the transformation. The transforms should
         should be a LIST containing a subset of SUPPORTED_TRANSFORMS.
-        be one of "rss", "newsletter", or "sidebar". If I was a better
-        programmer then I would force this.
+        Note that SUPPORTED_TRANSFORMS must match the keys under the
+        'feeds' entry in the YAML (currently 'rss', 'newsletter',
+        'sidebar', 'tweets')
     """
 
     for t in transforms:
@@ -902,31 +904,19 @@ def write_transformation(config, transforms):
 
 
 
-
-
     for transform_type in transforms:
 
-        # Before generating the new RSS get rid of the old one. 
-        # XXX THESE PATHS ARE WRONG. SHOULD BE CONFIGURABLE PER FEED
-        folder = ""
-        if config['feeds'].get('relative_to_publish_path'):
-            folder = config['paths']['publish_path']
 
-        filebase = config['feeds']['filename']
-
-        dest = None
         generated_file = None
 
+
         if transform_type == "rss":
-            dest = os.path.join(folder, "{}.rss".format(filebase))
             generated_file = generate_rss(config, cal_json)
 
         elif transform_type == "newsletter":
-            dest = os.path.join(folder, "{}.txt".format(filebase))
             generated_file = generate_newsletter(config, cal_json)
 
         elif transform_type == "sidebar":
-            dest = os.path.join(folder, "{}-sidebar.html".format(filebase))
             generated_file = generate_sidebar(config, cal_json)
 
         elif transform_type == 'tweets':
@@ -934,13 +924,27 @@ def write_transformation(config, transforms):
             tweets_to_schedule = construct_tweets(config)
             schedule_tweets(config, tweets_to_schedule)
             return
-        
-        if os.path.isfile(dest):
-            os.remove(dest)
 
-        # Insert Windows newlines for dumb email clients
-        outfile = open(dest, "w", newline='\r\n', encoding='utf8')
-        outfile.write(generated_file)
+
+        if transform_type in ['rss', 'newsletter', 'sidebar']:
+            if config['feeds'][transform_type]['filename'] == 'stdout':
+                print(generated_file)
+            else:
+                folder = ''
+                info = config['feeds'][transform_type]
+                if info.get('relative_to_publish_path'):
+                    folder = config['paths']['publish_path']
+
+                filebase = info['filename']
+
+                dest = os.path.join(folder, filebase)
+        
+                if os.path.isfile(dest):
+                    os.remove(dest)
+
+                # Insert Windows newlines for dumb email clients
+                outfile = open(dest, "w", newline='\r\n', encoding='utf8')
+                outfile.write(generated_file)
 
 
 # ------------------------------

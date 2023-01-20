@@ -61,6 +61,7 @@ services:
   # This requires a domain parameter:
   #   params:
   #     domain: 'https://s.kwlug.org'
+  # To use no shortener: use 'no_shortener'
   shortener: 
     service: 'dagd'
     params: {}
@@ -90,9 +91,26 @@ feeds:
   # How many items should be in the feed?
   num_items: 100
 
-  # Does not include the .rss/.txt/-sidebar.html
-  filename: watcamp
-  relative_to_publish_path: True
+  rss:
+    title: 'WatCamp Events'
+    description: >
+      Upcoming tech events in Waterloo Region.
+      The description can be multiple lines.
+
+      # For "filename" entries: use 'stdout' to publish to stdout with 
+      # no file. (Ugh type theory, but whatevs.)
+      
+      # filenames SHOULD include extensions now.
+      filename: /var/www/html/rss/watcamp.rss
+      relative_to_publish_path: false
+
+      # There is a DRY violation here. watcamp.rss is specified twice.
+      # I think this set should only be needed for RSS (and iCal?)
+      # It is used to generate the "atom:link rel="self" in the RSS
+      # feed. If it is relative to the website there is no need for 
+      # a leading slash.
+      url: rss/watcamp.rss
+      relative_to_website: true
 
   newsletter:
     # How many days back should the newsletter display? 
@@ -109,17 +127,24 @@ feeds:
       to the event sites directly (but those event sites are usually
       accessible from our calendar).
 
-  rss:
-    title: 'WatCamp Events'
-    description: >
-      Upcoming tech events in Waterloo Region.
-      The description can be multiple lines.
+    # filenames SHOULD include extensions now.
+    filename: watcamp.txt
+    relative_to_publish_path: true
 
 
+  sidebar: 
+    # For "filename" entries: use 'stdout' to publish to stdout with 
+    # no file. (Ugh type theory, but whatevs.)
 
-    # publish_path?
+    #filename: watcamp-sidebar.html
+    filename: stdout
 
-  tweet: 
+    # This is not used if stdout is specified. It can probably be
+    # deleted.
+    relative_to_publish_path: True 
+
+
+  tweets: 
     # Maybe this should be shared with toots?
 
     # How many days in advance should we tweet events, and 
@@ -145,6 +170,12 @@ feeds:
       start: '09:00'
       end: '16:00'
 
+    # For "filename" entries: use 'stdout' to publish to stdout with 
+    # no file. (Ugh type theory, but whatevs.)
+    
+    # filenames SHOULD include extensions now.
+    filename: watcamp-sidebar.html
+    relative_to_publish_path: true
 
   # If this is empty then we will use the tweet information for toots.
   # Otherwise the same dict structure as for tweets should be used.
