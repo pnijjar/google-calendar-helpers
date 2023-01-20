@@ -6,7 +6,7 @@ from gcal_helpers import helpers
 
 
 config = helpers.load_config()
-helpers.write_transformation(config, "tweets")
+helpers.write_transformation(config, ["tweets",])
 
 
 """

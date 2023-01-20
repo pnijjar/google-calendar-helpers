@@ -36,6 +36,15 @@ SHELL_SCRIPT_DIR=os.path.abspath(
 
 TWEET_SHELL_SCRIPT='launch_tweet_sender.sh'
 
+SUPPORTED_TRANSFORMS=['rss','newsletter','sidebar','tweets']
+
+
+## -----------------------------
+class UnsupportedTransformError(ValueError):
+    pass
+
+
+
 
 ## ------------------------------
 def parse_args(caller = None):
@@ -856,41 +865,20 @@ def send_tweet():
 
 
 # ------------------------------
-def write_transformation(config, transform_type):
-    """ Write a file for the transformation. The transform_type should
+def write_transformation(config, transforms):
+    """ Write a file for the transformation. The transforms should
+        should be a LIST containing a subset of SUPPORTED_TRANSFORMS.
         be one of "rss", "newsletter", or "sidebar". If I was a better
         programmer then I would force this.
     """
 
-    # Before generating the new RSS get rid of the old one. 
-    # XXX THESE PATHS ARE WRONG. SHOULD BE CONFIGURABLE PER FEED
-    folder = ""
-    if config['feeds'].get('relative_to_publish_path'):
-        folder = config['paths']['publish_path']
-
-    filebase = config['feeds']['filename']
-
-    dest = None
-    if transform_type == "rss":
-        dest = os.path.join(folder, "{}.rss".format(filebase))
-
-    elif transform_type == "newsletter":
-        dest = os.path.join(folder, "{}.txt".format(filebase))
-
-    elif transform_type == "sidebar":
-        dest = os.path.join(folder, "{}-sidebar.html".format(filebase))
-
-    elif transform_type == 'tweets':
-        # Grr. This does not really fit in.
-        tweets_to_schedule = construct_tweets(config)
-        schedule_tweets(config, tweets_to_schedule)
-        return
-    else:
-        raise NameError("Incorrect type '%s' listed" %
-          (transform_type,))
-    
-    if os.path.isfile(dest):
-        os.remove(dest)
+    for t in transforms:
+        if not (t in SUPPORTED_TRANSFORMS):
+            raise UnsupportedTransformError(
+              "{} is not a supported transformation! "
+              "Supported transforms:"
+              " {}".format( t, SUPPORTED_TRANSFORMS,)
+              )
 
     cal_json = call_api(config) 
 
@@ -910,24 +898,49 @@ def write_transformation(config, transform_type):
 
         outjson = open(out_json_file, "w", encoding='utf8')
         json.dump(cal_json, outjson, indent=2, separators=(',', ': '))
+   
 
-    generated_file = None
 
-    if transform_type == "rss":
-        generated_file = generate_rss(config, cal_json)
 
-    elif transform_type == "newsletter":
-        generated_file = generate_newsletter(config, cal_json)
 
-    elif transform_type == "sidebar":
-        generated_file = generate_sidebar(config, cal_json)
 
-    # No else should be needed. 
-    # print("dest is: {}".format(dest))
+    for transform_type in transforms:
 
-    # Insert Windows newlines for dumb email clients
-    outfile = open(dest, "w", newline='\r\n', encoding='utf8')
-    outfile.write(generated_file)
+        # Before generating the new RSS get rid of the old one. 
+        # XXX THESE PATHS ARE WRONG. SHOULD BE CONFIGURABLE PER FEED
+        folder = ""
+        if config['feeds'].get('relative_to_publish_path'):
+            folder = config['paths']['publish_path']
+
+        filebase = config['feeds']['filename']
+
+        dest = None
+        generated_file = None
+
+        if transform_type == "rss":
+            dest = os.path.join(folder, "{}.rss".format(filebase))
+            generated_file = generate_rss(config, cal_json)
+
+        elif transform_type == "newsletter":
+            dest = os.path.join(folder, "{}.txt".format(filebase))
+            generated_file = generate_newsletter(config, cal_json)
+
+        elif transform_type == "sidebar":
+            dest = os.path.join(folder, "{}-sidebar.html".format(filebase))
+            generated_file = generate_sidebar(config, cal_json)
+
+        elif transform_type == 'tweets':
+            # Grr. This does not really fit in.
+            tweets_to_schedule = construct_tweets(config)
+            schedule_tweets(config, tweets_to_schedule)
+            return
+        
+        if os.path.isfile(dest):
+            os.remove(dest)
+
+        # Insert Windows newlines for dumb email clients
+        outfile = open(dest, "w", newline='\r\n', encoding='utf8')
+        outfile.write(generated_file)
 
 
 # ------------------------------

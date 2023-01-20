@@ -3,4 +3,4 @@
 from gcal_helpers import helpers
 
 config = helpers.load_config()
-helpers.write_transformation(config, "sidebar")
+helpers.write_transformation(config, ["sidebar",])
