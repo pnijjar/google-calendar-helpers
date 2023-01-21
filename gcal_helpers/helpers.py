@@ -15,6 +15,7 @@ import pprint
 import json
 from bs4 import BeautifulSoup
 import yaml
+import logging, logging.handlers
 
 
 RSS_TEMPLATE="rss_template.jinja2"
@@ -37,6 +38,9 @@ SHELL_SCRIPT_DIR=os.path.abspath(
 TWEET_SHELL_SCRIPT='launch_tweet_sender.sh'
 
 SUPPORTED_TRANSFORMS=['rss','newsletter','sidebar','tweets']
+
+# Order is important! More verbose is earlier.
+LOGLEVELS = ['debug', 'info', 'warning', 'error', 'critical', 'silent']
 
 
 ## -----------------------------
@@ -64,6 +68,19 @@ def parse_args(caller = None):
         help='configuration file location',
         required=True,
         )
+    parser.add_argument('-v', '--verbose',
+        help='print debug info to log and stdout',
+        action='store_true',
+        )
+    parser.add_argument('-lf', '--loglevel-file',
+        help='Log level messages to print to the file.',
+        choices=LOGLEVELS,
+        )
+    parser.add_argument('-ld', '--loglevel-display',
+        help='Log level messages to print to the display.',
+        choices=LOGLEVELS,
+        )
+ 
 
 
     # HACK HACK HACK. send_tweet needs to load the config file, 
@@ -124,6 +141,8 @@ def load_config(configfile=None, caller=None):
     configuration_lala['internal']['config_location'] \
       = os.path.abspath(configfile)
 
+    config_logging(configuration_lala, args, configfile) 
+
     if caller == 'send_tweet' and args.tweet_id:
         config['flags']['tweet_id'] = args.tweet_id
 
@@ -131,16 +150,101 @@ def load_config(configfile=None, caller=None):
     return configuration_lala
             
 
-# ------------------------------
-# XXX - replace with proper logging
-def log_msg(msg, toscreen=False):
-   """ Log a message to syslog.
-   """
 
-   subprocess.call(['logger', msg])
 
-   if toscreen:
-       print(msg)
+## ------------------------------
+def loglevel_str_to_const(loglevel_str):
+    """ Consumes an element of LOGLEVELS and produces the
+        corresponding logging constant.
+
+        Pre: loglevel_str is in LOGLEVELS?
+    """
+
+    loglevel = None
+
+    if loglevel_str == 'debug':
+        loglevel = logging.DEBUG
+    elif loglevel_str == 'error':
+        loglevel = logging.ERROR
+    elif loglevel_str == 'warning':
+        loglevel = logging.WARNING
+    elif loglevel_str == 'critical':
+        loglevel = logging.CRITICAL
+    elif loglevel_str == 'info':
+        loglevel = logging.INFO
+    elif loglevel_str == 'silent':
+        loglevel = 1000
+
+    return loglevel
+
+## -----------------------------
+def config_logging(config, args, configfile):
+    """ Set up logging given the config and args.
+    """
+    formatter = logging.Formatter(
+      fmt='%(asctime)s %(levelname)s: %(message)s',
+      datefmt='%Y-%m-%d %H:%M {}'.format(configfile),
+      )
+
+    logger = logging.getLogger() # eventbrite_helpers
+    logger.setLevel(logging.DEBUG)
+
+    loglevel_file = 'silent'
+    if args and args.verbose:
+        loglevel_file = 'debug'
+    elif args and args.loglevel_file:
+        loglevel_file = args.loglevel_file
+    else:
+        # Better hope this is defined!
+        loglevel_file = config['logging']['loglevel_file']
+
+    if loglevel_file != 'silent':
+        logfile_full = config['logging']['logfile']
+
+        if config['logging'].get('relative_to_log_path'):
+            logfile_full = "{}/{}".format(
+              config['paths']['log_path'],
+              config['logging']['logfile'],
+              )
+
+        loghandler = logging.handlers.RotatingFileHandler(
+          filename=logfile_full,
+          maxBytes=config['logging']['max_logfile_size'],
+          backupCount=config['logging']['num_logfiles_to_keep'],
+          )
+
+
+        # Could factor out these lines into a new helper
+        loghandler.setLevel(loglevel_str_to_const(loglevel_file))
+        loghandler.setFormatter(formatter)
+        logger.addHandler(loghandler)
+
+
+    loglevel_display = 'silent'
+    if args and args.verbose:
+        loglevel_display = 'debug'
+    elif args and args.loglevel_display:
+        loglevel_display = args.loglevel_display
+    else:
+        loglevel_display = config['logging']['loglevel_display']
+
+    if loglevel_display != 'silent':
+        loghandler_display = logging.StreamHandler()
+        loghandler_display.setLevel(
+          loglevel_str_to_const(loglevel_display)
+          )
+        loghandler_display.setFormatter(formatter)
+        logger.addHandler(loghandler_display)
+
+
+    logging.debug("Display loglevel: {} ({}), File loglevel: {} ({})".format(
+      loglevel_display,
+      loglevel_str_to_const(loglevel_display),
+      loglevel_file,
+      loglevel_str_to_const(loglevel_file),
+      ))
+
+
 
 
 # ------------------------------
@@ -531,12 +635,12 @@ def schedule_tweets(config, tweets_to_schedule):
           )
         retval = p.communicate(input=send_tweet_cmd.encode())
 
-        # I do not know how to identify failure. Huh.
-        #if retval != 0: 
-        #    log_msg("{}: failed to start at command.  Retval={}".format(
-        #      sys.argv[0],
-        #      retval,
-        #      ), True)
+        # https://docs.python.org/3/library/subprocess.html#subprocess.CompletedProcess.returncode
+        if p.returncode != 0: 
+            logging.error("{}: failed to start at command.  Retval={}".format(
+              sys.argv[0],
+              retval,
+              ))
 
      
      # at invocation:
@@ -844,7 +948,8 @@ def send_tweet():
     try:
         api = tweepy.API(auth)
     except Exception as e:
-        log_msg("send_tweet.py: error opening Twitter API: {}".format(e))
+        logging.error(
+          "send_tweet.py: error opening Twitter API: {}".format(e))
         exit(3)
 
     tweetfile = os.path.join(
@@ -856,15 +961,15 @@ def send_tweet():
     try:
         with open(tweetfile) as f:
             tweettext = f.readline()
-            #helpers.log_msg('ID {}: {}'.format(
-            #    config['flags']['tweet_id'],
-            #    tweettext,
-            #    ))
+            logging.debug('ID {}: {}'.format(
+                config['flags']['tweet_id'],
+                tweettext,
+                ))
             api.update_status(tweettext)
             os.remove(tweetfile)
 
     except FileNotFoundError:
-        log_msg('send_tweet.py: Unable to open file {}'.format(tweetfile))
+        logging.error('send_tweet.py: Unable to open file {}'.format(tweetfile))
         exit(2)
 
 
@@ -908,7 +1013,6 @@ def write_transformation(config, transforms):
 
 
     for transform_type in transforms:
-
 
         generated_file = None
 
