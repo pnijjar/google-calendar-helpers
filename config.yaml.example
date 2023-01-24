@@ -7,7 +7,7 @@ paths:
   cache_path: /tmp/google_calendar_helpers/cache
   publish_path: /tmp/google_calendar_helpers/rss
   log_path: /tmp/google_calendar_helpers/logs
-  dump_path: /tmp/dump # Usually overwritten in args
+  dump_path: /tmp/dump # Usually overwritten in args (not implemented yet)
 
   # Where to find a venv to use
   # This really should be specified!
@@ -97,20 +97,20 @@ feeds:
       Upcoming tech events in Waterloo Region.
       The description can be multiple lines.
 
-      # For "filename" entries: use 'stdout' to publish to stdout with 
-      # no file. (Ugh type theory, but whatevs.)
-      
-      # filenames SHOULD include extensions now.
-      filename: /var/www/html/rss/watcamp.rss
-      relative_to_publish_path: false
+    # For "filename" entries: use 'stdout' to publish to stdout with 
+    # no file. (Ugh type theory, but whatevs.)
+    
+    # filenames SHOULD include extensions now.
+    filename: /var/www/html/rss/watcamp.rss
+    relative_to_publish_path: false
 
-      # There is a DRY violation here. watcamp.rss is specified twice.
-      # I think this set should only be needed for RSS (and iCal?)
-      # It is used to generate the "atom:link rel="self" in the RSS
-      # feed. If it is relative to the website there is no need for 
-      # a leading slash.
-      url: rss/watcamp.rss
-      relative_to_website: true
+    # There is a DRY violation here. watcamp.rss is specified twice.
+    # I think this set should only be needed for RSS (and iCal?)
+    # It is used to generate the "atom:link rel="self" in the RSS
+    # feed. If it is relative to the website there is no need for 
+    # a leading slash.
+    url: rss/watcamp.rss
+    relative_to_website: true
 
   newsletter:
     # How many days back should the newsletter display? 
@@ -170,13 +170,6 @@ feeds:
       start: '09:00'
       end: '16:00'
 
-    # For "filename" entries: use 'stdout' to publish to stdout with 
-    # no file. (Ugh type theory, but whatevs.)
-    
-    # filenames SHOULD include extensions now.
-    filename: watcamp-sidebar.html
-    relative_to_publish_path: true
-
   # If this is empty then we will use the tweet information for toots.
   # Otherwise the same dict structure as for tweets should be used.
   toot: {}
@@ -196,11 +189,11 @@ logging:
 # You probably do not want to set these in the YAML, but you do you.
 # They correspond to commandline args.
 flags:
-  limit_fetch: false # --small parameter
-  skip_api: false    # --skip-api
-  dump: false        # true if --dump-dir is set
+  limit_fetch: false # --small parameter (not implemented yet)
+  skip_api: false    # --skip-api (not implemented yet)
+  dump: false        # true if --dump-dir is set (not implemented yet)
   tweet_id: -1       # Only for send_tweet       
-  toot_id: -1        # Only for send_toot
+  toot_id: -1        # Only for send_toot (not implemented yet)
 
 
 # Same with these
