@@ -1,0 +1,88 @@
+WatCamp Events
+==============
+
+
+This is the default config.py newsletter.
+
+
+
+Wednesday, Apr 19 2017
+----------------------
+
+ 6:00pm: GGDWR: Eva Skuza - The Science of Cheese
+         Location: OpenSky Incubator LOT41, 41 Ardelt Place , Kitchener,...
+         Learn More: https://www.google.com/calendar/event?eid=aWdwOW1wZDlwbGI3YXUwdjh1YmdjZnBqY2cgbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw&ctz=America/Toronto 
+
+
+Saturday, Apr 22 2017
+---------------------
+
+ 2:00pm: Stemotics - LEGO Mindstorm EV3
+         Location: Idea Exchange | Hespeler, 5 Tannery St E, Cambridge, ON
+         Learn More: https://www.google.com/calendar/event?eid=YmI3YTJlcDFxNG5icGVwMW4zOTU1djR2N2dfMjAxNzA0MjJUMTgwMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn&ctz=America/Toronto 
+
+ 3:00pm: Guelph Solar - Island Foods and Solar Open House
+         Location: 49 Caledonia St, Guelph, ON
+         Learn More: https://www.google.com/calendar/event?eid=MG9vdjZuNGd2bWJmZTV0aG5sZGRzdW9mY2MgbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw&ctz=America/Toronto 
+
+
+Monday, Apr 24 2017
+-------------------
+
+ 4:00pm: WatPy: Python Project Hours
+         Location: University of Waterloo Grad House, University of...
+         Learn More: https://www.google.com/calendar/event?eid=MW04bHJicWtiZjhpb2Y4bDQ3cWM0MGl0ZmNfMjAxNzA0MjRUMjAwMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn&ctz=America/Toronto 
+
+
+Saturday, Apr 29 2017
+---------------------
+
+ 2:00pm: Stemotics - LEGO Mindstorm EV3
+         Location: Idea Exchange | Hespeler, 5 Tannery St E, Cambridge, ON
+         Learn More: https://www.google.com/calendar/event?eid=YmI3YTJlcDFxNG5icGVwMW4zOTU1djR2N2dfMjAxNzA0MjlUMTgwMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn&ctz=America/Toronto 
+
+
+Monday, May 01 2017
+-------------------
+
+ 4:00pm: WatPy: Python Project Hours
+         Location: University of Waterloo Grad House, University of...
+         Learn More: https://www.google.com/calendar/event?eid=MW04bHJicWtiZjhpb2Y4bDQ3cWM0MGl0ZmNfMjAxNzA1MDFUMjAwMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn&ctz=America/Toronto 
+
+ 7:30pm: KWARC
+         Location: St John Ambulance Station, 250 Gage Avenue, Kitchener,...
+         Learn More: https://www.google.com/calendar/event?eid=ZGw1dnVvdjE1OTU5OHQxdXI5c2l0bGpjbzRfMjAxNzA1MDFUMjMzMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn&ctz=America/Toronto 
+
+
+Saturday, May 06 2017
+---------------------
+
+ 2:00pm: Stemotics - LEGO Mindstorm EV3
+         Location: Idea Exchange | Hespeler, 5 Tannery St E, Cambridge, ON
+         Learn More: https://www.google.com/calendar/event?eid=YmI3YTJlcDFxNG5icGVwMW4zOTU1djR2N2dfMjAxNzA1MDZUMTgwMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn&ctz=America/Toronto 
+
+
+Monday, May 08 2017
+-------------------
+
+ 4:00pm: WatPy: Python Project Hours
+         Location: University of Waterloo Grad House, University of...
+         Learn More: https://www.google.com/calendar/event?eid=MW04bHJicWtiZjhpb2Y4bDQ3cWM0MGl0ZmNfMjAxNzA1MDhUMjAwMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn&ctz=America/Toronto 
+
+
+Tuesday, May 16 2017
+--------------------
+
+ 7:00pm: KWRuby: Contributing to Ruby Projects Workshop III
+         Location: Vidyard, 8 Queen St N, Kitchener, Ontario, Canada
+         Learn More: https://www.google.com/calendar/event?eid=NnNraDlydmNucGNsc3BiNjU2MWljaHV0M28gbmxrYzM5anQ0cDBuYmM0cGs5cGo3cDVmaDBAZw&ctz=America/Toronto 
+
+
+Monday, May 22 2017
+-------------------
+
+ 4:00pm: WatPy: Python Project Hours
+         Location: University of Waterloo Grad House, University of...
+         Learn More: https://www.google.com/calendar/event?eid=MW04bHJicWtiZjhpb2Y4bDQ3cWM0MGl0ZmNfMjAxNzA1MjJUMjAwMDAwWiBubGtjMzlqdDRwMG5iYzRwazlwajdwNWZoMEBn&ctz=America/Toronto 
+
+
