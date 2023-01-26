@@ -25,6 +25,8 @@ RSS_OUT = "data_rss_out"
 NEWSLETTER_OUT = "data_newsletter_out"
 SIDEBAR_OUT = "data_sidebar_out"
 
+RECURRENCE_OUT = "data_recurrence_out"
+
 # For counting numbers of elements
 ITEM_COUNT_OUT = "data_itemcount_out"
 
@@ -367,6 +369,49 @@ def test_json_to_rss(testcase, patch_datetime_now):
         # Use this to generate output for future runs
         save_to_temp("{}.rss".format(testcase), testrss)    
         raise
+
+# ==== TEST RSS RECURRENCES 
+
+@pytest.mark.parametrize("testcase", 
+  [('nothing', 3), 
+   ('everything', 11),
+   ('next', 6),
+  ])
+def test_rss_recurrence(testcase, 
+  patch_datetime_now,
+  ):
+    (option, num_expected) = testcase
+
+    outfile = "recurrence-{}.rss".format(option)
+
+    conf = get_config()
+    conf['feeds']['rss']['include_recurring'] = option
+
+    in_text = get_file_as_string("10-recurring.json", JSON_IN)
+    in_dict = json.loads(in_text)
+
+    testrss = h.generate_rss(conf, in_dict)
+
+    assert len(in_dict['items']) == num_expected
+
+    outrss = get_file_as_string(outfile, RECURRENCE_OUT)
+
+    try: 
+        assert testrss == outrss
+    except AssertionError:
+        # Use this to generate output for future runs
+        save_to_temp("{}".format(outfile), testrss)    
+        raise
+
+    
+
+
+
+
+
+
+
+
 
 # ==== TEST NEWSLETTER DAY RESTRICTIONS
 
