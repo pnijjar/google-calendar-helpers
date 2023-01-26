@@ -11,3 +11,7 @@
 - None of the gen_*.py files have test functions.
 - The write_transformation() has no test function.
 
+
+Things to test:
+- recurring meetings vs not
+- newsletter max_days settings in config

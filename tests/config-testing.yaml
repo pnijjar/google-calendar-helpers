@@ -1,0 +1,196 @@
+
+paths:
+  # Path for generated feeds
+  # Each use of these has an optional boolean: "relative_to_X_path"
+  #  - true : use this path
+  #  - false or absent: use absolute path
+  cache_path: /tmp/google_calendar_helpers/cache
+  publish_path: /tmp/google_calendar_helpers/rss
+  log_path: /tmp/google_calendar_helpers/logs
+  dump_path: /tmp/dump # Usually overwritten in args
+
+  # Where to find a venv to use
+  # This really should be specified!
+  venv_path: /home/pnijjar/src/google-calendar-helpers/venv
+
+  # Where to store tweets/toots to publish. This DOES need to be
+  # separate for tweets and toots. These folders need to be 
+  # readable by the tweet script.
+  tweet_cache_path: /tmp/google_calendar_helpers/cache/tweets
+  toot_cache_path: /tmp/google_calendar_helpers/cache/toots
+
+  # Where to keep cached json
+  # This replaces OUT_EVENT_DICT
+  cache_file: 
+    name: eventbrite-events-processed.json 
+    relative_to_cache_path: true
+
+
+services:
+  google:
+    # Go to https://console.developers.google.com to generate this. You
+    # need to enable it for the Google Calendar API
+    api_key: 'Insert-your-API-key-here'
+
+    calendar_ids:
+      - 'nlkc39jt4p0nbc4pk9pj7p5fh0@group.calendar.google.com'
+
+  twitter:
+    # This is for the Twitter API. Generate it from developers.twitter.com
+    # You only need it if you are sending tweets from the calendar
+    consumer_key: 'Insert-Your-Twitter-Consumer-Key'
+    consumer_secret: 'Insert-Your-Twitter-Consumer-Secret'
+    access_token: 'Insert-Your-Twitter-Access-Token'
+    access_secret: 'Insert-Your-Twitter-Access-Secret'
+
+  mastodon: [] # Coming soon, I hope
+
+  # See https://github.com/ellisonleao/pyshorteners/ for the
+  # syntax of making a new shortener.
+  # Note that the syntax has changed dramatically since v0.6.1
+  # (Uh oh. How does this become YAML?)
+
+  # To see the services:
+  #   source venv/bin/activate
+  #   python3
+  #   import pyshorteners
+  #   s = pyshorteners.Shortener()
+  #   print(s.available_shorteners)
+  #
+  # Another non-pyshorteners option is available: liteshort
+  # This requires a domain parameter:
+  #   params:
+  #     domain: 'https://s.kwlug.org'
+  # To use no shortener: use 'no_shortener'
+  shortener: 
+    service: 'no_shortener'
+    params: {}
+  
+
+
+feeds:
+  # Website that hosts these feeds
+  website: http://watcamp.com
+
+  # Logo for RSS feed
+  logo_url: http://watcamp.com/img/logo.png
+
+  # These get published in the RSS feeds
+  webmaster: admin@example.com
+  webmaster_name: "Webmaster"
+
+  # For datetime nonsense
+  timezone: "America/Toronto"
+
+  # What is the currency used in this application? I guess you are in 
+  # trouble if there are multiple currencies. You can probably be more
+  # sophisticated by translating the currency code (eg "CAN") to a
+  # symbol, but this is good enough for me. 
+  currency_symbol: '$'
+
+  # How many items should be in the feed?
+  num_items: 100
+
+  rss:
+    title: 'WatCamp Events'
+    description: >-
+      Taking inspiration from the TorCamp calendar. This calendar
+      lists all tech events taking place in the KW area.
+
+    # For "filename" entries: use 'stdout' to publish to stdout with 
+    # no file. (Ugh type theory, but whatevs.)
+    
+    # filenames SHOULD include extensions now.
+    filename: watcamp.rss
+    relative_to_publish_path: true 
+
+    # There is a DRY violation here. watcamp.rss is specified twice.
+    # I think this set should only be needed for RSS (and iCal?)
+    # It is used to generate the "atom:link rel="self" in the RSS
+    # feed. If it is relative to the website there is no need for 
+    # a leading slash.
+    url: watcamp.rss
+    relative_to_website: true
+
+  newsletter:
+    # How many days back should the newsletter display? 
+    # Use 1 for just today, -1 for no limit.
+    max_days: -1
+
+    header: >+
+
+      This is the default config.py newsletter.
+
+    # filenames SHOULD include extensions now.
+    filename: watcamp.txt
+    relative_to_publish_path: true
+
+
+  sidebar: 
+    # For "filename" entries: use 'stdout' to publish to stdout with 
+    # no file. (Ugh type theory, but whatevs.)
+
+    filename: watcamp-sidebar.html
+    #filename: stdout
+
+    # This is not used if stdout is specified. It can probably be
+    # deleted.
+    relative_to_publish_path: True 
+
+
+  tweets: 
+    # Maybe this should be shared with toots?
+
+    # How many days in advance should we tweet events, and 
+    # how should they be labelled?
+    date_expression:
+      0: "Today!"
+      1: "Tomorrow!"
+      3: "Three sleeps!"
+      6: "Next week!"
+
+    # How many days in advance should we grab tweets (upper bound).
+    # Use 8 for events one week from now. 0 is today.
+    days_in_advance: 8
+
+    # What hours of the day should we release tweets? 
+    # These parameters define a window when we are allowed to 
+    # actually send the tweets.
+    #
+    # The start should be AFTER you run the script (actually, after
+    # the script stops running). This is going to be bad for events
+    # that begin today, before the tweet window.
+    window:
+      start: '09:00'
+      end: '16:00'
+
+  # If this is empty then we will use the tweet information for toots.
+  # Otherwise the same dict structure as for tweets should be used.
+  toot: {}
+
+logging:
+  logfile: gcal_helper.log
+  relative_to_log_path: true
+
+  loglevel_file: info
+  loglevel_display: error
+  
+  # In kb?
+  max_logfile_size: 1024000
+  num_logfiles_to_keep: 5
+
+
+# You probably do not want to set these in the YAML, but you do you.
+# They correspond to commandline args.
+flags:
+  limit_fetch: false # --small parameter
+  skip_api: false    # --skip-api
+  dump: false        # true if --dump-dir is set
+  tweet_id: -1       # Only for send_tweet       
+  toot_id: -1        # Only for send_toot
+
+
+# Same with these
+internal:
+  config_location: None
+  

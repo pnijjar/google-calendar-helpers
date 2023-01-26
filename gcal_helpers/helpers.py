@@ -496,7 +496,8 @@ def organize_events_by_day(
         max_days. (1 == today)
     """
 
-    # print("Max days is: {}".format(max_days))
+    logging.error("Max days is: {}".format(max_days))
+    logging.error("cal_items length: {}".format(len(cal_items)))
 
     # I think python really wants me to make this a dict, so that 
     # there is title metadata. But that means we have to sort twice.
@@ -539,7 +540,7 @@ def organize_events_by_day(
         thisdate = get_human_dateonly(this_datestring)
 
         # Skip this entry if it is too far in the future
-        if max_days is not None:
+        if (max_days is not None) and (max_days >= 0):
             date_delta = this_datetime - today
             if date_delta.days >= max_days:
                 continue
@@ -556,6 +557,7 @@ def organize_events_by_day(
 
         outdict[thisdate].append(event)
 
+    logging.error("outdict length is {}".format(len(outdict)))
 
     return outdict
 
@@ -864,12 +866,14 @@ def generate_rss(config, cal_dict):
     ahead and actually sort the full list of events by date, which we
     can do easily via the ISO formated date time stamps.
 
+    UPDATE: No, getting rid of dups is not what I want.
+
     """
-    cal_dict['items'] = sort_by_date(filter_duplicate_guids(cal_dict['items']))
+    cal_dict['items'] = sort_by_date(cal_dict['items'])
 
     feed_selflink = config['feeds']['rss']['url']
     if config['feeds']['rss']['relative_to_website']:
-        feed_selflink = "{}/{}.rss".format(
+        feed_selflink = "{}/{}".format(
           config['feeds']['website'],
           config['feeds']['rss']['url'],
         )

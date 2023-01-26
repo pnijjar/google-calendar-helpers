@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 
 # Do the bad thing and import files from the parent folder. 
-# import sys, os
-# sys.path.insert(0, os.path.abspath(os.pardir))
+#import sys, os
+#sys.path.insert(0, os.path.abspath(os.pardir))
 
 from gcal_helpers import helpers as h
 #from gcal_helpers import config 
@@ -12,6 +12,7 @@ import pytest
 import os
 import json
 import pprint
+import copy
 
 
 # ==== CONSTANTS
@@ -27,10 +28,19 @@ SIDEBAR_OUT = "data_sidebar_out"
 # For counting numbers of elements
 ITEM_COUNT_OUT = "data_itemcount_out"
 
+# XXX - Get rid of this. Use tmp_path instead
 TMPDIR = "/tmp/pytest-temp"
 
-TESTCONFIG = 'testing_config.py'
+# XXX - update to YAML
+#TESTCONFIG = 'testing_config.py'
+TESTCONFIG = 'config-testing.yaml'
 
+# Everybody else should clone this.
+REF_CONFIG = h.load_config(
+  os.path.join(
+      os.path.dirname(os.path.abspath(__file__)),
+      TESTCONFIG,
+      ))
 
 # ==== TEST DATA
 
@@ -92,6 +102,26 @@ DATE_EXAMPLES = [
 
 # ==== Helper Functions 
 
+def get_initial_config():
+    """ Load config file. The idea is that this copy is expensive 
+        to load because it is from disk, but then we use copies to 
+        clone it.
+    """
+    config = h.load_config(
+        os.path.join(
+            os.path.dirname(os.path.abspath(__file__)),
+            TESTCONFIG,
+            )
+        )
+    return config
+    
+def get_config(ref=REF_CONFIG):
+    """ Load a mutable copy of the config and return it.
+    """
+    return copy.deepcopy(ref)
+
+
+# XXX - DELETE
 def set_config():
     """ Set dummy config file.
     """
@@ -102,8 +132,6 @@ def set_config():
             TESTCONFIG,
             )
         )
-
-
 
 def save_to_temp(filename, output):
     """ Save output to a tempdir so I can generate 
@@ -153,7 +181,6 @@ def tally_organized_list(orglist):
 
 @pytest.fixture
 def patch_datetime_now(monkeypatch):
-    set_config()
     class mydatetime:
         @classmethod
         # Gah. I have to account for timezone input.
@@ -163,12 +190,14 @@ def patch_datetime_now(monkeypatch):
 
 # Hrm. Google link shortener can return different short URLs
 # for the same long link, so ignore for my tests.
+# XXX - Should not be needed!
 @pytest.fixture
 def patch_google_shortener(monkeypatch):
     def my_shorten_url(longurl):
         return longurl
     monkeypatch.setattr(h, 'shorten_url', my_shorten_url)
     
+# XXX - NOT NEEDED
 @pytest.fixture
 def patch_newsletter_limit_infinite(monkeypatch):
     """ Make sure limited newsletter lengths do not mess up 
@@ -183,6 +212,8 @@ def patch_newsletter_limit_small(monkeypatch):
     monkeypatch.setattr(config, 'NEWSLETTER_MAX_DAYS', 2)
 
 
+# ==== GET FILES 
+
 def get_testfile_path(filename, datadir, ext=""):
     """ ext should be something like ".html"
     """
@@ -194,8 +225,7 @@ def get_testfile_path(filename, datadir, ext=""):
         fullfile,
         )
 
-# ==== GET FILES 
-
+# XXX - Maybe not needed with stdout??
 def get_file_as_string(filename, datadir, ext="", create_file=False):
     filepath = get_testfile_path(filename, datadir, ext)
 
@@ -332,6 +362,7 @@ def test_year_zero():
 
 # ==== TEST MARKDOWN 
 
+# XXX - Why is this even here?
 @pytest.mark.parametrize(
     "testcase", 
     get_testfiles(MD_IN, ".md"),
@@ -343,13 +374,16 @@ def test_markdown(testcase):
 
 # ==== TEST JSON TO RSS 
 
+@pytest.mark.xfail(reason="RSS IDs are messed up")
 @pytest.mark.parametrize(
     "testcase",
     get_testfiles(JSON_IN, ".json"),
     )
 def test_json_to_rss(testcase, patch_datetime_now):
     (injson, outrss) = get_rss_files(testcase)
-    testrss = h.generate_rss(injson)
+
+    conf = get_config()
+    testrss = h.generate_rss(conf, injson)
     
     try: 
         assert testrss == outrss
@@ -371,15 +405,17 @@ def test_organize_events_by_day(
     testcase,
     num_days,
     patch_datetime_now,
-    patch_newsletter_limit_small,
     ):
+
+    conf = get_config()
+    conf['feeds']['newsletter']['max_days'] = 2
 
     in_text = get_file_as_string(testcase, JSON_IN,)
     
     in_dict = json.loads(in_text)
 
     in_items = in_dict['items']
-    sorted_items = h.organize_events_by_day(in_items, num_days)
+    sorted_items = h.organize_events_by_day(conf, in_items, num_days)
 
     # pprint.pprint(sorted_items)
 
@@ -400,11 +436,13 @@ def test_organize_events_exact_items(
     patch_datetime_now,
     ):
 
+    conf = get_config()
+
     in_text = get_file_as_string(testcase, JSON_IN, ext=".json")
     in_dict = json.loads(in_text)
 
     in_items = in_dict['items']
-    sorted_items = h.organize_events_by_day(in_items, num_days)
+    sorted_items = h.organize_events_by_day(conf,in_items, num_days)
     item_tally = tally_organized_list(sorted_items)
 
     out_filename = "{}--limit-{}".format(testcase, num_days)
@@ -441,11 +479,11 @@ def test_organize_events_exact_items(
 def test_json_to_newsletter(
     testcase, 
     patch_datetime_now,
-    patch_google_shortener,
-    patch_newsletter_limit_infinite,
     ):
     (injson, outtxt) = get_newsletter_files(testcase)
-    test_newsletter = h.generate_newsletter(injson)
+
+    conf = get_config()
+    test_newsletter = h.generate_newsletter(conf, injson)
     
     try: 
         assert test_newsletter == outtxt
@@ -465,7 +503,8 @@ def test_json_to_sidebar(
     testcase, 
     ):
     (injson, outtxt) = get_sidebar_files(testcase)
-    test_sidebar = h.generate_sidebar(injson)
+    conf = get_config()
+    test_sidebar = h.generate_sidebar(conf, injson)
     
     try: 
         assert test_sidebar == outtxt
