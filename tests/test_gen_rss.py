@@ -188,29 +188,6 @@ def patch_datetime_now(monkeypatch):
             return FAKE_NOW
     monkeypatch.setattr(datetime, 'datetime', mydatetime)
 
-# Hrm. Google link shortener can return different short URLs
-# for the same long link, so ignore for my tests.
-# XXX - Should not be needed!
-@pytest.fixture
-def patch_google_shortener(monkeypatch):
-    def my_shorten_url(longurl):
-        return longurl
-    monkeypatch.setattr(h, 'shorten_url', my_shorten_url)
-    
-# XXX - NOT NEEDED
-@pytest.fixture
-def patch_newsletter_limit_infinite(monkeypatch):
-    """ Make sure limited newsletter lengths do not mess up 
-        the test cases.
-    """
-    set_config()
-    monkeypatch.setattr(config, 'NEWSLETTER_MAX_DAYS', None)
-
-@pytest.fixture
-def patch_newsletter_limit_small(monkeypatch):
-    set_config()
-    monkeypatch.setattr(config, 'NEWSLETTER_MAX_DAYS', 2)
-
 
 # ==== GET FILES 
 
