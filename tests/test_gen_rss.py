@@ -374,7 +374,6 @@ def test_markdown(testcase):
 
 # ==== TEST JSON TO RSS 
 
-@pytest.mark.xfail(reason="RSS IDs are messed up")
 @pytest.mark.parametrize(
     "testcase",
     get_testfiles(JSON_IN, ".json"),
