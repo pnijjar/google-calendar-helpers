@@ -52,7 +52,7 @@
                     {{ item['description'] | markdown }}
                 {% endif %}
             </description>
-            <guid isPermaLink="false">{{ item['iCalUID'] }}</guid>
+            <guid isPermaLink="false">{{ item['id'] }}</guid>
             <pubDate>
                 {%- if item['start']['dateTime'] is defined -%}
                     {{ item['start']['dateTime'] | rfc822 }}

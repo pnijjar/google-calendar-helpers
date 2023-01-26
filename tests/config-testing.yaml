@@ -112,6 +112,15 @@ feeds:
     url: watcamp.rss
     relative_to_website: true
 
+    # How should recurring events be handled? Options:
+    # 'nothing' : No events that are marked as recurring are 
+    #    included
+    # 'everything' : Include everything. This may include events 
+    #    long into the future.
+    # 'next' : Include the next upcoming event. 
+    include_recurring: 'next'
+
+
   newsletter:
     # How many days back should the newsletter display? 
     # Use 1 for just today, -1 for no limit.

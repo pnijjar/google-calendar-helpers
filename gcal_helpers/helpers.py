@@ -809,6 +809,7 @@ def generate_newsletter(config, cal_dict):
     return output_newsletter
 
 
+# ------------------------
 def filter_duplicate_guids(events):
     seen = set()
     filtered = []
@@ -822,8 +823,27 @@ def filter_duplicate_guids(events):
     return filtered
 
 
+# -------------------------
+def eliminate_all_recurring(events):
+    keep = []
+    for event in events:
+        if 'recurringEventId' in event:
+            continue
+        else:
+            keep.append(event)
+
+    return keep
+
+# -------------------------
 def sort_by_date(events):
-    return sorted(events, key=lambda event: event['start'].get('dateTime', event['start'].get('date', '')))
+    return sorted(
+      events, 
+      key=lambda event: event['start'].get(
+        'dateTime', 
+        event['start'].get('date', '')
+        ),
+      reverse=False,
+      )
 
 
 # ------------------------------
@@ -869,7 +889,28 @@ def generate_rss(config, cal_dict):
     UPDATE: No, getting rid of dups is not what I want.
 
     """
-    cal_dict['items'] = sort_by_date(cal_dict['items'])
+    
+    # How should we handle recurring events?
+    # Throwing an error here is bad but I don't care.
+    if not config['feeds']['rss'].get('include_recurring'):
+        logging.warn("'include_recurring' option for RSS feed not set!")
+    elif config['feeds']['rss']['include_recurring'] == 'next':
+        cal_dict['items'] = filter_duplicate_guids(
+          sort_by_date(cal_dict['items'])
+          )
+    elif config['feeds']['rss']['include_recurring'] == 'everything':
+        cal_dict['items'] = sort_by_date(cal_dict['items'])
+    elif config['feeds']['rss']['include_recurring'] == 'nothing':
+        cal_dict['items'] = eliminate_all_recurring(
+          sort_by_date(cal_dict['items'])
+          )
+    else:
+        logging.warn("Unknown option for 'include_recurring' "
+                     "in RSS config: {}. Keeping all.".format(
+                       config['feeds']['rss']['include_recurring']
+                       ))
+        cal_dict['items'] = sort_by_date(cal_dict['items'])
+
 
     feed_selflink = config['feeds']['rss']['url']
     if config['feeds']['rss']['relative_to_website']:
