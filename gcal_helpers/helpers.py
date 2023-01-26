@@ -496,8 +496,8 @@ def organize_events_by_day(
         max_days. (1 == today)
     """
 
-    logging.error("Max days is: {}".format(max_days))
-    logging.error("cal_items length: {}".format(len(cal_items)))
+    logging.debug("Max days is: {}".format(max_days))
+    logging.debug("cal_items length: {}".format(len(cal_items)))
 
     # I think python really wants me to make this a dict, so that 
     # there is title metadata. But that means we have to sort twice.
@@ -557,7 +557,7 @@ def organize_events_by_day(
 
         outdict[thisdate].append(event)
 
-    logging.error("outdict length is {}".format(len(outdict)))
+    logging.debug("outdict length is {}".format(len(outdict)))
 
     return outdict
 
