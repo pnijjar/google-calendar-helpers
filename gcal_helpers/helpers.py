@@ -845,6 +845,46 @@ def sort_by_date(events):
       reverse=False,
       )
 
+def process_recurrences(cal_dict, rss_opts):
+    """
+    Filtering duplicate events: Repeated events have the same calendar
+    UID, resulting in an invalid RSS feed as feeds are not allowed to
+    have multiple `<item>`s with the same `<guid>` tag. Filtering them
+    out allows us to still list the _next_ iteration of that
+    particular event though.
+    
+    Sorting by date: Because we're ingesting several calendars, the
+    RSS feed will end up being ordered first by the arbitrary order of
+    the calendar IDs in the config and then by the date (Google's API
+    already sorts them by date). At this point we have several date
+    sorted lists. To get a properly sorted RSS feed we need to go
+    ahead and actually sort the full list of events by date, which we
+    can do easily via the ISO formated date time stamps.
+
+    UPDATE: The real fix is to use 'id' as the GUID, not 'iCalUID'
+
+    """
+    
+    # How should we handle recurring events?
+    # Throwing an error here is bad but I don't care.
+    if not rss_opts.get('include_recurring'):
+        logging.warn("'include_recurring' option for RSS feed not set!")
+    elif rss_opts['include_recurring'] == 'next':
+        cal_dict['items'] = filter_duplicate_guids(
+          sort_by_date(cal_dict['items'])
+          )
+    elif rss_opts['include_recurring'] == 'everything':
+        cal_dict['items'] = sort_by_date(cal_dict['items'])
+    elif rss_opts['include_recurring'] == 'nothing':
+        cal_dict['items'] = eliminate_all_recurring(
+          sort_by_date(cal_dict['items'])
+          )
+    else:
+        logging.warn("Unknown option for 'include_recurring' "
+                     "in RSS config: {}. Keeping all.".format(
+                       rss_opts['include_recurring']
+                       ))
+        cal_dict['items'] = sort_by_date(cal_dict['items'])
 
 # ------------------------------
 def generate_rss(config, cal_dict):
@@ -870,47 +910,7 @@ def generate_rss(config, cal_dict):
 
     time_now = get_time_now(config)
 
-    """
-
-    Filtering duplicate events: Repeated events have the same calendar
-    UID, resulting in an invalid RSS feed as feeds are not allowed to
-    have multiple `<item>`s with the same `<guid>` tag. Filtering them
-    out allows us to still list the _next_ iteration of that
-    particular event though.
-    
-    Sorting by date: Because we're ingesting several calendars, the
-    RSS feed will end up being ordered first by the arbitrary order of
-    the calendar IDs in the config and then by the date (Google's API
-    already sorts them by date). At this point we have several date
-    sorted lists. To get a properly sorted RSS feed we need to go
-    ahead and actually sort the full list of events by date, which we
-    can do easily via the ISO formated date time stamps.
-
-    UPDATE: No, getting rid of dups is not what I want.
-
-    """
-    
-    # How should we handle recurring events?
-    # Throwing an error here is bad but I don't care.
-    if not config['feeds']['rss'].get('include_recurring'):
-        logging.warn("'include_recurring' option for RSS feed not set!")
-    elif config['feeds']['rss']['include_recurring'] == 'next':
-        cal_dict['items'] = filter_duplicate_guids(
-          sort_by_date(cal_dict['items'])
-          )
-    elif config['feeds']['rss']['include_recurring'] == 'everything':
-        cal_dict['items'] = sort_by_date(cal_dict['items'])
-    elif config['feeds']['rss']['include_recurring'] == 'nothing':
-        cal_dict['items'] = eliminate_all_recurring(
-          sort_by_date(cal_dict['items'])
-          )
-    else:
-        logging.warn("Unknown option for 'include_recurring' "
-                     "in RSS config: {}. Keeping all.".format(
-                       config['feeds']['rss']['include_recurring']
-                       ))
-        cal_dict['items'] = sort_by_date(cal_dict['items'])
-
+    process_recurrences(cal_dict, config['feeds']['rss'])
 
     feed_selflink = config['feeds']['rss']['url']
     if config['feeds']['rss']['relative_to_website']:
