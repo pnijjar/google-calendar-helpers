@@ -22,7 +22,7 @@ paths:
   # Where to keep cached json
   # This replaces OUT_EVENT_DICT
   cache_file: 
-    name: eventbrite-events-processed.json 
+    name: gcal-events-processed.json 
     relative_to_cache_path: true
 
 
