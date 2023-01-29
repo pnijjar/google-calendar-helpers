@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<rss version="2.0"
+    xmlns:atom="http://www.w3.org/2005/Atom"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+>
+
+    <channel>
+        <title>WubWub Feed</title>
+        <description>Hoo hah! 
+    This be the wubwub feed! 
+
+Hoo hah!</description>
+        <link>https://silly.example.com</link>
+        <pubDate>Wed, 19 Apr 2017 12:06:50 +0000</pubDate>
+        <webMaster>krusty@wubwub.com (Webmaster)</webMaster>
+        <lastBuildDate>Wed, 19 Apr 2017 15:01:56 -0400</lastBuildDate>
+        <image>
+            <url>https://example.com/logo.svg</url>
+            <title>WubWub Feed</title>
+            <link>https://silly.example.com</link>
+        </image>
+        <atom:link href="https://wubwub.com/feeds/wubwub.rss" rel="self" type="application/rss+xml" />
+
+        
+    </channel>
+</rss>

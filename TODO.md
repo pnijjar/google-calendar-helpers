@@ -1,17 +1,17 @@
 - Write code to EMAIL the newsletter
 - Make monkeypatch for date more smart
-- Make monkeypatch for URL shortener return a fail message instead of
-  just the longurl
 - Test date limits on newsletter (oy. How?)
-- Move away from config.py into command line parsing
-- Turn config.py into config.ini, which is less unsafe
-- Change the gen_* files to do the argument parsing, instead of doing
-  it in load_config. Then I can specify the type of transformation
-  too. 
 - None of the gen_*.py files have test functions.
 - The write_transformation() has no test function.
 
 
 Things to test:
-- recurring meetings vs not
 - newsletter max_days settings in config
+- Tweets (and toots)
+  + construct_tweets based on times
+  + scheduling tweets (how to test??)
+  + weird date boundaries for the tweet window
+
+- stdout stuff
+- writing transformations stuff (do files get put in the correct
+  place?)

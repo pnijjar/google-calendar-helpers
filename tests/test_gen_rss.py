@@ -27,6 +27,9 @@ SIDEBAR_OUT = "data_sidebar_out"
 
 RECURRENCE_OUT = "data_recurrence_out"
 
+# Every file in here should have a different name
+ODDBALL_OUT = "data_oddball_out"
+
 # For counting numbers of elements
 ITEM_COUNT_OUT = "data_itemcount_out"
 
@@ -369,6 +372,47 @@ def test_json_to_rss(testcase, patch_datetime_now):
         # Use this to generate output for future runs
         save_to_temp("{}.rss".format(testcase), testrss)    
         raise
+
+
+# ==== TEST RSS HEADER PARAMS
+
+def test_rss_header(patch_datetime_now,):
+    conf = get_config()
+
+    conf['feeds']['rss']['filename'] = '/tmp/wubwub.rss'
+    conf['feeds']['rss']['relative_to_publish_path'] = False
+
+    conf['feeds']['rss']['url'] = 'https://wubwub.com/feeds/wubwub.rss'
+    conf['feeds']['rss']['relative_to_website'] = False
+
+    conf['feeds']['rss']['title'] = 'WubWub Feed'
+    conf['feeds']['rss']['description'] = """Hoo hah! 
+    This be the wubwub feed! \n\nHoo hah!"""
+
+    conf['feeds']['website'] = 'https://silly.example.com'
+    conf['feeds']['logo_url'] = 'https://example.com/logo.svg'
+    conf['feeds']['webmaster'] = 'krusty@wubwub.com'
+    conf['feeds']['admin'] = 'Krusty Pancakes III'
+
+    conf['feeds']['timezone'] = 'Europe/Stockholm'
+
+    in_text = get_file_as_string("03-no-events.json", JSON_IN)
+    in_dict = json.loads(in_text)
+
+    outfile = "00-rss-header.rss"
+    outrss = get_file_as_string(outfile, ODDBALL_OUT)
+
+    testrss = h.generate_rss(conf, in_dict)
+
+    try: 
+        assert testrss == outrss
+    except AssertionError:
+        # Use this to generate output for future runs
+        save_to_temp("{}".format(outfile), testrss)    
+        raise
+
+
+    
 
 # ==== TEST RSS RECURRENCES 
 
