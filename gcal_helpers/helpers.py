@@ -115,6 +115,10 @@ def load_config_yaml(configfile=None):
     if not config.get('internal'):
         config['internal'] = {}
 
+    # Make a tz variable for all the human dates
+    config.TZ = pytz.timezone(config.TIMEZONE)
+
+    # For test harness
     return config
 
 
@@ -264,7 +268,7 @@ def get_rfc822_datestring (google_date):
 
     # Sometimes dates look like "0000-12-29T00:00.000Z" and this
     # confuses the date parser...
-    d = dateutil.parser.parse(google_date)
+    d = dateutil.parser.parse(google_date).astimezone(config.TZ)
 
     # Output the proper format
     return d.strftime("%a, %d %b %Y %T %z")
@@ -274,7 +278,7 @@ def get_rfc822_datestring (google_date):
 def get_human_datestring (google_date): 
     """ RFC 822 is ugly for humans. Use something nicer. """
 
-    d = dateutil.parser.parse(google_date)
+    d = dateutil.parser.parse(google_date).astimezone(config.TZ)
     
     # Wednesday, Oct 02 2005, 8:00pm
     return d.strftime("%A, %b %d %Y, %l:%M%P")
@@ -284,7 +288,7 @@ def get_human_dateonly (google_date):
     """ If there is no minute defined then the date looks bad.
     """
 
-    d = dateutil.parser.parse(google_date)
+    d = dateutil.parser.parse(google_date).astimezone(config.TZ)
     
     # Wednesday, Oct 02 2005
     return d.strftime("%A, %b %d %Y")
@@ -293,7 +297,7 @@ def get_human_dateonly (google_date):
 def get_short_human_dateonly (google_date):
     """ Readable by humans, but shorter. """
 
-    d = dateutil.parser.parse(google_date)
+    d = dateutil.parser.parse(google_date).astimezone(config.TZ)
 
     # Sun, Feb 18
     return d.strftime("%a, %b %e")
@@ -302,7 +306,7 @@ def get_short_human_dateonly (google_date):
 def get_short_human_datetime (google_date):
     """ Date time readable by humans, but shorter. """
 
-    d = dateutil.parser.parse(google_date)
+    d = dateutil.parser.parse(google_date).astimezone(config.TZ)
 
     # Sun, Feb 18, 8:00pm
     return d.strftime("%a, %b %e, %l:%M%P")
@@ -312,7 +316,7 @@ def get_short_human_datetime (google_date):
 def get_human_timeonly (google_date):
     """ Forget the date. Just gimme the time"""
 
-    d = dateutil.parser.parse(google_date)
+    d = dateutil.parser.parse(google_date).astimezone(config.TZ)
     #  8:00pm
     return d.strftime("%l:%M%P")
 
@@ -381,7 +385,7 @@ def get_markdown (rawtext):
 def get_time_now(config):
    
     target_timezone = pytz.timezone(config['feeds']['timezone'])
-    time_now = datetime.datetime.now(tz=target_timezone)
+    time_now = datetime.datetime.now(tz=config.TZ)
 
     return time_now
 
@@ -529,13 +533,13 @@ def organize_events_by_day(
             #    this_datetime, 
             #    this_datetime.tzinfo
             #    ))
-            this_datetime = tz.localize(this_datetime)
+            this_datetime = config.TZ.localize(this_datetime)
         elif this_datetime.tzinfo.utcoffset(this_datetime) is None:
             #print ("{}: tzinfo.utcoffset is {}".format(
             #    this_datetime, 
             #    this_datetime.tzinfo.utcoffset(this_datetime)
             #    ))
-            this_datetime = tz.localize(this_datetime)
+            this_datetime = config.TZ.localize(this_datetime)
            
         thisdate = get_human_dateonly(this_datestring)
 
@@ -686,7 +690,7 @@ def construct_tweets(config):
     for day in sorted:
         
         target_day = dateutil.parser.parse(day)
-        target_day = tz.localize(target_day)
+        target_day = config.TZ.localize(target_day)
         delta = target_day - today
         expression = ""
         #print("\ntoday = {}, target_day = {}, delta = {}\n".format(
@@ -1075,7 +1079,7 @@ def write_transformation(config, transforms):
             # Grr. This does not really fit in.
             tweets_to_schedule = construct_tweets(config)
             schedule_tweets(config, tweets_to_schedule)
-            return
+            continue
 
 
         if transform_type in ['rss', 'newsletter', 'sidebar']:
