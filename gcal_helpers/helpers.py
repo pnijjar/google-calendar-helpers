@@ -617,13 +617,23 @@ def schedule_tweets(config, tweets_to_schedule):
 
     date_now = get_time_now(config)
 
-    if date_now > start_dt:
-        start_dt = date_now
-
-    # If we missed the window then bump by one day
-    if end_dt > date_now:
+    if date_now > end_dt:
+        # If we missed the window then bump by one day
+        logging.debug("date_now: {}, end_dt = {}: bumping window by one day".format(
+          date_now,
+          end_dt,
+          ))
         start_dt = start_dt + datetime.timedelta(days=1)
         end_dt = end_dt + datetime.timedelta(days=1)
+
+    elif date_now > start_dt:
+        # If we missed the start then shift the tweet time
+        logging.debug("date_now: {}, start_dt = {}: shifting start to date_now".format(
+          date_now,
+          start_dt,
+          ))
+        start_dt = date_now
+
 
     tweet_delta = end_dt - start_dt
     
