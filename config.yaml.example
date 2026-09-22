@@ -14,11 +14,8 @@ paths:
   # This really should be specified!
   venv_path: /home/pnijjar/src/google-calendar-helpers/venv
 
-  # Where to store tweets/toots to publish. This DOES need to be
-  # separate for tweets and toots. These folders need to be 
-  # readable by the tweet script.
+  # Where to store tweets/toots/skeets to publish. 
   tweet_cache_path: /tmp/google_calendar_helpers/cache/tweets
-  toot_cache_path: /tmp/google_calendar_helpers/cache/toots
 
   # Where to keep cached json
   # This replaces OUT_EVENT_DICT
