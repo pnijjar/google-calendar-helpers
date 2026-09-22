@@ -2,5 +2,6 @@
 
 from gcal_helpers import helpers
 
-helpers.send_tweet()
+config = helpers.load_config(caller='send_tweet')
+helpers.send_tweet(config)
 

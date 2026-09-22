@@ -4,6 +4,7 @@ paths:
   # Each use of these has an optional boolean: "relative_to_X_path"
   #  - true : use this path
   #  - false or absent: use absolute path
+  # At this point each of these folders needs to exist beforehand
   cache_path: /tmp/google_calendar_helpers/cache
   publish_path: /tmp/google_calendar_helpers/rss
   log_path: /tmp/google_calendar_helpers/logs
@@ -42,8 +43,22 @@ services:
     consumer_secret: 'Insert-Your-Twitter-Consumer-Secret'
     access_token: 'Insert-Your-Twitter-Access-Token'
     access_secret: 'Insert-Your-Twitter-Access-Secret'
+    enable: false
 
-  mastodon: [] # Coming soon, I hope
+  mastodon: 
+    # Go to your profile, go to the "development" section, 
+    # make a new application with write:status
+    # permissions (and maybe profile?) and get the access 
+    access_token: 'Insert-Your-Mastodon-Access-Token'
+    server: 'examplemastodon.social'
+    enable: false
+
+  bluesky:
+    # https://bsky.app/settings/app-passwords
+    app_password: 'Insert-Your-App-Password-Here'
+    pds: 'https://bsky.social'
+    handle: 'example.bsky.social'
+    enable: false
 
   # See https://github.com/ellisonleao/pyshorteners/ for the
   # syntax of making a new shortener.
@@ -161,7 +176,7 @@ feeds:
       0: "Today!"
       1: "Tomorrow!"
       3: "Three sleeps!"
-      6: "Next week!"
+      7: "Next week!"
 
     # How many days in advance should we grab tweets (upper bound).
     # Use 8 for events one week from now. 0 is today.
@@ -171,16 +186,16 @@ feeds:
     # These parameters define a window when we are allowed to 
     # actually send the tweets.
     #
-    # The start should be AFTER you run the script (actually, after
-    # the script stops running). This is going to be bad for events
-    # that begin today, before the tweet window.
+    # If you run the script in between the start and end window then
+    # we try to schedule tweets in the remaining time.
+    # 
+    # If you run the script after the end window then we schedule
+    # tweets as if we are generating them the next day. 
+    # 
+    # Probably you should run the script before the start window.
     window:
       start: '09:00'
       end: '16:00'
-
-  # If this is empty then we will use the tweet information for toots.
-  # Otherwise the same dict structure as for tweets should be used.
-  toot: {}
 
 logging:
   logfile: gcal_helper.log

@@ -16,6 +16,7 @@ import json
 from bs4 import BeautifulSoup
 import yaml
 import logging, logging.handlers
+import atproto
 
 
 RSS_TEMPLATE="rss_template.jinja2"
@@ -32,7 +33,7 @@ LAUNCH_PYDIR=os.path.abspath(os.path.join(TEMPLATE_DIR, os.pardir))
 
 # This should be the folder that has the shell script
 SHELL_SCRIPT_DIR=os.path.abspath(
- os.path.join(TEMPLATE_DIR, 'scripts')
+ os.path.join(TEMPLATE_DIR, os.pardir, 'scripts')
  )
 
 TWEET_SHELL_SCRIPT='launch_tweet_sender.sh'
@@ -98,7 +99,7 @@ def parse_args(caller = None):
 
 
 ## ------------------------------
-def load_config_yaml(configfile=None):
+def load_config_yaml(configfile=None, args=None):
     """ Load config definitions from YAML file.
 
     I feel the commandline arg should be mandatory?
@@ -109,6 +110,10 @@ def load_config_yaml(configfile=None):
     with open(configfile, encoding='utf-8') as f:
         config = yaml.load(f, Loader=yaml.SafeLoader)
 
+        # I want the flags to be in config[]
+        if args:
+            config.update(vars(args))
+
     if not config.get('flags'):
         config['flags'] = {}
 
@@ -116,7 +121,8 @@ def load_config_yaml(configfile=None):
         config['internal'] = {}
 
     # Make a tz variable for all the human dates
-    config.TZ = pytz.timezone(config.TIMEZONE)
+    config['TZ'] = pytz.timezone(config['feeds']['timezone'])
+    
 
     # For test harness
     return config
@@ -148,7 +154,7 @@ def load_config(configfile=None, caller=None):
     config_logging(configuration_lala, args, configfile) 
 
     if caller == 'send_tweet' and args.tweet_id:
-        config['flags']['tweet_id'] = args.tweet_id
+        configuration_lala['flags']['tweet_id'] = args.tweet_id
 
     # For test harness
     return configuration_lala
@@ -261,64 +267,79 @@ def print_from_template (s):
 
 
 # ------------------------------
-def get_rfc822_datestring (google_date): 
-    """ Convert whatever date Google is using to the RFC-822 dates
-        that RSS wants.
-    """
+def get_rfc822_datestring_fn (config):
 
-    # Sometimes dates look like "0000-12-29T00:00.000Z" and this
-    # confuses the date parser...
-    d = dateutil.parser.parse(google_date).astimezone(config.TZ)
+    def get_rfc822_datestring (google_date): 
+        """ Convert whatever date Google is using to the RFC-822 dates
+            that RSS wants.
+        """
 
-    # Output the proper format
-    return d.strftime("%a, %d %b %Y %T %z")
+        # Sometimes dates look like "0000-12-29T00:00.000Z" and this
+        # confuses the date parser...
+        d = dateutil.parser.parse(google_date).astimezone(config['TZ'])
 
-
-# ------------------------------
-def get_human_datestring (google_date): 
-    """ RFC 822 is ugly for humans. Use something nicer. """
-
-    d = dateutil.parser.parse(google_date).astimezone(config.TZ)
-    
-    # Wednesday, Oct 02 2005, 8:00pm
-    return d.strftime("%A, %b %d %Y, %l:%M%P")
-
-# ------------------------------
-def get_human_dateonly (google_date):
-    """ If there is no minute defined then the date looks bad.
-    """
-
-    d = dateutil.parser.parse(google_date).astimezone(config.TZ)
-    
-    # Wednesday, Oct 02 2005
-    return d.strftime("%A, %b %d %Y")
-
-# ------------------------------
-def get_short_human_dateonly (google_date):
-    """ Readable by humans, but shorter. """
-
-    d = dateutil.parser.parse(google_date).astimezone(config.TZ)
-
-    # Sun, Feb 18
-    return d.strftime("%a, %b %e")
-
-# ------------------------------
-def get_short_human_datetime (google_date):
-    """ Date time readable by humans, but shorter. """
-
-    d = dateutil.parser.parse(google_date).astimezone(config.TZ)
-
-    # Sun, Feb 18, 8:00pm
-    return d.strftime("%a, %b %e, %l:%M%P")
+        # Output the proper format
+        return d.strftime("%a, %d %b %Y %T %z")
+    return get_rfc822_datestring
 
 
 # ------------------------------
-def get_human_timeonly (google_date):
-    """ Forget the date. Just gimme the time"""
+def get_human_datestring_fn (config): 
+    def get_human_datestring (google_date): 
+        """ RFC 822 is ugly for humans. Use something nicer. """
 
-    d = dateutil.parser.parse(google_date).astimezone(config.TZ)
-    #  8:00pm
-    return d.strftime("%l:%M%P")
+        d = dateutil.parser.parse(google_date).astimezone(config['TZ'])
+        
+        # Wednesday, Oct 02 2005, 8:00pm
+        return d.strftime("%A, %b %d %Y, %l:%M%P")
+    return get_human_datestring
+
+# ------------------------------
+def get_human_dateonly_fn (config):
+   
+    def get_human_dateonly (google_date):
+        """ If there is no minute defined then the date looks bad.
+        """
+
+        d = dateutil.parser.parse(google_date).astimezone(config['TZ'])
+        
+        # Wednesday, Oct 02 2005
+        return d.strftime("%A, %b %d %Y")
+    return get_human_dateonly
+
+# ------------------------------
+
+def get_short_human_dateonly_fn (config):
+    def get_short_human_dateonly (google_date):
+        """ Readable by humans, but shorter. """
+
+        d = dateutil.parser.parse(google_date).astimezone(config['TZ'])
+
+        # Sun, Feb 18
+        return d.strftime("%a, %b %e")
+    return get_short_human_dateonly
+
+# ------------------------------
+def get_short_human_datetime_fn (config):
+    def get_short_human_datetime (google_date):
+        """ Date time readable by humans, but shorter. """
+
+        d = dateutil.parser.parse(google_date).astimezone(config['TZ'])
+
+        # Sun, Feb 18, 8:00pm
+        return d.strftime("%a, %b %e, %l:%M%P")
+    return get_short_human_datetime 
+
+
+# ------------------------------
+def get_human_timeonly_fn (config):
+    def get_human_timeonly (google_date):
+        """ Forget the date. Just gimme the time"""
+
+        d = dateutil.parser.parse(google_date).astimezone(config['TZ'])
+        #  8:00pm
+        return d.strftime("%l:%M%P")
+    return get_human_timeonly
 
 
 # ------------------------------
@@ -385,7 +406,7 @@ def get_markdown (rawtext):
 def get_time_now(config):
    
     target_timezone = pytz.timezone(config['feeds']['timezone'])
-    time_now = datetime.datetime.now(tz=config.TZ)
+    time_now = datetime.datetime.now(tz=config['TZ'])
 
     return time_now
 
@@ -507,11 +528,11 @@ def organize_events_by_day(
     # there is title metadata. But that means we have to sort twice.
     outdict = collections.OrderedDict()
 
-    lastdate = get_human_dateonly(INVALID_DATE)
+    lastdate = get_human_dateonly_fn(config)(INVALID_DATE)
     today = get_time_now(config)
     
     # Set the time to midnight
-    today = today.replace(hour=0, minute=0, second=0)
+    today = today.replace(hour=0, minute=0, second=0, microsecond=0)
     # print ("today is {}".format(today))
 
     for event in sorted(cal_items, key=extract_datestring,):
@@ -533,15 +554,15 @@ def organize_events_by_day(
             #    this_datetime, 
             #    this_datetime.tzinfo
             #    ))
-            this_datetime = config.TZ.localize(this_datetime)
+            this_datetime = config['TZ'].localize(this_datetime)
         elif this_datetime.tzinfo.utcoffset(this_datetime) is None:
             #print ("{}: tzinfo.utcoffset is {}".format(
             #    this_datetime, 
             #    this_datetime.tzinfo.utcoffset(this_datetime)
             #    ))
-            this_datetime = config.TZ.localize(this_datetime)
+            this_datetime = config['TZ'].localize(this_datetime)
            
-        thisdate = get_human_dateonly(this_datestring)
+        thisdate = get_human_dateonly_fn(config)(this_datestring)
 
         # Skip this entry if it is too far in the future
         if (max_days is not None) and (max_days >= 0):
@@ -585,9 +606,24 @@ def schedule_tweets(config, tweets_to_schedule):
         tweet window. Consumes a dict of strings to be tweeted.
     """
     t_config = config['feeds']['tweets']
+    tz = pytz.timezone(config['feeds']['timezone'])
 
-    start_dt = dateutil.parser.parse(t_config['window']['start'])
-    end_dt = dateutil.parser.parse(t_config['window']['end'])
+    start_dt = tz.localize(dateutil.parser.parse(
+      t_config['window']['start'],
+      ))
+    end_dt = tz.localize(dateutil.parser.parse(
+      t_config['window']['end'],
+      ))
+
+    date_now = get_time_now(config)
+
+    if date_now > start_dt:
+        start_dt = date_now
+
+    # If we missed the window then bump by one day
+    if end_dt > date_now:
+        start_dt = start_dt + datetime.timedelta(days=1)
+        end_dt = end_dt + datetime.timedelta(days=1)
 
     tweet_delta = end_dt - start_dt
     
@@ -600,10 +636,10 @@ def schedule_tweets(config, tweets_to_schedule):
     for id in tweets_to_schedule:
         tweet_time = pick_random_time(start_dt, tweet_delta)
 
-        #print("Tweeting at {}: {}".format(
-        #  tweet_time,
-        #  tweets_to_schedule[id],
-        #  ))
+        logging.debug("Tweeting at {}: {}".format(
+          tweet_time,
+          tweets_to_schedule[id],
+          ))
 
         dest_filename = "{}-{}-{}".format(
            tweet_time.strftime("%Y-%m-%dT%H:%M"),
@@ -668,16 +704,20 @@ def construct_tweets(config):
 
     # Ugh. Need to convert this to midnight, or 
     # delta calculations can break. 
-    today = datetime.datetime(
-      today.year,
-      today.month,
-      today.day,
-      0,
-      0,
-      0,
-      0,
-      today.tzinfo,
-      )
+    today = today.replace(hour=0, minute=0, second=0, microsecond=0)
+
+    today_really = get_time_now(config)
+    window_end = tz.localize(dateutil.parser.parse(
+      config['feeds']['tweets']['window']['end']
+      ))
+
+    # If we will be scheduling these after the window ends,
+    # then bump by one day
+    if today_really > window_end:
+        today = today + datetime.timedelta(days=1)
+        logging.debug("Bumping computed day for tweets by one day to {}".format(
+          today,
+          ))
 
     sorted = organize_events_by_day(
       config,
@@ -690,14 +730,14 @@ def construct_tweets(config):
     for day in sorted:
         
         target_day = dateutil.parser.parse(day)
-        target_day = config.TZ.localize(target_day)
+        target_day = config['TZ'].localize(target_day)
         delta = target_day - today
         expression = ""
-        #print("\ntoday = {}, target_day = {}, delta = {}\n".format(
-        #  today,
-        #  target_day,
-        #  delta,
-        #  ))
+        logging.debug("\ntoday = {}, target_day = {}, delta = {}\n".format(
+          today,
+          target_day,
+          delta,
+          ))
 
         if delta.days in config['feeds']['tweets']['date_expression']:
             expression = \
@@ -731,21 +771,23 @@ def construct_tweets(config):
                   "day_expression": expression,
                   }
 
-                tweet_text = generate_tweet_text(tweet_dict)
+                tweet_text = generate_tweet_text(config, tweet_dict)
                 
                 tweet_output[item['id']] = tweet_text
                 
-                # print("{}".format(tweet_text))
+                logging.debug("{}".format(tweet_text))
 
 
     return tweet_output
 
 
 # -------------------------------
-def generate_tweet_text(tweet_dict):
+def generate_tweet_text(config, tweet_dict):
     """ Given information to put in a tweet, generate the string to
         tweet out. 
     """
+
+    logging.debug("In generate_tweet_text")
 
     
     template_loader = jinja2.FileSystemLoader(
@@ -756,9 +798,9 @@ def generate_tweet_text(tweet_dict):
         lstrip_blocks=True,
         trim_blocks=True,
         )
-    template_env.filters['humandate'] = get_short_human_datetime
-    template_env.filters['humandateonly'] = get_short_human_dateonly
-    template_env.filters['timeonly'] = get_human_timeonly
+    template_env.filters['humandate'] = get_short_human_datetime_fn(config)
+    template_env.filters['humandateonly'] = get_short_human_dateonly_fn(config)
+    template_env.filters['timeonly'] = get_human_timeonly_fn(config)
 
     template = template_env.get_template( TWEET_TEMPLATE ) 
     template_vars = { 
@@ -775,6 +817,8 @@ def generate_newsletter(config, cal_dict):
     """ Given a JSON formatted calendar dictionary, make the text for 
         a fascinating newsletter.
     """
+
+    logging.debug("In generate_newsletter")
 
     sorted_items = organize_events_by_day(
         config,
@@ -795,9 +839,9 @@ def generate_newsletter(config, cal_dict):
         lstrip_blocks=True,
         trim_blocks=True,
         )
-    template_env.filters['humandate'] = get_human_datestring
-    template_env.filters['humandateonly'] = get_human_dateonly
-    template_env.filters['timeonly'] = get_human_timeonly
+    template_env.filters['humandate'] = get_human_datestring_fn(config)
+    template_env.filters['humandateonly'] = get_human_dateonly_fn(config)
+    template_env.filters['timeonly'] = get_human_timeonly_fn(config)
     template_env.filters['shorturl'] = shorten_url_curry
     template_env.filters['underline'] = get_underline
     template_env.filters['addtz'] = add_timezone_curry
@@ -849,6 +893,7 @@ def sort_by_date(events):
       reverse=False,
       )
 
+# -------------------------
 def process_recurrences(cal_dict, rss_opts):
     """
     Filtering duplicate events: Repeated events have the same calendar
@@ -899,6 +944,8 @@ def generate_rss(config, cal_dict):
 
     # --- Process template 
 
+    logging.debug("In generate_rss")
+
     template_loader = jinja2.FileSystemLoader(
         searchpath=TEMPLATE_DIR
         )
@@ -906,9 +953,9 @@ def generate_rss(config, cal_dict):
         loader=template_loader,
         autoescape=True,
         )
-    template_env.filters['rfc822'] = get_rfc822_datestring
-    template_env.filters['humandate'] = get_human_datestring
-    template_env.filters['humandateonly'] = get_human_dateonly
+    template_env.filters['rfc822'] = get_rfc822_datestring_fn(config)
+    template_env.filters['humandate'] = get_human_datestring_fn(config)
+    template_env.filters['humandateonly'] = get_human_dateonly_fn(config)
     template_env.filters['markdown'] = get_markdown
     template_env.filters['print'] = print_from_template
 
@@ -949,6 +996,8 @@ def generate_sidebar(config, cal_dict):
         the HTML sidebar list.
     """
 
+    logging.debug("In generate_sidebar")
+
     # --- Process template 
     add_timezone_curry = lambda x: add_timezone(config, x)
 
@@ -959,8 +1008,8 @@ def generate_sidebar(config, cal_dict):
         loader=template_loader,
         autoescape=True,
         )
-    template_env.filters['humandate'] = get_short_human_datetime
-    template_env.filters['humandateonly'] = get_short_human_dateonly
+    template_env.filters['humandate'] = get_short_human_datetime_fn(config)
+    template_env.filters['humandateonly'] = get_short_human_dateonly_fn(config)
     template_env.filters['addtz'] = add_timezone_curry
 
     time_now = get_time_now(config)
@@ -975,31 +1024,56 @@ def generate_sidebar(config, cal_dict):
     return output_sidebar
 
 # ------------------------------
-def send_tweet():
-    """ Open Tweepy and send the tweet.
+def send_tweet(config):
+    """ Send tweets and toots and skeets.
     """
 
-    # This is going to break! We need the credentials in a file!
-    config = load_config(caller='send_tweet')
-    t_config = config['services']['twitter']
+    deploylist = []
 
-    auth = tweepy.OAuthHandler(
-      t_config['consumer_key'],
-      t_config['consumer_secret'],
-      )
-    auth.set_access_token(
-      t_config['access_token'],
-      t_config['access_secret'],
-      )
+    if 'enable' in config['services']['twitter'] and \
+      config['services']['twitter']['enable']:
+        # This is going to break! We need the credentials in a file!
+        t_config = config['services']['twitter']
 
-    api = None
+        auth = tweepy.OAuthHandler(
+          t_config['consumer_key'],
+          t_config['consumer_secret'],
+          )
+        auth.set_access_token(
+          t_config['access_token'],
+          t_config['access_secret'],
+          )
 
-    try:
-        api = tweepy.API(auth)
-    except Exception as e:
-        logging.error(
-          "send_tweet.py: error opening Twitter API: {}".format(e))
-        exit(3)
+        twitter_api = None
+
+        try:
+            twitter_api = tweepy.API(auth)
+            deploylist.append('twitter')
+        except Exception as e:
+            logging.error(
+              "send_tweet.py: error opening Twitter API: {}".format(e))
+
+
+    if 'enable' in config['services']['mastodon'] and \
+      config['services']['mastodon']['enable']:
+        deploylist.append('mastodon')
+
+    if 'enable' in config['services']['bluesky'] and \
+      config['services']['bluesky']['enable']:
+        # https://atproto.blue/getting-started/quickstart/
+        try:
+            bluesky_api = atproto.Client(
+              config['services']['bluesky']['pds']
+              )
+            bluesky_api.login(
+              config['services']['bluesky']['handle'],
+              config['services']['bluesky']['app_password'],
+              )
+            deploylist.append('bluesky')
+        except Exception as e:
+            logging.error(
+              "send_tweet.py: error opening Bluesky API: {}".format(e))
+
 
     tweetfile = os.path.join(
       config['paths']['tweet_cache_path'],
@@ -1009,12 +1083,51 @@ def send_tweet():
     # If you can't find the file just fail, I guess?
     try:
         with open(tweetfile) as f:
-            tweettext = f.readline()
+            tweettext = f.read()
             logging.debug('ID {}: {}'.format(
-                config['flags']['tweet_id'],
-                tweettext,
-                ))
-            api.update_status(tweettext)
+              config['flags']['tweet_id'],
+              tweettext,
+              ))
+            if 'twitter' in deploylist:
+                twitter_api.update_status(tweettext)
+                logging.debug('ID {}: sent to twitter'.format(
+                  config['flags']['tweet_id'],
+                  ))
+
+            if 'mastodon' in deploylist:
+                # https://docs.joinmastodon.org/methods/statuses/#create 
+                api_url='https://{}/api/v1/statuses'.format(
+                  config['services']['mastodon']['server'],
+                  )
+                api_headers = { 
+                    'Authorization' : 'Bearer {}'.format(
+                      config['services']['mastodon']['access_token'],
+                      ),
+                    'Idempotency-key' : config['flags']['tweet_id'],
+                    }
+                api_params = { 
+                    'status' : tweettext,
+                    'visibility' : 'public',
+                    } 
+
+                try:
+                    r = requests.post(
+                      api_url, 
+                      params=api_params,
+                      headers=api_headers,
+                      )
+                    r.raise_for_status()
+
+                    logging.debug('ID {}: sent to mastodon'.format(
+                      config['flags']['tweet_id'],
+                      ))
+                except HTTPError as e:
+                    logging.error('Mastodon post failed: {}'.format(e))
+
+            if 'bluesky' in deploylist:
+                bluesky_api.send_post(tweettext)
+
+              
             os.remove(tweetfile)
 
     except FileNotFoundError:
