@@ -17,6 +17,7 @@ from bs4 import BeautifulSoup
 import yaml
 import logging, logging.handlers
 import atproto
+import re
 
 
 RSS_TEMPLATE="rss_template.jinja2"
@@ -1135,7 +1136,8 @@ def send_tweet(config):
                     logging.error('Mastodon post failed: {}'.format(e))
 
             if 'bluesky' in deploylist:
-                bluesky_api.send_post(tweettext)
+                bluesky_text = bluesky_format_tweet(tweettext)
+                bluesky_api.send_post(bluesky_text)
 
               
             os.remove(tweetfile)
@@ -1144,7 +1146,28 @@ def send_tweet(config):
         logging.error('send_tweet.py: Unable to open file {}'.format(tweetfile))
         exit(2)
 
+# ------------------------------
+def bluesky_format_tweet(tweettext):
+    """ Take a str, find the links, turn the links into the weird
+    Bluesky format. 
+    """
 
+    bskytext = atproto.client_utils.TextBuilder()
+    split = re.split(r"(https?:\S+)", tweettext)
+
+    for item in split:
+        if re.match("^http", item):
+            bskytext.link(item, item)
+        else:
+            bskytext.text(item)
+
+    logging.debug("bluesky_format_text: original={}, bsky={}".format(
+      tweettext,
+      bskytext,
+      ))
+
+    return bskytext
+    
 # ------------------------------
 def write_transformation(config, transforms):
     """ Write a file for the transformation. The transforms should
