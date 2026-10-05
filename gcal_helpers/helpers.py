@@ -1236,6 +1236,8 @@ def write_transformation(config, transforms):
                 info = config['feeds'][transform_type]
                 if info.get('relative_to_publish_path'):
                     folder = config['paths']['publish_path']
+                elif info.get('relative_to_cache_path'):
+                    folder = config['paths']['cache_path']
 
                 filebase = info['filename']
 

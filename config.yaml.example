@@ -149,7 +149,7 @@ feeds:
 
     # filenames SHOULD include extensions now.
     filename: watcamp.txt
-    relative_to_publish_path: true
+    relative_to_cache_path: true
 
 
   sidebar: 
@@ -161,7 +161,7 @@ feeds:
 
     # This is not used if stdout is specified. It can probably be
     # deleted.
-    relative_to_publish_path: True 
+    relative_to_cache_path: True 
 
 
   tweets: 
